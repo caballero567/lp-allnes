@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Lista Precios - Allnes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            padding: 16px;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #0a0a0a;
+            padding: 24px 20px;
+            border-bottom: 2px solid #fbbf24;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #fbbf24;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 8px;
+        }
+
+        .filtros {
+            background: #111111;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #1f1f1f;
+        }
+
+        .search-wrapper {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .search-wrapper input {
+            flex: 1;
+            padding: 14px 16px;
+            background: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #e5e5e5;
+            font-family: inherit;
+        }
+
+        .search-wrapper input:focus {
+            outline: none;
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
+        }
+
+        .search-wrapper input::placeholder {
+            color: #6b7280;
+        }
+
+        .btn-buscar {
+            background: #fbbf24;
+            color: #0a0a0a;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-buscar:active {
+            transform: scale(0.97);
+            background: #f59e0b;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            background: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #e5e5e5;
+            margin-bottom: 16px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #fbbf24;
+        }
+
+        .btn-limpiar {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            width: 100%;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-limpiar:active {
+            transform: scale(0.98);
+            background: #b91c1c;
+        }
+
+        .resultados-info {
+            background: #111111;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #1f1f1f;
+        }
+
+        .resultados-info span:first-child {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        .badge {
+            background: #fbbf24;
+            color: #0a0a0a;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .tabla-wrapper {
+            background: #111111;
+            border-radius: 16px;
+            overflow-x: auto;
+            border: 1px solid #1f1f1f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            min-width: 550px;
+        }
+
+        th {
+            background: #0d0d0d;
+            padding: 14px 12px;
+            text-align: left;
+            color: #fbbf24;
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #1a1a1a;
+            color: #d1d5db;
+        }
+
+        .precio {
+            color: #fbbf24;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .empty-row td {
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.65rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Lista Precios</h1>
+        <p>Productos · Marcas</p>
+    </div>
+
+    <div class="filtros">
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Ej: cremosita 390, nescafe 170, milo 350" autocomplete="off">
+            <button class="btn-buscar" id="buscarBtn">Buscar</button>
+        </div>
+        <select id="marcaSelect">
+            <option value="">Todas las marcas</option>
+        </select>
+        <button class="btn-limpiar" id="limpiarBtn">Limpiar filtros</button>
+    </div>
+
+    <div class="resultados-info">
+        <span>📦 <span id="totalCount">0</span> productos</span>
+        <span class="badge" id="filtroBadge">Sin filtros</span>
+    </div>
+
+    <div class="tabla-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>MARCA</th>
+                    <th>PRODUCTO</th>
+                    <th>ABREV</th>
+                    <th>FACTOR</th>
+                    <th>PRECIO CJ</th>
+                    <th>PRECIO UN</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBody">
+                <tr><td colspan="6" style="text-align:center; color:#6b7280;">Cargando productos...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        👉 Puedes buscar por palabra o número (ej: "cremosita 390" o "390 cremosita")
+    </div>
+</div>
+
+<script>
+// ==================== TODOS LOS PRODUCTOS ====================
+const productos = [
+{Marca:"GERBER",Producto:"GERBER PURE MANGO CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39"},
+{Marca:"GERBER",Producto:"GERBER PURE MANZANA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39"},
+{Marca:"GERBER",Producto:"GERBER PURE PERA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"128.01",P1UN:"5.33"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 24U*400GR",Abrev:"CAJA",Factor:"24",P1CJ:"128.01",P1UN:"5.33"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"250.35",P1UN:"31.30"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*400GR",Abrev:"CAJA",Factor:"8",P1CJ:"250.25",P1UN:"31.28"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"119.80",P1UN:"5.00"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 24U*400GR",Abrev:"CAJA",Factor:"24",P1CJ:"119.79",P1UN:"4.99"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"235.06",P1UN:"29.39"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*400GR",Abrev:"CAJA",Factor:"8",P1CJ:"234.87",P1UN:"29.36"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALMENDRA CON AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALMENDRA SIN AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEBIDA DE AVENA S/AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80"},
+{Marca:"ECCO",Producto:"CBO: 2 TIRAS ECCO 12GR + 1 VASO ECCO VAPONADO",Abrev:"CBO",Factor:"1",P1CJ:"23.46",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"CBO: 2 TIRAS ECCO 14UN*12GR + 1 VASO ECCO VAPONADO",Abrev:"CBO",Factor:"1",P1CJ:"21.14",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"CBO: 3 UND ECCO 170GR + 1 JARRA ECCO",Abrev:"CBO",Factor:"1",P1CJ:"29.50",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"CBO: ECCO 3 TIRA*12GR + TAPER ECCO TRASPARENTE",Abrev:"CBO",Factor:"1",P1CJ:"31.71",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"CBO: JARRA ECCO  (3 TIRAS ECCO *14 UN*12GR)",Abrev:"CBO",Factor:"1",P1CJ:"31.71",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"CBO:1 UNID ECCO CEBADA LATA *170GR GRAT KIRMA*8GR",Abrev:"UN",Factor:"1",P1CJ:"9.74",P1UN:"0.00"},
+{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*10GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.30"},
+{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*12GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.29"},
+{Marca:"ECCO",Producto:"ECCO CEBADA  15x175g PE",Abrev:"CAJA",Factor:"15",P1CJ:"201.60",P1UN:"13.44"},
+{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK  12U*170GR + VASO PAVONADO",Abrev:"CAJA",Factor:"12",P1CJ:"138.06",P1UN:"11.51"},
+{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK CJ 15U*250GR",Abrev:"CAJA",Factor:"15",P1CJ:"211.46",P1UN:"14.10"},
+{Marca:"ECCO",Producto:"ECCO CEBADA INSTANT CJ 24U*80GR",Abrev:"CAJA",Factor:"24",P1CJ:"137.76",P1UN:"5.74"},
+{Marca:"ECCO",Producto:"ECCO CEBADA LATA CJ 24U* 50GR",Abrev:"CAJA",Factor:"24",P1CJ:"101.39",P1UN:"4.22"},
+{Marca:"ECCO",Producto:"ECCO CEBADA LATA CJ 24U*170GR",Abrev:"CAJA",Factor:"24",P1CJ:"322.69",P1UN:"13.45"},
+{Marca:"ECCO",Producto:"ECCO CEBADA LATA CJ 24U*190GR",Abrev:"CAJA",Factor:"24",P1CJ:"182.06",P1UN:"7.59"},
+{Marca:"ECCO",Producto:"ECCO Doypack 16x170g PE",Abrev:"CAJA",Factor:"16",P1CJ:"155.56",P1UN:"9.73"},
+{Marca:"ECCO",Producto:"ECCO Doypack 6x170g + Jarra",Abrev:"CAJA",Factor:"6",P1CJ:"63.72",P1UN:"10.62"},
+{Marca:"KIRMA",Producto:"3 TIRAS KIRMA 8G + 1 TAPER GRANE NESCAFE",Abrev:"DISP",Factor:"1",P1CJ:"41.31",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"6 TIRAS KIRMA 8G + 1 TAPER GRANE NESCAFE",Abrev:"DISP",Factor:"1",P1CJ:"83.52",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"CBO: 1UND KIRMA LATA 190GR+ 1 UND AMANECER 390GR",Abrev:"CBO",Factor:"1",P1CJ:"21.29",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"CBO: NESCAFE TRADICION TR*10U*15GR + KIRMA TR*8U*8GR",Abrev:"TIRA",Factor:"1",P1CJ:"31.12",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"CBO:KIRMA CJ 12TR*16U*7GR + NESCAFE *5U*15GR",Abrev:"TIRA",Factor:"1",P1CJ:"25.90",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA (MEDIA TIRA) TR*8U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"8.27",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA (MEDIA TIRA) TR*8U*7GR PRYAPE",Abrev:"TIRA",Factor:"1",P1CJ:"8.27",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA (MEDIA TIRA) TR*8U*8GR",Abrev:"TIRA",Factor:"1",P1CJ:"6.89",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA CAJA*12 (16UN*7GR+NESCAFE 5UN*15GR)",Abrev:"CAJA",Factor:"12",P1CJ:"318.47",P1UN:"26.54"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.46",P1UN:"16.54"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*7GR PRYAPE",Abrev:"CAJA",Factor:"12",P1CJ:"198.46",P1UN:"16.54"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*8GR",Abrev:"CAJA",Factor:"12",P1CJ:"165.39",P1UN:"13.78"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*9GR",Abrev:"CAJA",Factor:"12",P1CJ:"165.39",P1UN:"13.78"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*14GR PRYAPE",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*15GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK CJ 12*150GR + IDEAL AMANECER PE",Abrev:"CAJA",Factor:"12",P1CJ:"214.30",P1UN:"17.86"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK CJ 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"313.05",P1UN:"19.57"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK CJ 16*150GR",Abrev:"CAJA",Factor:"16",P1CJ:"285.74",P1UN:"17.86"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"147.15",P1UN:"6.13"},
+{Marca:"KIRMA",Producto:"KIRMA LATA CJ 12U*180GR",Abrev:"CAJA",Factor:"12",P1CJ:"265.71",P1UN:"22.14"},
+{Marca:"KIRMA",Producto:"KIRMA LATA CJ 12U*190GR+IDEAL AMANECER",Abrev:"CAJA",Factor:"12",P1CJ:"265.70",P1UN:"22.14"},
+{Marca:"KIRMA",Producto:"KIRMA LATA CJ 12U*190GR+TAZA PE",Abrev:"CAJA",Factor:"12",P1CJ:"265.70",P1UN:"22.14"},
+{Marca:"KIRMA",Producto:"KIRMA TR* 8U*9GR",Abrev:"TP",Factor:"1",P1CJ:"6.96",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA(MEDIA TIRA)TIRA*5U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"9.49",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA(MEDIA TIRA)TIRA*5U*14GR PRYAPE",Abrev:"TIRA",Factor:"1",P1CJ:"9.49",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"KIRMA(MEDIA TIRA)TIRA*5U*15GR",Abrev:"TIRA",Factor:"1",P1CJ:"9.49",P1UN:"0.00"},
+{Marca:"KIRMA",Producto:"NESCAFE KIRMA TIRA 10(10*17GR) PE",Abrev:"CAJA",Factor:"10",P1CJ:"146.32",P1UN:"14.63"},
+{Marca:"NESCAFE",Producto:"2 TIRAS NESCAFE 15G + 1 TAPER GRANE NESCAFE",Abrev:"DISP",Factor:"1",P1CJ:"38.00",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"4 TIRAS NESCAFE 16G + 1 TAPER GRANE NESCAFE",Abrev:"DISP",Factor:"1",P1CJ:"76.92",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"CBO: 1UND NESCAFE VIDRIO 170GR+ 1 UND AMANECER 390GR",Abrev:"CBO",Factor:"1",P1CJ:"23.58",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"CBO: 1UND NESCAFE VIDRIO 170GR+ 1 UND CREMOCITA 390GR",Abrev:"CBO",Factor:"1",P1CJ:"23.58",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"CBO: NESCAFE 5 UN* 15GR + CANISTER NSCF",Abrev:"CBO",Factor:"1",P1CJ:"12.09",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"CBO:1 TIRA NESCAFE DE 10 UND *15GR+10 UND ECCO *12GR",Abrev:"CBO",Factor:"1",P1CJ:"19.00",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"CBO:TIRA NESCAFE 10 UND 15GRGR+10 UND KIRMA * 8GR",Abrev:"CBO",Factor:"1",P1CJ:"19.00",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA)  TR* 9U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"11.28",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA)  TR* 9U*7GR PRYAPE",Abrev:"TIRA",Factor:"1",P1CJ:"11.28",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"10.50",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*14GR PRYAPE",Abrev:"TIRA",Factor:"1",P1CJ:"10.50",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*15GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.09",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE DECAF DOYPACK 24*90GR",Abrev:"CAJA",Factor:"24",P1CJ:"525.09",P1UN:"21.88"},
+{Marca:"NESCAFE",Producto:"NESCAFE DECAF DOYPACK 24x100GR",Abrev:"CAJA",Factor:"24",P1CJ:"383.17",P1UN:"15.97"},
+{Marca:"NESCAFE",Producto:"NESCAFE FINA SELECCION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"337.57",P1UN:"28.13"},
+{Marca:"NESCAFE",Producto:"NESCAFE FINA SELECCION CJ 12U*200GR",Abrev:"CAJA",Factor:"12",P1CJ:"337.62",P1UN:"28.14"},
+{Marca:"NESCAFE",Producto:"NESCAFE FINA SELECCION DOYPACK 24x100GR",Abrev:"CAJA",Factor:"24",P1CJ:"404.69",P1UN:"16.86"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD BLEND CJ12*50GR",Abrev:"CAJA",Factor:"12",P1CJ:"217.23",P1UN:"18.10"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD BLEND CJ6*200GR",Abrev:"CAJA",Factor:"6",P1CJ:"271.81",P1UN:"45.30"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO  MOCHA  CJ 6DP*8S*18GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO CJ 6DP*10S*14GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD FCO VIDRIO CJ 12U*100GR",Abrev:"CAJA",Factor:"12",P1CJ:"368.37",P1UN:"30.70"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 12x95g PE",Abrev:"CAJA",Factor:"12",P1CJ:"368.37",P1UN:"30.70"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 6x190g PE",Abrev:"CAJA",Factor:"6",P1CJ:"271.40",P1UN:"45.30"},
+{Marca:"NESCAFE",Producto:"NESCAFE KIRMA DOYPACK 24x80GR",Abrev:"CAJA",Factor:"24",P1CJ:"258.00",P1UN:"10.75"},
+{Marca:"NESCAFE",Producto:"NESCAFE PREMIUM PERU CJ 12TR*18U*8GR",Abrev:"CAJA",Factor:"12",P1CJ:"172.80",P1UN:"14.40"},
+{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 12TR*10*15GR",Abrev:"CAJA",Factor:"12",P1CJ:"300.19",P1UN:"25.02"},
+{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 18TR *10*7GR",Abrev:"CAJA",Factor:"18",P1CJ:"254.88",P1UN:"14.16"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12TR*18U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"270.60",P1UN:"22.55"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE",Abrev:"CAJA",Factor:"12",P1CJ:"270.56",P1UN:"22.55"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12TR*18U*8GR",Abrev:"CAJA",Factor:"12",P1CJ:"228.40",P1UN:"19.03"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12U*170GR+IDEAL CREMOSITA",Abrev:"CAJA",Factor:"12",P1CJ:"314.58",P1UN:"26.21"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 16*170gr +TAZA PE",Abrev:"CAJA",Factor:"16",P1CJ:"404.47",P1UN:"25.28"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 24*100GR",Abrev:"CAJA",Factor:"24",P1CJ:"482.23",P1UN:"20.10"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"168.00",P1UN:"21.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE",Abrev:"CAJA",Factor:"8",P1CJ:"168.00",P1UN:"21.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*15GR",Abrev:"CAJA",Factor:"8",P1CJ:"193.44",P1UN:"24.18"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*16GR",Abrev:"CAJA",Factor:"8",P1CJ:"152.00",P1UN:"19.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*17GR",Abrev:"CAJA",Factor:"8",P1CJ:"158.91",P1UN:"19.86"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DOYPACK CJ 16*150 GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.18",P1UN:"24.70"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.11",P1UN:"24.69"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER 24x100GR",Abrev:"CAJA",Factor:"24",P1CJ:"439.54",P1UN:"15.52"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"204.67",P1UN:"8.53"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER CJ 24U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"204.67",P1UN:"8.53"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION FCO CJ 24U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"270.87",P1UN:"11.29"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION TR* 9U*8GR",Abrev:"TIRA",Factor:"1",P1CJ:"9.52",P1UN:"0.00"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION TRADICION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"314.58",P1UN:"26.21"},
+{Marca:"NESCAFE",Producto:"NESCFE CAJA 8*(*10*15GR+KIRMAK*5UN*7GR)",Abrev:"CAJA",Factor:"12",P1CJ:"241.44",P1UN:"20.12"},
+{Marca:"NESCAFE",Producto:"NESCFE CAJA 8*(*10*15GR+KIRMAK*8UN*7GR)",Abrev:"CAJA",Factor:"8",P1CJ:"241.44",P1UN:"30.18"},
+{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF CJ 12*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"398.32",P1UN:"33.19"},
+{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF INTENSO SABOR CJ 10TR*12U*7GR",Abrev:"CAJA",Factor:"10",P1CJ:"175.92",P1UN:"17.57"},
+{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF ORIGINAL CJ 12U*40GR",Abrev:"CAJA",Factor:"12",P1CJ:"150.05",P1UN:"12.50"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC BOOM CEREAL MATINAL 24 x 170G EC",Abrev:"CAJA",Factor:"24",P1CJ:"195.98",P1UN:"8.17"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL 350gr + CHOCAPIC 90GR",Abrev:"CBO",Factor:"1",P1CJ:"15.62",P1UN:"0.00"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 18*350GR",Abrev:"CAJA",Factor:"18",P1CJ:"278.46",P1UN:"15.47"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 26*90GR",Abrev:"CAJA",Factor:"26",P1CJ:"96.34",P1UN:"3.71"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL+CREMOSITA  CJ 8*(350GR+2CREMOCITAS)",Abrev:"UN",Factor:"1",P1CJ:"19.08",P1UN:"0.00"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CJ 14*540GR",Abrev:"CAJA",Factor:"14",P1CJ:"267.45",P1UN:"19.10"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES 405GR + CHOCAPIC 90GR",Abrev:"CBO",Factor:"1",P1CJ:"13.50",P1UN:"0.00"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 14*405GR",Abrev:"CAJA",Factor:"14",P1CJ:"180.89",P1UN:"12.92"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 20*180 GR N2",Abrev:"CAJA",Factor:"20",P1CJ:"185.26",P1UN:"9.26"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 8 UN*740 GR",Abrev:"CAJA",Factor:"8",P1CJ:"150.51",P1UN:"18.81"},
+{Marca:"FITNESS",Producto:"FITNESS & FRUIT CEREAL CJ 18*330GR",Abrev:"CAJA",Factor:"18",P1CJ:"280.58",P1UN:"15.59"},
+{Marca:"FITNESS",Producto:"FITNESS CEREAL CJ 16*570GR",Abrev:"CAJA",Factor:"16",P1CJ:"339.46",P1UN:"21.22"},
+{Marca:"FITNESS",Producto:"FITNESS CEREAL CJ 18*285GR",Abrev:"CAJA",Factor:"18",P1CJ:"203.69",P1UN:"11.32"},
+{Marca:"FITNESS",Producto:"FITNESS HONEY&ALMOND CEREAL CJ 18*330GR",Abrev:"CAJA",Factor:"18",P1CJ:"280.58",P1UN:"15.59"},
+{Marca:"MILO",Producto:"MILO CEREAL CJ 20*320GR",Abrev:"CAJA",Factor:"20",P1CJ:"298.54",P1UN:"14.93"},
+{Marca:"MILO",Producto:"SUBLIME BREAK FAST CEREAL 24x230GR",Abrev:"CAJA",Factor:"24",P1CJ:"252.90",P1UN:"10.54"},
+{Marca:"TRIX",Producto:"TRIX CEREAL 36x90g PE",Abrev:"CAJA",Factor:"36",P1CJ:"126.72",P1UN:"3.52"},
+{Marca:"TRIX",Producto:"TRIX CEREAL CJ 18*330 GR",Abrev:"CAJA",Factor:"18",P1CJ:"259.98",P1UN:"14.45"},
+{Marca:"TRIX",Producto:"TRIX MARSHMALLOW CER  CJ 18*300 GR",Abrev:"CAJA",Factor:"18",P1CJ:"312.44",P1UN:"17.36"},
+{Marca:"NESTLE",Producto:"CBO EXH. SUBLIME 12 UND CLAS*30GR+12UNDTRIANGULO CLAS*28GR",Abrev:"CBO",Factor:"1",P1CJ:"34.83",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"CBO: NESTLE PRINCESA BARRA *12 U*30GR",Abrev:"CBO",Factor:"1",P1CJ:"15.60",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"CBO: NESTLÉ SUBLIME 9UN*26G + TRIANGULO CLÁSICO 9UN*29G  PE",Abrev:"UN",Factor:"1",P1CJ:"27.08",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"CBO: NESTLE SUBLIME CLASICO*15U*28GR",Abrev:"CBO",Factor:"1",P1CJ:"20.03",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"CBO:12 UN SUBLIME CLASICO + 10 UN SUBLIME SONRISA",Abrev:"CBO",Factor:"1",P1CJ:"44.70",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)",Abrev:"CBO",Factor:"1",P1CJ:"150.00",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"COMBO EXHIBIDOR NESTLE (SUB SON-MORCHAS-PRIN-TRIANGULO)",Abrev:"CBO",Factor:"1",P1CJ:"99.35",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA A/S CJ 24DP*9U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"221.18",P1UN:"9.22"},
+{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA DP*20U*24GR",Abrev:"DISP",Factor:"1",P1CJ:"19.25",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*320GR",Abrev:"CAJA",Factor:"15",P1CJ:"293.29",P1UN:"19.55"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*360GR",Abrev:"CAJA",Factor:"15",P1CJ:"330.00",P1UN:"22.00"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 24*72GR",Abrev:"CAJA",Factor:"24",P1CJ:"142.17",P1UN:"5.92"},
+{Marca:"NESTLE",Producto:"NESTLE ESTRELLA NAVIDEÑA CJ 24*6*8GR PE",Abrev:"CAJA",Factor:"24",P1CJ:"126.87",P1UN:"5.29"},
+{Marca:"NESTLE",Producto:"NESTLE KIT KAT 4 FINGER CHOC CJA 8*12*41.5GR",Abrev:"CAJA",Factor:"8",P1CJ:"320.58",P1UN:"40.07"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS BOLSA CJ 24*24U*16GR",Abrev:"CAJA",Factor:"24",P1CJ:"462.19",P1UN:"19.26"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"792.96",P1UN:"33.04"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS FIESTA CJ 15*30U*240GR",Abrev:"CAJA",Factor:"15",P1CJ:"187.80",P1UN:"12.52"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA 64(10x30g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"987.80",P1UN:"15.43"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA BLANCO CJ 28*20U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"740.12",P1UN:"26.40"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA CJ 28*18U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"1070.50",P1UN:"38.40"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA CJ 28*20U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"951.55",P1UN:"33.90"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA FRESA CJ 28*18U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"1070.50",P1UN:"38.23"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA FRESA CJ 28*20U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"951.55",P1UN:"33.90"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA BARRA MENTA CJ 28*20U*30GR",Abrev:"CAJA",Factor:"28",P1CJ:"740.10",P1UN:"26.43"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA Bola Navideña CJ 24x72g PE",Abrev:"CAJA",Factor:"24",P1CJ:"106.63",P1UN:"4.44"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOC ESTUCHE 12(24x8G) PE",Abrev:"CAJA",Factor:"12",P1CJ:"275.82",P1UN:"22.98"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*16U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.29",P1UN:"12.72"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR",Abrev:"CAJA",Factor:"24",P1CJ:"917.57",P1UN:"38.24"},
+{Marca:"NESTLE",Producto:"NESTLE SORRENTO CJ 30*20U*32GR",Abrev:"CAJA",Factor:"30",P1CJ:"842.52",P1UN:"28.08"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA TABL CJ 72U*100GR",Abrev:"CAJA",Factor:"72",P1CJ:"469.83",P1UN:"6.53"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRAS 32(12*26GR) PE",Abrev:"CAJA",Factor:"32",P1CJ:"539.21",P1UN:"16.85"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ANIVERSARIO CJ 24DP*20U*40GR",Abrev:"CAJA",Factor:"24",P1CJ:"798.62",P1UN:"33.28"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME BITTER CJ 24DP*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1331.04",P1UN:"55.46"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME Bola Navideña CJ 24x72g PE",Abrev:"CAJA",Factor:"24",P1CJ:"106.63",P1UN:"4.44"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME BOMBONES CJ 24 DP *16 U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.86",P1UN:"12.74"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CARNAVAL CJ24 DP*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"798.62",P1UN:"33.28"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CHOCOLATE CJ 28*30U*14GR",Abrev:"CAJA",Factor:"28",P1CJ:"1011.02",P1UN:"36.11"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 24*24U*26GR.",Abrev:"CAJA",Factor:"24",P1CJ:"951.55",P1UN:"39.65"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 27*24U*28GR",Abrev:"CAJA",Factor:"27",P1CJ:"871.69",P1UN:"32.28"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CRISPY CJ 12(20x20g) PE",Abrev:"CAJA",Factor:"12",P1CJ:"192.58",P1UN:"16.05"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME DUO CJ 21DP30U*28GR",Abrev:"CAJA",Factor:"21",P1CJ:"758.27",P1UN:"36.11"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME EXTREMO CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA CJ 12DP*24UN*28GR",Abrev:"CAJA",Factor:"12",P1CJ:"475.78",P1UN:"39.65"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME Sonrisa 64(8x37g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"984.78",P1UN:"15.39"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME Sonrisa 64(8x38g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"984.78",P1UN:"15.39"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA BLANCO CJ 24*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA CJ 24*20U*37GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA CJ 24*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1194.00",P1UN:"49.75"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA S/ AZUCAR CJA 21DP12UN*38GR",Abrev:"CAJA",Factor:"21",P1CJ:"734.48",P1UN:"34.98"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR",Abrev:"CAJA",Factor:"33",P1CJ:"238.32",P1UN:"7.22"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO Bola Navideña CJ 24x72g PE",Abrev:"CAJA",Factor:"24",P1CJ:"106.63",P1UN:"4.44"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO 2 DPL 20 (pac*2)*58GR",Abrev:"UN",Factor:"1",P1CJ:"42.48",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO 64(10x29g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"987.80",P1UN:"15.43"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*29GR",Abrev:"CAJA",Factor:"24",P1CJ:"782.40",P1UN:"32.60"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.48"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*22U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"897.18",P1UN:"37.38"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO JUNIOR CJ 24*18U*15GR",Abrev:"CAJA",Factor:"24",P1CJ:"519.96",P1UN:"21.67"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO JUNIOR CJ 24*18U*17GR",Abrev:"CAJA",Factor:"24",P1CJ:"346.64",P1UN:"14.44"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.81"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO MARMOLEADO CJ 24DP*22U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"897.18",P1UN:"37.38"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO SIN AZUCAR CJ 24*18U*17GR",Abrev:"CAJA",Factor:"24",P1CJ:"540.35",P1UN:"22.51"},
+{Marca:"NESTLE",Producto:"SBLM Stick+TRGL Jr 28(10(14+15)g) PE",Abrev:"CAJA",Factor:"28",P1CJ:"674.02",P1UN:"24.07"},
+{Marca:"NESTLE",Producto:"SUBLIMECOOKIES&CREAM24(12*38GR) PE",Abrev:"CAJA",Factor:"24",P1CJ:"710.27",P1UN:"29.59"},
+{Marca:"NESTLE",Producto:"TRIANGULO CLASICO DPL 20 (pac*2)*58GR + DPL 20U*29GR",Abrev:"UN",Factor:"1",P1CJ:"84.16",P1UN:"0.00"},
+{Marca:"DONOFRIO",Producto:"COCOA (MEDIA TIRA) TR*12U*10GR",Abrev:"CBO",Factor:"1",P1CJ:"10.00",P1UN:"0.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA CAJA 7TR*24U*10GR",Abrev:"CAJA",Factor:"7",P1CJ:"140.01",P1UN:"20.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA DOYPACK CAJA 12*150GR",Abrev:"CAJA",Factor:"12",P1CJ:"185.86",P1UN:"15.49"},
+{Marca:"MILO",Producto:"CBO: 1 TIRA MILO*17GR+BATEA LOGO MILO",Abrev:"CBO",Factor:"1",P1CJ:"20.67",P1UN:"0.00"},
+{Marca:"MILO",Producto:"CBO: EXHIBIDOR MILO 48UN*17GR",Abrev:"CBO",Factor:"1",P1CJ:"41.35",P1UN:"0.00"},
+{Marca:"MILO",Producto:"CBO: MILO ACTI-GO LATA*380GR+02 UND VASO",Abrev:"CBO",Factor:"1",P1CJ:"17.41",P1UN:"0.00"},
+{Marca:"MILO",Producto:"CBO: MILO CHOC ACTI-GO*350GR + 01 UND AMANECER*390GR",Abrev:"UN",Factor:"1",P1CJ:"11.36",P1UN:"0.00"},
+{Marca:"MILO",Producto:"CBO: MILO CHOC ACTI-GO*350GR + 01 UND CREMOCITA*390GR",Abrev:"UN",Factor:"1",P1CJ:"11.36",P1UN:"0.00"},
+{Marca:"MILO",Producto:"MILO (MEDIA TIRA)  CHOC ACTI-E GRANUL TR*12U*16GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.40",P1UN:"0.00"},
+{Marca:"MILO",Producto:"MILO (MEDIA TIRA)  CHOC ACTI-E GRANUL TR*12U*17GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.40",P1UN:"0.00"},
+{Marca:"MILO",Producto:"MILO ACTI-GO 2EN1 LATA CJ 12U*400GR",Abrev:"CAJA",Factor:"12",P1CJ:"208.88",P1UN:"17.41"},
+{Marca:"MILO",Producto:"MILO ACTIGO 350GR + 01 UND AMANECER*390GR CAJA 12 UND",Abrev:"CAJA",Factor:"12",P1CJ:"180.00",P1UN:"15.00"},
+{Marca:"MILO",Producto:"MILO ACTI-GO DOYPACK  CJ 12U*350GR+PACK REFIL",Abrev:"CAJA",Factor:"12",P1CJ:"173.45",P1UN:"14.45"},
+{Marca:"MILO",Producto:"MILO ACTIV-GO JIRAFA CJ 6TR*24U*19GR",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 12U*400GR",Abrev:"CAJA",Factor:"12",P1CJ:"208.86",P1UN:"17.41"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR",Abrev:"CAJA",Factor:"5",P1CJ:"101.68",P1UN:"20.34"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR PRYAPE",Abrev:"CAJA",Factor:"5",P1CJ:"101.69",P1UN:"20.34"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 5TR*8U*51GR",Abrev:"CAJA",Factor:"5",P1CJ:"101.68",P1UN:"20.34"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*17GR",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*18GR",Abrev:"CAJA",Factor:"6",P1CJ:"123.63",P1UN:"20.60"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6U*940 GR",Abrev:"CAJA",Factor:"6",P1CJ:"273.51",P1UN:"45.59"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-GO DOY PACK CJ 12U*350GR",Abrev:"CAJA",Factor:"12",P1CJ:"173.45",P1UN:"14.50"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-GO DOY PACK CJ 12U*385GR",Abrev:"CAJA",Factor:"12",P1CJ:"173.45",P1UN:"14.45"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-GO LATA CJ 12U*380GR",Abrev:"CAJA",Factor:"12",P1CJ:"250.04",P1UN:"20.84"},
+{Marca:"MILO",Producto:"MILO CHOC ACTIV-GO CJ 10TR*8U*36GR",Abrev:"CAJA",Factor:"10",P1CJ:"137.56",P1UN:"13.76"},
+{Marca:"MILO",Producto:"MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR",Abrev:"CAJA",Factor:"48",P1CJ:"531.85",P1UN:"11.09"},
+{Marca:"MILO",Producto:"MILO DOYPACK 10x350G VASO PE",Abrev:"CAJA",Factor:"10",P1CJ:"153.30",P1UN:"15.33"},
+{Marca:"MILO",Producto:"MILO DOYPACK 10x700G PRPACK PLUMONES PE",Abrev:"CAJA",Factor:"10",P1CJ:"260.03",P1UN:"26.01"},
+{Marca:"NESQUIK",Producto:"NESQUIK FRESA DOYPACK CJ 12*350GR",Abrev:"CAJA",Factor:"12",P1CJ:"165.39",P1UN:"13.78"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOC CJ 24U*380GR",Abrev:"CAJA",Factor:"24",P1CJ:"321.15",P1UN:"13.38"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOC CJ 24U*400GR",Abrev:"CAJA",Factor:"24",P1CJ:"289.93",P1UN:"12.08"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 12*470GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.74",P1UN:"16.56"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR",Abrev:"CAJA",Factor:"15",P1CJ:"121.78",P1UN:"8.12"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 48*190GR",Abrev:"CAJA",Factor:"48",P1CJ:"420.96",P1UN:"8.77"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA ESPARRAGOS DP*12*66GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA HONGOS DP 12U*65GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA CRIOLLA GLIN FD 12*12*60GR",Abrev:"CAJA",Factor:"12",P1CJ:"443.63",P1UN:"37.40"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA CRIOLLA GLIN FD DP12*60GR",Abrev:"UN",Factor:"1",P1CJ:"3.11",P1UN:"0.00"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS CJ 12*12*57GR",Abrev:"CAJA",Factor:"12",P1CJ:"431.60",P1UN:"35.97"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS DP*12*57GR",Abrev:"UN",Factor:"1",P1CJ:"3.05",P1UN:"0.00"},
+{Marca:"MAGGI",Producto:"CBO TAPER: 1 UND APANAR+ 4 UND MAGGI *18.8GR",Abrev:"CBO",Factor:"1",P1CJ:"5.00",P1UN:"0.00"},
+{Marca:"MAGGI",Producto:"CBO: 1 UND TAPER + 2 TIRAS MAGGI GALLINA 7GR PE",Abrev:"CBO",Factor:"1",P1CJ:"4.06",P1UN:"0.00"},
+{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO CARNE CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03"},
+{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO GALLINA CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI Caldo Cubo Gallina 20(12x28.2g) PE",Abrev:"CAJA",Factor:"20",P1CJ:"195.80",P1UN:"9.80"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/CARNE DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/CARNESOL PACK DP 26U*28.2GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR GRATIS 1U*SOPA GALLINA 60G",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR GRATIS 1U*SOPA POLLO 57G",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR",Abrev:"DISP",Factor:"1",P1CJ:"20.86",P1UN:"0.00"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO CARNE TAPER CJ 24U*90CUB*4GR",Abrev:"CAJA",Factor:"24",P1CJ:"292.26",P1UN:"12.18"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO GALLINA CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13"},
+{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR",Abrev:"CAJA",Factor:"15",P1CJ:"41.95",P1UN:"2.80"},
+{Marca:"IDEAL",Producto:"CBO: IDEAL COMPLEJO-B MZC LAC * 1 Unid* 390G PE",Abrev:"UN",Factor:"1",P1CJ:"3.96",P1UN:"0.00"},
+{Marca:"IDEAL",Producto:"IDEAL COMPLEJO-B MZC LAC * 1 Unid* 390G - C",Abrev:"UN",Factor:"1",P1CJ:"3.96",P1UN:"0.00"},
+{Marca:"IDEAL",Producto:"IDEAL COMPLEJO-B MZC LAC SIX PACK (6 Unid* 390G) PE",Abrev:"UN",Factor:"1",P1CJ:"23.78",P1UN:"0.00"},
+{Marca:"IDEAL AMANECER",Producto:"CBO: IDEAL AMANECER*390GR+GRAT 1 UND MILO 17GR",Abrev:"CBO",Factor:"1",P1CJ:"3.05",P1UN:"0.00"},
+{Marca:"IDEAL AMANECER",Producto:"CBO: IDEAL CREMOSITA*390GR+GRAT 1 UND MILO 17GR",Abrev:"CBO",Factor:"1",P1CJ:"3.62",P1UN:"0.00"},
+{Marca:"IDEAL AMANECER",Producto:"IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"72.35",P1UN:"3.02"},
+{Marca:"IDEAL CREMOSITA",Producto:"CBO: 1 UND AMANECER*390GR+GRAT NESQUIK 13*GR",Abrev:"CBO",Factor:"1",P1CJ:"3.05",P1UN:"0.00"},
+{Marca:"IDEAL CREMOSITA",Producto:"CBO: 1 UND CREMOSITA*390GR+GRAT NESQUIK 13*GR",Abrev:"CBO",Factor:"1",P1CJ:"3.61",P1UN:"0.00"},
+{Marca:"IDEAL CREMOSITA",Producto:"CBO: 2UND  IDEAL AMANECER*390GR + GRAT 1UND KIRMA 15GR",Abrev:"CBO",Factor:"1",P1CJ:"6.10",P1UN:"0.00"},
+{Marca:"IDEAL CREMOSITA",Producto:"CBO: NAN 3 390GR+GRAT 1 UND ABRE LATA NAN 3",Abrev:"CBO",Factor:"1",P1CJ:"4.99",P1UN:"0.00"},
+{Marca:"IDEAL CREMOSITA",Producto:"IDEAL  CREMOSITACJ 24U*390GR GRATIS NSCF RSV*2GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.10",P1UN:"3.80"},
+{Marca:"IDEAL CREMOSITA",Producto:"IDEAL TABL LECHE  ENTERA CJ 24U*395GR",Abrev:"CAJA",Factor:"24",P1CJ:"87.04",P1UN:"3.63"},
+{Marca:"IDEAL CREMOSITA",Producto:"IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.19",P1UN:"3.80"},
+{Marca:"IDEAL LIGHT",Producto:"IDEAL TABLETA LIGHT MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"89.78",P1UN:"3.75"},
+{Marca:"NESTLE",Producto:"CBO: 2 DP MOROCHA TACO*75GR + EXHIBIDOR MOROCHA TACO",Abrev:"CBO",Factor:"1",P1CJ:"25.20",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"DISPLER MOROCHA + DORE CJ 12*6(30G+24G)",Abrev:"CAJA",Factor:"12",P1CJ:"130.84",P1UN:"10.90"},
+{Marca:"NESTLE",Producto:"MOROCHAS WAFER FIESTA BOLSA 15*24*7.5GR",Abrev:"CAJA",Factor:"15",P1CJ:"187.80",P1UN:"12.52"},
+{Marca:"NESTLE",Producto:"NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR",Abrev:"CAJA",Factor:"6",P1CJ:"180.12",P1UN:"30.02"},
+{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"117.24",P1UN:"4.89"},
+{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA TACO CJ 27U*230GR",Abrev:"CAJA",Factor:"27",P1CJ:"121.39",P1UN:"4.50"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHA FIESTA CJ 15 UN * 20U*11.2GR",Abrev:"CAJA",Factor:"15",P1CJ:"138.06",P1UN:"9.20"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS + DORE CJ 14*(6*30GR+6*24GR)",Abrev:"CAJA",Factor:"14",P1CJ:"112.00",P1UN:"8.00"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS BARQUILLO  CJ 14*6U*22GR",Abrev:"CAJA",Factor:"14",P1CJ:"101.10",P1UN:"7.25"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS BARQUILLO DISP  14*6U*22GR",Abrev:"CAJA",Factor:"14",P1CJ:"101.10",P1UN:"7.22"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS DOBLE PLACER CJ 30*6U*34.4GR",Abrev:"CAJA",Factor:"30",P1CJ:"225.14",P1UN:"7.51"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CJ 18*8U*30GR",Abrev:"CAJA",Factor:"18",P1CJ:"120.64",P1UN:"6.70"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR",Abrev:"CAJA",Factor:"22",P1CJ:"221.76",P1UN:"10.08"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR",Abrev:"CAJA",Factor:"30",P1CJ:"150.80",P1UN:"5.03"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA LUCUMA CJ 18*8U*30GR",Abrev:"CAJA",Factor:"18",P1CJ:"120.64",P1UN:"6.70"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS SNACK CJ 8*8U*42GR",Abrev:"CAJA",Factor:"8",P1CJ:"80.05",P1UN:"10.01"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR",Abrev:"CAJA",Factor:"18",P1CJ:"226.84",P1UN:"12.61"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR",Abrev:"DISP",Factor:"1",P1CJ:"12.18",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS WAFER BOLSA 24(9x17G)",Abrev:"CAJA",Factor:"24",P1CJ:"165.67",P1UN:"6.90"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR",Abrev:"CAJA",Factor:"24",P1CJ:"120.65",P1UN:"5.03"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*46GR",Abrev:"CAJA",Factor:"24",P1CJ:"158.03",P1UN:"6.58"},
+{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FLOR DE JAMAICA CJ 12 * 20 UND 13GR",Abrev:"CAJA",Factor:"12",P1CJ:"108.24",P1UN:"9.02"},
+{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FRUTOS ROJOS CJ 20*20 UND 1.3GR",Abrev:"CAJA",Factor:"20",P1CJ:"164.00",P1UN:"8.20"},
+{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 12*800GR",Abrev:"CAJA",Factor:"12",P1CJ:"387.51",P1UN:"32.29"},
+{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 48*96GR",Abrev:"CAJA",Factor:"48",P1CJ:"188.21",P1UN:"3.92"},
+{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE A/F CJ 48U*160GR",Abrev:"CAJA",Factor:"48",P1CJ:"304.39",P1UN:"6.35"},
+{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE CJ 48U*300GR",Abrev:"CAJA",Factor:"48",P1CJ:"424.40",P1UN:"8.85"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 12U*1KG",Abrev:"BOLSA",Factor:"12",P1CJ:"232.35",P1UN:"19.37"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 24U*500GR",Abrev:"BOLSA",Factor:"24",P1CJ:"254.80",P1UN:"10.62"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR CJ 48U*200GR",Abrev:"CAJA",Factor:"48",P1CJ:"213.11",P1UN:"4.44"},
+{Marca:"NESTLE CONDENSADA",Producto:"CBO:01 UNID  NESTLE CONDENSADA *393GR+ 1UN CONDENSADA 100GR",Abrev:"CBO",Factor:"1",P1CJ:"5.78",P1UN:"0.00"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE COND TOPPING TARRO CJ 96U*100GR",Abrev:"CAJA",Factor:"96",P1CJ:"237.82",P1UN:"2.48"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA A/F CJ 96U*100GR",Abrev:"CAJA",Factor:"96",P1CJ:"300.85",P1UN:"3.13"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR",Abrev:"CAJA",Factor:"24",P1CJ:"142.05",P1UN:"5.92"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR + DULCERA",Abrev:"CAJA",Factor:"24",P1CJ:"152.08",P1UN:"6.34"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA DOY PACK CJ 24U*90GR",Abrev:"CAJA",Factor:"24",P1CJ:"74.23",P1UN:"3.09"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LCA TOPPING TARRO 48U*397GR",Abrev:"CAJA",Factor:"48",P1CJ:"223.61",P1UN:"4.66"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LECHE COND DOYPACK 36x180G PE",Abrev:"CAJA",Factor:"36",P1CJ:"131.10",P1UN:"3.65"},
+{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR",Abrev:"DISP",Factor:"15",P1CJ:"35.93",P1UN:"2.45"},
+{Marca:"BUON NATALE",Producto:"BUON NATALE PANETON BOLSA CJA 6*750GR",Abrev:"CAJA",Factor:"6",P1CJ:"115.54",P1UN:"19.26"},
+{Marca:"BUON NATALE",Producto:"BUON NATALE PANETON CAJA CJA 6*750GR",Abrev:"CAJA",Factor:"6",P1CJ:"129.19",P1UN:"21.63"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTON BOLSA CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"108.62",P1UN:"18.10"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTON DOBLE CHOC CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"128.80",P1UN:"21.47"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTON RELL MANJAR CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"128.45",P1UN:"21.41"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTONCITO 12x80GR PE",Abrev:"CJA",Factor:"1",P1CJ:"40.36",P1UN:"0.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTONCITO BOLSA CJ 36*80GR",Abrev:"CAJA",Factor:"36",P1CJ:"121.07",P1UN:"3.36"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTONCITOx80GR PE",Abrev:"UN",Factor:"1",P1CJ:"3.36",P1UN:"0.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANDULCE BOLSA CJA 6*490GR",Abrev:"CAJA",Factor:"6",P1CJ:"113.33",P1UN:"18.89"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON BOLSA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"140.80",P1UN:"23.47"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CAJA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"155.91",P1UN:"25.99"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CHOCOTON CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"118.71",P1UN:"19.73"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON INTEGRAL BSA 6U*500GR",Abrev:"CAJA",Factor:"6",P1CJ:"114.00",P1UN:"19.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON INTEGRAL CJ 6U*500GR",Abrev:"CAJA",Factor:"6",P1CJ:"113.63",P1UN:"18.94"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON LATA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"231.16",P1UN:"38.53"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETONCITO 12x80GR PE",Abrev:"CJA",Factor:"1",P1CJ:"40.36",P1UN:"0.00"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETONCITO CAJA CJ 48*90GR",Abrev:"CAJA",Factor:"48",P1CJ:"201.64",P1UN:"4.20"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETONCITOx80GR PE",Abrev:"UN",Factor:"1",P1CJ:"3.36",P1UN:"0.00"},
+{Marca:"NESTLE",Producto:"NESTLE AFHS PANETON BOLSA 6x750G PE",Abrev:"CAJA",Factor:"6",P1CJ:"71.40",P1UN:"11.90"}
+];
+
+console.log('📦 Total productos:', productos.length);
+
+// ==================== FUNCIÓN DE BÚSQUEDA INTELIGENTE ====================
+// Esta función divide el texto de búsqueda en palabras y busca que TODAS estén presentes
+function buscarProductosInteligente() {
+    const searchInput = document.getElementById('searchInput');
+    const textoCompleto = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const marcaSeleccionada = document.getElementById('marcaSelect').value;
+    
+    // Dividir el texto en palabras individuales
+    const palabrasBusqueda = textoCompleto !== '' ? textoCompleto.split(/\s+/) : [];
+    
+    console.log('🔍 Palabras a buscar:', palabrasBusqueda);
+    console.log('🏷️ Marca seleccionada:', marcaSeleccionada);
+    
+    const filtrados = [];
+    
+    for(let i = 0; i < productos.length; i++) {
+        const p = productos[i];
+        
+        // Crear texto completo para buscar (marca + producto)
+        const textoCompletoProducto = (p.Marca + ' ' + p.Producto).toLowerCase();
+        
+        // Verificar que TODAS las palabras estén presentes en el texto del producto
+        let todasLasPalabrasCoinciden = true;
+        for(let j = 0; j < palabrasBusqueda.length; j++) {
+            const palabra = palabrasBusqueda[j];
+            if(palabra !== '' && !textoCompletoProducto.includes(palabra)) {
+                todasLasPalabrasCoinciden = false;
+                break;
+            }
+        }
+        
+        // Si no coinciden todas las palabras, saltar este producto
+        if(palabrasBusqueda.length > 0 && !todasLasPalabrasCoinciden) {
+            continue;
+        }
+        
+        // Filtro por marca
+        if(marcaSeleccionada !== '' && p.Marca !== marcaSeleccionada) {
+            continue;
+        }
+        
+        filtrados.push(p);
+    }
+    
+    // Actualizar badge
+    const badge = document.getElementById('filtroBadge');
+    if(textoCompleto !== '' || marcaSeleccionada !== '') {
+        badge.textContent = 'Filtros activos';
+        badge.style.background = '#f59e0b';
+    } else {
+        badge.textContent = 'Sin filtros';
+        badge.style.background = '#fbbf24';
+    }
+    
+    // Renderizar resultados
+    const tbody = document.getElementById('tablaBody');
+    const totalSpan = document.getElementById('totalCount');
+    totalSpan.textContent = filtrados.length;
+    
+    if(filtrados.length === 0) {
+        tbody.innerHTML = `<tr class="empty-row"><td colspan="6">❌ No se encontraron productos con: "${textoCompleto}"</td></tr>`;
+        return;
+    }
+    
+    let html = '';
+    for(let i = 0; i < filtrados.length; i++) {
+        const p = filtrados[i];
+        html += `<tr>
+            <td>${escapeHtml(p.Marca || '')}</td>
+            <td>${escapeHtml(p.Producto || '')}</td>
+            <td>${escapeHtml(p.Abrev || '')}</td>
+            <td>${escapeHtml(p.Factor || '')}</td>
+            <td class="precio">${formatearPrecio(p.P1CJ)}</td>
+            <td class="precio">${formatearPrecio(p.P1UN)}</td>
+        </tr>`;
+    }
+    tbody.innerHTML = html;
+    
+    console.log('✅ Resultados:', filtrados.length, 'productos encontrados');
+}
+
+// Función auxiliar para escapar HTML
+function escapeHtml(str) {
+    if(!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+        if(m === '&') return '&amp;';
+        if(m === '<') return '&lt;';
+        if(m === '>') return '&gt;';
+        return m;
+    });
+}
+
+// Formatear precio
+function formatearPrecio(valor) {
+    let num = parseFloat(valor);
+    if(isNaN(num)) return 'S/ 0.00';
+    return 'S/ ' + num.toFixed(2);
+}
+
+// Llenar select de marcas
+function cargarMarcas() {
+    const marcasSet = new Set();
+    productos.forEach(p => {
+        if(p.Marca && p.Marca.trim() !== "") {
+            marcasSet.add(p.Marca);
+        }
+    });
+    const marcas = Array.from(marcasSet).sort();
+    const select = document.getElementById('marcaSelect');
+    marcas.forEach(marca => {
+        const option = document.createElement('option');
+        option.value = marca;
+        option.textContent = marca;
+        select.appendChild(option);
+    });
+    console.log('🏷️ Marcas cargadas:', marcas.length);
+}
+
+// Limpiar filtros
+function limpiarFiltros() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('marcaSelect').value = '';
+    buscarProductosInteligente();
+}
+
+// Configurar eventos
+function setupEventListeners() {
+    const buscarBtn = document.getElementById('buscarBtn');
+    const limpiarBtn = document.getElementById('limpiarBtn');
+    const marcaSelect = document.getElementById('marcaSelect');
+    const searchInput = document.getElementById('searchInput');
+    
+    if(buscarBtn) buscarBtn.addEventListener('click', buscarProductosInteligente);
+    if(limpiarBtn) limpiarBtn.addEventListener('click', limpiarFiltros);
+    if(marcaSelect) marcaSelect.addEventListener('change', buscarProductosInteligente);
+    if(searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter') buscarProductosInteligente();
+        });
+    }
+}
+
+// Inicializar
+function init() {
+    cargarMarcas();
+    setupEventListeners();
+    buscarProductosInteligente();
+}
+
+init();
+</script>
+</body>
+</html>
