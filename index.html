@@ -14,7 +14,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #0a0a0a;
-            padding: 16px;
+            padding: 12px;
             padding-bottom: 40px;
         }
 
@@ -23,11 +23,12 @@
             margin: 0 auto;
         }
 
+        /* Header */
         .header {
             background: #0a0a0a;
-            padding: 24px 20px;
+            padding: 20px 16px;
             border-bottom: 2px solid #fbbf24;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .header h1 {
@@ -40,30 +41,31 @@
         .header p {
             font-size: 0.8rem;
             color: #9ca3af;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
+        /* Filtros */
         .filtros {
             background: #111111;
             border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 16px;
+            margin-bottom: 16px;
             border: 1px solid #1f1f1f;
         }
 
         .search-wrapper {
             display: flex;
-            gap: 12px;
-            margin-bottom: 16px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .search-wrapper input {
             flex: 1;
-            padding: 14px 16px;
+            padding: 12px 14px;
             background: #1a1a1a;
             border: 1px solid #2d2d2d;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #e5e5e5;
             font-family: inherit;
         }
@@ -71,23 +73,22 @@
         .search-wrapper input:focus {
             outline: none;
             border-color: #fbbf24;
-            box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
         }
 
         .search-wrapper input::placeholder {
             color: #6b7280;
+            font-size: 0.85rem;
         }
 
         .btn-buscar {
             background: #fbbf24;
             color: #0a0a0a;
             border: none;
-            padding: 14px 24px;
+            padding: 12px 20px;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
         .btn-buscar:active {
@@ -97,32 +98,25 @@
 
         select {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 14px;
             background: #1a1a1a;
             border: 1px solid #2d2d2d;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #e5e5e5;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             font-family: inherit;
-            cursor: pointer;
-        }
-
-        select:focus {
-            outline: none;
-            border-color: #fbbf24;
         }
 
         .btn-limpiar {
             background: #dc2626;
             color: white;
             border: none;
-            padding: 14px;
+            padding: 12px;
             border-radius: 12px;
             width: 100%;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
         .btn-limpiar:active {
@@ -130,10 +124,11 @@
             background: #b91c1c;
         }
 
+        /* Resultados info */
         .resultados-info {
             background: #111111;
             border-radius: 12px;
-            padding: 12px 16px;
+            padding: 10px 14px;
             margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
@@ -143,65 +138,105 @@
 
         .resultados-info span:first-child {
             color: #9ca3af;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .badge {
             background: #fbbf24;
             color: #0a0a0a;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
         }
 
-        .tabla-wrapper {
+        /* Tarjetas de productos - SIN SCROLL HORIZONTAL */
+        .productos-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .producto-card {
             background: #111111;
             border-radius: 16px;
-            overflow-x: auto;
+            padding: 14px;
             border: 1px solid #1f1f1f;
+            transition: all 0.2s;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 550px;
+        .producto-card:active {
+            background: #1a1a1a;
         }
 
-        th {
-            background: #0d0d0d;
-            padding: 14px 12px;
-            text-align: left;
-            color: #fbbf24;
-            font-weight: 600;
+        .producto-marca {
+            display: inline-block;
+            background: #fbbf24;
+            color: #0a0a0a;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.7rem;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid #1f1f1f;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #1a1a1a;
-            color: #d1d5db;
+        .producto-nombre {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #f1f5f9;
+            line-height: 1.3;
+            margin-bottom: 12px;
         }
 
-        .precio {
-            color: #fbbf24;
-            font-weight: 600;
-            white-space: nowrap;
+        .producto-detalles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid #1f1f1f;
+            padding-top: 10px;
         }
 
-        .empty-row td {
-            text-align: center;
-            padding: 40px;
+        .detalle-item {
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .detalle-label {
+            font-size: 0.6rem;
             color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .detalle-valor {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e5e5e5;
+        }
+
+        .precio-cj {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+
+        .precio-un {
+            color: #fbbf24;
+            font-size: 0.9rem;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #6b7280;
+            background: #111111;
+            border-radius: 16px;
         }
 
         .footer {
             text-align: center;
             margin-top: 20px;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #4b5563;
         }
     </style>
@@ -215,7 +250,7 @@
 
     <div class="filtros">
         <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Ej: cremosita 390, nescafe 170, milo 350" autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Ej: cremosita 390, nescafe 170" autocomplete="off">
             <button class="btn-buscar" id="buscarBtn">Buscar</button>
         </div>
         <select id="marcaSelect">
@@ -229,25 +264,12 @@
         <span class="badge" id="filtroBadge">Sin filtros</span>
     </div>
 
-    <div class="tabla-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>MARCA</th>
-                    <th>PRODUCTO</th>
-                    <th>ABREV</th>
-                    <th>FACTOR</th>
-                    <th>PRECIO CJ</th>
-                    <th>PRECIO UN</th>
-                </tr>
-            </thead>
-            <tbody id="tablaBody">
-                <tr><td colspan="6" style="text-align:center; color:#6b7280;">Cargando productos...</td></tr>
-            </tbody>
-        </table>
+    <div id="productosLista" class="productos-lista">
+        <!-- Las tarjetas se cargarán aquí -->
     </div>
+
     <div class="footer">
-        👉 Puedes buscar por palabra o número (ej: "cremosita 390" o "390 cremosita")
+        👉 Busca por palabra o número | Tarjetas verticales
     </div>
 </div>
 
@@ -585,27 +607,19 @@ const productos = [
 console.log('📦 Total productos:', productos.length);
 
 // ==================== FUNCIÓN DE BÚSQUEDA INTELIGENTE ====================
-// Esta función divide el texto de búsqueda en palabras y busca que TODAS estén presentes
 function buscarProductosInteligente() {
     const searchInput = document.getElementById('searchInput');
     const textoCompleto = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const marcaSeleccionada = document.getElementById('marcaSelect').value;
     
-    // Dividir el texto en palabras individuales
     const palabrasBusqueda = textoCompleto !== '' ? textoCompleto.split(/\s+/) : [];
-    
-    console.log('🔍 Palabras a buscar:', palabrasBusqueda);
-    console.log('🏷️ Marca seleccionada:', marcaSeleccionada);
     
     const filtrados = [];
     
     for(let i = 0; i < productos.length; i++) {
         const p = productos[i];
-        
-        // Crear texto completo para buscar (marca + producto)
         const textoCompletoProducto = (p.Marca + ' ' + p.Producto).toLowerCase();
         
-        // Verificar que TODAS las palabras estén presentes en el texto del producto
         let todasLasPalabrasCoinciden = true;
         for(let j = 0; j < palabrasBusqueda.length; j++) {
             const palabra = palabrasBusqueda[j];
@@ -615,12 +629,10 @@ function buscarProductosInteligente() {
             }
         }
         
-        // Si no coinciden todas las palabras, saltar este producto
         if(palabrasBusqueda.length > 0 && !todasLasPalabrasCoinciden) {
             continue;
         }
         
-        // Filtro por marca
         if(marcaSeleccionada !== '' && p.Marca !== marcaSeleccionada) {
             continue;
         }
@@ -628,7 +640,6 @@ function buscarProductosInteligente() {
         filtrados.push(p);
     }
     
-    // Actualizar badge
     const badge = document.getElementById('filtroBadge');
     if(textoCompleto !== '' || marcaSeleccionada !== '') {
         badge.textContent = 'Filtros activos';
@@ -638,34 +649,51 @@ function buscarProductosInteligente() {
         badge.style.background = '#fbbf24';
     }
     
-    // Renderizar resultados
-    const tbody = document.getElementById('tablaBody');
     const totalSpan = document.getElementById('totalCount');
     totalSpan.textContent = filtrados.length;
     
-    if(filtrados.length === 0) {
-        tbody.innerHTML = `<tr class="empty-row"><td colspan="6">❌ No se encontraron productos con: "${textoCompleto}"</td></tr>`;
+    renderizarTarjetas(filtrados, textoCompleto);
+}
+
+function renderizarTarjetas(productosLista, busqueda) {
+    const container = document.getElementById('productosLista');
+    
+    if(productosLista.length === 0) {
+        container.innerHTML = `<div class="empty-message">❌ No se encontraron productos para: "${busqueda}"</div>`;
         return;
     }
     
     let html = '';
-    for(let i = 0; i < filtrados.length; i++) {
-        const p = filtrados[i];
-        html += `<tr>
-            <td>${escapeHtml(p.Marca || '')}</td>
-            <td>${escapeHtml(p.Producto || '')}</td>
-            <td>${escapeHtml(p.Abrev || '')}</td>
-            <td>${escapeHtml(p.Factor || '')}</td>
-            <td class="precio">${formatearPrecio(p.P1CJ)}</td>
-            <td class="precio">${formatearPrecio(p.P1UN)}</td>
-        </tr>`;
+    for(let i = 0; i < productosLista.length; i++) {
+        const p = productosLista[i];
+        html += `
+            <div class="producto-card">
+                <div class="producto-marca">${escapeHtml(p.Marca || '')}</div>
+                <div class="producto-nombre">${escapeHtml(p.Producto || '')}</div>
+                <div class="producto-detalles">
+                    <div class="detalle-item">
+                        <div class="detalle-label">ABREV</div>
+                        <div class="detalle-valor">${escapeHtml(p.Abrev || '')}</div>
+                    </div>
+                    <div class="detalle-item">
+                        <div class="detalle-label">FACTOR</div>
+                        <div class="detalle-valor">${escapeHtml(p.Factor || '')}</div>
+                    </div>
+                    <div class="detalle-item">
+                        <div class="detalle-label">PRECIO CJ</div>
+                        <div class="detalle-valor precio-cj">${formatearPrecio(p.P1CJ)}</div>
+                    </div>
+                    <div class="detalle-item">
+                        <div class="detalle-label">PRECIO UN</div>
+                        <div class="detalle-valor precio-un">${formatearPrecio(p.P1UN)}</div>
+                    </div>
+                </div>
+            </div>
+        `;
     }
-    tbody.innerHTML = html;
-    
-    console.log('✅ Resultados:', filtrados.length, 'productos encontrados');
+    container.innerHTML = html;
 }
 
-// Función auxiliar para escapar HTML
 function escapeHtml(str) {
     if(!str) return '';
     return str.replace(/[&<>]/g, function(m) {
@@ -676,14 +704,12 @@ function escapeHtml(str) {
     });
 }
 
-// Formatear precio
 function formatearPrecio(valor) {
     let num = parseFloat(valor);
     if(isNaN(num)) return 'S/ 0.00';
     return 'S/ ' + num.toFixed(2);
 }
 
-// Llenar select de marcas
 function cargarMarcas() {
     const marcasSet = new Set();
     productos.forEach(p => {
@@ -699,17 +725,14 @@ function cargarMarcas() {
         option.textContent = marca;
         select.appendChild(option);
     });
-    console.log('🏷️ Marcas cargadas:', marcas.length);
 }
 
-// Limpiar filtros
 function limpiarFiltros() {
     document.getElementById('searchInput').value = '';
     document.getElementById('marcaSelect').value = '';
     buscarProductosInteligente();
 }
 
-// Configurar eventos
 function setupEventListeners() {
     const buscarBtn = document.getElementById('buscarBtn');
     const limpiarBtn = document.getElementById('limpiarBtn');
@@ -726,7 +749,6 @@ function setupEventListeners() {
     }
 }
 
-// Inicializar
 function init() {
     cargarMarcas();
     setupEventListeners();
