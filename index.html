@@ -100,10 +100,11 @@
             font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
+            transition: transform 0.1s ease, background 0.2s;
         }
 
         .btn-buscar:active {
-            transform: scale(0.97);
+            transform: scale(0.96);
             background: #f59e0b;
         }
 
@@ -117,6 +118,7 @@
             color: #e5e5e5;
             margin-bottom: 12px;
             font-family: inherit;
+            cursor: pointer;
         }
 
         select:focus {
@@ -133,6 +135,7 @@
             width: 100%;
             font-weight: 600;
             cursor: pointer;
+            transition: transform 0.1s ease, background 0.2s;
         }
 
         .btn-limpiar:active {
@@ -268,6 +271,20 @@
             font-size: 0.6rem;
             color: #4b5563;
         }
+
+        /* Responsive adicional */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+            .producto-detalles {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .detalle-valor {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -307,158 +324,160 @@
 </div>
 
 <script>
-// ==================== TODOS LOS PRODUCTOS ====================
+// ==================== TODOS LOS PRODUCTOS ACTUALIZADOS (con tus datos completos) ====================
 const productos = [
-{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 48*96GR",Abrev:"CAJA",Factor:"48",P1CJ:"188.21",P1UN:"3.92",FechaVencimiento:"03/12/26"},
-{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 12*800GR",Abrev:"CAJA",Factor:"12",P1CJ:"387.51",P1UN:"32.29",FechaVencimiento:"15/01/28"},
-{Marca:"IDEAL",Producto:"IDEAL COMPLEJO-B MZC LAC 6*390G PE",Abrev:"PACK",Factor:"6",P1CJ:"23.78",P1UN:"3.96",FechaVencimiento:"31/10/26"},
-{Marca:"IDEAL CREMOSITA",Producto:"IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.19",P1UN:"3.80",FechaVencimiento:"18/12/26"},
-{Marca:"IDEAL AMANECER",Producto:"IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"72.35",P1UN:"3.02",FechaVencimiento:"18/10/26"},
-{Marca:"IDEAL CREMOSITA",Producto:"IDEAL  CREMOSITACJ 24U*390GR GRATIS NSCF RSV*2GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.10",P1UN:"3.80",FechaVencimiento:"04/07/26"},
-{Marca:"IDEAL LIGHT",Producto:"IDEAL TABLETA LIGHT MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"89.78",P1UN:"3.75",FechaVencimiento:"16/09/26"},
-{Marca:"NESTLE CONDENSADA",Producto:"NESTLE COND TOPPING TARRO CJ 96U*100GR",Abrev:"CAJA",Factor:"96",P1CJ:"237.82",P1UN:"2.48",FechaVencimiento:"24/10/26"},
-{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR",Abrev:"CAJA",Factor:"24",P1CJ:"142.05",P1UN:"5.92",FechaVencimiento:"14/04/27"},
-{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LCA TOPPING TARRO 48U*397GR",Abrev:"CAJA",Factor:"48",P1CJ:"223.61",P1UN:"4.66",FechaVencimiento:"07/12/26"},
-{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LECHE COND DOYPACK 36x180G PE",Abrev:"CAJA",Factor:"36",P1CJ:"131.10",P1UN:"3.65",FechaVencimiento:"06/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE CJ 48U*300GR",Abrev:"CAJA",Factor:"48",P1CJ:"424.40",P1UN:"8.85",FechaVencimiento:"31/05/27"},
-{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE A/F CJ 48U*160GR",Abrev:"CAJA",Factor:"48",P1CJ:"304.39",P1UN:"6.35",FechaVencimiento:"03/06/27"},
-{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 24U*500GR",Abrev:"BOLSA",Factor:"24",P1CJ:"254.80",P1UN:"10.62",FechaVencimiento:"09/11/26"},
-{Marca:"NESTLE",Producto:"NESTLE EL MANJAR CJ 48U*200GR",Abrev:"CAJA",Factor:"48",P1CJ:"213.11",P1UN:"4.44",FechaVencimiento:"12/09/26"},
-{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 12U*1KG",Abrev:"BOLSA",Factor:"12",P1CJ:"232.35",P1UN:"19.37",FechaVencimiento:"27/10/26"},
-{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR + DULCERA",Abrev:"CAJA",Factor:"24",P1CJ:"152.08",P1UN:"6.34",FechaVencimiento:"06/02/27"},
-{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"119.80",P1UN:"5.00",FechaVencimiento:"06/12/26"},
-{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"235.06",P1UN:"29.39",FechaVencimiento:"07/12/26"},
-{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"128.01",P1UN:"5.33",FechaVencimiento:"12/10/26"},
-{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"250.35",P1UN:"31.30",FechaVencimiento:"26/10/26"},
-{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK CJ 15U*250GR",Abrev:"CAJA",Factor:"15",P1CJ:"211.46",P1UN:"14.10",FechaVencimiento:"24/09/27"},
-{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK  12U*170GR + VASO PAVONADO",Abrev:"CAJA",Factor:"12",P1CJ:"138.06",P1UN:"11.51",FechaVencimiento:"26/08/26"},
-{Marca:"ECCO",Producto:"ECCO CEBADA LATA CJ 24U*170GR",Abrev:"CAJA",Factor:"24",P1CJ:"322.69",P1UN:"13.45",FechaVencimiento:"31/07/27"},
-{Marca:"ECCO",Producto:"ECCO Doypack 16x170g PE",Abrev:"CAJA",Factor:"16",P1CJ:"155.56",P1UN:"9.73",FechaVencimiento:"21/10/27"},
-{Marca:"ECCO",Producto:"ECCO CEBADA  15x175g PE",Abrev:"CAJA",Factor:"15",P1CJ:"201.60",P1UN:"13.44",FechaVencimiento:"09/07/27"},
-{Marca:"ECCO",Producto:"ECCO CEBADA INSTANT CJ 24U*80GR",Abrev:"CAJA",Factor:"24",P1CJ:"137.76",P1UN:"5.74",FechaVencimiento:"02/11/27"},
-{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*12GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.29",FechaVencimiento:"13/12/26"},
-{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*10GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.30",FechaVencimiento:"30/10/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 6x190g PE",Abrev:"CAJA",Factor:"6",P1CJ:"271.40",P1UN:"45.30",FechaVencimiento:"31/07/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 12x95g PE",Abrev:"CAJA",Factor:"12",P1CJ:"368.37",P1UN:"30.70",FechaVencimiento:"30/11/26"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION TRADICION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"314.58",P1UN:"26.21",FechaVencimiento:"01/02/28"},
-{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF CJ 12*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"398.32",P1UN:"33.19",FechaVencimiento:"01/08/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DOYPACK CJ 16*150 GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.18",P1UN:"24.70",FechaVencimiento:"06/12/26"},
-{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF ORIGINAL CJ 12U*40GR",Abrev:"CAJA",Factor:"12",P1CJ:"150.05",P1UN:"12.50",FechaVencimiento:"01/06/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 24*100GR",Abrev:"CAJA",Factor:"24",P1CJ:"482.23",P1UN:"20.10",FechaVencimiento:"01/10/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12TR*18U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"270.60",P1UN:"22.55",FechaVencimiento:"28/09/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74",FechaVencimiento:"31/01/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION FCO CJ 24U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"270.87",P1UN:"11.29",FechaVencimiento:"01/11/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE FINA SELECCION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"337.57",P1UN:"28.13",FechaVencimiento:"01/02/28"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.11",P1UN:"24.69",FechaVencimiento:"17/07/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"168.00",P1UN:"21.00",FechaVencimiento:"21/10/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"204.67",P1UN:"8.53",FechaVencimiento:"21/09/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 12TR*10*15GR",Abrev:"CAJA",Factor:"12",P1CJ:"300.19",P1UN:"25.02",FechaVencimiento:"04/01/27"},
-{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 18TR *10*7GR",Abrev:"CAJA",Factor:"18",P1CJ:"254.88",P1UN:"14.16",FechaVencimiento:"18/12/26"},
-{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*8GR",Abrev:"CAJA",Factor:"12",P1CJ:"165.39",P1UN:"13.78",FechaVencimiento:"08/05/27"},
-{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.46",P1UN:"16.54",FechaVencimiento:"23/06/27"},
-{Marca:"KIRMA",Producto:"KIRMA CAJA*12 (16UN*7GR+NESCAFE 5UN*15GR)",Abrev:"CAJA",Factor:"12",P1CJ:"318.47",P1UN:"26.54",FechaVencimiento:"13/08/26"},
-{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*15GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97",FechaVencimiento:"08/05/27"},
-{Marca:"KIRMA",Producto:"KIRMA DOY PACK ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"147.15",P1UN:"6.13",FechaVencimiento:"27/09/27"},
-{Marca:"KIRMA",Producto:"KIRMA LATA CJ 12U*180GR",Abrev:"CAJA",Factor:"12",P1CJ:"265.71",P1UN:"22.14",FechaVencimiento:"01/01/28"},
-{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97",FechaVencimiento:"20/05/27"},
-{Marca:"NESCAFE",Producto:"NESCFE CAJA 8*(*10*15GR+KIRMAK*8UN*7GR)",Abrev:"CAJA",Factor:"8",P1CJ:"241.44",P1UN:"30.18",FechaVencimiento:"13/08/26"},
-{Marca:"ECCO",Producto:"ECCO Doypack 6x170g + Jarra",Abrev:"CAJA",Factor:"6",P1CJ:"63.72",P1UN:"10.62",FechaVencimiento:"27/07/27"},
-{Marca:"KIRMA",Producto:"KIRMA DOY PACK CJ 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"313.05",P1UN:"19.57",FechaVencimiento:"09/04/27"},
-{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA A/S CJ 24DP*9U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"221.18",P1UN:"9.22",FechaVencimiento:"20/07/26"},
-{Marca:"NESTLE",Producto:"NESTLE SORRENTO CJ 30*20U*32GR",Abrev:"CAJA",Factor:"30",P1CJ:"842.52",P1UN:"28.08",FechaVencimiento:"25/09/26"},
-{Marca:"NESTLE",Producto:"NESTLE LENTEJAS BOLSA CJ 24*24U*16GR",Abrev:"CAJA",Factor:"24",P1CJ:"462.19",P1UN:"19.26",FechaVencimiento:"09/02/27"},
-{Marca:"NESTLE",Producto:"NESTLE KIT KAT 4 FINGER CHOC CJA 8*12*41.5GR",Abrev:"CAJA",Factor:"8",P1CJ:"320.58",P1UN:"40.07",FechaVencimiento:"18/02/27"},
-{Marca:"NESTLE",Producto:"NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"792.96",P1UN:"33.04",FechaVencimiento:"17/02/27"},
-{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA TACO CJ 27U*230GR",Abrev:"CAJA",Factor:"27",P1CJ:"121.39",P1UN:"4.50",FechaVencimiento:"04/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"117.24",P1UN:"4.89",FechaVencimiento:"11/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA DP*20U*24GR",Abrev:"DISP",Factor:"1",P1CJ:"19.25",P1UN:"0.00",FechaVencimiento:"02/08/26"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS DOBLE PLACER CJ 30*6U*34.4GR",Abrev:"CAJA",Factor:"30",P1CJ:"225.14",P1UN:"7.51",FechaVencimiento:"08/08/26"},
-{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*360GR",Abrev:"CAJA",Factor:"15",P1CJ:"330.00",P1UN:"22.00",FechaVencimiento:"24/07/26"},
-{Marca:"NESTLE",Producto:"NESTLE LENTEJAS FIESTA CJ 15*30U*240GR",Abrev:"CAJA",Factor:"15",P1CJ:"187.80",P1UN:"12.52",FechaVencimiento:"20/11/26"},
-{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.48",FechaVencimiento:"22/05/26"},
-{Marca:"NESTLE",Producto:"NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.81",FechaVencimiento:"25/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*29GR",Abrev:"CAJA",Factor:"24",P1CJ:"782.40",P1UN:"32.60",FechaVencimiento:"28/02/27"},
-{Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR",Abrev:"CAJA",Factor:"24",P1CJ:"917.57",P1UN:"38.24",FechaVencimiento:"18/11/26"},
-{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*320GR",Abrev:"CAJA",Factor:"15",P1CJ:"293.29",P1UN:"19.55",FechaVencimiento:"13/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME DUO CJ 21DP30U*28GR",Abrev:"CAJA",Factor:"21",P1CJ:"758.27",P1UN:"36.11",FechaVencimiento:"06/01/27"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA BLANCO CJ 24*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33",FechaVencimiento:"18/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA TABL CJ 72U*100GR",Abrev:"CAJA",Factor:"72",P1CJ:"469.83",P1UN:"6.53",FechaVencimiento:"09/09/26"},
-{Marca:"NESTLE",Producto:"NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR",Abrev:"CAJA",Factor:"6",P1CJ:"180.12",P1UN:"30.02",FechaVencimiento:"06/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61",FechaVencimiento:"25/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR",Abrev:"CAJA",Factor:"22",P1CJ:"221.76",P1UN:"10.08",FechaVencimiento:"11/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS SNACK CJ 8*8U*42GR",Abrev:"CAJA",Factor:"8",P1CJ:"80.05",P1UN:"10.01",FechaVencimiento:"05/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME BITTER CJ 24DP*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1331.04",P1UN:"55.46",FechaVencimiento:"09/01/27"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR",Abrev:"CAJA",Factor:"33",P1CJ:"238.32",P1UN:"7.22",FechaVencimiento:"19/09/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME BOMBONES CJ 24 DP *16 U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.86",P1UN:"12.74",FechaVencimiento:"23/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR",Abrev:"CAJA",Factor:"18",P1CJ:"226.84",P1UN:"12.61",FechaVencimiento:"23/11/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME Sonrisa 64(8x37g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"984.78",P1UN:"15.39",FechaVencimiento:"25/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME EXTREMO CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61",FechaVencimiento:"20/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 24*24U*26GR.",Abrev:"CAJA",Factor:"24",P1CJ:"951.55",P1UN:"39.65",FechaVencimiento:"14/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR",Abrev:"CAJA",Factor:"24",P1CJ:"120.65",P1UN:"5.03",FechaVencimiento:"11/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO 64(10x29g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"987.80",P1UN:"15.43",FechaVencimiento:"25/02/27"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR",Abrev:"CAJA",Factor:"30",P1CJ:"150.80",P1UN:"5.03",FechaVencimiento:"09/10/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA CJ 12DP*24UN*28GR",Abrev:"CAJA",Factor:"12",P1CJ:"475.78",P1UN:"39.65",FechaVencimiento:"02/09/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA CJ 24*20U*37GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33",FechaVencimiento:"26/12/26"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME CRISPY CJ 12(20x20g) PE",Abrev:"CAJA",Factor:"12",P1CJ:"192.58",P1UN:"16.05",FechaVencimiento:"07/11/26"},
-{Marca:"MILO",Producto:"MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR",Abrev:"CAJA",Factor:"48",P1CJ:"531.85",P1UN:"11.09",FechaVencimiento:"19/05/27"},
-{Marca:"MILO",Producto:"MILO CHOC ACTI-GO DOY PACK CJ 12U*350GR",Abrev:"CAJA",Factor:"12",P1CJ:"173.45",P1UN:"14.50",FechaVencimiento:"25/09/26"},
-{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR",Abrev:"CAJA",Factor:"5",P1CJ:"101.68",P1UN:"20.34",FechaVencimiento:"04/07/27"},
-{Marca:"MILO",Producto:"MILO CHOC ACTI-GO LATA CJ 12U*380GR",Abrev:"CAJA",Factor:"12",P1CJ:"250.04",P1UN:"20.84",FechaVencimiento:"31/07/27"},
-{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80",FechaVencimiento:"19/08/26"},
-{Marca:"NESCAFE",Producto:"NESCAFE GOLD BLEND CJ12*50GR",Abrev:"CAJA",Factor:"12",P1CJ:"217.23",P1UN:"18.10",FechaVencimiento:"13/10/27"},
-{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80",FechaVencimiento:"23/06/27"},
-{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 12*470GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.74",P1UN:"16.56",FechaVencimiento:"10/07/27"},
-{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 48*190GR",Abrev:"CAJA",Factor:"48",P1CJ:"420.96",P1UN:"8.77",FechaVencimiento:"19/08/27"},
-{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR",Abrev:"CAJA",Factor:"15",P1CJ:"121.78",P1UN:"8.12",FechaVencimiento:"20/08/27"},
-{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOC CJ 24U*380GR",Abrev:"CAJA",Factor:"24",P1CJ:"321.15",P1UN:"13.38",FechaVencimiento:"31/03/28"},
-{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA CAJA 7TR*24U*10GR",Abrev:"CAJA",Factor:"7",P1CJ:"140.01",P1UN:"20.00",FechaVencimiento:"04/09/27"},
-{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA DOYPACK CAJA 12*150GR",Abrev:"CAJA",Factor:"12",P1CJ:"185.86",P1UN:"15.49",FechaVencimiento:"15/07/27"},
-{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALMENDRA SIN AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"28/02/27"},
-{Marca:"NATURES HEART",Producto:"NATURES HEART BEBIDA DE COCO SIN/ AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"05/03/27"},
-{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"05/01/27"},
-{Marca:"NATURES HEART",Producto:"NATURES HEART BEBIDA DE AVENA S/AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"17/12/26"},
-{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FLOR DE JAMAICA CJ 12 * 20 UND 13GR",Abrev:"CAJA",Factor:"12",P1CJ:"108.24",P1UN:"9.02",FechaVencimiento:"16/06/26"},
-{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FRUTOS ROJOS CJ 20*20 UND 1.3GR",Abrev:"CAJA",Factor:"20",P1CJ:"164.00",P1UN:"8.20",FechaVencimiento:"28/12/26"},
-{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 26*90GR",Abrev:"CAJA",Factor:"26",P1CJ:"96.34",P1UN:"3.71",FechaVencimiento:"31/03/27"},
-{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 18*350GR",Abrev:"CAJA",Factor:"18",P1CJ:"278.46",P1UN:"15.47",FechaVencimiento:"31/12/26"},
-{Marca:"TRIX",Producto:"TRIX CEREAL CJ 18*330 GR",Abrev:"CAJA",Factor:"18",P1CJ:"259.98",P1UN:"14.45",FechaVencimiento:"31/03/27"},
-{Marca:"NESTLE",Producto:"SUBLIME BREAK FAST CEREAL 24x230GR",Abrev:"CAJA",Factor:"24",P1CJ:"252.90",P1UN:"10.54",FechaVencimiento:"04/02/27"},
-{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 14*405GR",Abrev:"CAJA",Factor:"14",P1CJ:"180.89",P1UN:"12.92",FechaVencimiento:"28/02/27"},
-{Marca:"CHOCAPIC",Producto:"CHOCAPIC CJ 14*540GR",Abrev:"CAJA",Factor:"14",P1CJ:"267.45",P1UN:"19.10",FechaVencimiento:"31/03/27"},
-{Marca:"FITNESS",Producto:"FITNESS CEREAL CJ 18*285GR",Abrev:"CAJA",Factor:"18",P1CJ:"203.69",P1UN:"11.32",FechaVencimiento:"31/01/27"},
-{Marca:"FITNESS",Producto:"FITNESS HONEY&ALMOND CEREAL CJ 18*330GR",Abrev:"CAJA",Factor:"18",P1CJ:"280.58",P1UN:"15.59",FechaVencimiento:"31/01/27"},
-{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 20*180 GR N2",Abrev:"CAJA",Factor:"20",P1CJ:"185.26",P1UN:"9.26",FechaVencimiento:"31/01/27"},
-{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 8 UN*740 GR",Abrev:"CAJA",Factor:"8",P1CJ:"150.51",P1UN:"18.81",FechaVencimiento:"31/01/27"},
-{Marca:"TRIX",Producto:"TRIX CEREAL 36x90g PE",Abrev:"CAJA",Factor:"36",P1CJ:"126.72",P1UN:"3.52",FechaVencimiento:"31/12/26"},
-{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO CARNE CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"21/07/26"},
-{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO GALLINA CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"02/02/27"},
-{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/CARNE DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"25/03/27"},
-{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"25/09/26"},
-{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO GALLINA CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"06/02/27"},
-{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR",Abrev:"CAJA",Factor:"15",P1CJ:"41.95",P1UN:"2.80",FechaVencimiento:"21/12/26"},
-{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"25/02/27"},
-{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR",Abrev:"DISP",Factor:"15",P1CJ:"35.93",P1UN:"2.45",FechaVencimiento:"08/04/27"},
-{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA ESPARRAGOS DP*12*66GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"30/09/26"},
-{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA HONGOS DP 12U*65GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"31/10/26"},
-{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS CJ 12*12*57GR",Abrev:"CAJA",Factor:"12",P1CJ:"431.60",P1UN:"35.97",FechaVencimiento:"31/10/26"},
-{Marca:"GERBER",Producto:"GERBER PURE MANGO CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"30/06/27"},
-{Marca:"GERBER",Producto:"GERBER PURE PERA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"31/08/27"},
-{Marca:"GERBER",Producto:"GERBER PURE MANZANA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"31/08/27"},
-{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CHOCOTON CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"118.71",P1UN:"19.73",FechaVencimiento:"04/08/26"},
-{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTON BOLSA CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"108.62",P1UN:"18.10",FechaVencimiento:"23/10/26"},
-{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*15GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.09",P1UN:"0.00",FechaVencimiento:"25/09/26"},
-{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA)  TR* 9U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"11.28",P1UN:"0.00",FechaVencimiento:"30/11/26"},
-{Marca:"DONOFRIO",Producto:"COCOA (MEDIA TIRA) TR*12U*10GR",Abrev:"TIRA",Factor:"1",P1CJ:"10.00",P1UN:"0.00",FechaVencimiento:"18/05/26"},
-{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"10.50",P1UN:"0.00",FechaVencimiento:"07/10/27"},
-{Marca:"KIRMA",Producto:"KIRMA(MEDIA TIRA)TIRA*5U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"9.49",P1UN:"0.00",FechaVencimiento:"21/05/27"},
-{Marca:"KIRMA",Producto:"KIRMA (MEDIA TIRA) TR*8U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"8.27",P1UN:"0.00",FechaVencimiento:"23/06/27"},
-{Marca:"MILO",Producto:"MILO (MEDIA TIRA)  CHOC ACTI-E GRANUL TR*12U*16GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.40",P1UN:"0.00",FechaVencimiento:"04/08/26"},
-{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS DP*12*57GR",Abrev:"UN",Factor:"1",P1CJ:"3.05",P1UN:"0.00",FechaVencimiento:"31/10/26"}
+{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 48*96GR",Abrev:"CAJA",Factor:"48",P1CJ:"188.21",P1UN:"3.92",FechaVencimiento:"4/12/2026"},
+{Marca:"ANCHOR",Producto:"ANCHOR LECHE EN POLVO CJ 12*800GR",Abrev:"CAJA",Factor:"12",P1CJ:"387.51",P1UN:"32.29",FechaVencimiento:"15/01/2028"},
+{Marca:"S/MARCA",Producto:"IDEAL COMPLEJO-B MZC LAC 8(6X390G) PE",Abrev:"PACK",Factor:"6",P1CJ:"23.78",P1UN:"3.96",FechaVencimiento:"31/10/2026"},
+{Marca:"IDEAL CREMOSITA",Producto:"IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.19",P1UN:"3.80",FechaVencimiento:"18/12/2026"},
+{Marca:"IDEAL AMANECER",Producto:"IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"72.35",P1UN:"3.02",FechaVencimiento:"24/10/2026"},
+{Marca:"IDEAL CREMOSITA",Producto:"IDEAL  CREMOSITACJ 24U*390GR GRATIS NSCF RSV*2GR",Abrev:"CAJA",Factor:"24",P1CJ:"91.10",P1UN:"3.80",FechaVencimiento:"4/07/2026"},
+{Marca:"IDEAL LIGHT",Producto:"IDEAL TABLETA LIGHT MZC LAC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"89.78",P1UN:"3.75",FechaVencimiento:"16/09/2026"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE COND TOPPING TARRO CJ 96U*100GR",Abrev:"CAJA",Factor:"96",P1CJ:"237.82",P1UN:"2.48",FechaVencimiento:"24/10/2026"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR",Abrev:"CAJA",Factor:"24",P1CJ:"142.05",P1UN:"5.92",FechaVencimiento:"16/04/2027"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LCA TOPPING TARRO 48U*397GR",Abrev:"CAJA",Factor:"48",P1CJ:"223.61",P1UN:"4.66",FechaVencimiento:"7/12/2026"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE LECHE COND DOYPACK 36x180G PE",Abrev:"CAJA",Factor:"36",P1CJ:"131.10",P1UN:"3.65",FechaVencimiento:"6/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE CJ 48U*300GR",Abrev:"CAJA",Factor:"48",P1CJ:"424.40",P1UN:"8.85",FechaVencimiento:"31/05/2027"},
+{Marca:"NESTLE",Producto:"NESTLE CREMA DE LECHE A/F CJ 48U*160GR",Abrev:"CAJA",Factor:"48",P1CJ:"304.39",P1UN:"6.35",FechaVencimiento:"3/06/2027"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 24U*500GR",Abrev:"BOLSA",Factor:"24",P1CJ:"254.80",P1UN:"10.62",FechaVencimiento:"9/11/2026"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR CJ 48U*200GR",Abrev:"CAJA",Factor:"48",P1CJ:"213.11",P1UN:"4.44",FechaVencimiento:"12/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE EL MANJAR BOL 12U*1KG",Abrev:"BOLSA",Factor:"12",P1CJ:"232.35",P1UN:"19.37",FechaVencimiento:"27/10/2026"},
+{Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR + DULCERA",Abrev:"CAJA",Factor:"24",P1CJ:"152.08",P1UN:"6.34",FechaVencimiento:"6/02/2027"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"119.80",P1UN:"5.00",FechaVencimiento:"6/12/2026"},
+{Marca:"NAN",Producto:"NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"235.06",P1UN:"29.39",FechaVencimiento:"7/12/2026"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 24U*390GR",Abrev:"CAJA",Factor:"24",P1CJ:"128.01",P1UN:"5.33",FechaVencimiento:"12/10/2026"},
+{Marca:"NAN",Producto:"NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR",Abrev:"CAJA",Factor:"8",P1CJ:"250.35",P1UN:"31.30",FechaVencimiento:"26/10/2026"},
+{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK CJ 15U*250GR",Abrev:"CAJA",Factor:"15",P1CJ:"211.46",P1UN:"14.10",FechaVencimiento:"24/09/2027"},
+{Marca:"ECCO",Producto:"ECCO CEBADA DOYPACK  12U*170GR + VASO PAVONADO",Abrev:"CAJA",Factor:"12",P1CJ:"138.06",P1UN:"11.51",FechaVencimiento:"26/08/2026"},
+{Marca:"ECCO",Producto:"ECCO CEBADA LATA CJ 24U*170GR",Abrev:"CAJA",Factor:"24",P1CJ:"322.69",P1UN:"13.45",FechaVencimiento:"31/07/2027"},
+{Marca:"ECCO",Producto:"ECCO Doypack 16x170g PE",Abrev:"CAJA",Factor:"16",P1CJ:"155.56",P1UN:"9.73",FechaVencimiento:"21/10/2027"},
+{Marca:"ECCO",Producto:"ECCO CEBADA  15x175g PE",Abrev:"CAJA",Factor:"15",P1CJ:"201.60",P1UN:"13.44",FechaVencimiento:"9/07/2027"},
+{Marca:"ECCO",Producto:"ECCO CEBADA INSTANT CJ 24U*80GR",Abrev:"CAJA",Factor:"24",P1CJ:"137.76",P1UN:"5.74",FechaVencimiento:"2/11/2027"},
+{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*12GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.29",FechaVencimiento:"13/12/2026"},
+{Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*10GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.30",FechaVencimiento:"30/10/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 6x190g PE",Abrev:"CAJA",Factor:"6",P1CJ:"271.40",P1UN:"45.30",FechaVencimiento:"31/07/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD Signature Jar 12x95g PE",Abrev:"CAJA",Factor:"12",P1CJ:"368.37",P1UN:"30.70",FechaVencimiento:"30/11/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION TRADICION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"314.58",P1UN:"26.21",FechaVencimiento:"1/02/2028"},
+{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF CJ 12*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"398.32",P1UN:"33.19",FechaVencimiento:"1/08/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DOYPACK CJ 16*150 GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.18",P1UN:"24.70",FechaVencimiento:"6/12/2026"},
+{Marca:"NESCAFE DECAF",Producto:"NESCAFE DESCAF ORIGINAL CJ 12U*40GR",Abrev:"CAJA",Factor:"12",P1CJ:"150.05",P1UN:"12.50",FechaVencimiento:"1/06/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 24*100GR",Abrev:"CAJA",Factor:"24",P1CJ:"482.23",P1UN:"20.10",FechaVencimiento:"1/10/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 12TR*18U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"270.60",P1UN:"22.55",FechaVencimiento:"28/09/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74",FechaVencimiento:"31/01/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION FCO CJ 24U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"270.87",P1UN:"11.29",FechaVencimiento:"1/11/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE FINA SELECCION CJ 12U*170GR",Abrev:"CAJA",Factor:"12",P1CJ:"337.57",P1UN:"28.13",FechaVencimiento:"1/02/2028"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"395.11",P1UN:"24.69",FechaVencimiento:"17/07/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"168.00",P1UN:"21.00",FechaVencimiento:"22/10/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE TRADICION DP ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"204.67",P1UN:"8.53",FechaVencimiento:"21/09/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 12TR*10*15GR",Abrev:"CAJA",Factor:"12",P1CJ:"300.19",P1UN:"25.02",FechaVencimiento:"4/01/2027"},
+{Marca:"NESCAFE",Producto:"NESCAFE RESERVA CJ 18TR *10*7GR",Abrev:"CAJA",Factor:"18",P1CJ:"254.88",P1UN:"14.16",FechaVencimiento:"18/12/2026"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*8GR",Abrev:"CAJA",Factor:"12",P1CJ:"165.39",P1UN:"13.78",FechaVencimiento:"8/05/2027"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 12TR*16U*7GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.46",P1UN:"16.54",FechaVencimiento:"23/06/2027"},
+{Marca:"KIRMA",Producto:"KIRMA CAJA*12 (16UN*7GR+NESCAFE 5UN*15GR)",Abrev:"CAJA",Factor:"12",P1CJ:"318.47",P1UN:"26.54",FechaVencimiento:"13/08/2026"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*15GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97",FechaVencimiento:"8/05/2027"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK ZIPPER CJ 24U*45GR",Abrev:"CAJA",Factor:"24",P1CJ:"147.15",P1UN:"6.13",FechaVencimiento:"27/09/2027"},
+{Marca:"KIRMA",Producto:"KIRMA LATA CJ 12U*180GR",Abrev:"CAJA",Factor:"12",P1CJ:"265.71",P1UN:"22.14",FechaVencimiento:"1/01/2028"},
+{Marca:"KIRMA",Producto:"KIRMA CJ 8TR*10U*14GR",Abrev:"CAJA",Factor:"8",P1CJ:"151.72",P1UN:"18.97",FechaVencimiento:"21/05/2027"},
+{Marca:"NESCAFE",Producto:"NESCFE CAJA 8*(*10*15GR+KIRMAK*8UN*7GR)",Abrev:"CAJA",Factor:"8",P1CJ:"241.44",P1UN:"30.18",FechaVencimiento:"13/08/2026"},
+{Marca:"ECCO",Producto:"ECCO Doypack 6x170g + Jarra",Abrev:"CAJA",Factor:"6",P1CJ:"63.72",P1UN:"10.62",FechaVencimiento:"27/07/2027"},
+{Marca:"KIRMA",Producto:"KIRMA DOY PACK CJ 16*140GR",Abrev:"CAJA",Factor:"16",P1CJ:"313.05",P1UN:"19.57",FechaVencimiento:"9/04/2027"},
+{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA A/S CJ 24DP*9U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"221.18",P1UN:"9.22",FechaVencimiento:"20/07/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SORRENTO CJ 30*20U*32GR",Abrev:"CAJA",Factor:"30",P1CJ:"842.52",P1UN:"28.08",FechaVencimiento:"25/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS BOLSA CJ 24*24U*16GR",Abrev:"CAJA",Factor:"24",P1CJ:"462.19",P1UN:"19.26",FechaVencimiento:"9/02/2027"},
+{Marca:"NESTLE",Producto:"NESTLE KIT KAT 4 FINGER CHOC CJA 8*12*41.5GR",Abrev:"CAJA",Factor:"8",P1CJ:"320.58",P1UN:"40.07",FechaVencimiento:"18/02/2027"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"792.96",P1UN:"33.04",FechaVencimiento:"17/02/2027"},
+{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA TACO CJ 27U*230GR",Abrev:"CAJA",Factor:"27",P1CJ:"121.39",P1UN:"4.50",FechaVencimiento:"4/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"117.24",P1UN:"4.89",FechaVencimiento:"11/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA DP*20U*24GR",Abrev:"DISP",Factor:"1",P1CJ:"19.25",P1UN:"0.00",FechaVencimiento:"2/08/2026"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS DOBLE PLACER CJ 30*6U*34.4GR",Abrev:"CAJA",Factor:"30",P1CJ:"225.14",P1UN:"7.51",FechaVencimiento:"8/08/2026"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*360GR",Abrev:"CAJA",Factor:"15",P1CJ:"330.00",P1UN:"22.00",FechaVencimiento:"24/07/2026"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS FIESTA CJ 15*30U*240GR",Abrev:"CAJA",Factor:"15",P1CJ:"187.80",P1UN:"12.52",FechaVencimiento:"20/11/2026"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.48",FechaVencimiento:"22/05/2026"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"1019.52",P1UN:"42.81",FechaVencimiento:"25/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO CJ 24*20U*29GR",Abrev:"CAJA",Factor:"24",P1CJ:"782.40",P1UN:"32.60",FechaVencimiento:"28/02/2027"},
+{Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR",Abrev:"CAJA",Factor:"24",P1CJ:"917.57",P1UN:"38.24",FechaVencimiento:"19/11/2026"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*320GR",Abrev:"CAJA",Factor:"15",P1CJ:"293.29",P1UN:"19.55",FechaVencimiento:"13/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME DUO CJ 21DP30U*28GR",Abrev:"CAJA",Factor:"21",P1CJ:"758.27",P1UN:"36.11",FechaVencimiento:"6/01/2027"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA BLANCO CJ 24*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33",FechaVencimiento:"18/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA TABL CJ 72U*100GR",Abrev:"CAJA",Factor:"72",P1CJ:"469.83",P1UN:"6.53",FechaVencimiento:"9/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR",Abrev:"CAJA",Factor:"6",P1CJ:"180.12",P1UN:"30.02",FechaVencimiento:"6/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME ALMENDRA CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61",FechaVencimiento:"25/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR",Abrev:"CAJA",Factor:"22",P1CJ:"221.76",P1UN:"10.08",FechaVencimiento:"11/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS SNACK CJ 8*8U*42GR",Abrev:"CAJA",Factor:"8",P1CJ:"80.05",P1UN:"10.01",FechaVencimiento:"5/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME BITTER CJ 24DP*20U*38GR",Abrev:"CAJA",Factor:"24",P1CJ:"1331.04",P1UN:"55.46",FechaVencimiento:"9/01/2027"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR",Abrev:"CAJA",Factor:"33",P1CJ:"238.32",P1UN:"7.22",FechaVencimiento:"19/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME BOMBONES CJ 24 DP *16 U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.86",P1UN:"12.74",FechaVencimiento:"3/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR",Abrev:"CAJA",Factor:"18",P1CJ:"226.84",P1UN:"12.61",FechaVencimiento:"24/11/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME Sonrisa 64(8x37g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"984.78",P1UN:"15.39",FechaVencimiento:"25/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME EXTREMO CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61",FechaVencimiento:"20/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 24*24U*26GR.",Abrev:"CAJA",Factor:"24",P1CJ:"951.55",P1UN:"39.65",FechaVencimiento:"14/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR",Abrev:"CAJA",Factor:"24",P1CJ:"120.65",P1UN:"5.03",FechaVencimiento:"11/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE TRIANGULO CLASICO 64(10x29g) PE",Abrev:"CAJA",Factor:"64",P1CJ:"987.80",P1UN:"15.43",FechaVencimiento:"25/02/2027"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR",Abrev:"CAJA",Factor:"30",P1CJ:"150.80",P1UN:"5.03",FechaVencimiento:"9/10/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME GALLETA CJ 12DP*24UN*28GR",Abrev:"CAJA",Factor:"12",P1CJ:"475.78",P1UN:"39.65",FechaVencimiento:"2/09/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME SONRISA CJ 24*20U*37GR",Abrev:"CAJA",Factor:"24",P1CJ:"1183.78",P1UN:"49.33",FechaVencimiento:"26/12/2026"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CRISPY CJ 12(20x20g) PE",Abrev:"CAJA",Factor:"12",P1CJ:"192.58",P1UN:"16.05",FechaVencimiento:"7/11/2026"},
+{Marca:"MILO",Producto:"MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR",Abrev:"CAJA",Factor:"48",P1CJ:"531.85",P1UN:"11.09",FechaVencimiento:"19/05/2027"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-GO DOY PACK CJ 12U*350GR",Abrev:"CAJA",Factor:"12",P1CJ:"173.45",P1UN:"14.50",FechaVencimiento:"9/05/2027"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR",Abrev:"CAJA",Factor:"5",P1CJ:"101.68",P1UN:"20.34",FechaVencimiento:"5/07/2027"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-GO LATA CJ 12U*380GR",Abrev:"CAJA",Factor:"12",P1CJ:"250.04",P1UN:"20.84",FechaVencimiento:"31/07/2027"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80",FechaVencimiento:"19/08/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD BLEND CJ12*50GR",Abrev:"CAJA",Factor:"12",P1CJ:"217.23",P1UN:"18.10",FechaVencimiento:"13/10/2027"},
+{Marca:"MILO",Producto:"MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE",Abrev:"CAJA",Factor:"6",P1CJ:"148.79",P1UN:"24.80",FechaVencimiento:"23/06/2027"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 12*470GR",Abrev:"CAJA",Factor:"12",P1CJ:"198.74",P1UN:"16.56",FechaVencimiento:"10/07/2027"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 48*190GR",Abrev:"CAJA",Factor:"48",P1CJ:"420.96",P1UN:"8.77",FechaVencimiento:"19/08/2027"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR",Abrev:"CAJA",Factor:"15",P1CJ:"121.78",P1UN:"8.12",FechaVencimiento:"20/08/2027"},
+{Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOC CJ 24U*380GR",Abrev:"CAJA",Factor:"24",P1CJ:"321.15",P1UN:"13.38",FechaVencimiento:"31/03/2028"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA CAJA 7TR*24U*10GR",Abrev:"CAJA",Factor:"7",P1CJ:"140.01",P1UN:"20.00",FechaVencimiento:"4/09/2027"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO COCOA DOYPACK CAJA 12*150GR",Abrev:"CAJA",Factor:"12",P1CJ:"185.86",P1UN:"15.49",FechaVencimiento:"15/07/2027"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALMENDRA SIN AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"28/02/2027"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEBIDA DE COCO SIN/ AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"5/03/2027"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"5/01/2027"},
+{Marca:"NATURES HEART",Producto:"NATURES HEART BEBIDA DE AVENA S/AZUCAR CJ 12U*946ML",Abrev:"CAJA",Factor:"12",P1CJ:"117.53",P1UN:"9.80",FechaVencimiento:"17/12/2026"},
+{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FLOR DE JAMAICA CJ 12 * 20 UND 13GR",Abrev:"CAJA",Factor:"12",P1CJ:"108.24",P1UN:"9.02",FechaVencimiento:"16/06/2026"},
+{Marca:"NATURES HEART",Producto:"INFUSIÓN N.H FRUTOS ROJOS CJ 20*20 UND 1.3GR",Abrev:"CAJA",Factor:"20",P1CJ:"164.00",P1UN:"8.20",FechaVencimiento:"28/12/2026"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 26*90GR",Abrev:"CAJA",Factor:"26",P1CJ:"96.34",P1UN:"3.71",FechaVencimiento:"31/03/2027"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CEREAL CJ 18*350GR",Abrev:"CAJA",Factor:"18",P1CJ:"278.46",P1UN:"15.47",FechaVencimiento:"31/12/2026"},
+{Marca:"TRIX",Producto:"TRIX CEREAL CJ 18*330 GR",Abrev:"CAJA",Factor:"18",P1CJ:"259.98",P1UN:"14.45",FechaVencimiento:"31/03/2027"},
+{Marca:"NESTLE",Producto:"SUBLIME BREAK FAST CEREAL 24x230GR",Abrev:"CAJA",Factor:"24",P1CJ:"252.90",P1UN:"10.54",FechaVencimiento:"4/02/2027"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 14*405GR",Abrev:"CAJA",Factor:"14",P1CJ:"180.89",P1UN:"12.92",FechaVencimiento:"28/02/2027"},
+{Marca:"CHOCAPIC",Producto:"CHOCAPIC CJ 14*540GR",Abrev:"CAJA",Factor:"14",P1CJ:"267.45",P1UN:"19.10",FechaVencimiento:"31/03/2027"},
+{Marca:"FITNESS",Producto:"FITNESS CEREAL CJ 18*285GR",Abrev:"CAJA",Factor:"18",P1CJ:"203.69",P1UN:"11.32",FechaVencimiento:"31/01/2027"},
+{Marca:"FITNESS",Producto:"FITNESS HONEY&ALMOND CEREAL CJ 18*330GR",Abrev:"CAJA",Factor:"18",P1CJ:"280.58",P1UN:"15.59",FechaVencimiento:"31/01/2027"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 20*180 GR N2",Abrev:"CAJA",Factor:"20",P1CJ:"185.26",P1UN:"9.26",FechaVencimiento:"31/01/2027"},
+{Marca:"CORN FLAKES",Producto:"CORN FLAKES CJ 8 UN*740 GR",Abrev:"CAJA",Factor:"8",P1CJ:"150.51",P1UN:"18.81",FechaVencimiento:"31/01/2027"},
+{Marca:"TRIX",Producto:"TRIX CEREAL 36x90g PE",Abrev:"CAJA",Factor:"36",P1CJ:"126.72",P1UN:"3.52",FechaVencimiento:"31/12/2026"},
+{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO CARNE CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"21/07/2026"},
+{Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO GALLINA CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"2/02/2027"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/CARNE DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"25/03/2027"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"25/09/2026"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO GALLINA CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"6/02/2027"},
+{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR",Abrev:"CAJA",Factor:"15",P1CJ:"41.95",P1UN:"2.80",FechaVencimiento:"21/12/2026"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"1/03/2027"},
+{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR",Abrev:"DISP",Factor:"15",P1CJ:"35.93",P1UN:"2.45",FechaVencimiento:"8/04/2027"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA ESPARRAGOS DP*12*66GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"30/09/2026"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA HONGOS DP 12U*65GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"31/10/2026"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS CJ 12*12*57GR",Abrev:"CAJA",Factor:"12",P1CJ:"431.60",P1UN:"35.97",FechaVencimiento:"31/10/2026"},
+{Marca:"GERBER",Producto:"GERBER PURE MANGO CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"30/06/2027"},
+{Marca:"GERBER",Producto:"GERBER PURE PERA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"31/08/2027"},
+{Marca:"GERBER",Producto:"GERBER PURE MANZANA CJ 12*113GR",Abrev:"CAJA",Factor:"12",P1CJ:"52.68",P1UN:"4.39",FechaVencimiento:"31/08/2027"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CHOCOTON CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"118.71",P1UN:"19.73",FechaVencimiento:"4/08/2026"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO CHOCOTON BOLSA CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"108.62",P1UN:"18.10",FechaVencimiento:"23/10/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*15GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.09",P1UN:"0.00",FechaVencimiento:"25/09/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA)  TR* 9U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"11.28",P1UN:"0.00",FechaVencimiento:"30/11/2026"},
+{Marca:"DONOFRIO",Producto:"COCOA (MEDIA TIRA) TR*12U*10GR",Abrev:"TIRA",Factor:"1",P1CJ:"10.00",P1UN:"0.00",FechaVencimiento:"18/05/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE (MEDIA TIRA) *5 U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"10.50",P1UN:"0.00",FechaVencimiento:"7/10/2027"},
+{Marca:"KIRMA",Producto:"KIRMA(MEDIA TIRA)TIRA*5U*14GR",Abrev:"TIRA",Factor:"1",P1CJ:"9.49",P1UN:"0.00",FechaVencimiento:"21/05/2027"},
+{Marca:"KIRMA",Producto:"KIRMA (MEDIA TIRA) TR*8U*7GR",Abrev:"TIRA",Factor:"1",P1CJ:"8.27",P1UN:"0.00",FechaVencimiento:"23/06/2027"},
+{Marca:"MILO",Producto:"MILO (MEDIA TIRA)  CHOC ACTI-E GRANUL TR*12U*16GR",Abrev:"TIRA",Factor:"1",P1CJ:"12.40",P1UN:"0.00",FechaVencimiento:"4/08/2026"},
+{Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS DP*12*57GR",Abrev:"UN",Factor:"1",P1CJ:"3.05",P1UN:"0.00",FechaVencimiento:"31/10/2026"},
+{Marca:"IDEAL",Producto:"CBO: IDEAL COMPLEJO-B MZC LAC * 1 Unid* 390G PE",Abrev:"UN",Factor:"1",P1CJ:"3.96",P1UN:"0.00",FechaVencimiento:"31/10/2026"},
+{Marca:"NESCAFE",Producto:"NESCAFE GOLD CAPPUCCINO  MOCHA  CJ 6DP*8S*18GR",Abrev:"CAJA",Factor:"6",P1CJ:"100.45",P1UN:"16.74",FechaVencimiento:"31/01/2027"}
 ];
 
 console.log('📦 Total productos cargados:', productos.length);
 
-// Función de búsqueda inteligente
+// Función de búsqueda inteligente (por palabras separadas)
 function buscarProductosInteligente() {
     const searchInput = document.getElementById('searchInput');
     const textoCompleto = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -511,7 +530,7 @@ function renderizarTarjetas(productosLista, busqueda) {
     const container = document.getElementById('productosLista');
     
     if(productosLista.length === 0) {
-        container.innerHTML = `<div class="empty-message">❌ No se encontraron productos para: "${busqueda}"</div>`;
+        container.innerHTML = `<div class="empty-message">❌ No se encontraron productos para: "${escapeHtml(busqueda)}"</div>`;
         return;
     }
     
