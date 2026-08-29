@@ -94,7 +94,7 @@
     </div>
     <div class="tab-nav">
         <button class="tab-btn active" onclick="switchTab('precios', this)">📦 Lista de Precios</button>
-        <button class="tab-btn" onclick="switchTab('brief', this)">📋 Brief Ruta Julio</button>
+        <button class="tab-btn" onclick="switchTab('brief', this)">📋 Brief Ruta Agosto</button>
     </div>
     <div id="panel-precios" class="panel active">
         <div class="filtros">
@@ -113,7 +113,7 @@
     </div>
     <div id="panel-brief" class="panel">
         <div class="brief-header">
-            <div><div class="brief-title">Brief Ruta <span>Julio 2026</span></div><div class="brief-subtitle">Mecánicas de venta · Bonificaciones · Escalas</div></div>
+            <div><div class="brief-title">Brief Ruta <span>Agosto 2026</span></div><div class="brief-subtitle">Mecánicas de venta · Bonificaciones · Escalas</div></div>
             <div class="brief-obs">⚠ Una escala anula la anterior</div>
         </div>
         <div class="brief-filtro"><label>Filtrar por categoría</label><select id="briefCatSelect" onchange="renderBrief()"><option value="">Todas las categorías</option></select></div>
@@ -279,18 +279,22 @@ const productos = [
 ];
 console.log('📦 Total productos cargados:', productos.length);
 // =================================================================================
-// 📋 BRIEF RUTA JULIO 2026 - ⭐⭐⭐ PEGA TUS NUEVOS DATOS DEL BRIEF AQUÍ ⭐⭐⭐
+// 📋 BRIEF RUTA AGOSTO 2026 - ⭐⭐⭐ PEGA TUS NUEVOS DATOS DEL BRIEF AQUÍ ⭐⭐⭐
 // =================================================================================
 const briefData = [
+  [
+[
+  {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"2.85%","mecCant":"10","mecFac":"PL","bonCant":"7","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""},
+  {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"1.42%","mecCant":"50","mecFac":"PL","bonCant":"17","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""},
+  {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"2.00%","mecCant":"100","mecFac":"PL","bonCant":"48","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""},
   {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"6.50%","mecCant":"6","mecFac":"UN","bonCant":"6.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":"Mixto cluster C/D"},
   {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"7.50%","mecCant":"12","mecFac":"UN","bonCant":"7.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"8.50%","mecCant":"72","mecFac":"UN","bonCant":"8.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
+  {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"10.50%","mecCant":"1200","mecFac":"UN","bonCant":"10.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"EVAPORADAS","marca":"AMANECER","tasa":"3.00%","mecCant":"6","mecFac":"UN","bonCant":"3.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"EVAPORADAS","marca":"AMANECER","tasa":"3.50%","mecCant":"12","mecFac":"UN","bonCant":"3.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"EVAPORADAS","marca":"AMANECER","tasa":"5.00%","mecCant":"48","mecFac":"UN","bonCant":"5.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"EVAPORADAS","marca":"AMANECER","tasa":"6.00%","mecCant":"72","mecFac":"UN","bonCant":"6.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"EVAPORADAS","marca":"COMPLEJOB","tasa":"4.00%","mecCant":"1","mecFac":"PACK","bonCant":"4.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"CULINARIOS","marca":"1 DPL MAGGI + 7 TR MAGGI POLVO GALLINA","tasa":"0.00%","mecCant":"1+7","mecFac":"DP+TR","bonCant":"1","bonFac":"UN","prod":"TAPER GALLINA C/TAPA ROJA","obs":"Maximo 1 al mes"},
   {"cat":"CULINARIOS","marca":"DPL MAGGI GALLLINA/CARNE 18.8GR","tasa":"1.92%","mecCant":"2","mecFac":"DP","bonCant":"1","bonFac":"UN","prod":"MAGGI 18.8GR","obs":""},
   {"cat":"CULINARIOS","marca":"DPL MAGGI GALLLINA/CARNE 18.8GR","tasa":"5.13%","mecCant":"6","mecFac":"DP","bonCant":"8","bonFac":"UN","prod":"MAGGI 18.8GR","obs":""},
   {"cat":"CULINARIOS","marca":"VARIOS - CATEGORIA CULINARIOS","tasa":"2.61%","mecCant":"S/ 25","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"MAGGI 18.8GR","obs":"No ingresa maggi display 18.8g"},
@@ -299,42 +303,43 @@ const briefData = [
   {"cat":"ECCO","marca":"VARIOS - CATEGORIA ECCO","tasa":"5.74%","mecCant":"S/ 180","mecFac":"Soles","bonCant":"10","bonFac":"UN","prod":"KIRMA 7 GR","obs":""},
   {"cat":"NUTRICION","marca":"NAN 3","tasa":"3.52%","mecCant":"6","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"NESCAFE TRADICION 7G","obs":""},
   {"cat":"NUTRICION","marca":"NAN 3 SIX PAC","tasa":"3.52%","mecCant":"1","mecFac":"PC","bonCant":"1","bonFac":"UN","prod":"NESCAFE TRADICION 7G","obs":""},
-  {"cat":"NUTRICION","marca":"GERBER","tasa":"16.67%","mecCant":"6","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"NESCAFE TRADICION 7G","obs":""},
+  {"cat":"NUTRICION","marca":"GERBER","tasa":"16.67%","mecCant":"6","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"GERBER MANZANA","obs":""},
+  {"cat":"NUTRICION","marca":"NAN 2","tasa":"5.00%","mecCant":"12","mecFac":"UN","bonCant":"3","bonFac":"UN","prod":"NESCAFE TRADICION 7G","obs":""},
+  {"cat":"NUTRICION","marca":"NAN 2","tasa":"6.00%","mecCant":"24","mecFac":"UN","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 390G","obs":""},
+  {"cat":"NUTRICION","marca":"NAN 2 SIX PACK","tasa":"5.00%","mecCant":"2","mecFac":"PACK","bonCant":"3","bonFac":"UN","prod":"NESCAFE TRADICION 7G","obs":""},
+  {"cat":"NUTRICION","marca":"NAN 2 SIX PACK","tasa":"6.00%","mecCant":"4","mecFac":"PACK","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 390G","obs":""},
   {"cat":"BEBIDAS POLVO","marca":"VARIOS - CATEGORIA B.POLVO","tasa":"2.93%","mecCant":"S/ 35.00","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"MILO 16GR","obs":"No ingresa Milo 16g"},
   {"cat":"BEBIDAS POLVO","marca":"MILO 16G","tasa":"4.15%","mecCant":"1","mecFac":"TR","bonCant":"1","bonFac":"UN","prod":"MILO 16GR","obs":""},
   {"cat":"BEBIDAS VEGETALES","marca":"NATURE HEART","tasa":"2.93%","mecCant":"3","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"KIRMA*7GR x CAFE|CAFÉS","obs":""},
   {"cat":"BEBIDAS VEGETALES","marca":"NATURE HEART","tasa":"5.78%","mecCant":"6","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"IDEAL CREMOSITA*390GR x NE","obs":""},
   {"cat":"BEBIDAS VEGETALES","marca":"NATURE HEART","tasa":"12.50%","mecCant":"8","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"NATURES HEART ALMENDRA S/AZU  946ML","obs":""},
   {"cat":"OTROS LACTEOS","marca":"CONDENSADA / TOPPING","tasa":"5.00%","mecCant":"12","mecFac":"UN","bonCant":"5","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"OTROS LACTEOS","marca":"CONDENSADA / TOPPING","tasa":"4.00%","mecCant":"6","mecFac":"UN","bonCant":"6","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
+  {"cat":"OTROS LACTEOS","marca":"CONDENSADA / TOPPING","tasa":"4.00%","mecCant":"6","mecFac":"UN","bonCant":"4","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"OTROS LACTEOS","marca":"TOPPING 100G","tasa":"10.00%","mecCant":"10","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"TOPPING 100G","obs":""},
-  {"cat":"OTROS LACTEOS","marca":"VARIOS","tasa":"2.93%","mecCant":"S/ 40","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"MILO 16GR","obs":"No ingresa condensada 393g-topping 397g"},
-  {"cat":"OTROS LACTEOS","marca":"CONDENSADA LATAS","tasa":"0.00%","mecCant":"S/ 34","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"TAZAS MEDIDORAS","obs":"Maximo 2 al mes"},
+  {"cat":"OTROS LACTEOS","marca":"VARIOS","tasa":"2.57%","mecCant":"S/ 40","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"MILO 16GR","obs":"No ingresa condensada 393g-topping 397g"},
   {"cat":"GALLETAS","marca":"VARIOS","tasa":"3.35%","mecCant":"S/ 25","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"MOROCHA GALLETA 30GR","obs":""},
+  {"cat":"CHOCOLATES","marca":"EXHIBIDOR CONFITERO","tasa":"10.00%","mecCant":"1","mecFac":"UN","bonCant":"10","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
+  {"cat":"CHOCOLATES","marca":"TRIANGULO CLASICO 29G","tasa":"7.00%","mecCant":"2","mecFac":"DP","bonCant":"7","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CHOCOLATES","marca":"VARIOS - CATEGORIA CHOCOLATE","tasa":"4.16%","mecCant":"S/ 39.60","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"SUBLIME CLASICO 26G","obs":"No ingresa mediodisplay - Triangulo clasico"},
   {"cat":"CHOCOLATES","marca":"VARIOS - CATEGORIA CHOCOLATE","tasa":"6.19%","mecCant":"S/ 80.00","mecFac":"Soles","bonCant":"3","bonFac":"UN","prod":"SUBLIME CLASICO 26G","obs":"No ingresa mediodisplay - Triangulo clasico"},
   {"cat":"CHOCOLATES","marca":"VARIOS - CATEGORIA CHOCOLATE","tasa":"8.25%","mecCant":"S/ 160.00","mecFac":"Soles","bonCant":"8","bonFac":"UN","prod":"SUBLIME CLASICO 26G","obs":"No ingresa mediodisplay - Triangulo clasico"},
-  {"cat":"CHOCOLATES","marca":"TRIANGULO 29G","tasa":"7.00%","mecCant":"1","mecFac":"DP","bonCant":"7.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":"No ingresa mediodisplay - Triangulo clasico"},
-  {"cat":"CAFES","marca":"FRASCOS & DOY PACK","tasa":"5.67%","mecCant":"S/ 60","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"CREMOSITA 390G","obs":""},
-  {"cat":"CAFES","marca":"FRASCOS & DOY PACK","tasa":"11.96%","mecCant":"S/ 120","mecFac":"Soles","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 390G","obs":""},
+  {"cat":"CAFES","marca":"FRASCOS & DOY PACK","tasa":"6.30%","mecCant":"S/ 60","mecFac":"Soles","bonCant":"1","bonFac":"UN","prod":"CREMOSITA 390G","obs":""},
+  {"cat":"CAFES","marca":"FRASCOS & DOY PACK","tasa":"11.40%","mecCant":"S/ 14","mecFac":"Soles","bonCant":"7","bonFac":"UN","prod":"KIRMA 2G","obs":"FV SET"},
+  {"cat":"CAFES","marca":"NSCF/KIRMA 7G-14G","tasa":"0.00%","mecCant":"S/ 100","mecFac":"","bonCant":"","bonFac":"","prod":"","obs":""},
   {"cat":"CAFES","marca":"KIRMA 14G","tasa":"2.00%","mecCant":"1","mecFac":"TR","bonCant":"2.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"KIRMA 14G","tasa":"7.00%","mecCant":"2","mecFac":"TR","bonCant":"7.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"KIRMA 14G","tasa":"9.00%","mecCant":"10","mecFac":"TR","bonCant":"9.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"KIRMA 7G","tasa":"2.00%","mecCant":"1","mecFac":"TR","bonCant":"2.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"KIRMA 7G","tasa":"7.00%","mecCant":"2","mecFac":"TR","bonCant":"7.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"KIRMA 7G","tasa":"9.00%","mecCant":"10","mecFac":"TR","bonCant":"9.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"CAFES","marca":"NESCAFE TRADICION 14G","tasa":"2.00%","mecCant":"1","mecFac":"TR","bonCant":"2.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
+  {"cat":"CAFES","marca":"NESCAFE TRADICION 14G","tasa":"2.00%","mecCant":"1+D51:E58","mecFac":"TR","bonCant":"2.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"NESCAFE TRADICION 14G","tasa":"7.00%","mecCant":"2","mecFac":"TR","bonCant":"7.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"NESCAFE TRADICION 14G","tasa":"9.00%","mecCant":"10","mecFac":"TR","bonCant":"9.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"NESCAFE TRADICION 7G","tasa":"2.00%","mecCant":"1","mecFac":"TR","bonCant":"2.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"NESCAFE TRADICION 7G","tasa":"7.00%","mecCant":"2","mecFac":"TR","bonCant":"7.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
   {"cat":"CAFES","marca":"NESCAFE TRADICION 7G","tasa":"9.00%","mecCant":"10","mecFac":"TR","bonCant":"9.00","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"LECHE EN POLVO","marca":"ANCHOR","tasa":"6.89%","mecCant":"S/ 40","mecFac":"Soles","bonCant":"2","bonFac":"UN","prod":"MILO 16GR","obs":""},
-  {"cat":"PANETON","marca":"DONOFRIO 880G","tasa":"1.50%","mecCant":"6","mecFac":"UN","bonCant":"1.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"PANETON","marca":"BUON NATALE BOLSA 750G","tasa":"1.50%","mecCant":"6","mecFac":"UN","bonCant":"1.50","bonFac":"%","prod":"DESCUENTO AL DOCUMENTO","obs":""},
-  {"cat":"PANETON","marca":"DONOFRIO /BUON NATALE 880G/750G","tasa":"0.00%","mecCant":"1","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"CUCHILLO PANETON","obs":"Maximo 2 al mes"},
-  {"cat":"PANETON","marca":"DONOFRIO /BUON NATALE 880G/750G","tasa":"0.00%","mecCant":"6","mecFac":"UN","bonCant":"1","bonFac":"UN","prod":"BATEA DONOFRIO","obs":"Maximo 1 al mes"}
-]
+  {"cat":"LECHE EN POLVO","marca":"ANCHOR","tasa":"5.15%","mecCant":"S/ 40","mecFac":"Soles","bonCant":"2","bonFac":"UN","prod":"MILO 16GR","obs":""}
+];
 // =================================================================================
 // FUNCIONES (no tocar)
 // =================================================================================
