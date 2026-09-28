@@ -954,7 +954,15 @@ function stockPill(p) {
     if (p && p.Stock !== undefined && p.Stock !== null && String(p.Stock).trim() !== '') val = p.Stock;
     if (val === null && stockAuto) {
         const k = String(p.Producto || '').trim().toUpperCase().replace(/\s+/g, ' ');
-        val = stockAuto[k] !== undefined ? stockAuto[k] : null;
+        const sc = stockAuto[k];
+        if (sc !== undefined) {
+            if (sc && typeof sc === 'object' && 'q' in sc) {
+                val = (sc.u ? sc.u + ' ' : '') + sc.q;
+                if (Number(sc.n) === 0) return '<div class="stock-pill cero">📦 ' + (sc.u ? sc.u + ' ' : '') + sc.q + ' | SIN STOCK</div>';
+            } else {
+                val = sc;
+            }
+        }
     }
     if (val === null && typeof stockData !== 'undefined' && stockData) {
         const k = String(p.Producto || '').trim().toUpperCase();
