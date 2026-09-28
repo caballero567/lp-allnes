@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -384,6 +384,12 @@
             padding: 5px 12px; border-radius: 30px; font-size: 0.68rem; font-weight: 600;
             font-family: Consolas, monospace; letter-spacing: 0.4px;
         }
+        .stock-pill {
+            background: rgba(52,211,153,0.13); color: #6ee7b7; border: 1px solid rgba(52,211,153,0.32);
+            padding: 5px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: 800;
+            font-variant-numeric: tabular-nums; white-space: nowrap;
+        }
+        .stock-pill.cero { background: rgba(248,113,113,0.13); color: #fca5a5; border-color: rgba(248,113,113,0.32); }
         .producto-nombre {
             font-size: 0.96rem; font-weight: 600; color: #f1f2f5; line-height: 1.4; margin-bottom: 14px;
         }
@@ -584,7 +590,7 @@
 
         /* ========== CONTADOR DE VISITAS (derecha, pegado al borde) ========== */
         .visita-caja {
-            position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 999;
+            position: fixed; right: 0; top: 76px; z-index: 999;
             display: flex; flex-direction: column; align-items: center; gap: 6px;
             padding: 15px 13px 13px;
             background: linear-gradient(160deg, rgba(33,36,44,0.99), rgba(14,16,20,1));
@@ -594,7 +600,7 @@
             cursor: default; user-select: none; min-width: 84px;
             transition: opacity 0.25s ease, transform 0.25s ease;
         }
-        .visita-caja.mini { transform: translateY(-50%) translateX(60%); }
+        .visita-caja.mini { transform: translateX(62%); }
         .visita-caja .vc-indicador {
             width: 8px; height: 8px; border-radius: 50%; background: var(--green);
             box-shadow: 0 0 10px rgba(52,211,153,0.9); animation: vcPulse 2.2s ease-in-out infinite;
@@ -632,6 +638,7 @@
             .fv-flex-buttons { flex-direction: column; }
             .fv-resultado-card .fv-info-grid { grid-template-columns: 1fr; }
             .producto-detalles { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .visita-caja { top: 70px; }
             .brief-card-body { grid-template-columns: 1fr 1fr; }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -895,8 +902,22 @@ const productos = [
 ];
 
 // =================================================================================
-// 🎯 BRIEF RUTA - Aquí pegas tu brief (igual que antes)
+// 📦 STOCK (OPCIONAL) - Aquí pegas el stock desde tu plantilla Excel/SQL
+// Se puede usar de dos formas (elige la que te convenga):
+//
+//  FORMA A) Agregar Stock en cada línea del array de productos (arriba):
+//          {Marca:"ANCHOR",Producto:"...",...,Stock:"250"}
+//
+//  FORMA B) Pegar aquí un mapa Producto -> cantidad (ideal si es otra consulta SQL).
+//           El nombre debe ser IGUAL al "Producto" del array.
+//
+// Si no usas stock, deja esto vacío o bórralo; la página funciona igual.
 // =================================================================================
+const stockData = {
+    // "NOMBRE EXACTO DEL PRODUCTO": cantidad,
+};
+// =================================================================================
+// 🎯 BRIEF RUTA - Aquí pegas tu brief (igual que antes)
 const briefData = [
     // AQUÍ PEGAS TU BRIEF. Ejemplo de formato (borra este ejemplo y pega el tuyo):
     // {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"1.2%","mecCant":"10","mecFac":"PL","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""}
@@ -927,12 +948,29 @@ function buscarProductosInteligente() {
     document.getElementById('totalCount').textContent = filtrados.length;
     renderizarTarjetas(filtrados);
 }
+let stockAuto = null; // stock en vivo que trae el servidor local (tu Excel)
+function stockPill(p) {
+    let val = null;
+    if (p && p.Stock !== undefined && p.Stock !== null && String(p.Stock).trim() !== '') val = p.Stock;
+    if (val === null && stockAuto) {
+        const k = String(p.Producto || '').trim().toUpperCase().replace(/\s+/g, ' ');
+        val = stockAuto[k] !== undefined ? stockAuto[k] : null;
+    }
+    if (val === null && typeof stockData !== 'undefined' && stockData) {
+        const k = String(p.Producto || '').trim().toUpperCase();
+        val = stockData[k] !== undefined ? stockData[k] : null;
+    }
+    if (val === null) return '';
+    const n = String(val).trim();
+    if (n === '0') return '<div class="stock-pill cero">📦 Stock: 0</div>';
+    return '<div class="stock-pill">📦 ' + n + '</div>';
+}
 function renderizarTarjetas(lista) {
     const c = document.getElementById('productosLista');
     if (!lista.length) { c.innerHTML = '<div class="empty-message">❌ No se encontraron productos</div>'; return; }
     c.innerHTML = lista.map(p => `
         <div class="producto-card">
-            <div class="card-header-row"><div class="producto-marca">${esc(p.Marca)}</div><div class="fecha-vencimiento">FV ${esc(p.FechaVencimiento||'')}</div></div>
+            <div class="card-header-row"><div class="producto-marca">${esc(p.Marca)}</div>${stockPill(p)}<div class="fecha-vencimiento">FV ${esc(p.FechaVencimiento||'')}</div></div>
             <div class="producto-nombre">${esc(p.Producto)}</div>
             <div class="producto-detalles">
                 <div class="detalle-item"><div class="detalle-label">ABREV</div><div class="detalle-valor">${esc(p.Abrev)}</div></div>
@@ -1006,6 +1044,28 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     document.getElementById('searchInput').addEventListener('keypress', e => { if(e.key==='Enter') buscarProductosInteligente(); });
     buscarProductosInteligente();
     renderBrief();
+
+    // =================================================================================
+    // ✅ STOCK AUTOMATICO DESDE TU EXCEL
+    // Cuando abres la pagina con el servidor local (servidor_stock.py), pide el stock
+    // en vivo. Si no hay servidor (pagina subida a internet), usa el stockData manual.
+    // =================================================================================
+    const cargarStockAutomatico = async function () {
+        try {
+            const res = await fetch('stock.json', { cache: 'no-store' });
+            if (res.ok) {
+                const datos = await res.json();
+                if (datos && typeof datos === 'object') {
+                    stockAuto = datos;
+                    console.log('📦 Stock en vivo cargado:', Object.keys(stockAuto).length, 'productos');
+                    buscarProductosInteligente();
+                    return;
+                }
+            }
+        } catch (e) {}
+        stockAuto = null;
+    };
+    cargarStockAutomatico();
 
     // =================================================================================
     // ✅ VALIDADOR DE LOTES - Funciones (no tocar)
