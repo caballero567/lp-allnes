@@ -388,6 +388,14 @@ const productos = [
 {Marca:"NESCAFE",Producto:"NESCAFE TRADICION 3(18x7g) PE",Abrev:"CAJA",Factor:"8",P1CJ:"67.65",P1UN:"8.46",FechaVencimiento:"7/05/2027"}
 ];
 
+// =================================================================================
+// 🎯 BRIEF RUTA - Aquí pegas tu brief (igual que antes)
+// =================================================================================
+const briefData = [
+    // AQUÍ PEGAS TU BRIEF. Ejemplo de formato (borra este ejemplo y pega el tuyo):
+    // {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"1.2%","mecCant":"10","mecFac":"PL","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""}
+];
+
 console.log('📦 Total productos cargados:', productos.length);
 // =================================================================================
 // FUNCIONES (no tocar)
@@ -439,13 +447,15 @@ function limpiarFiltros() {
     buscarProductosInteligente();
 }
 function cargarCategoriasBrief() {
-    const cats = [...new Set(briefData.map(r => r.cat))];
+    const bd = (typeof briefData !== 'undefined' && Array.isArray(briefData)) ? briefData : [];
+    const cats = [...new Set(bd.map(r => r.cat))];
     const sel = document.getElementById('briefCatSelect');
     sel.innerHTML = '<option value="">Todas las categorías</option>' + cats.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
 }
 function renderBrief() {
+    const bd = (typeof briefData !== 'undefined' && Array.isArray(briefData)) ? briefData : [];
     const catFiltro = document.getElementById('briefCatSelect').value;
-    const datos = catFiltro ? briefData.filter(r => r.cat === catFiltro) : briefData;
+    const datos = catFiltro ? bd.filter(r => r.cat === catFiltro) : bd;
     const lista = document.getElementById('briefLista');
     if (!datos.length) { lista.innerHTML = '<div class="brief-empty">Sin resultados</div>'; return; }
     const grupos = {};
