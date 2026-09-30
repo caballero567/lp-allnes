@@ -276,6 +276,18 @@
     "Total": 12.4
   },
   {
+    "CodVend": "01AN07",
+    "GrupoVentas": "01 GUTIERREZ",
+    "ClienteCodigo": "108959",
+    "ClienteNombre": "CASTOFE ARIAS, KATIA",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente no hizo pedido",
+    "NumCp": "BNN9-00073734",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T067",
+    "Total": 12.61
+  },
+  {
     "CodVend": "01AN08",
     "GrupoVentas": "01 GUTIERREZ",
     "ClienteCodigo": "314247",
@@ -478,6 +490,18 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T046",
     "Total": 79.75
+  },
+  {
+    "CodVend": "01AN26",
+    "GrupoVentas": "01 RAMIREZ",
+    "ClienteCodigo": "235854",
+    "ClienteNombre": "DISTRIBUIDORA CIRO AYLAS E.I.R.L.",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "FNN9-00073733",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T047",
+    "Total": 68.009
   },
   {
     "CodVend": "01TN03",
@@ -1174,5 +1198,17 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01TMGRAL",
     "Total": 253.32
+  },
+  {
+    "CodVend": "01TN13",
+    "GrupoVentas": "01 LLONTOP",
+    "ClienteCodigo": "013950",
+    "ClienteNombre": "FLORES BUENDIA YOVANNA SOLEDAD/MINIMARKET LA SEÑIT",
+    "TipoRechazo": "Anulado",
+    "MotivoRechazo": "Cerrado local cliente",
+    "NumCp": "FA01-00903395",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T059",
+    "Total": 16.0483
   }
 ]
