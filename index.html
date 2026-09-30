@@ -625,21 +625,67 @@
         .visita-caja.mini .vc-inner-mini { display: block; font-size: 1.15rem; font-weight: 800; color: var(--gold); line-height: 1; font-family: 'Poppins', sans-serif; }
 
         /* ========== RESPONSIVE ========== */
+        @media (max-width: 380px) {
+            .tab-nav { gap: 2px; padding: 4px; }
+            .tab-btn { font-size: 0.55rem; gap: 2px; padding: 9px 1px; line-height: 1.1; }
+        }
         @media (max-width: 640px) {
             body { padding: 10px; }
             .header { padding: 16px 16px; gap: 14px; }
             .logo-badge { width: 50px; height: 50px; font-size: 1.15rem; border-radius: 16px; }
             .title-section h1 { font-size: 1.25rem; }
-            .tab-nav { top: 6px; gap: 4px; padding: 5px; border-radius: 18px; }
-            .tab-btn { font-size: 0.74rem; gap: 5px; padding: 11px 6px; }
+            .tab-nav { top: 6px; gap: 3px; padding: 5px; border-radius: 18px; }
+            .tab-btn { font-size: 0.6rem; gap: 2px; padding: 10px 2px; flex: 1 1 0; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.15; }
             .search-wrapper { flex-direction: column; }
             .btn-buscar { width: 100%; }
             .fv-input-row { flex-direction: column; gap: 14px; }
             .fv-flex-buttons { flex-direction: column; }
             .fv-resultado-card .fv-info-grid { grid-template-columns: 1fr; }
             .producto-detalles { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .visita-caja { top: 70px; }
+            .visita-caja { top: 6px; }
+            .title-section { padding-right: 96px; }
             .brief-card-body { grid-template-columns: 1fr 1fr; }
+        }
+        /* ========== DEVOLUCIONES / RECHAZOS ========== */
+        .dev-header { background: #111111; border-radius: 16px; padding: 16px; margin-bottom: 16px; border: 1px solid #1f1f1f; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .dev-header-icon { font-size: 1.6rem; }
+        .dev-title { font-size: 1rem; font-weight: 700; color: #f1f5f9; }
+        .dev-title span { color: #fbbf24; }
+        .dev-subtitle { font-size: 0.7rem; color: #6b7280; margin-top: 3px; }
+        .dev-obs { background: #fbbf2422; border: 1px solid #fbbf2444; border-radius: 10px; padding: 8px 12px; font-size: 0.72rem; color: #fbbf24; font-weight: 600; margin-left: auto; }
+        .dev-filtros { background: #111111; border-radius: 16px; padding: 16px; margin-bottom: 16px; border: 1px solid #1f1f1f; }
+        .dev-filtro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+        .dev-input-group label { font-size: 0.62rem; color: #6b7280; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .dev-botones { display: flex; gap: 10px; margin-top: 12px; }
+        .dev-btn { flex: 1; border: none; padding: 11px 14px; border-radius: 12px; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: transform 0.08s ease, filter 0.08s ease, box-shadow 0.08s ease; user-select: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+        .dev-btn-buscar { background: linear-gradient(145deg, #fbbf24, #f59e0b); color: #0a0a0a; box-shadow: 0 2px 8px rgba(251,191,36,0.15); }
+        .dev-btn-buscar:active { transform: translateY(2px) scale(0.96); filter: brightness(0.9); box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+        .dev-btn-limpiar { background: #1f1f1f; color: #9ca3af; border: 1px solid #2d2d2d; }
+        .dev-btn-limpiar:active { transform: translateY(2px) scale(0.96); filter: brightness(0.75); box-shadow: none; }
+        .dev-resultados-info { background: #111111; border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #1f1f1f; }
+        .dev-resultados-info span:first-child { color: #9ca3af; font-size: 0.8rem; }
+        .dev-empty { text-align: center; padding: 40px 20px; color: #6b7280; background: #111111; border-radius: 16px; font-size: 0.85rem; }
+        .dev-card { background: #111111; border: 1px solid #1f1f1f; border-left: 4px solid #fbbf24; border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+        .dev-card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .dev-numcp { font-family: monospace; color: #9ca3af; font-size: 0.72rem; flex: 1; min-width: 0; word-break: break-all; }
+        .dev-monto { font-family: monospace; color: #fbbf24; font-weight: 700; white-space: nowrap; font-size: 0.82rem; }
+        .dev-tipo-anulado { background: #dc262622; color: #f87171; padding: 3px 8px; border-radius: 20px; font-size: 0.6rem; font-weight: 700; white-space: nowrap; }
+        .dev-tipo-parcial { background: #f59e0b22; color: #fbbf24; padding: 3px 8px; border-radius: 20px; font-size: 0.6rem; font-weight: 700; white-space: nowrap; }
+        .dev-card-cliente { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; line-height: 1.35; margin-bottom: 10px; }
+        .dev-card-cod { color: #fbbf24; font-family: monospace; font-weight: 700; }
+        .dev-card-detalles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; padding: 10px 0; border-top: 1px solid #1f1f1f; border-bottom: 1px solid #1f1f1f; }
+        .dev-det { display: flex; flex-direction: column; min-width: 0; }
+        .dev-det-label { font-size: 0.58rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+        .dev-det-val { font-size: 0.78rem; font-weight: 600; color: #e5e5e5; }
+        .dev-card-motivo { display: flex; flex-direction: column; margin-top: 10px; }
+        .dev-motivo-text { font-size: 0.78rem; color: #d1d5db; line-height: 1.35; }
+        .dev-total-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #111111; border: 1px solid #1f1f1f; border-radius: 12px; padding: 12px 14px; margin-top: 14px; flex-wrap: wrap; }
+        .dev-total-row > span:first-child { color: #9ca3af; font-size: 0.78rem; }
+        @media (max-width: 640px) {
+            .dev-filtro-grid { grid-template-columns: 1fr 1fr; }
+            .dev-botones { flex-direction: column; }
+            .dev-obs { margin-left: 0; }
+            .dev-card-detalles { grid-template-columns: 1fr 1fr; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -659,6 +705,7 @@
         <button class="tab-btn active" onclick="switchTab('precios', this)">📦 Lista de Precios</button>
         <button class="tab-btn" onclick="switchTab('brief', this)">📋 Brief Ruta Agosto</button>
         <button class="tab-btn" onclick="switchTab('validador', this)">✅ Validar Lote</button>
+        <button class="tab-btn" onclick="switchTab('devoluciones', this)">🔁 Devoluciones</button>
     </div>
     <div id="panel-precios" class="panel active">
         <div class="filtros">
@@ -733,6 +780,50 @@
             </div>
         </div>
     </div>
+    <div id="panel-devoluciones" class="panel">
+        <div class="dev-header">
+            <div class="dev-header-icon">🔁</div>
+            <div>
+                <div class="dev-title">Consulta de Rechazos <span>ALLNES</span></div>
+                <div class="dev-subtitle">Devoluciones y anulados por vendedor</div>
+            </div>
+            <div class="dev-obs">⚠ Selecciona filtros para ver los registros</div>
+        </div>
+        <div class="dev-filtros" id="devFiltros">
+            <div class="dev-filtro-grid">
+                <div class="dev-input-group">
+                    <label>Grupo de Ventas</label>
+                    <select id="devGrupo"><option value="">Todos los grupos</option></select>
+                </div>
+                <div class="dev-input-group">
+                    <label>Día</label>
+                    <select id="devDia"><option value="">Todos los días</option></select>
+                </div>
+                <div class="dev-input-group">
+                    <label>Código de Vendedor</label>
+                    <select id="devVend"><option value="">Todos los vendedores</option></select>
+                </div>
+                <div class="dev-input-group">
+                    <label>Código de Cliente</label>
+                    <input type="text" id="devCliente" placeholder="Ej: 309567" autocomplete="off">
+                </div>
+                <div class="dev-input-group">
+                    <label>Vehículo</label>
+                    <select id="devVehiculo"><option value="">Todos</option></select>
+                </div>
+            </div>
+            <div class="dev-botones">
+                <button class="dev-btn dev-btn-buscar" onclick="devAplicar()">🔎 Buscar</button>
+                <button class="dev-btn dev-btn-limpiar" onclick="devLimpiar()">✕ Limpiar</button>
+            </div>
+        </div>
+        <div class="dev-resultados-info">
+            <span>🔁 <span id="devCount">0</span> registros</span>
+            <span class="badge" id="devBadge">Sin filtros</span>
+        </div>
+        <div id="devLista"></div>
+    </div>
+    
     <div class="footer">👉 Precios: busca por palabra o número &nbsp;|&nbsp; Brief: escalas de bonificación · FV = Fecha Vencimiento</div>
 </div>
 
@@ -84082,6 +84173,145 @@ document.addEventListener('DOMContentLoaded', function () {
     const caja = document.getElementById('visitaCaja');
     if (caja) { document.body.appendChild(caja); }
 });
+let RECHAZOS = [{"CodVend":"01MPAN03","GrupoVentas":"01 MOROCH","ClienteCodigo":"309567","ClienteNombre":"INVERSIONES KENIN Y NICOL E.I.R.L.","TipoRechazo":"Anulado","MotivoRechazo":"Pedido Duplicado","NumCp":"FA01-00902946","FechaComprobante":"2026-09-29","Vehiculo":"01TM08","Total":205.85},{"CodVend":"01MPAN03","GrupoVentas":"01 MOROCH","ClienteCodigo":"318548","ClienteNombre":"INOCENTE  GALVAN , ERIKA  GIOVANNA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente siempre Rechaza","NumCp":"FA01-00902947","FechaComprobante":"2026-09-29","Vehiculo":"01TM08","Total":150.838},{"CodVend":"01MPAN03","GrupoVentas":"01 MOROCH","ClienteCodigo":"081750","ClienteNombre":"COARITA HUANCA, BEATRIZ","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03326230","FechaComprobante":"2026-09-29","Vehiculo":"01TM08","Total":54.078464},{"CodVend":"01AN04","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"306054","ClienteNombre":"CONTRERAS VALDERRAMA, FELICITAS","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325137","FechaComprobante":"2026-09-29","Vehiculo":"01T031","Total":57.18},{"CodVend":"01AN10","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"315290","ClienteNombre":"CHAVEZ , SILVIA DEL PILAR","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325114","FechaComprobante":"2026-09-29","Vehiculo":"01T023","Total":62.32},{"CodVend":"01AN25","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"317289","ClienteNombre":"BONIFACIO TORRES, TEODOSIO","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325600","FechaComprobante":"2026-09-29","Vehiculo":"01T028","Total":54.588},{"CodVend":"01AN25","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"000129","ClienteNombre":"AGUILAR MAMANI DE QUISPE OLGA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325564","FechaComprobante":"2026-09-29","Vehiculo":"01T028","Total":23.48},{"CodVend":"01AN25","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"318918","ClienteNombre":"GARAY JABIDA, NANCY MARINA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03324780","FechaComprobante":"2026-09-29","Vehiculo":"01T028","Total":60.4409},{"CodVend":"01AN38","GrupoVentas":"01 NESTARES","ClienteCodigo":"306011","ClienteNombre":"MERCADO SANCHEZ, MILDRE ARELI","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325532","FechaComprobante":"2026-09-29","Vehiculo":"01T037","Total":20.000001},{"CodVend":"01AN38","GrupoVentas":"01 NESTARES","ClienteCodigo":"140044","ClienteNombre":"ROJAS PUERTA, CELIA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325523","FechaComprobante":"2026-09-29","Vehiculo":"01T037","Total":20.4747},{"CodVend":"01AN06","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"314759","ClienteNombre":"TAMAVI TINA, MARTHA LUZ","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325992","FechaComprobante":"2026-09-29","Vehiculo":"01T040","Total":41.684897},{"CodVend":"01AN06","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"314655","ClienteNombre":"BELTRAN NAQUICHE, BRIAN JOSEPH","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03326336","FechaComprobante":"2026-09-29","Vehiculo":"01T067","Total":22.69},{"CodVend":"01AN06","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"013769","ClienteNombre":"GAMARRA LIVIAS GLADIS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03326335","FechaComprobante":"2026-09-29","Vehiculo":"01T067","Total":16.0483},{"CodVend":"01AN06","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"249299","ClienteNombre":"PINTADO LÓPEZ, FIDEL","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073712","FechaComprobante":"2026-09-29","Vehiculo":"01T040","Total":18.595403},{"CodVend":"01AN01","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"002842","ClienteNombre":"CALDERON FERNANDEZ MARIA TRINIDAD","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03325979","FechaComprobante":"2026-09-29","Vehiculo":"01T019","Total":21.61878},{"CodVend":"01AN01","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"079084","ClienteNombre":"GUEVARA CHUQUI, ELDEGINA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03326388","FechaComprobante":"2026-09-29","Vehiculo":"01T019","Total":42.18},{"CodVend":"01AN01","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"317436","ClienteNombre":"RODRIGUEZ MONCADA, CARLOS","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073724","FechaComprobante":"2026-09-29","Vehiculo":"01T019","Total":20.34},{"CodVend":"01AN01","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"299704","ClienteNombre":"CACHA VALENTIN DE SOPLAPUCO, MARIA MIGUELINA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073703","FechaComprobante":"2026-09-29","Vehiculo":"01T013","Total":7.3},{"CodVend":"01AN01","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"000045","ClienteNombre":"HUARAZ VALLEJO RUBETH ODILIA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073723","FechaComprobante":"2026-09-29","Vehiculo":"01T019","Total":10.0149},{"CodVend":"01AN05","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"002495","ClienteNombre":"BARBOZA QUIROZ MARIA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"FA01-00902660","FechaComprobante":"2026-09-29","Vehiculo":"01T048","Total":15.42},{"CodVend":"01AN05","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"028905","ClienteNombre":"CASTILLO ARANDA, ERMAES BRISTAN","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073722","FechaComprobante":"2026-09-29","Vehiculo":"01T007","Total":32.6},{"CodVend":"01AN07","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"014137","ClienteNombre":"MEMENZA ALLCCA YENNY MILAGROS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325901","FechaComprobante":"2026-09-29","Vehiculo":"01T040","Total":19.25},{"CodVend":"01AN07","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"314405","ClienteNombre":"GAN CHAVEZ, YADIRA NAHOMI","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073714","FechaComprobante":"2026-09-29","Vehiculo":"01T040","Total":12.400001},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"314247","ClienteNombre":"MARIN TUANAMA, ROSAURA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325692","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":32.8328},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"239734","ClienteNombre":"GUTIERREZ  MARTINEZ, GABRIELA GIOVANNA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"BA01-03325609","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":27.510001},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"005810","ClienteNombre":"RIVERA CALISTRO PIO SABINO","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"FA01-00902789","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":26.5049},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"008778","ClienteNombre":"ARONI CASQUI GETRUDES","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"BA01-03325643","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":16.214002},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"311714","ClienteNombre":"ZEGARRA  ZEVALLOS, CARMEN  LUZ","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325726","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":38.2449},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"318334","ClienteNombre":"SERNA  GARCIA, WILMER JESUS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"FA01-00902457","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":21.61878},{"CodVend":"01AN08","GrupoVentas":"01 GUTIERREZ","ClienteCodigo":"303123","ClienteNombre":"MILLA SHIGUAY, ISAAC RUFINO","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"BA01-03325743","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":82.903314},{"CodVend":"01AN11","GrupoVentas":"01 ACOSTA","ClienteCodigo":"291976","ClienteNombre":"GARCIA ROJAS, JORGE LUIS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325561","FechaComprobante":"2026-09-29","Vehiculo":"01T007","Total":38.2449},{"CodVend":"01AN11","GrupoVentas":"01 ACOSTA","ClienteCodigo":"034009","ClienteNombre":"CASTILLO ROBLES, LIZBETH YANNINA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03325402","FechaComprobante":"2026-09-29","Vehiculo":"01T007","Total":153.57135},{"CodVend":"01AN11","GrupoVentas":"01 ACOSTA","ClienteCodigo":"016634","ClienteNombre":"RODRIGUEZ SANCHEZ DOMINGO","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325153","FechaComprobante":"2026-09-29","Vehiculo":"01T031","Total":19.42},{"CodVend":"01AN14","GrupoVentas":"01 ACOSTA","ClienteCodigo":"024340","ClienteNombre":"GARCIA ROMERO MARCIA NELLY","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"FA01-00902818","FechaComprobante":"2026-09-29","Vehiculo":"01T039","Total":60.8463},{"CodVend":"01AN14","GrupoVentas":"01 ACOSTA","ClienteCodigo":"311036","ClienteNombre":"TORRES DE SILVA, CRISTINA ROSA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325228","FechaComprobante":"2026-09-29","Vehiculo":"01T006","Total":143.867702},{"CodVend":"01AN14","GrupoVentas":"01 ACOSTA","ClienteCodigo":"305212","ClienteNombre":"CULQUI HUAMAN, AGAPITA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325270","FechaComprobante":"2026-09-29","Vehiculo":"01T006","Total":39.654899},{"CodVend":"01AN15","GrupoVentas":"01 ACOSTA","ClienteCodigo":"307394","ClienteNombre":"TRUJILLO USCA, CELIA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325253","FechaComprobante":"2026-09-29","Vehiculo":"01T006","Total":16.0483},{"CodVend":"01AN16","GrupoVentas":"01 ACOSTA","ClienteCodigo":"020807","ClienteNombre":"CASAMAYOR ANCHALLA, IRENE F","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03324735","FechaComprobante":"2026-09-29","Vehiculo":"01T013","Total":23.5494},{"CodVend":"01AN32","GrupoVentas":"01 NESTARES","ClienteCodigo":"042081","ClienteNombre":"RIVAS DE LEYVA CLEMENTINA","TipoRechazo":"Parcial","MotivoRechazo":"Producto en mal estado","NumCp":"BNN9-00073718","FechaComprobante":"2026-09-29","Vehiculo":"01T029","Total":19.25},{"CodVend":"01AN26","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"023497","ClienteNombre":"SIFUENTES JARA MAGALI CRISTIE","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325214","FechaComprobante":"2026-09-29","Vehiculo":"01T046","Total":79.75},{"CodVend":"01TN03","GrupoVentas":"01 PEREZ","ClienteCodigo":"001902","ClienteNombre":"FLORES APAZA, CARMENA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03324963","FechaComprobante":"2026-09-29","Vehiculo":"01T003","Total":21.61878},{"CodVend":"01TN03","GrupoVentas":"01 PEREZ","ClienteCodigo":"305791","ClienteNombre":"GARFIAS HURTADO, JUAN PABLO","TipoRechazo":"Anulado","MotivoRechazo":"Causa Inesperada","NumCp":"BA01-03324966","FechaComprobante":"2026-09-29","Vehiculo":"01T003","Total":84.350749},{"CodVend":"01TN03","GrupoVentas":"01 PEREZ","ClienteCodigo":"314413","ClienteNombre":"VEGA SALAZAR, BERTHA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03324983","FechaComprobante":"2026-09-29","Vehiculo":"01T003","Total":49.33},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"134217","ClienteNombre":"RAMIREZ BARBARAN, RUTH NATALIA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326063","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":60.114002},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"086009","ClienteNombre":"CRUZ BARBOZA DE FUENTES, MARIA CIRA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326099","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":45.000001},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"088475","ClienteNombre":"QUISPE QUISPE, AUGUSTINA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"FNN9-00073727","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":30.7},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"099733","ClienteNombre":"TAFUR TAFUR DE CUNZA, MAGNOLIA EUGENIA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073726","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":16.214002},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"272751","ClienteNombre":"PACHECO GROVAS, GLADIS","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073725","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":10.08},{"CodVend":"01AN40","GrupoVentas":"01 NESTARES","ClienteCodigo":"318922","ClienteNombre":"RIVERA  BERNABE , DAYANNA  LIZET","TipoRechazo":"Parcial","MotivoRechazo":"Pedido Duplicado","NumCp":"FNN9-00073721","FechaComprobante":"2026-09-29","Vehiculo":"01T041","Total":16.909999},{"CodVend":"01AN33","GrupoVentas":"01 NESTARES","ClienteCodigo":"015594","ClienteNombre":"ATOCHE JARA MILAGROS MARISOL","TipoRechazo":"Anulado","MotivoRechazo":"Pedido no Conforme","NumCp":"BA01-03325319","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":49.6098},{"CodVend":"01AN33","GrupoVentas":"01 NESTARES","ClienteCodigo":"032864","ClienteNombre":"ALVARADO ESPINOZA, CLAUDIA ALEJANDRINA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073709","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":13.440001},{"CodVend":"01AN33","GrupoVentas":"01 NESTARES","ClienteCodigo":"015527","ClienteNombre":"RUIZ BARRETO LADER FLORA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073710","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":11.8498},{"CodVend":"01AN35","GrupoVentas":"01 NESTARES","ClienteCodigo":"135780","ClienteNombre":"FLORES ARQUEÑO, BETSY MARIBEL","TipoRechazo":"Anulado","MotivoRechazo":"Pedido no Conforme","NumCp":"BA01-03325394","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":16.54},{"CodVend":"01AN35","GrupoVentas":"01 NESTARES","ClienteCodigo":"318247","ClienteNombre":"VALVERDE VICENTE, FANENCIA","TipoRechazo":"Anulado","MotivoRechazo":"Pedido no Conforme","NumCp":"BA01-03325376","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":20.84},{"CodVend":"01AN35","GrupoVentas":"01 NESTARES","ClienteCodigo":"135846","ClienteNombre":"ZARATE GALLEGOS VDA DE MIGUEL, FELICITAS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325366","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":20.34},{"CodVend":"01AN35","GrupoVentas":"01 NESTARES","ClienteCodigo":"318408","ClienteNombre":"ARBILDO MENDOZA, SARITA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"BA01-03325352","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":23.18},{"CodVend":"01AN35","GrupoVentas":"01 NESTARES","ClienteCodigo":"098912","ClienteNombre":"GOÑI MAQUIN, SONIA AZUCENA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073708","FechaComprobante":"2026-09-29","Vehiculo":"01T047","Total":10.95},{"CodVend":"01AN21","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"288754","ClienteNombre":"DURAN RAMIREZ, MARIA ESTHER","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325446","FechaComprobante":"2026-09-29","Vehiculo":"01T027","Total":77.899799},{"CodVend":"01AN19","GrupoVentas":"01 ACOSTA","ClienteCodigo":"025903","ClienteNombre":"LUYO SANCHEZ DE MELENDEZ VICTORINA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"FNN9-00073728","FechaComprobante":"2026-09-29","Vehiculo":"01T055","Total":10.08},{"CodVend":"01AN24","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"314403","ClienteNombre":"MEDINA RAMOS DE GARBOZA, SILVIA ANGELA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente Ausente","NumCp":"BA01-03325676","FechaComprobante":"2026-09-29","Vehiculo":"01T038","Total":39.654899},{"CodVend":"01AN24","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"143994","ClienteNombre":"FLORES ALARCON, NANCY BEATRIZ","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073719","FechaComprobante":"2026-09-29","Vehiculo":"01T038","Total":49.33},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"112347","ClienteNombre":"PRETEL ALONZO, YINO ANGEL","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03324859","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":20.84},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"087583","ClienteNombre":"LOPEZ RIUFANO, MARCELA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326175","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":42.18},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"309398","ClienteNombre":"FLORES INFANTE, ALICIA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326169","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":21.61878},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"230702","ClienteNombre":"PASAPERA MORALES, CARMELA ESMERITA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073730","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":15.386758},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"317802","ClienteNombre":"GARCIA CORONEL, MARY LIZ","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073729","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":12.519999},{"CodVend":"01AN48","GrupoVentas":"01 QUISPE","ClienteCodigo":"302379","ClienteNombre":"CHASQUIBOL ROJAS, MAVELITA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073731","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":108.6},{"CodVend":"01AN42","GrupoVentas":"01 QUISPE","ClienteCodigo":"312116","ClienteNombre":"CASO PONCE, NORMA AGRIPINA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325961","FechaComprobante":"2026-09-29","Vehiculo":"01T053","Total":16.0483},{"CodVend":"01AN42","GrupoVentas":"01 QUISPE","ClienteCodigo":"294498","ClienteNombre":"GARAY QUILLAMA, NANCY","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073704","FechaComprobante":"2026-09-29","Vehiculo":"01T004","Total":10.0149},{"CodVend":"01AN49","GrupoVentas":"01 QUISPE","ClienteCodigo":"317871","ClienteNombre":"SHIMPORINTSI DOMINGUEZ, ANA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03325583","FechaComprobante":"2026-09-29","Vehiculo":"01T009","Total":93.9749},{"CodVend":"01TN04","GrupoVentas":"01 PEREZ","ClienteCodigo":"218690","ClienteNombre":"QUISPE INGA PIJO, EMERZON AURELIO","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"FA01-00902794","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":97.706828},{"CodVend":"01TN04","GrupoVentas":"01 PEREZ","ClienteCodigo":"005587","ClienteNombre":"MALLMA CRESPO GREGORIA HERMES","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"FA01-00902782","FechaComprobante":"2026-09-29","Vehiculo":"01T049","Total":38.935403},{"CodVend":"01TN04","GrupoVentas":"01 PEREZ","ClienteCodigo":"315385","ClienteNombre":"JIMENEZ VERA, GRUWER MIKE","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073713","FechaComprobante":"2026-09-29","Vehiculo":"01T040","Total":21.61878},{"CodVend":"01AN41","GrupoVentas":"01 QUISPE","ClienteCodigo":"311090","ClienteNombre":"VELASQUEZ BUIZA, PEDRO JOSE","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03326014","FechaComprobante":"2026-09-29","Vehiculo":"01T053","Total":21.61878},{"CodVend":"01AN41","GrupoVentas":"01 QUISPE","ClienteCodigo":"316835","ClienteNombre":"MARIN BARDALES, RANDY JOSE","TipoRechazo":"Anulado","MotivoRechazo":"Cliente siempre Rechaza","NumCp":"BA01-03326199","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":32.91878},{"CodVend":"01AN41","GrupoVentas":"01 QUISPE","ClienteCodigo":"140988","ClienteNombre":"TELLO CRESPO, SEGUNDA NICOLAZA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073711","FechaComprobante":"2026-09-29","Vehiculo":"01T035","Total":49.33},{"CodVend":"01AN31","GrupoVentas":"01 NESTARES","ClienteCodigo":"315140","ClienteNombre":"CUEVA CORTEZ DE MARREROS, MARIA  ELENA","TipoRechazo":"Anulado","MotivoRechazo":"Producto en mal estado","NumCp":"BA01-03325801","FechaComprobante":"2026-09-29","Vehiculo":"01T029","Total":19.25},{"CodVend":"01AN31","GrupoVentas":"01 NESTARES","ClienteCodigo":"112748","ClienteNombre":"JOYA YDOÑA, MARIA YSABEL","TipoRechazo":"Anulado","MotivoRechazo":"Causa Inesperada","NumCp":"FA01-00902850","FechaComprobante":"2026-09-29","Vehiculo":"01T018","Total":22.7},{"CodVend":"01AN43","GrupoVentas":"01 QUISPE","ClienteCodigo":"306006","ClienteNombre":"CORDOBA CHUCOS, LINDA FLOR","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326180","FechaComprobante":"2026-09-29","Vehiculo":"01T058","Total":45.6427},{"CodVend":"01AN43","GrupoVentas":"01 QUISPE","ClienteCodigo":"317945","ClienteNombre":"BUSTAMANTE SANTOS, JULIA  YSABEL","TipoRechazo":"Parcial","MotivoRechazo":"Pedido no Conforme","NumCp":"BNN9-00073707","FechaComprobante":"2026-09-29","Vehiculo":"01T009","Total":4.4449},{"CodVend":"01AN46","GrupoVentas":"01 QUISPE","ClienteCodigo":"318492","ClienteNombre":"QUICAÑA QUISPE, EVA  NILDA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03324821","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":24.8049},{"CodVend":"01AN46","GrupoVentas":"01 QUISPE","ClienteCodigo":"251205","ClienteNombre":"HUAMANRAIME QUISPE, YENI MONICA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073715","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":19.529999},{"CodVend":"01AN46","GrupoVentas":"01 QUISPE","ClienteCodigo":"317875","ClienteNombre":"ASENCIOS GUTIERREZ, LIZBETH JANINA","TipoRechazo":"Parcial","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BNN9-00073717","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":38.2449},{"CodVend":"01AN39","GrupoVentas":"01 NESTARES","ClienteCodigo":"135353","ClienteNombre":"ROMERO OCAÑA, PASCUALA MARIA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03324948","FechaComprobante":"2026-09-29","Vehiculo":"01T002","Total":37.532002},{"CodVend":"01AN44","GrupoVentas":"01 QUISPE","ClienteCodigo":"273026","ClienteNombre":"REMUZGO LOVATON, MARCO ANTONIO","TipoRechazo":"Parcial","MotivoRechazo":"Pedido no Conforme","NumCp":"BNN9-00073705","FechaComprobante":"2026-09-29","Vehiculo":"01T004","Total":16.214002},{"CodVend":"01MPAN04","GrupoVentas":"01 MOROCH","ClienteCodigo":"015294","ClienteNombre":"GALINDO LOAYZA LEONIDAS BENITA","TipoRechazo":"Anulado","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BA01-03326137","FechaComprobante":"2026-09-29","Vehiculo":"01TM03","Total":22.56},{"CodVend":"01AN23","GrupoVentas":"01 RAMIREZ","ClienteCodigo":"298585","ClienteNombre":"ROJAS  GUEVARA , ANGIE  NICOLE","TipoRechazo":"Anulado","MotivoRechazo":"Pedido Duplicado","NumCp":"FA01-00902734","FechaComprobante":"2026-09-29","Vehiculo":"01T046","Total":111.3596},{"CodVend":"01AN47","GrupoVentas":"01 QUISPE","ClienteCodigo":"271784","ClienteNombre":"CABALLERO INCARROCA, HIGIDA BERTHA","TipoRechazo":"Anulado","MotivoRechazo":"Causa Inesperada","NumCp":"FA01-00902923","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":518.672399},{"CodVend":"01AN47","GrupoVentas":"01 QUISPE","ClienteCodigo":"","ClienteNombre":"","TipoRechazo":"","MotivoRechazo":"","NumCp":"FA01-00902922","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":74.02061},{"CodVend":"01AN47","GrupoVentas":"01 QUISPE","ClienteCodigo":"","ClienteNombre":"","TipoRechazo":"","MotivoRechazo":"","NumCp":"FA01-00902924","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":268.6198},{"CodVend":"01AN47","GrupoVentas":"01 QUISPE","ClienteCodigo":"000961","ClienteNombre":"LEZAMETA PANTOJA, ELEUTERIA","TipoRechazo":"Parcial","MotivoRechazo":"Pedido no Conforme","NumCp":"BNN9-00073706","FechaComprobante":"2026-09-29","Vehiculo":"01T053","Total":49.33},{"CodVend":"01AN47","GrupoVentas":"01 QUISPE","ClienteCodigo":"307668","ClienteNombre":"FLORES APONTE, THALIA  BRITNEY","TipoRechazo":"Parcial","MotivoRechazo":"Cliente sin Efectivo","NumCp":"BNN9-00073716","FechaComprobante":"2026-09-29","Vehiculo":"01T044","Total":16.214002},{"CodVend":"01MPAN02","GrupoVentas":"01 MOROCH","ClienteCodigo":"305324","ClienteNombre":"CHAMBI CLAVIJO, VIDAL","TipoRechazo":"Anulado","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BA01-03326074","FechaComprobante":"2026-09-29","Vehiculo":"01TM02","Total":130.8756},{"CodVend":"01TN11","GrupoVentas":"01 LLONTOP","ClienteCodigo":"131753","ClienteNombre":"GONZALEZ BARBOZA, SEGUNDO LUIS","TipoRechazo":"Anulado","MotivoRechazo":"Cliente siempre Rechaza","NumCp":"FA01-00902662","FechaComprobante":"2026-09-29","Vehiculo":"01T048","Total":56.016435},{"CodVend":"01TN11","GrupoVentas":"01 LLONTOP","ClienteCodigo":"029059","ClienteNombre":"ESTRADA GARCIA NELLY EILEEN","TipoRechazo":"Parcial","MotivoRechazo":"Cliente no hizo pedido","NumCp":"BNN9-00073720","FechaComprobante":"2026-09-29","Vehiculo":"01T031","Total":16.909999},{"CodVend":"01AN12","GrupoVentas":"01 ACOSTA","ClienteCodigo":"007796","ClienteNombre":"GOMEZ DAVILA MARYLENE EXALTACION","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325477","FechaComprobante":"2026-09-29","Vehiculo":"01T048","Total":47.61},{"CodVend":"01AN12","GrupoVentas":"01 ACOSTA","ClienteCodigo":"129357","ClienteNombre":"SALAZAR LOJA, MELITA","TipoRechazo":"Anulado","MotivoRechazo":"Cerrado local cliente","NumCp":"BA01-03325473","FechaComprobante":"2026-09-29","Vehiculo":"01T048","Total":20.0298},{"CodVend":"01TN18","GrupoVentas":"01 LLONTOP","ClienteCodigo":"001544","ClienteNombre":"MINIMARKET MENDOCITA S.A.","TipoRechazo":"Parcial","MotivoRechazo":"Pedido no Conforme","NumCp":"FNN9-00073732","FechaComprobante":"2026-09-29","Vehiculo":"01TMGRAL","Total":253.320001},{"CodVend":"Total general","GrupoVentas":"01 LLONTOP","ClienteCodigo":"","ClienteNombre":"","TipoRechazo":"","MotivoRechazo":"","NumCp":"","FechaComprobante":"","Vehiculo":"","Total":4924.669582999999}];
+
+// ================= FUNCIONALIDAD DEVOLUCIONES =================
+function devOpciones(clave) {
+    return [...new Set(RECHAZOS.map(r => r[clave]).filter(Boolean))].sort();
+}
+function devVendedoresDeGrupo(grp) {
+    const base = grp ? RECHAZOS.filter(r => r.GrupoVentas === grp) : RECHAZOS;
+    return [...new Set(base.map(r => r.CodVend).filter(Boolean))].sort();
+}
+function devGrupoDeVendedor(vend) {
+    const r = RECHAZOS.find(x => x.CodVend === vend);
+    return r ? r.GrupoVentas : '';
+}
+function devCargarJson() {
+    fetch('rechazos.json', { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('no rechazos.json'); return r.json(); })
+        .then(function (datos) {
+            if (Array.isArray(datos) && datos.length) {
+                RECHAZOS.length = 0;
+                RECHAZOS.push.apply(RECHAZOS, datos);
+devLlenarSelects();
+devCargarJson();
+                devAplicar();
+            }
+        })
+        .catch(function () { });
+}
+function devLlenarSelects() {
+    const sGrupo = document.getElementById('devGrupo');
+    const sDia = document.getElementById('devDia');
+    const sVehiculo = document.getElementById('devVehiculo');
+    sGrupo.innerHTML = '<option value="">Todos los grupos</option>' + devOpciones('GrupoVentas').map(v => '<option value="' + v + '">' + v + '</option>').join('');
+    sDia.innerHTML = '<option value="">Todos los días</option>' + devOpciones('FechaComprobante').map(v => '<option value="' + v + '">' + v + '</option>').join('');
+    sVehiculo.innerHTML = '<option value="">Todos</option>' + devOpciones('Vehiculo').map(v => '<option value="' + v + '">' + v + '</option>').join('');
+    devLlenarVendedores();
+}
+function devLlenarVendedores() {
+    const s = document.getElementById('devVend');
+    const grp = document.getElementById('devGrupo').value;
+    const vends = devVendedoresDeGrupo(grp);
+    const previo = s.value;
+    s.innerHTML = '<option value="">Todos los vendedores</option>' + vends.map(v => '<option value="' + v + '">' + v + '</option>').join('');
+    if (vends.includes(previo)) s.value = previo;
+}
+function devOnGrupoChange() {
+    const vend = document.getElementById('devVend').value;
+    if (vend && devGrupoDeVendedor(vend) !== document.getElementById('devGrupo').value) {
+        document.getElementById('devVend').value = '';
+    }
+    devLlenarVendedores();
+}
+function devOnVendChange() {
+    const vend = document.getElementById('devVend').value;
+    if (vend) {
+        const grp = devGrupoDeVendedor(vend);
+        if (grp) document.getElementById('devGrupo').value = grp;
+        devLlenarVendedores();
+    }
+}
+function devFiltrar() {
+    const grp = document.getElementById('devGrupo').value;
+    const dia = document.getElementById('devDia').value;
+    const vend = document.getElementById('devVend').value;
+    const cli = document.getElementById('devCliente').value.trim();
+    const veh = document.getElementById('devVehiculo').value;
+    return RECHAZOS.filter(r =>
+        (!grp || r.GrupoVentas === grp) &&
+        (!dia || r.FechaComprobante === dia) &&
+        (!vend || r.CodVend === vend) &&
+        (!cli || String(r.ClienteCodigo).includes(cli)) &&
+        (!veh || r.Vehiculo === veh)
+    );
+}
+function devTotal(lista) {
+    return lista.reduce((s, r) => s + (Number(r.Total) || 0), 0);
+}
+function devRender(lista) {
+    const cont = document.getElementById('devLista');
+    document.getElementById('devCount').textContent = lista.length;
+    const hayFiltros = devHayFiltros();
+    const badge = document.getElementById('devBadge');
+    badge.textContent = hayFiltros ? 'Filtros activos' : 'Sin filtros';
+    badge.style.background = hayFiltros ? '#f59e0b' : '#fbbf24';
+    if (!hayFiltros) {
+        cont.innerHTML = '<div class="dev-empty">🔁 Selecciona filtros (grupo de ventas, día, vendedor o cliente) para ver los rechazos.</div>';
+        return;
+    }
+    if (lista.length === 0) {
+        cont.innerHTML = '<div class="dev-empty">Sin resultados para los filtros seleccionados.</div>';
+        return;
+    }
+    const monto = devTotal(lista);
+    let cards = lista.map(r => {
+        const tipo = String(r.TipoRechazo || '').toLowerCase() === 'anulado'
+            ? '<span class="dev-tipo-anulado">ANULADO</span>'
+            : '<span class="dev-tipo-parcial">PARCIAL</span>';
+        return '<div class="dev-card">' +
+            '<div class="dev-card-top">' +
+                '<span class="dev-numcp">' + (r.NumCp || '-') + '</span>' +
+                tipo +
+                '<span class="dev-monto">S/ ' + Number(r.Total).toFixed(2) + '</span>' +
+            '</div>' +
+            '<div class="dev-card-cliente"><span class="dev-card-cod">' + (r.ClienteCodigo || '-') + '</span> ' + (r.ClienteNombre || '-') + '</div>' +
+            '<div class="dev-card-detalles">' +
+                '<div class="dev-det"><span class="dev-det-label">Grupo</span><span class="dev-det-val">' + (r.GrupoVentas || '-') + '</span></div>' +
+                '<div class="dev-det"><span class="dev-det-label">Vendedor</span><span class="dev-det-val">' + (r.CodVend || '-') + '</span></div>' +
+                '<div class="dev-det"><span class="dev-det-label">Vehículo</span><span class="dev-det-val">' + (r.Vehiculo || '-') + '</span></div>' +
+                '<div class="dev-det"><span class="dev-det-label">Día</span><span class="dev-det-val">' + (devFechaCorta(r.FechaComprobante)) + '</span></div>' +
+            '</div>' +
+            '<div class="dev-card-motivo"><span class="dev-det-label">Motivo</span><span class="dev-motivo-text">' + (r.MotivoRechazo || '-') + '</span></div>' +
+        '</div>';
+    }).join('');
+    cont.innerHTML =
+        cards +
+        '<div class="dev-total-row"><span>Total rechazos</span><strong class="dev-monto">S/ ' + monto.toFixed(2) + '</strong><span class="badge">' + lista.length + ' registros</span></div>';
+}
+function devFechaCorta(f) {
+    if (!f) return '-';
+    const p = String(f).split('-');
+    return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : f;
+}
+function devHayFiltros() {
+    return ['devGrupo','devDia','devVend','devVehiculo'].some(id => document.getElementById(id).value !== '') ||
+        document.getElementById('devCliente').value.trim() !== '';
+}
+function devAplicar() { devRender(devFiltrar()); }
+function devLimpiar() {
+    ['devGrupo','devDia','devVend','devVehiculo'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('devCliente').value = '';
+    devLlenarVendedores();
+    devRender([]);
+}
+devLlenarSelects();
+document.getElementById('devGrupo').addEventListener('change', function () { devOnGrupoChange(); devAplicar(); });
+document.getElementById('devVend').addEventListener('change', function () { devOnVendChange(); devAplicar(); });
+document.getElementById('devDia').addEventListener('change', devAplicar);
+document.getElementById('devVehiculo').addEventListener('change', devAplicar);
+document.getElementById('devCliente').addEventListener('keydown', function (e) { if (e.key === 'Enter') devAplicar(); });
 </script>
 </body>
 </html>
