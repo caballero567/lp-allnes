@@ -444,6 +444,18 @@
     "Total": 39.6549
   },
   {
+    "CodVend": "01AN14",
+    "GrupoVentas": "01 ACOSTA",
+    "ClienteCodigo": "315794",
+    "ClienteNombre": "JANAMPA ROJAS, AGRIPINA",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BNN9-00073737",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T040",
+    "Total": 20.58
+  },
+  {
     "CodVend": "01AN15",
     "GrupoVentas": "01 ACOSTA",
     "ClienteCodigo": "307394",
@@ -454,6 +466,30 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T006",
     "Total": 16.0483
+  },
+  {
+    "CodVend": "01AN15",
+    "GrupoVentas": "01 ACOSTA",
+    "ClienteCodigo": "127353",
+    "ClienteNombre": "MUÑOZ CULQUI, LUCILINDA",
+    "TipoRechazo": "Anulado",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BA01-03327923",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T040",
+    "Total": 28.71
+  },
+  {
+    "CodVend": "01AN15",
+    "GrupoVentas": "01 ACOSTA",
+    "ClienteCodigo": "316875",
+    "ClienteNombre": "FLORES LOPEZ, GEISY",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BNN9-00073739",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T040",
+    "Total": 17.6467
   },
   {
     "CodVend": "01AN16",
@@ -538,6 +574,18 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T003",
     "Total": 49.33
+  },
+  {
+    "CodVend": "01TN03",
+    "GrupoVentas": "01 PEREZ",
+    "ClienteCodigo": "293992",
+    "ClienteNombre": "CANCHARI ZEA, ELIZABETH",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BNN9-00073736",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T040",
+    "Total": 31.16
   },
   {
     "CodVend": "01AN40",
@@ -708,6 +756,30 @@
     "Total": 10.95
   },
   {
+    "CodVend": "01AN35",
+    "GrupoVentas": "01 NESTARES",
+    "ClienteCodigo": "003228",
+    "ClienteNombre": "AULLA LAURA, TERESA",
+    "TipoRechazo": "Anulado",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BA01-03327346",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T043",
+    "Total": 16.214
+  },
+  {
+    "CodVend": "01AN35",
+    "GrupoVentas": "01 NESTARES",
+    "ClienteCodigo": "009457",
+    "ClienteNombre": "ALAYA VASQUEZ CARMEN ROSA",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Pedido no Conforme",
+    "NumCp": "BNN9-00073735",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T043",
+    "Total": 20.84
+  },
+  {
     "CodVend": "01AN21",
     "GrupoVentas": "01 RAMIREZ",
     "ClienteCodigo": "288754",
@@ -730,6 +802,18 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T055",
     "Total": 10.08
+  },
+  {
+    "CodVend": "01AN19",
+    "GrupoVentas": "01 ACOSTA",
+    "ClienteCodigo": "299693",
+    "ClienteNombre": "OBREGON ROCA, WENDY KAREN",
+    "TipoRechazo": "Parcial",
+    "MotivoRechazo": "Cliente sin Efectivo",
+    "NumCp": "BNN9-00073738",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T040",
+    "Total": 12.4
   },
   {
     "CodVend": "01AN24",
@@ -862,6 +946,18 @@
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T009",
     "Total": 93.9749
+  },
+  {
+    "CodVend": "01AN37",
+    "GrupoVentas": "01 NESTARES",
+    "ClienteCodigo": "014998",
+    "ClienteNombre": "VASQUEZ SANCHEZ BRIGITTE",
+    "TipoRechazo": "Anulado",
+    "MotivoRechazo": "Cerrado local cliente",
+    "NumCp": "BA01-03327345",
+    "FechaComprobante": "2026-09-30",
+    "Vehiculo": "01T043",
+    "Total": 124.68
   },
   {
     "CodVend": "01TN04",
