@@ -1047,7 +1047,8 @@ function buscarProductosInteligente() {
     badge.style.background = (texto || marca) ? '#f59e0b' : '#fbbf24';
     document.getElementById('totalCount').textContent = filtrados.length;
     ultimaLista = filtrados;
-    renderizarTarjetas(filtrados);
+    const hayFiltro = !!(texto || marca);
+    renderizarTarjetas(filtrados, hayFiltro);
 }
 let ultimaLista = [];
 const INICIAL_PRODUCTOS = 10;
