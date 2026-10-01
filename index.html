@@ -655,7 +655,7 @@
             .title-section { padding-right: 96px; }
             .brief-card-body { grid-template-columns: 1fr 1fr; }
         }
-        /* ========== DEVOLUCIONES / RECHAZOS ========== */
+/* ========== DEVOLUCIONES / RECHAZOS ========== */
         .dev-header { background: #111111; border-radius: 16px; padding: 16px; margin-bottom: 16px; border: 1px solid #1f1f1f; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .dev-header-icon { font-size: 1.6rem; }
         .dev-title { font-size: 1rem; font-weight: 700; color: #f1f5f9; }
@@ -715,7 +715,7 @@
         <button class="tab-btn" onclick="switchTab('brief', this)">📋 Brief Ruta Agosto</button>
         <button class="tab-btn" onclick="switchTab('validador', this)">✅ Validar Lote</button>
         <button class="tab-btn" onclick="switchTab('devoluciones', this)">🔁 Devoluciones</button>
-    </div>
+            </div>
     <div id="panel-precios" class="panel active">
         <div class="filtros">
             <div class="search-wrapper">
@@ -789,7 +789,7 @@
             </div>
         </div>
     </div>
-    <div id="panel-devoluciones" class="panel">
+<div id="panel-devoluciones" class="panel">
         <div class="dev-header">
             <div class="dev-header-icon">🔁</div>
             <div>
@@ -832,6 +832,7 @@
         </div>
         <div id="devLista"></div>
     </div>
+    
     
     <div class="footer">👉 Precios: busca por palabra o número &nbsp;|&nbsp; Brief: escalas de bonificación · FV = Fecha Vencimiento</div>
 </div>
@@ -1001,7 +1002,45 @@ const productos = [
 {Marca:"MILO",Producto:"MILO ACTI-GO DOYPACK  CJ 12U*350GR+POTE",Abrev:"CAJA",Factor:"12",P1CJ:"183.18",P1UN:"15.27",FechaVencimiento:"02/09/2027"},
 {Marca:"KIRMA",Producto:"NESCAFE GOLD  (MEDIA TIRA) TR*5 UN*11GR",Abrev:"TIRA",Factor:"1",P1CJ:"11.62",P1UN:"0.00",FechaVencimiento:"01/12/2027"},
 {Marca:"NESCAFE",Producto:"NESCAFE TRADICION 3(18x7g) PE",Abrev:"CAJA",Factor:"8",P1CJ:"67.65",P1UN:"8.46",FechaVencimiento:"07/05/2027"},
-]
+];
+
+// =================================================================================
+// 📦 STOCK (OPCIONAL) - Aquí pegas el stock desde tu plantilla Excel/SQL
+// Se puede usar de dos formas (elige la que te convenga):
+//
+//  FORMA A) Agregar Stock en cada línea del array de productos (arriba):
+//          {Marca:"ANCHOR",Producto:"...",...,Stock:"250"}
+//
+//  FORMA B) Pegar aquí un mapa Producto -> cantidad (ideal si es otra consulta SQL).
+//           El nombre debe ser IGUAL al "Producto" del array.
+//
+// Si no usas stock, deja esto vacío o bórralo; la página funciona igual.
+// =================================================================================
+const stockData = {
+    // "NOMBRE EXACTO DEL PRODUCTO": cantidad,
+};
+// =================================================================================
+// 🎯 BRIEF RUTA - Aquí pegas tu brief (igual que antes)
+const briefData = [
+    // AQUÍ PEGAS TU BRIEF. Ejemplo de formato (borra este ejemplo y pega el tuyo):
+    // {"cat":"EVAPORADAS","marca":"CREMOSITA","tasa":"1.2%","mecCant":"10","mecFac":"PL","bonCant":"3","bonFac":"UN","prod":"CREMOSITA 393GR - EVA","obs":""}
+];
+
+console.log('📦 Total productos cargados:', productos.length);
+// =================================================================================
+// FUNCIONES (no tocar)
+// =================================================================================
+function switchTab(tab, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+}
+
+function buscarProductosInteligente() {
+    const texto = document.getElementById('searchInput').value.toLowerCase().trim();
+    const marca = document.getElementById('marcaSelect').value;
+    const palabras = texto ? texto.split(/\s+/) : [];
     const filtrados = productos.filter(p => {
         const full = (p.Marca + ' ' + p.Producto).toLowerCase();
         return (palabras.length === 0 || palabras.every(w => full.includes(w))) && (marca === '' || p.Marca === marca);
