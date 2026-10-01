@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "6330/0",
-    "n": 6330
+    "q": "6331/0",
+    "n": 6331
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "2325/0",
-    "n": 2325
+    "q": "2326/0",
+    "n": 2326
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -1096,8 +1096,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "965/0",
-    "n": 965
+    "q": "964/0",
+    "n": 964
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "DISP",
@@ -1116,7 +1116,7 @@
   },
   "MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR": {
     "u": "CAJA",
-    "q": "0/22",
+    "q": "0/23",
     "n": 0
   },
   "MAGGI CUBITO GALLINA CJ 32 U *75CUBOS X4 GR": {
@@ -1721,7 +1721,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "94/13",
+    "q": "94/8",
     "n": 94
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
