@@ -33,7 +33,7 @@
     "NumCp": "BA01-03326230",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01TM08",
-    "Total": 54.0785
+    "Total": 54.078464
   },
   {
     "CodVend": "01AN04",
@@ -57,7 +57,7 @@
     "NumCp": "BNN9-00073783",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T034",
-    "Total": 17.6467
+    "Total": 17.646657
   },
   {
     "CodVend": "01AN10",
@@ -141,7 +141,7 @@
     "NumCp": "BA01-03326834",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T006",
-    "Total": 56.599
+    "Total": 56.599001
   },
   {
     "CodVend": "01AN25",
@@ -165,7 +165,7 @@
     "NumCp": "BA01-03325532",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T037",
-    "Total": 20.0
+    "Total": 20.000001
   },
   {
     "CodVend": "01AN38",
@@ -201,7 +201,7 @@
     "NumCp": "BA01-03328217",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T074",
-    "Total": 40.8531
+    "Total": 40.853099
   },
   {
     "CodVend": "01AN38",
@@ -213,7 +213,7 @@
     "NumCp": "FA01-00903203",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T024",
-    "Total": 86.8368
+    "Total": 86.83678
   },
   {
     "CodVend": "01AN38",
@@ -249,7 +249,7 @@
     "NumCp": "BA01-03325992",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T040",
-    "Total": 41.6849
+    "Total": 41.684897
   },
   {
     "CodVend": "01AN06",
@@ -285,7 +285,7 @@
     "NumCp": "BNN9-00073712",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T040",
-    "Total": 18.5954
+    "Total": 18.595403
   },
   {
     "CodVend": "01AN06",
@@ -297,7 +297,7 @@
     "NumCp": "BA01-03327617",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T051",
-    "Total": 55.7032
+    "Total": 55.703199
   },
   {
     "CodVend": "01AN06",
@@ -321,7 +321,7 @@
     "NumCp": "BNN9-00073751",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T051",
-    "Total": 19.554
+    "Total": 19.553999
   },
   {
     "CodVend": "01AN06",
@@ -333,7 +333,7 @@
     "NumCp": "BA01-03327568",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T051",
-    "Total": 62.76
+    "Total": 62.760002
   },
   {
     "CodVend": "01AN06",
@@ -369,7 +369,7 @@
     "NumCp": "BA01-03325979",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T019",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN01",
@@ -525,7 +525,7 @@
     "NumCp": "BNN9-00073772",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T058",
-    "Total": 13.44
+    "Total": 13.440001
   },
   {
     "CodVend": "01AN07",
@@ -549,7 +549,7 @@
     "NumCp": "BNN9-00073714",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T040",
-    "Total": 12.4
+    "Total": 12.400001
   },
   {
     "CodVend": "01AN07",
@@ -597,7 +597,7 @@
     "NumCp": "FA01-00904025",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T005",
-    "Total": 85.6938
+    "Total": 85.693798
   },
   {
     "CodVend": "01AN07",
@@ -633,7 +633,7 @@
     "NumCp": "BA01-03325609",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 27.51
+    "Total": 27.510001
   },
   {
     "CodVend": "01AN08",
@@ -657,7 +657,7 @@
     "NumCp": "BA01-03325643",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN08",
@@ -681,7 +681,7 @@
     "NumCp": "FA01-00902457",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN08",
@@ -693,7 +693,7 @@
     "NumCp": "BA01-03325743",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 82.9033
+    "Total": 82.903314
   },
   {
     "CodVend": "01AN08",
@@ -705,7 +705,7 @@
     "NumCp": "BA01-03327110",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T015",
-    "Total": 189.8085
+    "Total": 189.808499
   },
   {
     "CodVend": "01AN08",
@@ -717,7 +717,7 @@
     "NumCp": "BA01-03327124",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T015",
-    "Total": 18.5954
+    "Total": 18.595403
   },
   {
     "CodVend": "01AN08",
@@ -741,7 +741,7 @@
     "NumCp": "BNN9-00073764",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T031",
-    "Total": 30.7735
+    "Total": 30.773514
   },
   {
     "CodVend": "01AN11",
@@ -765,7 +765,7 @@
     "NumCp": "BA01-03325402",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T007",
-    "Total": 153.5713
+    "Total": 153.57135
   },
   {
     "CodVend": "01AN11",
@@ -789,7 +789,7 @@
     "NumCp": "BA01-03328124",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T069",
-    "Total": 78.038
+    "Total": 78.038014
   },
   {
     "CodVend": "01AN11",
@@ -801,7 +801,7 @@
     "NumCp": "BA01-03328162",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T069",
-    "Total": 53.19
+    "Total": 53.190036
   },
   {
     "CodVend": "01AN11",
@@ -837,7 +837,7 @@
     "NumCp": "BNN9-00073767",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T070",
-    "Total": 13.44
+    "Total": 13.440001
   },
   {
     "CodVend": "01AN14",
@@ -861,7 +861,7 @@
     "NumCp": "BA01-03325228",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T006",
-    "Total": 143.8677
+    "Total": 143.867702
   },
   {
     "CodVend": "01AN14",
@@ -873,7 +873,7 @@
     "NumCp": "BA01-03325270",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T006",
-    "Total": 39.6549
+    "Total": 39.654899
   },
   {
     "CodVend": "01AN14",
@@ -921,7 +921,7 @@
     "NumCp": "BA01-03329913",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T048",
-    "Total": 70.9488
+    "Total": 70.94878
   },
   {
     "CodVend": "01AN15",
@@ -945,7 +945,7 @@
     "NumCp": "BA01-03327923",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T040",
-    "Total": 28.71
+    "Total": 28.710001
   },
   {
     "CodVend": "01AN15",
@@ -957,7 +957,7 @@
     "NumCp": "BNN9-00073739",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T040",
-    "Total": 17.6467
+    "Total": 17.646657
   },
   {
     "CodVend": "01AN16",
@@ -1005,7 +1005,7 @@
     "NumCp": "FA01-00903878",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T048",
-    "Total": 17.6049
+    "Total": 17.604918
   },
   {
     "CodVend": "01AN16",
@@ -1017,7 +1017,7 @@
     "NumCp": "BA01-03329522",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T041",
-    "Total": 36.794
+    "Total": 36.794002
   },
   {
     "CodVend": "01AN32",
@@ -1065,7 +1065,7 @@
     "NumCp": "FNN9-00073733",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T047",
-    "Total": 68.009
+    "Total": 68.008999
   },
   {
     "CodVend": "01AN28",
@@ -1077,7 +1077,7 @@
     "NumCp": "BA01-03326719",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01TM02",
-    "Total": 757.2392
+    "Total": 757.23925
   },
   {
     "CodVend": "01AN28",
@@ -1113,7 +1113,7 @@
     "NumCp": "BA01-03329258",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T039",
-    "Total": 30.7735
+    "Total": 30.773514
   },
   {
     "CodVend": "01AN29",
@@ -1137,7 +1137,7 @@
     "NumCp": "BA01-03330662",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T017",
-    "Total": 39.6549
+    "Total": 39.654899
   },
   {
     "CodVend": "01AN29",
@@ -1149,7 +1149,7 @@
     "NumCp": "BA01-03330656",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T017",
-    "Total": 60.9729
+    "Total": 60.972899
   },
   {
     "CodVend": "01TN03",
@@ -1161,7 +1161,7 @@
     "NumCp": "BA01-03324963",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T003",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01TN03",
@@ -1173,7 +1173,7 @@
     "NumCp": "BA01-03324966",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T003",
-    "Total": 84.3507
+    "Total": 84.350749
   },
   {
     "CodVend": "01TN03",
@@ -1233,7 +1233,7 @@
     "NumCp": "BNN9-00073748",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T028",
-    "Total": 55.7032
+    "Total": 55.703199
   },
   {
     "CodVend": "01TN05",
@@ -1245,7 +1245,7 @@
     "NumCp": "FNN9-00073788",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T040",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01TN05",
@@ -1293,7 +1293,7 @@
     "NumCp": "FA01-00903185",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T019",
-    "Total": 16.91
+    "Total": 16.909999
   },
   {
     "CodVend": "01AN34",
@@ -1305,7 +1305,7 @@
     "NumCp": "BNN9-00073750",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T019",
-    "Total": 59.09
+    "Total": 59.089999
   },
   {
     "CodVend": "01AN34",
@@ -1317,7 +1317,7 @@
     "NumCp": "BA01-03329112",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T055",
-    "Total": 103.001
+    "Total": 103.000993
   },
   {
     "CodVend": "01AN40",
@@ -1329,7 +1329,7 @@
     "NumCp": "BA01-03326063",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T041",
-    "Total": 60.114
+    "Total": 60.114002
   },
   {
     "CodVend": "01AN40",
@@ -1341,7 +1341,7 @@
     "NumCp": "BA01-03326099",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T041",
-    "Total": 45.0
+    "Total": 45.000001
   },
   {
     "CodVend": "01AN40",
@@ -1365,7 +1365,7 @@
     "NumCp": "BNN9-00073726",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T041",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN40",
@@ -1389,7 +1389,7 @@
     "NumCp": "FNN9-00073721",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T041",
-    "Total": 16.91
+    "Total": 16.909999
   },
   {
     "CodVend": "01AN40",
@@ -1401,7 +1401,7 @@
     "NumCp": "BA01-03329158",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T007",
-    "Total": 40.16
+    "Total": 40.160001
   },
   {
     "CodVend": "01AN40",
@@ -1437,7 +1437,7 @@
     "NumCp": "BNN9-00073709",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T047",
-    "Total": 13.44
+    "Total": 13.440001
   },
   {
     "CodVend": "01AN33",
@@ -1509,7 +1509,7 @@
     "NumCp": "BA01-03330214",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T029",
-    "Total": 141.6332
+    "Total": 141.633242
   },
   {
     "CodVend": "01AN33",
@@ -1593,7 +1593,7 @@
     "NumCp": "BA01-03327346",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T043",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN35",
@@ -1617,7 +1617,7 @@
     "NumCp": "BA01-03327631",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T037",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN22",
@@ -1629,7 +1629,7 @@
     "NumCp": "BA01-03328363",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T003",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN22",
@@ -1653,7 +1653,7 @@
     "NumCp": "BA01-03328366",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T003",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN22",
@@ -1677,7 +1677,7 @@
     "NumCp": "BA01-03325446",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T027",
-    "Total": 77.8998
+    "Total": 77.899799
   },
   {
     "CodVend": "01AN21",
@@ -1785,7 +1785,7 @@
     "NumCp": "BA01-03329537",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T019",
-    "Total": 38.814
+    "Total": 38.813999
   },
   {
     "CodVend": "01AN21",
@@ -1821,7 +1821,7 @@
     "NumCp": "BNN9-00073738",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T040",
-    "Total": 12.4
+    "Total": 12.400001
   },
   {
     "CodVend": "01AN19",
@@ -1833,7 +1833,7 @@
     "NumCp": "FA01-00903874",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T027",
-    "Total": 26.31
+    "Total": 26.310036
   },
   {
     "CodVend": "01AN19",
@@ -1845,7 +1845,7 @@
     "NumCp": "BA01-03330010",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T027",
-    "Total": 70.716
+    "Total": 70.715999
   },
   {
     "CodVend": "01AN19",
@@ -1869,7 +1869,7 @@
     "NumCp": "BNN9-00073793",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T023",
-    "Total": 20.0
+    "Total": 20.000001
   },
   {
     "CodVend": "01AN24",
@@ -1881,7 +1881,7 @@
     "NumCp": "BA01-03325676",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T038",
-    "Total": 39.6549
+    "Total": 39.654899
   },
   {
     "CodVend": "01AN24",
@@ -1929,7 +1929,7 @@
     "NumCp": "BA01-03326169",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T058",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN48",
@@ -1941,7 +1941,7 @@
     "NumCp": "BNN9-00073730",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T058",
-    "Total": 15.3868
+    "Total": 15.386758
   },
   {
     "CodVend": "01AN48",
@@ -1953,7 +1953,7 @@
     "NumCp": "BNN9-00073729",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T058",
-    "Total": 12.52
+    "Total": 12.519999
   },
   {
     "CodVend": "01AN48",
@@ -1977,7 +1977,7 @@
     "NumCp": "BNN9-00073779",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01TM01",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN42",
@@ -2037,7 +2037,7 @@
     "NumCp": "FA01-00903599",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T052",
-    "Total": 55.8689
+    "Total": 55.868901
   },
   {
     "CodVend": "01AN27",
@@ -2061,7 +2061,7 @@
     "NumCp": "BA01-03328911",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T052",
-    "Total": 69.6649
+    "Total": 69.664899
   },
   {
     "CodVend": "01AN27",
@@ -2073,7 +2073,7 @@
     "NumCp": "BNN9-00073756",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T040",
-    "Total": 12.4
+    "Total": 12.400001
   },
   {
     "CodVend": "01AN49",
@@ -2133,7 +2133,7 @@
     "NumCp": "FNN9-00073792",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T040",
-    "Total": 12.4
+    "Total": 12.400001
   },
   {
     "CodVend": "01AN09",
@@ -2157,7 +2157,7 @@
     "NumCp": "BA01-03327345",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T043",
-    "Total": 124.68
+    "Total": 124.680002
   },
   {
     "CodVend": "01AN37",
@@ -2169,7 +2169,7 @@
     "NumCp": "FA01-00903444",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T074",
-    "Total": 28.3136
+    "Total": 28.313602
   },
   {
     "CodVend": "01AN37",
@@ -2181,7 +2181,7 @@
     "NumCp": "BA01-03326714",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01TM02",
-    "Total": 67.1743
+    "Total": 67.174299
   },
   {
     "CodVend": "01AN37",
@@ -2217,7 +2217,7 @@
     "NumCp": "BA01-03328277",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01TM02",
-    "Total": 44.0
+    "Total": 44.000001
   },
   {
     "CodVend": "01AN37",
@@ -2253,7 +2253,7 @@
     "NumCp": "BA01-03328553",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T002",
-    "Total": 100.9876
+    "Total": 100.98756
   },
   {
     "CodVend": "01AN37",
@@ -2289,7 +2289,7 @@
     "NumCp": "FA01-00902794",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 97.7068
+    "Total": 97.706828
   },
   {
     "CodVend": "01TN04",
@@ -2301,7 +2301,7 @@
     "NumCp": "FA01-00902782",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T049",
-    "Total": 38.9354
+    "Total": 38.935403
   },
   {
     "CodVend": "01TN04",
@@ -2313,7 +2313,7 @@
     "NumCp": "BNN9-00073713",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T040",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01TN04",
@@ -2325,7 +2325,7 @@
     "NumCp": "BNN9-00073760",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T054",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN41",
@@ -2337,7 +2337,7 @@
     "NumCp": "BA01-03326014",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T053",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01AN41",
@@ -2349,7 +2349,7 @@
     "NumCp": "BA01-03326199",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T044",
-    "Total": 32.9188
+    "Total": 32.91878
   },
   {
     "CodVend": "01AN41",
@@ -2409,7 +2409,7 @@
     "NumCp": "BA01-03327527",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T049",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN31",
@@ -2421,7 +2421,7 @@
     "NumCp": "BA01-03329879",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T023",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN31",
@@ -2469,7 +2469,7 @@
     "NumCp": "BA01-03327960",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T058",
-    "Total": 15.0949
+    "Total": 15.094899
   },
   {
     "CodVend": "01AN20",
@@ -2493,7 +2493,7 @@
     "NumCp": "FA01-00903120",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T008",
-    "Total": 67.8857
+    "Total": 67.885682
   },
   {
     "CodVend": "01TN08",
@@ -2553,7 +2553,7 @@
     "NumCp": "BA01-03327426",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T044",
-    "Total": 79.0649
+    "Total": 79.064899
   },
   {
     "CodVend": "01AN43",
@@ -2565,7 +2565,7 @@
     "NumCp": "FNN9-00073741",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T044",
-    "Total": 138.6978
+    "Total": 138.697849
   },
   {
     "CodVend": "01AN43",
@@ -2577,7 +2577,7 @@
     "NumCp": "FA01-00903625",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T037",
-    "Total": 152.5466
+    "Total": 152.546599
   },
   {
     "CodVend": "01AN46",
@@ -2601,7 +2601,7 @@
     "NumCp": "BNN9-00073715",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T044",
-    "Total": 19.53
+    "Total": 19.529999
   },
   {
     "CodVend": "01AN46",
@@ -2661,7 +2661,7 @@
     "NumCp": "BA01-03324948",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T002",
-    "Total": 37.532
+    "Total": 37.532002
   },
   {
     "CodVend": "01AN39",
@@ -2697,7 +2697,7 @@
     "NumCp": "BNN9-00073705",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T004",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01TN16",
@@ -2781,7 +2781,7 @@
     "NumCp": "BA01-03326879",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T007",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01TN14",
@@ -2793,7 +2793,7 @@
     "NumCp": "BNN9-00073742",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T007",
-    "Total": 14.1
+    "Total": 14.100001
   },
   {
     "CodVend": "01TN14",
@@ -2805,7 +2805,7 @@
     "NumCp": "BA01-03329606",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T060",
-    "Total": 166.1893
+    "Total": 166.189299
   },
   {
     "CodVend": "01TN14",
@@ -2913,7 +2913,7 @@
     "NumCp": "BA01-03329668",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T068",
-    "Total": 85.4837
+    "Total": 85.48368
   },
   {
     "CodVend": "01TN19",
@@ -2937,7 +2937,7 @@
     "NumCp": "BA01-03329663",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T068",
-    "Total": 21.6188
+    "Total": 21.61878
   },
   {
     "CodVend": "01TN19",
@@ -2949,7 +2949,7 @@
     "NumCp": "FA01-00903783",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T068",
-    "Total": 84.36
+    "Total": 84.360001
   },
   {
     "CodVend": "01TN19",
@@ -2997,7 +2997,7 @@
     "NumCp": "FA01-00902923",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T044",
-    "Total": 518.6724
+    "Total": 518.672399
   },
   {
     "CodVend": "01AN47",
@@ -3009,7 +3009,7 @@
     "NumCp": "FA01-00902922",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T044",
-    "Total": 74.0206
+    "Total": 74.02061
   },
   {
     "CodVend": "01AN47",
@@ -3045,7 +3045,7 @@
     "NumCp": "BNN9-00073716",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T044",
-    "Total": 16.214
+    "Total": 16.214002
   },
   {
     "CodVend": "01AN47",
@@ -3081,7 +3081,7 @@
     "NumCp": "FA01-00902662",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T048",
-    "Total": 56.0164
+    "Total": 56.016435
   },
   {
     "CodVend": "01TN11",
@@ -3093,7 +3093,7 @@
     "NumCp": "BNN9-00073720",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01T031",
-    "Total": 16.91
+    "Total": 16.909999
   },
   {
     "CodVend": "01TN11",
@@ -3117,7 +3117,7 @@
     "NumCp": "BA01-03328675",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T032",
-    "Total": 77.8452
+    "Total": 77.845203
   },
   {
     "CodVend": "01AN12",
@@ -3165,7 +3165,7 @@
     "NumCp": "BA01-03328944",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T053",
-    "Total": 18.5954
+    "Total": 18.595403
   },
   {
     "CodVend": "01TN18",
@@ -3177,7 +3177,7 @@
     "NumCp": "FNN9-00073732",
     "FechaComprobante": "2026-09-29",
     "Vehiculo": "01TMGRAL",
-    "Total": 253.32
+    "Total": 253.320001
   },
   {
     "CodVend": "01TN18",
@@ -3189,7 +3189,7 @@
     "NumCp": "BA01-03329594",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T060",
-    "Total": 29.4766
+    "Total": 29.476601
   },
   {
     "CodVend": "01TN18",
@@ -3201,7 +3201,7 @@
     "NumCp": "BA01-03329602",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T060",
-    "Total": 24.849
+    "Total": 24.849001
   },
   {
     "CodVend": "01TN18",
@@ -3261,7 +3261,7 @@
     "NumCp": "BA01-03327357",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T027",
-    "Total": 22.48
+    "Total": 22.480001
   },
   {
     "CodVend": "01AN36",
@@ -3273,7 +3273,7 @@
     "NumCp": "BA01-03327361",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T027",
-    "Total": 38.9229
+    "Total": 38.922918
   },
   {
     "CodVend": "01AN36",
@@ -3285,7 +3285,7 @@
     "NumCp": "BA01-03328833",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T004",
-    "Total": 30.7735
+    "Total": 30.773514
   },
   {
     "CodVend": "01AN36",
@@ -3321,7 +3321,7 @@
     "NumCp": "BA01-03328326",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01TM06",
-    "Total": 138.6978
+    "Total": 138.697849
   },
   {
     "CodVend": "01MPAN05",
@@ -3345,7 +3345,7 @@
     "NumCp": "BA01-03327441",
     "FechaComprobante": "2026-09-30",
     "Vehiculo": "01T029",
-    "Total": 60.0082
+    "Total": 60.00818
   },
   {
     "CodVend": "01TN09",
@@ -3429,7 +3429,7 @@
     "NumCp": "BA01-03330278",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T052",
-    "Total": 34.8094
+    "Total": 34.809405
   },
   {
     "CodVend": "01TN17",
@@ -3441,7 +3441,7 @@
     "NumCp": "BA01-03328661",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T051",
-    "Total": 104.94
+    "Total": 104.940001
   },
   {
     "CodVend": "01MPAN06",
@@ -3465,7 +3465,7 @@
     "NumCp": "BA01-03331571",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T053",
-    "Total": 144.4543
+    "Total": 144.454263
   },
   {
     "CodVend": "01AN13",
@@ -3477,7 +3477,7 @@
     "NumCp": "FA01-00903791",
     "FechaComprobante": "2026-10-01",
     "Vehiculo": "01T043",
-    "Total": 71.48
+    "Total": 71.480001
   },
   {
     "CodVend": "01AN13",
@@ -3501,7 +3501,7 @@
     "NumCp": "FA01-00904429",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T075",
-    "Total": 18.5954
+    "Total": 18.595403
   },
   {
     "CodVend": "01AN13",
@@ -3525,7 +3525,7 @@
     "NumCp": "BA01-03330457",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T003",
-    "Total": 43.718
+    "Total": 43.718001
   },
   {
     "CodVend": "01AN13",
@@ -3597,7 +3597,7 @@
     "NumCp": "FNN9-00073790",
     "FechaComprobante": "2026-10-02",
     "Vehiculo": "01T040",
-    "Total": 18.5954
+    "Total": 18.595403
   },
   {
     "CodVend": "01AN03",
