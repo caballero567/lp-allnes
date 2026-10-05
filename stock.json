@@ -16,7 +16,7 @@
   },
   "ANCHOR LECHE EN POLVO CJ 48*96GR": {
     "u": "CAJA",
-    "q": "115/13",
+    "q": "115/5",
     "n": 115
   },
   "AZUCARES CON LOGO MILO VERTE/PLASTICO": {
@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "1587/0",
-    "n": 1587
+    "q": "1586/0",
+    "n": 1586
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "1425/0",
-    "n": 1425
+    "q": "1423/0",
+    "n": 1423
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "5696/0",
-    "n": 5696
+    "q": "5689/0",
+    "n": 5689
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "2511/0",
-    "n": 2511
+    "q": "2495/0",
+    "n": 2495
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "1534/3",
+    "q": "1534/0",
     "n": 1534
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -796,8 +796,8 @@
   },
   "DONOFRIO COCOA DOYPACK CAJA 12*150GR": {
     "u": "CAJA",
-    "q": "11/2",
-    "n": 11
+    "q": "10/11",
+    "n": 10
   },
   "DONOFRIO PANDULCE BOLSA CJA 6*490GR": {
     "u": "CAJA",
@@ -806,8 +806,8 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "5926/0",
-    "n": 5926
+    "q": "5925/1",
+    "n": 5925
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
@@ -836,8 +836,8 @@
   },
   "DONOFRIO PANETONCITO 12X80GR PE": {
     "u": "CJA",
-    "q": "115/0",
-    "n": 115
+    "q": "114/0",
+    "n": 114
   },
   "DONOFRIO PANETONCITO CAJA CJ 48*90GR": {
     "u": "CAJA",
@@ -856,7 +856,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "345/1",
+    "q": "345/0",
     "n": 345
   },
   "ECCO CEBADA 15X175G PE": {
@@ -866,7 +866,7 @@
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
     "u": "CAJA",
-    "q": "138/3",
+    "q": "138/2",
     "n": 138
   },
   "ECCO CEBADA DOYPACK 12U*170GR + VASO PAVONADO": {
@@ -891,7 +891,7 @@
   },
   "ECCO DOYPACK 16X170G PE": {
     "u": "CAJA",
-    "q": "93/13",
+    "q": "93/11",
     "n": 93
   },
   "ECCO DOYPACK 6X170G + JARRA": {
@@ -956,13 +956,13 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2516/17",
-    "n": 2516
+    "q": "2515/5",
+    "n": 2515
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "4691/5",
-    "n": 4691
+    "q": "4689/23",
+    "n": 4689
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1016,8 +1016,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1213/7",
-    "n": 1213
+    "q": "1212/9",
+    "n": 1212
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1026,8 +1026,8 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "157/2",
-    "n": 157
+    "q": "156/6",
+    "n": 156
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1051,7 +1051,7 @@
   },
   "KIRMA DOY PACK ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "81/17",
+    "q": "81/15",
     "n": 81
   },
   "KIRMA LATA CJ 12U*180GR": {
@@ -1096,8 +1096,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "555/0",
-    "n": 555
+    "q": "432/0",
+    "n": 432
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "DISP",
@@ -1196,8 +1196,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "159/0",
-    "n": 159
+    "q": "158/0",
+    "n": 158
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1216,8 +1216,8 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR": {
     "u": "CAJA",
-    "q": "535/2",
-    "n": 535
+    "q": "534/4",
+    "n": 534
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR PRYAPE": {
     "u": "CAJA",
@@ -1291,7 +1291,7 @@
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
     "u": "CAJA",
-    "q": "34/5",
+    "q": "34/2",
     "n": 34
   },
   "NATURES HEART BEB ALMENDRA CON AZUCAR CJ 12U*946ML": {
@@ -1411,7 +1411,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "237/11",
+    "q": "237/8",
     "n": 237
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1456,7 +1456,7 @@
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
     "u": "CAJA",
-    "q": "152/11",
+    "q": "152/10",
     "n": 152
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE": {
@@ -1486,8 +1486,8 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "186/0",
-    "n": 186
+    "q": "185/4",
+    "n": 185
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1526,7 +1526,7 @@
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "47/3",
+    "q": "47/1",
     "n": 47
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*50GR": {
@@ -1621,12 +1621,12 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "2439/0",
-    "n": 2439
+    "q": "2438/0",
+    "n": 2438
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
-    "q": "133/4",
+    "q": "133/3",
     "n": 133
   },
   "NESTLE BOMBON MULTIPACK CJ 15*360GR": {
@@ -1641,7 +1641,7 @@
   },
   "NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR": {
     "u": "CAJA",
-    "q": "78/2",
+    "q": "78/1",
     "n": 78
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
@@ -1686,7 +1686,7 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "169/15",
+    "q": "169/14",
     "n": 169
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
@@ -1701,7 +1701,7 @@
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
     "u": "CAJA",
-    "q": "70/22",
+    "q": "70/15",
     "n": 70
   },
   "NESTLE ESTRELLA NAVIDEÑA CJ 24*6*8GR PE": {
@@ -1721,17 +1721,17 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "57/18",
+    "q": "57/15",
     "n": 57
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "59/17",
+    "q": "59/16",
     "n": 59
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
     "u": "CAJA",
-    "q": "73/23",
+    "q": "73/22",
     "n": 73
   },
   "NESTLE LENTEJAS FIESTA CJ 15*30U*240GR": {
@@ -1786,13 +1786,13 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "287/1",
+    "q": "287/0",
     "n": 287
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "217/6",
-    "n": 217
+    "q": "216/17",
+    "n": 216
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
     "u": "DISP",
@@ -1856,17 +1856,17 @@
   },
   "NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR": {
     "u": "CAJA",
-    "q": "111/17",
+    "q": "111/10",
     "n": 111
   },
   "NESTLE SORRENTO CJ 30*20U*32GR": {
     "u": "CAJA",
-    "q": "10/3",
+    "q": "10/2",
     "n": 10
   },
   "NESTLE SUBLIME ALMENDRA CJ 24*15U*50GR": {
     "u": "CAJA",
-    "q": "49/12",
+    "q": "49/11",
     "n": 49
   },
   "NESTLE SUBLIME ALMENDRA TABL CJ 72U*100GR": {
@@ -1896,12 +1896,12 @@
   },
   "NESTLE SUBLIME BOMBONES CJ 24 DP *16 U*8GR": {
     "u": "CAJA",
-    "q": "1/13",
+    "q": "1/12",
     "n": 1
   },
   "NESTLE SUBLIME CAPUCCINO CJ 18(12X37G) PE": {
     "u": "CAJA",
-    "q": "320/4",
+    "q": "320/3",
     "n": 320
   },
   "NESTLE SUBLIME CARNAVAL CJ24 DP*20U*38GR": {
@@ -1916,7 +1916,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "189/10",
+    "q": "189/8",
     "n": 189
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
@@ -1926,7 +1926,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "536/4",
+    "q": "536/2",
     "n": 536
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
@@ -1941,8 +1941,8 @@
   },
   "NESTLE SUBLIME EXTREMO CJ 24*15U*50GR": {
     "u": "CAJA",
-    "q": "38/0",
-    "n": 38
+    "q": "37/22",
+    "n": 37
   },
   "NESTLE SUBLIME GALLETA CJ 12DP*24UN*28GR": {
     "u": "CAJA",
@@ -1976,7 +1976,7 @@
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*37GR": {
     "u": "CAJA",
-    "q": "134/7",
+    "q": "134/6",
     "n": 134
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*38GR": {
@@ -1991,7 +1991,7 @@
   },
   "NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR": {
     "u": "CAJA",
-    "q": "37/19",
+    "q": "37/18",
     "n": 37
   },
   "NESTLE TRIANGULO BOLA NAVIDEÑA CJ 24X72G PE": {
@@ -2011,7 +2011,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "212/22",
+    "q": "212/15",
     "n": 212
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
