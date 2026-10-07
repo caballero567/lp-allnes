@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
-    "q": "31/0",
-    "n": 31
+    "q": "30/0",
+    "n": 30
   },
   "CBO:EXHIBIDOR-SUB(SON/CLA)-PRI-KIT-TRGL CLA-MRHS CLA -AGO": {
     "u": "UN",
@@ -806,8 +806,8 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "7032/3",
-    "n": 7032
+    "q": "7031/4",
+    "n": 7031
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
