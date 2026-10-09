@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "CBO:EXHIBIDOR-SUB(SON/CLA)-PRI-KIT-TRGL CLA-MRHS CLA -AGO": {
     "u": "UN",
@@ -996,8 +996,8 @@
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR": {
     "u": "TIRA",
-    "q": "379/0",
-    "n": 379
+    "q": "378/0",
+    "n": 378
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR PRYAPE": {
     "u": "TIRA",
@@ -1021,7 +1021,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1535/3",
+    "q": "1535/4",
     "n": 1535
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1681,12 +1681,12 @@
   },
   "NESTLE CREMA DE LECHE CJ 48U*300GR": {
     "u": "CAJA",
-    "q": "39/47",
+    "q": "39/46",
     "n": 39
   },
   "NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR": {
     "u": "CAJA",
-    "q": "28/20",
+    "q": "28/21",
     "n": 28
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
@@ -1776,7 +1776,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "162/5",
+    "q": "162/6",
     "n": 162
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
@@ -1791,8 +1791,8 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "241/7",
-    "n": 241
+    "q": "242/0",
+    "n": 242
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
