@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "4685/0",
-    "n": 4685
+    "q": "4658/0",
+    "n": 4658
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -861,13 +861,13 @@
   },
   "ECCO CEBADA 15X175G PE": {
     "u": "CAJA",
-    "q": "72/12",
-    "n": 72
+    "q": "71/12",
+    "n": 71
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
     "u": "CAJA",
-    "q": "41/0",
-    "n": 41
+    "q": "40/7",
+    "n": 40
   },
   "ECCO CEBADA DOYPACK 12U*170GR + VASO PAVONADO": {
     "u": "CAJA",
@@ -1221,7 +1221,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR": {
     "u": "CAJA",
-    "q": "648/3",
+    "q": "648/2",
     "n": 648
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR PRYAPE": {
