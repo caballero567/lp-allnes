@@ -755,7 +755,7 @@
 .esc-head button{background:#1b1e24;border:1px solid #2b2f38;color:#e5e5e5;border-radius:8px;padding:4px 10px;cursor:pointer}
 .esc-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000}
 #escVideo{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
-.esc-guia{position:absolute;left:7%;right:7%;top:37%;height:26%;border:2px dashed #fbbf24;border-radius:10px;box-shadow:0 0 0 9999px rgba(0,0,0,.35);pointer-events:none}
+.esc-guia{position:absolute;left:4%;right:4%;top:34%;height:30%;border:2px dashed #fbbf24;border-radius:10px;box-shadow:0 0 0 9999px rgba(0,0,0,.35);pointer-events:none}
 .esc-guia span{position:absolute;top:-20px;left:0;font-size:.66rem;color:#fbbf24;font-weight:700}
 .esc-hint{color:#fbbf24;font-size:.82rem;margin-top:8px;min-height:18px;text-align:center;font-weight:600}
 .esc-raw{color:#9ca3af;font-size:.72rem;word-break:break-all;margin-top:4px;text-align:center}
@@ -773,14 +773,13 @@
         <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara</span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap">
             <video id="escVideo" playsinline muted autoplay></video>
-            <div class="esc-guia"><span>↓ enmarca aquí el lote o la FV ↓</span></div>
+            <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
         </div>
         <div class="esc-hint" id="escHint">Iniciando cámara…</div>
         <div class="esc-raw" id="escRaw"></div>
         <div class="esc-sug" id="escSug" style="display:none"></div>
         <div class="esc-ctrl">
-            <button type="button" class="pri" onclick="escLeer('lote')">📸 Leer LOTE</button>
-            <button type="button" class="pri" onclick="escLeer('fv')">📸 Leer FV</button>
+            <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Escanear etiqueta (lote + FV)</button>
             <button type="button" onclick="escCambiarCamara()">🔄 Cámara</button>
             <button type="button" onclick="escTorch()">🔦 Linterna</button>
             <label class="foto">🖼️ Usar foto<input id="escArchivo" type="file" accept="image/*" style="display:none" onchange="escArchivo(this)"></label>
@@ -84188,7 +84187,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     function capturarCamara() {
         var v = el('escVideo'), vw = v.videoWidth, vh = v.videoHeight;
         if (!vw || !vh) return null;
-        return preparar(v, Math.round(vw * 0.86), Math.round(vh * 0.26), Math.round(vw * 0.07), Math.round(vh * 0.37));
+        return preparar(v, Math.round(vw * 0.92), Math.round(vh * 0.30), Math.round(vw * 0.04), Math.round(vh * 0.34));
     }
 
     // ---- OCR + limpieza ----
@@ -84262,33 +84261,62 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         });
     }
 
-    function pintar(tipo, valor, crudo) {
-        var fv = '';
-        if (tipo === 'lote') {
-            var lote = limpiarLote(valor);
-            pintarSugerencias([]);
-            if (lote) {
-                var li = el('loteInput'); li.value = lote; li.dispatchEvent(new Event('input'));
-                if (existeLote(lote)) setHint('LOTE leído: ' + lote + ' (está en la base) — pulsa "Leer FV" o "Validar Lote".');
-                else { setHint('LOTE leído: ' + lote + ' — no coincide exacto en la base. Revisa o toca una sugerencia.'); pintarSugerencias(lotesParecidos(lote)); }
-            } else setHint('No se reconoció el lote. Acércalo, evita brillos y reintenta.');
+    // ---- fecha desde texto: 3 grupos de 2 digitos, o 6/8 digitos seguidos ----
+    function fechaDeTexto(txt) {
+        var groups = (mapear(txt).match(/[0-9]+/g) || []);
+        var digs;
+        if (groups.length >= 3 && groups[0].length <= 2 && groups[1].length <= 2 && groups[2].length <= 2) {
+            digs = groups.slice(0, 3).join('');
         } else {
-            fv = aFecha(aDigitos(valor));
-            if (fv.length >= 4) { var fi = el('fvInput'); fi.value = fv.replace(/\D/g, ''); aplicarMascaraFecha(fi); setHint('FV leída: ' + fv + ' — ya puedes pulsar "Validar Lote".'); }
-            else setHint('No se reconoció la FV (DD/MM/AA). Acércala y reintenta.');
+            digs = aDigitos(txt);
         }
-        setRaw('OCR crudo: ' + (crudo || '').trim());
+        if (digs.length >= 8) return digs.slice(0, 2) + '/' + digs.slice(2, 4) + '/' + digs.slice(6, 8);
+        if (digs.length >= 6) return digs.slice(0, 2) + '/' + digs.slice(2, 4) + '/' + digs.slice(4, 6);
+        if (digs.length >= 4) return digs.slice(-4, -2) + '/' + digs.slice(-2);
+        return '';
     }
-
-    window.escLeer = function (tipo) {
-        ultimaTag = tipo;
+    // ---- lee la etiqueta: LOTE a la izquierda + FV tras la marca V/FV ----
+    function parsearEtiqueta(texto) {
+        var up = (texto || '').toUpperCase();
+        var mv = up.match(/\bFV\b|\bV\b/);
+        var izq = up, der = '';
+        if (mv) { izq = up.slice(0, mv.index); der = up.slice(mv.index + mv[0].length); }
+        var runs = (mapear(izq).match(/[0-9]+/g) || []);
+        if (!mv) runs = (mapear(up).match(/[0-9]+/g) || []).filter(function (r) { return r.length >= 6; });
+        var lote = '';
+        runs.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (r) { if (!lote) lote = r; });
+        if (!lote) {
+            var todos = (mapear(up).match(/[0-9]+/g) || []).filter(function (r) { return r.length >= 6; });
+            todos.sort(function (a, b) { return b.length - a.length; });
+            if (todos.length) lote = todos[0];
+        }
+        var fv = '';
+        if (der) fv = fechaDeTexto(der);
+        if (!fv) fv = fechaDeTexto(up);
+        return { lote: lote, fv: fv };
+    }
+    function pintarEtiqueta(texto) {
+        var r = parsearEtiqueta(texto);
+        setRaw('OCR crudo: ' + (texto || '').trim());
+        pintarSugerencias([]);
+        if (r.lote) { var li = el('loteInput'); li.value = r.lote; li.dispatchEvent(new Event('input')); }
+        if (r.fv && r.fv.length >= 4) { var fi = el('fvInput'); fi.value = r.fv.replace(/\D/g, ''); aplicarMascaraFecha(fi); }
+        if (!r.lote) { setHint('No reconocí el lote. Acércalo en el recuadro (el número a la izquierda) y reintenta.'); return; }
+        var msg = 'Lote: ' + r.lote + (r.fv ? ('  ·  FV: ' + r.fv) : '  ·  (no reconocí la FV)');
+        if (existeLote(r.lote)) msg += '  — pulsa "Validar Lote"';
+        else { msg += '  — el lote no está en la base; revisa o toca una sugerencia'; pintarSugerencias(lotesParecidos(r.lote)); }
+        setHint(msg);
+    }
+    function escanearCanvas(canvas, psm) {
+        var whitelist = '0123456789FVLOTE';
+        setHint('Reconociendo etiqueta…');
+        reconocer(canvas, whitelist, psm).then(function (r) { pintarEtiqueta(r.data.text); })
+            .catch(function (e) { setHint('Error OCR: ' + e.message); });
+    }
+    window.escEscanear = function () {
         var canvas = capturarCamara();
         if (!canvas) { setHint('La cámara aún no está lista.'); return; }
-        setHint(tipo === 'lote' ? 'Leyendo LOTE…' : 'Leyendo FV…');
-        var whitelist = '0123456789OIoSlSB';
-        reconocer(canvas, whitelist, 7).then(function (r) {
-            pintar(tipo, r.data.text, r.data.text);
-        }).catch(function (e) { setHint('Error OCR: ' + e.message); });
+        escanearCanvas(canvas, 6);
     };
 
     // ---- usar una foto de la galería (útil para probar precisión) ----
@@ -84296,13 +84324,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         if (!inp.files || !inp.files[0]) return;
         var img = new Image();
         img.onload = function () {
-            var tipo = ultimaTag || 'lote';
-            var w = img.width, h = img.height;
-            var canvas = preparar(img, w, h, 0, 0);
-            setHint('Leyendo la foto…');
-            var whitelist = '0123456789OIoSlSB';
-            reconocer(canvas, whitelist, 6).then(function (r) { pintar(tipo, r.data.text, r.data.text); })
-                .catch(function (e) { setHint('Error OCR: ' + e.message); });
+            escanearCanvas(preparar(img, img.width, img.height, 0, 0), 6);
             inp.value = '';
         };
         img.src = URL.createObjectURL(inp.files[0]);
