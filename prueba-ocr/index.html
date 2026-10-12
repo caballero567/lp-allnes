@@ -775,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v9</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v10</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84167,10 +84167,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             stream = s;
             video.srcObject = s;
             video.setAttribute('playsinline', '');
-            video.onloadedmetadata = function () {
-                var wrap = el('escWrap'), vw = video.videoWidth, vh = video.videoHeight;
-                if (wrap && vw && vh) wrap.style.aspectRatio = vw + ' / ' + vh;
-            };
+            video.onloadedmetadata = function () {};
             video.play().catch(function () {});
             setHint('Enmarca el LOTE y la FV en el recuadro y pulsa "Escanear etiqueta".');
         }).catch(function (e) {
@@ -84185,7 +84182,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     // ---- recorte + realce suave (SIN binarizar; tesseract binariza solo) ----
     function preparar(origen, w, h, x, y) {
         var c = document.createElement('canvas');
-        var escala = Math.max(0.2, Math.min(3, 1600 / w));
+        var escala = Math.max(0.2, Math.min(2, 1200 / w));
         c.width = Math.round(w * escala); c.height = Math.round(h * escala);
         var ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = true;
