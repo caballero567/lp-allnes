@@ -775,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v12</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v13</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84377,7 +84377,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         box.style.display = 'block';
     }
     var WHITELIST = '0123456789FVOILSB';
-    function leerVarios(canvases, previewIdx) {
+    function leerVarios(canvases, previewIdx, whitelist) {
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Leyendo etiqueta…');
         var prev = el('escPrev'); if (prev && canvases[previewIdx]) { try { prev.src = canvases[previewIdx].toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
@@ -84386,14 +84386,14 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             if (k >= canvases.length) { decidirEtiqueta(textos); return; }
             var canvas = canvases[k]; k++;
             setHint('Leyendo etiqueta… (' + k + ' de ' + canvases.length + ')');
-            reconocer(canvas, '', 6).then(function (r) { textos.push(r.data.text); setTimeout(paso, 50); })
+            reconocer(canvas, whitelist, 6).then(function (r) { textos.push(r.data.text); setTimeout(paso, 50); })
                 .catch(function (e) { setHint('Error OCR: ' + e.message); });
         })();
     }
     window.escEscanear = function () {
         var v = el('escVideo');
         if (!v || !v.videoWidth || !v.videoHeight) { setHint('La cámara aún no está lista.'); return; }
-        leerVarios([recorteGuia(v, 'bin'), recorteGuia(v, 'gris'), recorteCompleto(v, 'gris')], 1);
+        leerVarios([recorteGuia(v, 'bin'), recorteGuia(v, 'gris'), recorteCompleto(v, 'gris')], 1, '0123456789FV');
     };
 
     // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
@@ -84401,7 +84401,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         if (!inp.files || !inp.files[0]) return;
         var img = new Image();
         img.onload = function () {
-            leerVarios([preparar(img, img.width, img.height, 0, 0, 2000, 'gris'), preparar(img, img.width, img.height, 0, 0, 2000, 'bin')], 0);
+            leerVarios([preparar(img, img.width, img.height, 0, 0, 2000, 'gris'), preparar(img, img.width, img.height, 0, 0, 2000, 'bin')], 0, '0123456789FV');
             inp.value = '';
         };
         img.onerror = function () { setHint('No pude abrir la imagen.'); inp.value = ''; };
