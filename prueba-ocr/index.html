@@ -761,6 +761,9 @@
 .esc-raw{color:#9ca3af;font-size:.72rem;word-break:break-all;margin-top:4px;text-align:center}
 .esc-prev{width:100%;display:block;margin-top:8px;border-radius:8px;border:1px solid #2b2f38;background:#000}
 .esc-raw-b{color:#e5e5e5;font-size:1rem;font-weight:700;word-break:break-all;margin-top:6px;text-align:center;background:#14161a;border:1px solid #2b2f38;border-radius:8px;padding:6px}
+.esc-nums{margin-top:8px}
+.esc-nums-lbl{font-size:.72rem;color:#9ca3af;margin-bottom:6px;text-align:center}
+.esc-nums button{background:#1b3a2b;border:1px solid #2f6b4a;color:#c9f7d8;border-radius:8px;padding:8px 12px;margin:3px;cursor:pointer;font-weight:700;font-size:.9rem;font-family:inherit}
 .esc-sug{margin-top:8px;border-top:1px solid #2b2f38;padding-top:8px}
 .esc-sug-t{color:#fbbf24;font-size:.72rem;font-weight:700;margin-bottom:6px;text-align:center}
 .esc-sug-b{display:block;width:100%;text-align:left;background:#14161a;border:1px solid #374151;color:#e5e5e5;border-radius:8px;padding:8px;margin-bottom:5px;cursor:pointer;font-family:inherit;font-size:.82rem}
@@ -772,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara</span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v6</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -781,6 +784,7 @@
         <div class="esc-hint" id="escHint">Iniciando cámara…</div>
         <div class="esc-raw" id="escRaw"></div>
         <div class="esc-raw-b" id="escRawB"></div>
+        <div class="esc-nums" id="escNums" style="display:none"></div>
         <div class="esc-sug" id="escSug" style="display:none"></div>
         <div class="esc-ctrl">
             <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Escanear etiqueta (lote + FV)</button>
@@ -84198,7 +84202,9 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             var mB = sumB / wB, mF = (suma - sumB) / wF, v = wB * wF * (mB - mF) * (mB - mF);
             if (v > maxVar) { maxVar = v; umbral = i; }
         }
-        for (i = 0; i < d.length; i += 4) { g = d[i] > umbral ? 255 : 0; d[i] = d[i + 1] = d[i + 2] = g; }
+        var blancos = 0;
+        for (i = 0; i < d.length; i += 4) { g = d[i] > umbral ? 255 : 0; d[i] = d[i + 1] = d[i + 2] = g; if (g) blancos++; }
+        if (blancos < (d.length / 4) / 2) { for (i = 0; i < d.length; i += 4) { g = 255 - d[i]; d[i] = d[i + 1] = d[i + 2] = g; } }
         ctx.putImageData(img, 0, 0);
         return c;
     }
@@ -84341,18 +84347,38 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             return best;
         }
         pintarResultado(masComun(lotes, true), masComun(fvs, false), textos.join('   |   '));
+        pintarNumeros(textos);
+    }
+    // ---- botones con todos los numeros detectados (elegir el lote a mano) ----
+    function pintarNumeros(textos) {
+        var box = el('escNums'); if (!box) return;
+        var set = {};
+        textos.forEach(function (t) { (mapear(t).match(/[0-9]+/g) || []).forEach(function (r) { if (r.length >= 4) set[r] = true; }); });
+        var arr = Object.keys(set).sort(function (a, b) { return b.length - a.length; });
+        box.innerHTML = '';
+        if (!arr.length) { box.style.display = 'none'; return; }
+        var lbl = document.createElement('div'); lbl.className = 'esc-nums-lbl';
+        lbl.textContent = 'Si el lote no es el correcto, toca el número aquí:';
+        box.appendChild(lbl);
+        arr.forEach(function (r) {
+            var b = document.createElement('button'); b.type = 'button'; b.textContent = r;
+            b.onclick = function () { var li = el('loteInput'); li.value = r; li.dispatchEvent(new Event('input')); setHint('Lote elegido: ' + r + ' — pulsa "Validar Lote"'); };
+            box.appendChild(b);
+        });
+        box.style.display = 'block';
     }
     var WHITELIST = '0123456789FVOILSB';
     function escanearCanvas(canvas, psm) {
         var prev = el('escPrev');
         if (prev) { try { prev.src = canvas.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
         setRaw(''); setHint('Reconociendo etiqueta…');
-        reconocer(canvas, WHITELIST, psm).then(function (r) { pintarEtiqueta(r.data.text); })
+        reconocer(canvas, WHITELIST, psm).then(function (r) { pintarEtiqueta(r.data.text); pintarNumeros([r.data.text]); })
             .catch(function (e) { setHint('Error OCR: ' + e.message); });
     }
     window.escEscanear = function () {
         var v = el('escVideo');
         if (!v || !v.videoWidth || !v.videoHeight) { setHint('La cámara aún no está lista.'); return; }
+        var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Reconociendo etiqueta (3 lecturas)…');
         var capturas = [], i = 0;
         (function paso() {
@@ -84380,6 +84406,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     window.abrirEscaner = function () {
         el('escModal').style.display = 'flex';
         var p = el('escPrev'); if (p) { p.style.display = 'none'; p.removeAttribute('src'); }
+        var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Iniciando cámara…');
         worker().catch(function (e) { setHint('No se pudo cargar el OCR: ' + e.message); });
         arrancar();
