@@ -775,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v8</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v9</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -787,10 +787,11 @@
         <div class="esc-nums" id="escNums" style="display:none"></div>
         <div class="esc-sug" id="escSug" style="display:none"></div>
         <div class="esc-ctrl">
-            <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Escanear etiqueta (lote + FV)</button>
+            <label class="foto" style="flex:1 1 100%;background:#fbbf24;color:#111;border-color:#fbbf24">📷 Tomar foto nítida<input id="escFoto" type="file" accept="image/*" capture="environment" style="display:none" onchange="escArchivo(this)"></label>
+            <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Leer por cámara en vivo</button>
             <button type="button" onclick="escCambiarCamara()">🔄 Cámara</button>
             <button type="button" onclick="escTorch()">🔦 Linterna</button>
-            <label class="foto">🖼️ Usar foto<input id="escArchivo" type="file" accept="image/*" style="display:none" onchange="escArchivo(this)"></label>
+            <label class="foto">🖼️ Galería<input id="escArchivo" type="file" accept="image/*" style="display:none" onchange="escArchivo(this)"></label>
             <button type="button" onclick="cerrarEscaner()">✔ Listo</button>
         </div>
     </div>
@@ -84184,7 +84185,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     // ---- recorte + realce suave (SIN binarizar; tesseract binariza solo) ----
     function preparar(origen, w, h, x, y) {
         var c = document.createElement('canvas');
-        var escala = Math.min(3, Math.max(1, 2200 / w));
+        var escala = Math.max(0.2, Math.min(3, 1600 / w));
         c.width = Math.round(w * escala); c.height = Math.round(h * escala);
         var ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = true;
@@ -84386,14 +84387,17 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         })();
     };
 
-    // ---- usar una foto de la galería (útil para probar precisión) ----
+    // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
     window.escArchivo = function (inp) {
         if (!inp.files || !inp.files[0]) return;
         var img = new Image();
         img.onload = function () {
+            var nn = el('escNums'); if (nn) nn.style.display = 'none';
+            setRaw(''); setHint('Leyendo foto (' + img.width + '×' + img.height + ')…');
             escanearCanvas(preparar(img, img.width, img.height, 0, 0), 6);
             inp.value = '';
         };
+        img.onerror = function () { setHint('No pude abrir la imagen.'); inp.value = ''; };
         img.src = URL.createObjectURL(inp.files[0]);
     };
 
