@@ -84101,20 +84101,42 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     function setHint(t) { var h = el('escHint'); if (h) h.textContent = t; }
     function setRaw(t) { var r = el('escRaw'); if (r) r.textContent = t; }
 
+    // ---- rutas absolutas + eleccion de core (evita la deteccion interna de Tesseract) ----
+    var TESS = new URL('tess/', document.baseURI).href;
+    function soportaSIMD() {
+        try {
+            return WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 5, 1, 96, 0, 1, 123, 3, 2, 1, 0, 10, 10, 1, 8, 0, 65, 0, 253, 15, 253, 98, 11]));
+        } catch (e) { return false; }
+    }
+    function coreElegido() {
+        var arch = soportaSIMD() ? 'tesseract-core-simd-lstm.wasm.js' : 'tesseract-core-lstm.wasm.js';
+        return TESS + arch;
+    }
+    function nombreEtapa(s) {
+        if (/loading tesseract core/i.test(s)) return 'Cargando motor OCR';
+        if (/initializ\w* tesseract/i.test(s)) return 'Iniciando motor OCR';
+        if (/loading language|loaded language/i.test(s)) return 'Cargando idioma';
+        if (/initializ\w* api/i.test(s)) return 'Preparando OCR';
+        if (/recognizing/i.test(s)) return 'Reconociendo texto';
+        return s;
+    }
+
     // ---- carga diferida del OCR (una sola vez) ----
     function worker() {
         if (!workerP) {
-            setHint('Cargando lector OCR (una vez, ~7 MB)…');
+            setHint('Cargando lector OCR (solo la primera vez, ~7 MB)…');
             workerP = Tesseract.createWorker('eng', 1, {
-                workerPath: 'tess/worker.min.js',
-                corePath: 'tess/',
-                langPath: 'tess/',
+                workerPath: TESS + 'worker.min.js',
+                corePath: coreElegido(),
+                langPath: TESS,
+                workerBlobURL: true,
+                errorHandler: function (e) { setHint('ERROR del OCR: ' + (e && e.message ? e.message : e)); },
                 logger: function (m) {
-                    if (m && m.status && m.progress !== undefined && m.progress < 1) {
-                        setHint('Preparando OCR: ' + m.status + ' ' + Math.round(m.progress * 100) + '%');
-                    }
+                    if (!m || !m.status) return;
+                    var pct = Math.round((m.progress || 0) * 100);
+                    setHint(nombreEtapa(m.status) + ' ' + pct + '%');
                 }
-            }).catch(function (e) { workerP = null; throw e; });
+            }).catch(function (e) { workerP = null; setHint('No se pudo cargar el OCR: ' + (e && e.message ? e.message : e)); throw e; });
         }
         return workerP;
     }
