@@ -759,6 +759,8 @@
 .esc-guia span{position:absolute;top:-20px;left:0;font-size:.66rem;color:#fbbf24;font-weight:700}
 .esc-hint{color:#fbbf24;font-size:.82rem;margin-top:8px;min-height:18px;text-align:center;font-weight:600}
 .esc-raw{color:#9ca3af;font-size:.72rem;word-break:break-all;margin-top:4px;text-align:center}
+.esc-prev{width:100%;display:block;margin-top:8px;border-radius:8px;border:1px solid #2b2f38;background:#000}
+.esc-raw-b{color:#e5e5e5;font-size:1rem;font-weight:700;word-break:break-all;margin-top:6px;text-align:center;background:#14161a;border:1px solid #2b2f38;border-radius:8px;padding:6px}
 .esc-sug{margin-top:8px;border-top:1px solid #2b2f38;padding-top:8px}
 .esc-sug-t{color:#fbbf24;font-size:.72rem;font-weight:700;margin-bottom:6px;text-align:center}
 .esc-sug-b{display:block;width:100%;text-align:left;background:#14161a;border:1px solid #374151;color:#e5e5e5;border-radius:8px;padding:8px;margin-bottom:5px;cursor:pointer;font-family:inherit;font-size:.82rem}
@@ -775,8 +777,10 @@
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
         </div>
+        <img id="escPrev" class="esc-prev" alt="" style="display:none">
         <div class="esc-hint" id="escHint">Iniciando cámara…</div>
         <div class="esc-raw" id="escRaw"></div>
+        <div class="esc-raw-b" id="escRawB"></div>
         <div class="esc-sug" id="escSug" style="display:none"></div>
         <div class="esc-ctrl">
             <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Escanear etiqueta (lote + FV)</button>
@@ -84103,7 +84107,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
 
     function el(id) { return document.getElementById(id); }
     function setHint(t) { var h = el('escHint'); if (h) h.textContent = t; }
-    function setRaw(t) { var r = el('escRaw'); if (r) r.textContent = t; }
+    function setRaw(t) { var r = el('escRaw'); if (r) r.textContent = t; var b = el('escRawB'); if (b) b.textContent = t ? t.replace(/^OCR crudo:\s*/, '') : ''; }
 
     // ---- rutas absolutas + eleccion de core (evita la deteccion interna de Tesseract) ----
     var TESS = new URL('tess/', document.baseURI).href;
@@ -84172,7 +84176,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     // ---- recorte de la zona guía + realce (mejora mucho la precisión) ----
     function preparar(origen, w, h, x, y) {
         var c = document.createElement('canvas');
-        var escala = Math.max(1, Math.min(3, 1500 / w));
+        var escala = Math.min(3, Math.max(1, 2200 / w));
         c.width = Math.round(w * escala); c.height = Math.round(h * escala);
         var ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = true;
@@ -84308,8 +84312,10 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         setHint(msg);
     }
     function escanearCanvas(canvas, psm) {
-        var whitelist = '0123456789FVLOTE';
-        setHint('Reconociendo etiqueta…');
+        var whitelist = '0123456789FVOILSB';
+        var prev = el('escPrev');
+        if (prev) { try { prev.src = canvas.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
+        setRaw(''); setHint('Reconociendo etiqueta…');
         reconocer(canvas, whitelist, psm).then(function (r) { pintarEtiqueta(r.data.text); })
             .catch(function (e) { setHint('Error OCR: ' + e.message); });
     }
@@ -84332,6 +84338,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
 
     window.abrirEscaner = function () {
         el('escModal').style.display = 'flex';
+        var p = el('escPrev'); if (p) { p.style.display = 'none'; p.removeAttribute('src'); }
         setRaw(''); setHint('Iniciando cámara…');
         worker().catch(function (e) { setHint('No se pudo cargar el OCR: ' + e.message); });
         arrancar();
