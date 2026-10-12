@@ -754,7 +754,7 @@
 .esc-head{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#fff;margin-bottom:10px}
 .esc-head button{background:#1b1e24;border:1px solid #2b2f38;color:#e5e5e5;border-radius:8px;padding:4px 10px;cursor:pointer}
 .esc-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000}
-#escVideo{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+#escVideo{width:100%;display:block}
 .esc-guia{position:absolute;left:4%;right:4%;top:34%;height:30%;border:2px dashed #fbbf24;border-radius:10px;box-shadow:0 0 0 9999px rgba(0,0,0,.35);pointer-events:none}
 .esc-guia span{position:absolute;top:-20px;left:0;font-size:.66rem;color:#fbbf24;font-weight:700}
 .esc-hint{color:#fbbf24;font-size:.82rem;margin-top:8px;min-height:18px;text-align:center;font-weight:600}
@@ -773,7 +773,7 @@
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
         <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara</span><button type="button" onclick="cerrarEscaner()">✕</button></div>
-        <div class="esc-wrap">
+        <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
         </div>
@@ -84162,8 +84162,12 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             stream = s;
             video.srcObject = s;
             video.setAttribute('playsinline', '');
+            video.onloadedmetadata = function () {
+                var wrap = el('escWrap'), vw = video.videoWidth, vh = video.videoHeight;
+                if (wrap && vw && vh) wrap.style.aspectRatio = vw + ' / ' + vh;
+            };
             video.play().catch(function () {});
-            setHint('Enmarca el número y pulsa "Leer LOTE" o "Leer FV".');
+            setHint('Enmarca el LOTE y la FV en el recuadro y pulsa "Escanear etiqueta".');
         }).catch(function (e) {
             setHint('No se pudo abrir la cámara (¿permiso? ¿HTTPS?).'); console.error(e);
         });
@@ -84173,7 +84177,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         stream = null; var v = el('escVideo'); if (v) v.srcObject = null;
     }
 
-    // ---- recorte de la zona guía + realce (mejora mucho la precisión) ----
+    // ---- recorte de la zona guía + binarizado (Otsu) para OCR nítido ----
     function preparar(origen, w, h, x, y) {
         var c = document.createElement('canvas');
         var escala = Math.min(3, Math.max(1, 2200 / w));
@@ -84181,10 +84185,20 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         var ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = true;
         ctx.drawImage(origen, x, y, w, h, 0, 0, c.width, c.height);
-        var img = ctx.getImageData(0, 0, c.width, c.height), d = img.data, min = 255, max = 0, i, g;
-        for (i = 0; i < d.length; i += 4) { g = (d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114) | 0; d[i] = d[i + 1] = d[i + 2] = g; if (g < min) min = g; if (g > max) max = g; }
-        var rango = (max - min) || 1;
-        for (i = 0; i < d.length; i += 4) { g = ((d[i] - min) * 255 / rango) | 0; g = g < 0 ? 0 : g > 255 ? 255 : g; d[i] = d[i + 1] = d[i + 2] = g; }
+        var img = ctx.getImageData(0, 0, c.width, c.height), d = img.data, i, g;
+        var hist = new Array(256).fill(0);
+        for (i = 0; i < d.length; i += 4) { g = (d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114) | 0; d[i] = d[i + 1] = d[i + 2] = g; hist[g]++; }
+        var total = d.length / 4, suma = 0;
+        for (i = 0; i < 256; i++) suma += i * hist[i];
+        var sumB = 0, wB = 0, maxVar = 0, umbral = 128;
+        for (i = 0; i < 256; i++) {
+            wB += hist[i]; if (!wB) continue;
+            var wF = total - wB; if (!wF) break;
+            sumB += i * hist[i];
+            var mB = sumB / wB, mF = (suma - sumB) / wF, v = wB * wF * (mB - mF) * (mB - mF);
+            if (v > maxVar) { maxVar = v; umbral = i; }
+        }
+        for (i = 0; i < d.length; i += 4) { g = d[i] > umbral ? 255 : 0; d[i] = d[i + 1] = d[i + 2] = g; }
         ctx.putImageData(img, 0, 0);
         return c;
     }
@@ -84285,8 +84299,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         var mv = up.match(/\bFV\b|\bV\b/);
         var izq = up, der = '';
         if (mv) { izq = up.slice(0, mv.index); der = up.slice(mv.index + mv[0].length); }
-        var runs = (mapear(izq).match(/[0-9]+/g) || []);
-        if (!mv) runs = (mapear(up).match(/[0-9]+/g) || []).filter(function (r) { return r.length >= 6; });
+        var runs = (mapear(izq).match(/[0-9]+/g) || []).filter(function (r) { return r.length >= 6; });
         var lote = '';
         runs.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (r) { if (!lote) lote = r; });
         if (!lote) {
@@ -84299,30 +84312,58 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         if (!fv) fv = fechaDeTexto(up);
         return { lote: lote, fv: fv };
     }
-    function pintarEtiqueta(texto) {
-        var r = parsearEtiqueta(texto);
-        setRaw('OCR crudo: ' + (texto || '').trim());
+    function pintarResultado(lote, fv, crudo) {
+        setRaw('OCR crudo: ' + (crudo || '').trim());
         pintarSugerencias([]);
-        if (r.lote) { var li = el('loteInput'); li.value = r.lote; li.dispatchEvent(new Event('input')); }
-        if (r.fv && r.fv.length >= 4) { var fi = el('fvInput'); fi.value = r.fv.replace(/\D/g, ''); aplicarMascaraFecha(fi); }
-        if (!r.lote) { setHint('No reconocí el lote. Acércalo en el recuadro (el número a la izquierda) y reintenta.'); return; }
-        var msg = 'Lote: ' + r.lote + (r.fv ? ('  ·  FV: ' + r.fv) : '  ·  (no reconocí la FV)');
-        if (existeLote(r.lote)) msg += '  — pulsa "Validar Lote"';
-        else { msg += '  — el lote no está en la base; revisa o toca una sugerencia'; pintarSugerencias(lotesParecidos(r.lote)); }
+        if (lote) { var li = el('loteInput'); li.value = lote; li.dispatchEvent(new Event('input')); }
+        if (fv && fv.length >= 4) { var fi = el('fvInput'); fi.value = fv.replace(/\D/g, ''); aplicarMascaraFecha(fi); }
+        if (!lote) { setHint('No reconocí el lote (número junto de 6+ dígitos). Acércalo en el recuadro y reintenta.'); return; }
+        var msg = 'Lote: ' + lote + (fv ? ('  ·  FV: ' + fv) : '  ·  (no reconocí la FV)');
+        if (existeLote(lote)) msg += '  — pulsa "Validar Lote"';
+        else { msg += '  — el lote no está en la base; revisa o toca una sugerencia'; pintarSugerencias(lotesParecidos(lote)); }
         setHint(msg);
     }
+    function pintarEtiqueta(texto) {
+        var r = parsearEtiqueta(texto);
+        pintarResultado(r.lote, r.fv, texto);
+    }
+    // ---- consenso de 3 lecturas: el lote/fecha que mas se repite ----
+    function decidirEtiqueta(textos) {
+        var lotes = {}, fvs = {};
+        textos.forEach(function (t) {
+            var r = parsearEtiqueta(t);
+            if (r.lote) lotes[r.lote] = (lotes[r.lote] || 0) + 1;
+            if (r.fv) fvs[r.fv] = (fvs[r.fv] || 0) + 1;
+        });
+        function masComun(m, porLargo) {
+            var best = '', bc = 0;
+            Object.keys(m).forEach(function (k) { if (m[k] > bc || (m[k] === bc && porLargo && k.length > best.length)) { bc = m[k]; best = k; } });
+            return best;
+        }
+        pintarResultado(masComun(lotes, true), masComun(fvs, false), textos.join('   |   '));
+    }
+    var WHITELIST = '0123456789FVOILSB';
     function escanearCanvas(canvas, psm) {
-        var whitelist = '0123456789FVOILSB';
         var prev = el('escPrev');
         if (prev) { try { prev.src = canvas.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
         setRaw(''); setHint('Reconociendo etiqueta…');
-        reconocer(canvas, whitelist, psm).then(function (r) { pintarEtiqueta(r.data.text); })
+        reconocer(canvas, WHITELIST, psm).then(function (r) { pintarEtiqueta(r.data.text); })
             .catch(function (e) { setHint('Error OCR: ' + e.message); });
     }
     window.escEscanear = function () {
-        var canvas = capturarCamara();
-        if (!canvas) { setHint('La cámara aún no está lista.'); return; }
-        escanearCanvas(canvas, 6);
+        var v = el('escVideo');
+        if (!v || !v.videoWidth || !v.videoHeight) { setHint('La cámara aún no está lista.'); return; }
+        setRaw(''); setHint('Reconociendo etiqueta (3 lecturas)…');
+        var capturas = [], i = 0;
+        (function paso() {
+            if (i >= 3) { decidirEtiqueta(capturas); return; }
+            i++;
+            var canvas = capturarCamara();
+            if (canvas) { var prev = el('escPrev'); if (prev) { try { prev.src = canvas.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } } }
+            setHint('Reconociendo etiqueta… (lectura ' + i + ' de 3)');
+            reconocer(canvas, WHITELIST, 6).then(function (r) { capturas.push(r.data.text); setTimeout(paso, 120); })
+                .catch(function (e) { setHint('Error OCR: ' + e.message); });
+        })();
     };
 
     // ---- usar una foto de la galería (útil para probar precisión) ----
