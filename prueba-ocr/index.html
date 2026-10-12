@@ -753,13 +753,15 @@
 .esc-box{width:100%;max-width:560px;background:#111214;border:1px solid #2b2f38;border-radius:16px;padding:14px}
 .esc-head{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#fff;margin-bottom:10px}
 .esc-head button{background:#1b1e24;border:1px solid #2b2f38;color:#e5e5e5;border-radius:8px;padding:4px 10px;cursor:pointer}
-.esc-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000}
+.esc-wrap{position:relative;border-radius:12px;overflow:hidden;background:#000;touch-action:none}
+.tap-info{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);color:#fbbf24;font-size:.66rem;text-align:center;padding:3px}
 #escVideo{width:100%;display:block}
 .esc-guia{position:absolute;left:4%;right:4%;top:34%;height:30%;border:2px dashed #fbbf24;border-radius:10px;box-shadow:0 0 0 9999px rgba(0,0,0,.35);pointer-events:none}
 .esc-guia span{position:absolute;top:-20px;left:0;font-size:.66rem;color:#fbbf24;font-weight:700}
 .esc-hint{color:#fbbf24;font-size:.82rem;margin-top:8px;min-height:18px;text-align:center;font-weight:600}
 .esc-raw{color:#9ca3af;font-size:.72rem;word-break:break-all;margin-top:4px;text-align:center}
 .esc-prev{width:100%;display:block;margin-top:8px;border-radius:8px;border:1px solid #2b2f38;background:#000}
+.esc-prev-cap{color:#fbbf24;font-size:.68rem;font-weight:700;margin:8px 0 3px;text-align:center}
 .esc-raw-b{color:#e5e5e5;font-size:1rem;font-weight:700;word-break:break-all;margin-top:6px;text-align:center;background:#14161a;border:1px solid #2b2f38;border-radius:8px;padding:6px}
 .esc-nums{margin-top:8px}
 .esc-nums-lbl{font-size:.72rem;color:#9ca3af;margin-bottom:6px;text-align:center}
@@ -772,19 +774,20 @@
 .esc-ctrl button{flex:1 1 40%;background:#14161a;border:1px solid #2b2f38;color:#e5e5e5;border-radius:10px;padding:11px;cursor:pointer;font-weight:700;font-family:inherit;font-size:.85rem}
 .esc-ctrl button.pri{background:#fbbf24;color:#111;border-color:#fbbf24}
 .esc-ctrl label.foto{flex:1 1 40%;text-align:center;background:#14161a;border:1px solid #2b2f38;color:#e5e5e5;border-radius:10px;padding:11px;cursor:pointer;font-weight:700;font-size:.85rem}
-.esc-editor{position:absolute;inset:0;display:none}
+.esc-editor{position:absolute;inset:0;display:none;touch-action:none}
 .esc-editor img{width:100%;height:100%;object-fit:fill;display:block}
 .esc-box-sel{position:absolute;border:2px solid #fbbf24;box-shadow:0 0 0 9999px rgba(0,0,0,.55);box-sizing:border-box;touch-action:none;cursor:move}
 .esc-box-sel .esc-hnd{position:absolute;right:-11px;bottom:-11px;width:24px;height:24px;background:#fbbf24;border:2px solid #111;border-radius:50%;touch-action:none;cursor:se-resize}
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v17</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v18</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
             <div class="esc-editor" id="escEditor"><img id="escEditImg" alt=""><div class="esc-box-sel" id="escBox"><span class="esc-hnd" id="escHnd"></span></div></div>
         </div>
+        <div class="esc-prev-cap" id="escPrevCap" style="display:none">Así se lee el recuadro (debe verse tu lote):</div>
         <img id="escPrev" class="esc-prev" alt="" style="display:none">
         <div class="esc-hint" id="escHint">Iniciando cámara…</div>
         <div class="esc-raw" id="escRaw"></div>
@@ -794,6 +797,7 @@
         <div class="esc-ctrl">
             <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Congelar imagen</button>
             <button type="button" class="pri" id="escLeerBtn" style="flex:1 1 100%;display:none" onclick="escLeerSeleccion()">🔍 Leer la zona marcada</button>
+            <button type="button" id="escAllBtn" style="flex:1 1 100%;display:none" onclick="leerTodaFoto()">🔎 Probar leyendo TODA la foto</button>
             <label class="foto" style="flex:1 1 100%;background:#1b1e24">📷 Tomar foto (si hay memoria)<input id="escFoto" type="file" accept="image/*" capture="environment" style="display:none" onchange="escArchivo(this)"></label>
             <button type="button" onclick="escCambiarCamara()">🔄 Cámara</button>
             <button type="button" onclick="escTorch()">🔦 Linterna</button>
@@ -84401,7 +84405,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     function leerVarios(items, previewIdx) {
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Leyendo etiqueta…');
-        var prev = el('escPrev'); if (prev && items[previewIdx] && items[previewIdx].c) { try { prev.src = items[previewIdx].c.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
+        var prev = el('escPrev'); if (prev && items[previewIdx] && items[previewIdx].c) { try { prev.src = items[previewIdx].c.toDataURL('image/png'); prev.style.display = 'block'; var cap = el('escPrevCap'); if (cap) cap.style.display = 'block'; } catch (e) { } }
         var textos = [], k = 0;
         (function paso() {
             if (k >= items.length) { decidirEtiqueta(textos); return; }
@@ -84421,7 +84425,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         if (dragListo) return; var box = el('escBox'), hnd = el('escHnd'), wrap = el('escWrap'); if (!box) return;
         dragListo = true; var modo = null, sx = 0, sy = 0, ini = null;
         box.addEventListener('pointerdown', function (e) {
-            e.preventDefault(); try { box.setPointerCapture(e.pointerId); } catch (x) { }
+            e.preventDefault(); e.stopPropagation(); try { box.setPointerCapture(e.pointerId); } catch (x) { }
             modo = (e.target === hnd) ? 'resize' : 'move'; sx = e.clientX; sy = e.clientY;
             ini = { x: selBox.x, y: selBox.y, w: selBox.w, h: selBox.h };
         });
@@ -84432,8 +84436,23 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             else { selBox.w = Math.min(1 - selBox.x, Math.max(0.04, ini.w + dx)); selBox.h = Math.min(1 - selBox.y, Math.max(0.04, ini.h + dy)); }
             dibujarBox();
         });
-        function fin() { modo = null; }
+        function fin() { if (modo) { modo = null; vistaPrevia(); } }
         box.addEventListener('pointerup', fin); box.addEventListener('pointercancel', fin);
+        wrap.addEventListener('pointerdown', function (e) {
+            if (e.target === box || (box.contains && box.contains(e.target))) return;
+            e.preventDefault(); var r = wrap.getBoundingClientRect();
+            var fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+            selBox.x = Math.min(1 - selBox.w, Math.max(0, fx - selBox.w / 2));
+            selBox.y = Math.min(1 - selBox.h, Math.max(0, fy - selBox.h / 2));
+            dibujarBox(); vistaPrevia();
+        });
+    }
+    function vistaPrevia() {
+        if (!baseFull) return;
+        var bw = baseFull.width, bh = baseFull.height;
+        var x = Math.round(selBox.x * bw), y = Math.round(selBox.y * bh);
+        var w = Math.max(12, Math.round(selBox.w * bw)), h = Math.max(12, Math.round(selBox.h * bh));
+        try { var g = preparar(baseFull, w, h, x, y, 420, 'gris'); var p = el('escPrev'); if (g && p) { p.src = g.toDataURL('image/png'); p.style.display = 'block'; var cap = el('escPrevCap'); if (cap) cap.style.display = 'block'; } } catch (e) { }
     }
     function abrirEditor(canvasBase) {
         baseFull = canvasBase; asegurarDrag();
@@ -84441,9 +84460,10 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         el('escEditor').style.display = 'block';
         el('escBox').style.display = 'block';
         var lb = el('escLeerBtn'); if (lb) lb.style.display = 'block';
+        var ab = el('escAllBtn'); if (ab) ab.style.display = 'block';
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
-        setRaw(''); dibujarBox();
-        setHint('Foto ' + baseFull.width + '×' + baseFull.height + ' — mueve el recuadro SOBRE el lote y la fecha y toca "Leer la zona marcada".');
+        setRaw(''); dibujarBox(); vistaPrevia();
+        setHint('TOCA tu lote en la foto (o mueve el recuadro hasta que abajo se vea tu lote nítido) y toca "Leer la zona marcada".');
     }
     window.escEscanear = function () {
         var v = el('escVideo');
@@ -84474,6 +84494,21 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             { c: rotar(bin, 270), wl: '0123456789FV', psm: 7 }
         ], 3);
     };
+    window.leerTodaFoto = function () {
+        if (!baseFull) return;
+        var bw = baseFull.width, bh = baseFull.height;
+        el('escEditor').style.display = 'none';
+        var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none';
+        var ab = el('escAllBtn'); if (ab) ab.style.display = 'none';
+        setHint('Leyendo toda la foto…');
+        try { asciiActual = asciiDe(preparar(baseFull, bw / 2, bh / 2, 0, 0, 800, 'gris'), 110); } catch (e) { asciiActual = ''; }
+        leerVarios([
+            { c: preparar(baseFull, bw, bh, 0, 0, 1600, 'bin'), wl: '0123456789FV', psm: 6 },
+            { c: preparar(baseFull, bw, bh, 0, 0, 1600, 'gris'), wl: '0123456789FV', psm: 6 },
+            { c: preparar(baseFull, bw, bh, 0, 0, 1600, ''), wl: '0123456789FV', psm: 6 },
+            { c: preparar(baseFull, bw, bh, 0, 0, 1600, 'gris'), wl: '', psm: 11 }
+        ], 1);
+    };
 
     // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
     window.escArchivo = function (inp) {
@@ -84490,15 +84525,17 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     window.abrirEscaner = function () {
         el('escModal').style.display = 'flex';
         var p = el('escPrev'); if (p) { p.style.display = 'none'; p.removeAttribute('src'); }
+        var pc = el('escPrevCap'); if (pc) pc.style.display = 'none';
         var ed = el('escEditor'); if (ed) ed.style.display = 'none';
         var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none';
+        var ab = el('escAllBtn'); if (ab) ab.style.display = 'none';
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Iniciando cámara…');
         worker().catch(function (e) { setHint('No se pudo cargar el OCR: ' + e.message); });
         arrancar();
     };
     window.cerrarEscaner = function () { parar(); el('escModal').style.display = 'none'; };
-    window.escCambiarCamara = function () { facing = (facing === 'environment') ? 'user' : 'environment'; parar(); var ed = el('escEditor'); if (ed) ed.style.display = 'none'; var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none'; setHint('Cambiando cámara…'); arrancar(); };
+    window.escCambiarCamara = function () { facing = (facing === 'environment') ? 'user' : 'environment'; parar(); var ed = el('escEditor'); if (ed) ed.style.display = 'none'; var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none'; var ab = el('escAllBtn'); if (ab) ab.style.display = 'none'; setHint('Cambiando cámara…'); arrancar(); };
     window.escTorch = function () {
         try {
             var t = stream.getVideoTracks()[0];
