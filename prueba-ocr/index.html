@@ -775,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v7</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v8</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84375,13 +84375,13 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Leyendo etiqueta…');
         var capturas = [], i = 0;
-        var fuentes = [recorteGuia, recorteGuia, recorteCompleto];
+        var fuentes = [recorteGuia];
         (function paso() {
             if (i >= fuentes.length) { decidirEtiqueta(capturas); return; }
             var canvas = fuentes[i](v); i++;
             if (canvas) { var prev = el('escPrev'); if (prev) { try { prev.src = canvas.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } } }
-            setHint('Leyendo etiqueta… (' + i + ' de ' + fuentes.length + ')');
-            reconocer(canvas, '', 6).then(function (r) { capturas.push(r.data.text); setTimeout(paso, 120); })
+            setHint('Leyendo etiqueta…');
+            reconocer(canvas, '', 6).then(function (r) { capturas.push(r.data.text); setTimeout(paso, 60); })
                 .catch(function (e) { setHint('Error OCR: ' + e.message); });
         })();
     };
