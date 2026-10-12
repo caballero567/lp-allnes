@@ -779,7 +779,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v16</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v17</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84208,18 +84208,33 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         for (i = 0; i < 256; i++) { acum += hist[i]; if (acum >= total * 0.02) { lo = i; break; } }
         acum = 0; for (i = 0; i < 256; i++) { acum += hist[i]; if (acum >= total * 0.98) { hi = i; break; } }
         var rango = (hi - lo) || 1;
-        if (modo === 'bin') {
+        if (modo === 'bin' || modo === 'binInv') {
             var suma = 0; for (i = 0; i < 256; i++) suma += i * hist[i];
             var sumB = 0, wB = 0, maxVar = 0, umbral = 128;
             for (i = 0; i < 256; i++) { wB += hist[i]; if (!wB) continue; var wF = total - wB; if (!wF) break; sumB += i * hist[i]; var mB = sumB / wB, mF = (suma - sumB) / wF, v = wB * wF * (mB - mF) * (mB - mF); if (v > maxVar) { maxVar = v; umbral = i; } }
-            var blancos = 0;
-            for (i = 0; i < d.length; i += 4) { g = d[i] > umbral ? 255 : 0; d[i] = d[i + 1] = d[i + 2] = g; if (g) blancos++; }
-            if (blancos < total / 2) { for (i = 0; i < d.length; i += 4) { g = 255 - d[i]; d[i] = d[i + 1] = d[i + 2] = g; } }
+            var oscuro = (modo === 'binInv');
+            for (i = 0; i < d.length; i += 4) { g = (d[i] > umbral) === oscuro ? 0 : 255; d[i] = d[i + 1] = d[i + 2] = g; }
         } else {
             for (i = 0; i < d.length; i += 4) { g = ((d[i] - lo) * 255 / rango) | 0; g = g < 0 ? 0 : g > 255 ? 255 : g; d[i] = d[i + 1] = d[i + 2] = g; }
         }
         ctx.putImageData(img, 0, 0);
         return c;
+    }
+    function rotar(src, grados) {
+        var c = document.createElement('canvas');
+        if (grados === 90 || grados === 270) { c.width = src.height; c.height = src.width; } else { c.width = src.width; c.height = src.height; }
+        var ctx = c.getContext('2d');
+        ctx.translate(c.width / 2, c.height / 2); ctx.rotate(grados * Math.PI / 180);
+        ctx.drawImage(src, -src.width / 2, -src.height / 2);
+        return c;
+    }
+    function asciiDe(src, cols) {
+        var rows = Math.max(6, Math.min(46, Math.round(cols * src.height / src.width)));
+        var c = document.createElement('canvas'); c.width = cols; c.height = rows;
+        var ctx = c.getContext('2d'); ctx.drawImage(src, 0, 0, cols, rows);
+        var d = ctx.getImageData(0, 0, cols, rows).data, chars = ' .:-=+*#%@', out = [];
+        for (var y = 0; y < rows; y++) { var line = ''; for (var x = 0; x < cols; x++) { var i = (y * cols + x) * 4; var g = (d[i] * 0.299 + d[i + 1] * 0.587 + d[i + 2] * 0.114) | 0; line += chars[Math.min(9, Math.floor((255 - g) / 25.6))]; } out.push(line); }
+        return out.join('\n');
     }
     function recorteGuia(v, modo) { var vw = v.videoWidth, vh = v.videoHeight; return preparar(v, Math.round(vw * 0.92), Math.round(vh * 0.30), Math.round(vw * 0.04), Math.round(vh * 0.34), 2200, modo); }
     function recorteCompleto(v, modo) { return preparar(v, v.videoWidth, v.videoHeight, 0, 0, 2000, modo); }
@@ -84334,7 +84349,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         return { lote: lote, fv: fv };
     }
     function pintarResultado(lote, fv, crudo) {
-        setRaw('OCR crudo: ' + (crudo || '').trim());
+        setRaw('OCR crudo:\n' + (crudo || '').trim() + (asciiActual ? ('\n\n--- vista del recorte ---\n' + asciiActual) : ''));
         pintarSugerencias([]);
         if (lote) { var li = el('loteInput'); li.value = lote; li.dispatchEvent(new Event('input')); }
         if (fv && fv.length >= 4) { var fi = el('fvInput'); fi.value = fv.replace(/\D/g, ''); aplicarMascaraFecha(fi); }
@@ -84383,20 +84398,20 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         box.style.display = 'block';
     }
     var WHITELIST = '0123456789FVOILSB';
-    function leerVarios(canvases, previewIdx, whitelist, psm) {
+    function leerVarios(items, previewIdx) {
         var nn = el('escNums'); if (nn) nn.style.display = 'none';
         setRaw(''); setHint('Leyendo etiqueta…');
-        var prev = el('escPrev'); if (prev && canvases[previewIdx]) { try { prev.src = canvases[previewIdx].toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
+        var prev = el('escPrev'); if (prev && items[previewIdx] && items[previewIdx].c) { try { prev.src = items[previewIdx].c.toDataURL('image/png'); prev.style.display = 'block'; } catch (e) { } }
         var textos = [], k = 0;
         (function paso() {
-            if (k >= canvases.length) { decidirEtiqueta(textos); return; }
-            var canvas = canvases[k]; k++;
-            setHint('Leyendo etiqueta… (' + k + ' de ' + canvases.length + ')');
-            reconocer(canvas, whitelist, psm || 6).then(function (r) { textos.push(r.data.text); setTimeout(paso, 50); })
+            if (k >= items.length) { decidirEtiqueta(textos); return; }
+            var it = items[k]; k++;
+            setHint('Leyendo etiqueta… (' + k + ' de ' + items.length + ')');
+            reconocer(it.c, it.wl, it.psm).then(function (r) { textos.push(r.data.text); setTimeout(paso, 50); })
                 .catch(function (e) { setHint('Error OCR: ' + e.message); });
         })();
     }
-    var baseFull = null, selBox = { x: 0.06, y: 0.38, w: 0.88, h: 0.18 }, dragListo = false;
+    var baseFull = null, asciiActual = '', selBox = { x: 0.06, y: 0.38, w: 0.88, h: 0.18 }, dragListo = false;
     function dibujarBox() {
         var b = el('escBox'); if (!b) return;
         b.style.left = (selBox.x * 100) + '%'; b.style.top = (selBox.y * 100) + '%';
@@ -84443,7 +84458,21 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         el('escEditor').style.display = 'none';
         var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none';
         setHint('Leyendo la zona marcada…');
-        leerVarios([preparar(baseFull, w, h, x, y, 2200, 'bin'), preparar(baseFull, w, h, x, y, 2200, ''), preparar(baseFull, w, h, x, y, 2200, 'gris')], 2, '0123456789FV', 7);
+        var bin = preparar(baseFull, w, h, x, y, 2200, 'bin');
+        var binI = preparar(baseFull, w, h, x, y, 2200, 'binInv');
+        var gris = preparar(baseFull, w, h, x, y, 2200, 'gris');
+        var crudo = preparar(baseFull, w, h, x, y, 2200, '');
+        try { asciiActual = asciiDe(gris, 110); } catch (e) { asciiActual = ''; }
+        leerVarios([
+            { c: bin, wl: '0123456789FV', psm: 7 },
+            { c: binI, wl: '0123456789FV', psm: 7 },
+            { c: gris, wl: '0123456789FV', psm: 7 },
+            { c: crudo, wl: '0123456789FV', psm: 7 },
+            { c: crudo, wl: '', psm: 7 },
+            { c: rotar(bin, 90), wl: '0123456789FV', psm: 7 },
+            { c: rotar(bin, 180), wl: '0123456789FV', psm: 7 },
+            { c: rotar(bin, 270), wl: '0123456789FV', psm: 7 }
+        ], 3);
     };
 
     // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
