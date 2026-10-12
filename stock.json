@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "1156/0",
-    "n": 1156
+    "q": "1054/0",
+    "n": 1054
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -231,8 +231,8 @@
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X CULINARIOS|CULINARIOS": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "7612/0",
+    "n": 7612
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X MAGGI CALDO|CULINARIOS": {
     "u": "UN",
@@ -615,7 +615,7 @@
     "n": 0
   },
   "CBO: NESTLE MOROCHAS PACK 6*30GR": {
-    "u": "UN",
+    "u": "PACK",
     "q": "0/0",
     "n": 0
   },
@@ -720,9 +720,9 @@
     "n": 1
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
-    "u": "CBO",
-    "q": "0/0",
-    "n": 0
+    "u": "TIRA",
+    "q": "271/0",
+    "n": 271
   },
   "COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)": {
     "u": "CBO",
@@ -813,6 +813,11 @@
     "u": "CAJA",
     "q": "4567/4",
     "n": 4567
+  },
+  "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
+    "u": "UN",
+    "q": "0/0",
+    "n": 0
   },
   "DONOFRIO PANETON CHOCOTON CJ 6*450GR": {
     "u": "CAJA",
@@ -1115,9 +1120,9 @@
     "n": 55
   },
   "MAGGI CREMA HONGOS DP 12U*65GR": {
-    "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "u": "DISP",
+    "q": "76/3",
+    "n": 76
   },
   "MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR": {
     "u": "CAJA",
@@ -1231,7 +1236,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "380/1",
+    "q": "380/2",
     "n": 380
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -2251,8 +2256,8 @@
   },
   "TRASL. MANTA ROJA KIRMA LOGO": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "4/0",
+    "n": 4
   },
   "TRASL. NESCAFE GOLD SIGNATURE 95G": {
     "u": "UN",
@@ -2611,8 +2616,8 @@
   },
   "TRASL.GRAT LONCHERA MANO MILO": {
     "u": "UN",
-    "q": "602/0",
-    "n": 602
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT MAGGI POLVO CARNE 7GR PE": {
     "u": "UN",
