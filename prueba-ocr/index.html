@@ -775,7 +775,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v10</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v11</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84162,14 +84162,21 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         }
         navigator.mediaDevices.getUserMedia({
             audio: false,
-            video: { facingMode: { ideal: facing }, width: { ideal: 1920 }, height: { ideal: 1080 } }
+            video: { facingMode: { ideal: facing }, width: { ideal: 2560 }, height: { ideal: 1440 } }
         }).then(function (s) {
             stream = s;
             video.srcObject = s;
             video.setAttribute('playsinline', '');
             video.onloadedmetadata = function () {};
             video.play().catch(function () {});
-            setHint('Enmarca el LOTE y la FV en el recuadro y pulsa "Escanear etiqueta".');
+            try {
+                var t = s.getVideoTracks()[0], cap = t.getCapabilities ? t.getCapabilities() : {};
+                var adv = {};
+                if (cap.focusMode && cap.focusMode.indexOf('continuous') >= 0) adv.focusMode = 'continuous';
+                if (cap.width && cap.height) adv.width = cap.width.max; adv.height = cap.height.max;
+                t.applyConstraints({ advanced: [adv] }).catch(function () {});
+            } catch (e) { }
+            setTimeout(function () { setHint('Cámara ' + (video.videoWidth || '?') + '×' + (video.videoHeight || '?') + ' — enmarca lote y FV'); }, 800);
         }).catch(function (e) {
             setHint('No se pudo abrir la cámara (¿permiso? ¿HTTPS?).'); console.error(e);
         });
@@ -84180,9 +84187,9 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     }
 
     // ---- recorte + realce suave (SIN binarizar; tesseract binariza solo) ----
-    function preparar(origen, w, h, x, y) {
+    function preparar(origen, w, h, x, y, maxAncho) {
         var c = document.createElement('canvas');
-        var escala = Math.max(0.2, Math.min(2, 1200 / w));
+        var escala = Math.max(0.5, Math.min(3, (maxAncho || 1200) / w));
         c.width = Math.round(w * escala); c.height = Math.round(h * escala);
         var ctx = c.getContext('2d');
         ctx.imageSmoothingEnabled = true;
@@ -84198,7 +84205,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         ctx.putImageData(img, 0, 0);
         return c;
     }
-    function recorteGuia(v) { var vw = v.videoWidth, vh = v.videoHeight; return preparar(v, Math.round(vw * 0.92), Math.round(vh * 0.30), Math.round(vw * 0.04), Math.round(vh * 0.34)); }
+    function recorteGuia(v) { var vw = v.videoWidth, vh = v.videoHeight; return preparar(v, Math.round(vw * 0.92), Math.round(vh * 0.30), Math.round(vw * 0.04), Math.round(vh * 0.34), 2400); }
     function recorteCompleto(v) { return preparar(v, v.videoWidth, v.videoHeight, 0, 0); }
     function capturarCamara() {
         var v = el('escVideo'), vw = v.videoWidth, vh = v.videoHeight;
