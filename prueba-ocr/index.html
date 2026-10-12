@@ -779,7 +779,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v14</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v15</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -84433,7 +84433,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
     window.escEscanear = function () {
         var v = el('escVideo');
         if (!v || !v.videoWidth || !v.videoHeight) { setHint('La cámara aún no está lista.'); return; }
-        abrirEditor(preparar(v, v.videoWidth, v.videoHeight, 0, 0, 2000, 'gris'));
+        abrirEditor(preparar(v, v.videoWidth, v.videoHeight, 0, 0, 2000, ''));
     };
     window.escLeerSeleccion = function () {
         if (!baseFull) { setHint('Primero congela la imagen.'); return; }
@@ -84443,7 +84443,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         el('escEditor').style.display = 'none';
         var lb = el('escLeerBtn'); if (lb) lb.style.display = 'none';
         setHint('Leyendo la zona marcada…');
-        leerVarios([preparar(baseFull, w, h, x, y, 1800, 'bin'), preparar(baseFull, w, h, x, y, 1800, 'gris')], 1, '0123456789FV');
+        leerVarios([preparar(baseFull, w, h, x, y, 1800, 'bin'), preparar(baseFull, w, h, x, y, 1800, ''), preparar(baseFull, w, h, x, y, 1800, 'gris')], 2, '0123456789FV');
     };
 
     // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
@@ -84451,7 +84451,7 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
         if (!inp.files || !inp.files[0]) return;
         var img = new Image();
         img.onload = function () {
-            abrirEditor(preparar(img, img.width, img.height, 0, 0, 2000, 'gris'));
+            abrirEditor(preparar(img, img.width, img.height, 0, 0, 2000, ''));
             inp.value = '';
         };
         img.onerror = function () { setHint('No pude abrir la imagen.'); inp.value = ''; };
