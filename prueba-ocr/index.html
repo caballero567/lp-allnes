@@ -762,6 +762,7 @@
 .esc-raw{color:#9ca3af;font-size:.72rem;word-break:break-all;margin-top:4px;text-align:center}
 .esc-prev{width:100%;display:block;margin-top:8px;border-radius:8px;border:1px solid #2b2f38;background:#000}
 .esc-prev-cap{color:#fbbf24;font-size:.68rem;font-weight:700;margin:8px 0 3px;text-align:center}
+.esc-diag{width:100%;height:90px;margin-top:8px;background:#0b0c0e;color:#9ae6b4;border:1px solid #2b2f38;border-radius:8px;font-size:.6rem;font-family:monospace}
 .esc-raw-b{color:#e5e5e5;font-size:1rem;font-weight:700;word-break:break-all;margin-top:6px;text-align:center;background:#14161a;border:1px solid #2b2f38;border-radius:8px;padding:6px}
 .esc-nums{margin-top:8px}
 .esc-nums-lbl{font-size:.72rem;color:#9ca3af;margin-bottom:6px;text-align:center}
@@ -781,7 +782,7 @@
 </style>
 <div class="esc-modal" id="escModal">
     <div class="esc-box">
-        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v18</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
+        <div class="esc-head"><span>📷 Leer LOTE y FV con la cámara <small id="escVer" style="background:#fbbf24;color:#111;border-radius:6px;padding:1px 6px;font-size:.62rem">v19</small></span><button type="button" onclick="cerrarEscaner()">✕</button></div>
         <div class="esc-wrap" id="escWrap">
             <video id="escVideo" playsinline muted autoplay></video>
             <div class="esc-guia"><span>↓ enmarca el LOTE y la FV ↓</span></div>
@@ -791,6 +792,7 @@
         <img id="escPrev" class="esc-prev" alt="" style="display:none">
         <div class="esc-hint" id="escHint">Iniciando cámara…</div>
         <div class="esc-raw" id="escRaw"></div>
+        <textarea id="escDiag" class="esc-diag" readonly placeholder="(aquí aparecerá el diagnóstico para copiar)" style="display:none"></textarea>
         <div class="esc-raw-b" id="escRawB"></div>
         <div class="esc-nums" id="escNums" style="display:none"></div>
         <div class="esc-sug" id="escSug" style="display:none"></div>
@@ -798,6 +800,7 @@
             <button type="button" class="pri" style="flex:1 1 100%" onclick="escEscanear()">📸 Congelar imagen</button>
             <button type="button" class="pri" id="escLeerBtn" style="flex:1 1 100%;display:none" onclick="escLeerSeleccion()">🔍 Leer la zona marcada</button>
             <button type="button" id="escAllBtn" style="flex:1 1 100%;display:none" onclick="leerTodaFoto()">🔎 Probar leyendo TODA la foto</button>
+            <button type="button" style="flex:1 1 100%" onclick="copiarDiagnostico()">📋 Copiar diagnóstico (para el técnico)</button>
             <label class="foto" style="flex:1 1 100%;background:#1b1e24">📷 Tomar foto (si hay memoria)<input id="escFoto" type="file" accept="image/*" capture="environment" style="display:none" onchange="escArchivo(this)"></label>
             <button type="button" onclick="escCambiarCamara()">🔄 Cámara</button>
             <button type="button" onclick="escTorch()">🔦 Linterna</button>
@@ -84509,7 +84512,22 @@ function fmt(v) { const n = parseFloat(String(v).replace(/S\/\s*/,'')); return i
             { c: preparar(baseFull, bw, bh, 0, 0, 1600, 'gris'), wl: '', psm: 11 }
         ], 1);
     };
-
+    function miniB64(canvas, q) { try { return canvas.toDataURL('image/jpeg', q || 0.5).split(',')[1]; } catch (e) { return ''; } }
+    window.copiarDiagnostico = function () {
+        if (!baseFull) { setHint('Primero congela la imagen.'); return; }
+        var bw = baseFull.width, bh = baseFull.height;
+        var x = Math.round(selBox.x * bw), y = Math.round(selBox.y * bh);
+        var w = Math.max(12, Math.round(selBox.w * bw)), h = Math.max(12, Math.round(selBox.h * bh));
+        var crop = miniB64(preparar(baseFull, w, h, x, y, 300, ''), 0.5);
+        var full = miniB64(preparar(baseFull, bw, bh, 0, 0, 320, ''), 0.5);
+        var t = 'DIAG_CROP ' + crop + '\nDIAG_FULL ' + full;
+        var ta = el('escDiag');
+        if (ta) { ta.style.display = 'block'; ta.value = t; try { ta.focus(); ta.setSelectionRange(0, t.length); } catch (e) {} }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(t).then(function () { setHint('Diagnóstico COPIADO ✓ — pégalo en el chat.'); })
+                .catch(function () { setHint('Mantén pulsado el cuadro verde y toca Copiar.'); });
+        } else setHint('Mantén pulsado el cuadro verde y toca Copiar.');
+    };
     // ---- usar una foto de la galería o de la cámara nativa (nítida) ----
     window.escArchivo = function (inp) {
         if (!inp.files || !inp.files[0]) return;
