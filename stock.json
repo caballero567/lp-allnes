@@ -351,8 +351,8 @@
   },
   "BONIF NESCAFE*7GR X CAFE": {
     "u": "UN",
-    "q": "1036/0",
-    "n": 1036
+    "q": "1035/0",
+    "n": 1035
   },
   "BONIF NESCAFE*7GR X CAFE YAPE L NE": {
     "u": "UN",
@@ -861,8 +861,8 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "369/1",
-    "n": 369
+    "q": "368/7",
+    "n": 368
   },
   "ECCO CEBADA 15X175G PE": {
     "u": "CAJA",
@@ -971,8 +971,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "4860/3",
-    "n": 4860
+    "q": "4859/22",
+    "n": 4859
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1026,7 +1026,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1400/3",
+    "q": "1400/4",
     "n": 1400
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1296,8 +1296,8 @@
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "147/0",
-    "n": 147
+    "q": "146/7",
+    "n": 146
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
     "u": "CAJA",
@@ -1421,7 +1421,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "134/3",
+    "q": "134/4",
     "n": 134
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1736,7 +1736,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "48/12",
+    "q": "48/11",
     "n": 48
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -1781,7 +1781,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "95/3",
+    "q": "95/1",
     "n": 95
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
