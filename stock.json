@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "CBO:EXHIBIDOR-SUB(SON/CLA)-PRI-KIT-TRGL CLA-MRHS CLA -AGO": {
     "u": "UN",
@@ -966,8 +966,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "1677/15",
-    "n": 1677
+    "q": "1620/3",
+    "n": 1620
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
@@ -1196,8 +1196,8 @@
   },
   "MAGGI SOPA POLLO/FIDEOS CJ 12*12*57GR": {
     "u": "CAJA",
-    "q": "1/11",
-    "n": 1
+    "q": "2/0",
+    "n": 2
   },
   "MAGGI SOPA POLLO/FIDEOS DP*12*57GR": {
     "u": "UN",
@@ -1666,7 +1666,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "651/2",
+    "q": "651/6",
     "n": 651
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
@@ -1781,7 +1781,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "90/20",
+    "q": "90/21",
     "n": 90
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
