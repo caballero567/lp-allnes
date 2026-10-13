@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "4142/0",
-    "n": 4142
+    "q": "4141/0",
+    "n": 4141
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -806,7 +806,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "6417/3",
+    "q": "6417/2",
     "n": 6417
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -971,13 +971,13 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "4941/23",
-    "n": 4941
+    "q": "4937/17",
+    "n": 4937
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
-    "q": "16/21",
-    "n": 16
+    "q": "0/21",
+    "n": 0
   },
   "IDEAL TABLETA LIGHT MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
@@ -1036,7 +1036,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "184/5",
+    "q": "184/4",
     "n": 184
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1236,7 +1236,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "376/1",
+    "q": "376/0",
     "n": 376
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -1691,7 +1691,7 @@
   },
   "NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR": {
     "u": "CAJA",
-    "q": "22/13",
+    "q": "22/12",
     "n": 22
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
