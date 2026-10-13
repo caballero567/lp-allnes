@@ -351,8 +351,8 @@
   },
   "BONIF NESCAFE*7GR X CAFE": {
     "u": "UN",
-    "q": "1039/0",
-    "n": 1039
+    "q": "1038/0",
+    "n": 1038
   },
   "BONIF NESCAFE*7GR X CAFE YAPE L NE": {
     "u": "UN",
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "371/1",
+    "q": "371/0",
     "n": 371
   },
   "ECCO CEBADA 15X175G PE": {
@@ -1026,7 +1026,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1402/11",
+    "q": "1402/8",
     "n": 1402
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1296,7 +1296,7 @@
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "147/3",
+    "q": "147/2",
     "n": 147
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
@@ -1421,7 +1421,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "135/6",
+    "q": "135/5",
     "n": 135
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1666,8 +1666,8 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "677/8",
-    "n": 677
+    "q": "676/20",
+    "n": 676
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
     "u": "CAJA",
