@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "3585/0",
-    "n": 3585
+    "q": "3584/0",
+    "n": 3584
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "4678/0",
-    "n": 4678
+    "q": "4675/0",
+    "n": 4675
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2734/2",
+    "q": "2734/1",
     "n": 2734
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -806,7 +806,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "6079/2",
+    "q": "6079/0",
     "n": 6079
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -886,7 +886,7 @@
   },
   "ECCO CEBADA INSTANT CJ 24U*80GR": {
     "u": "CAJA",
-    "q": "58/10",
+    "q": "58/13",
     "n": 58
   },
   "ECCO CEBADA LATA CJ 24U* 50GR": {
@@ -971,7 +971,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "3562/11",
+    "q": "3562/23",
     "n": 3562
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1061,7 +1061,7 @@
   },
   "KIRMA DOY PACK ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "188/11",
+    "q": "188/15",
     "n": 188
   },
   "KIRMA LATA CJ 12U*180GR": {
@@ -1096,7 +1096,7 @@
   },
   "MAGGI CALDO CUBO GALLINA 20(12X28.2G) PE": {
     "u": "CAJA",
-    "q": "58/14",
+    "q": "58/12",
     "n": 58
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
@@ -1236,7 +1236,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "441/1",
+    "q": "441/0",
     "n": 441
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -1281,7 +1281,7 @@
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "31/14",
+    "q": "31/12",
     "n": 31
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
@@ -1671,7 +1671,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1358/12",
+    "q": "1358/6",
     "n": 1358
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
@@ -1731,8 +1731,8 @@
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
-    "q": "225/31",
-    "n": 225
+    "q": "224/31",
+    "n": 224
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
@@ -1741,7 +1741,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "45/3",
+    "q": "45/2",
     "n": 45
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -1871,7 +1871,7 @@
   },
   "NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR": {
     "u": "CAJA",
-    "q": "108/16",
+    "q": "108/14",
     "n": 108
   },
   "NESTLE SORRENTO CJ 30*20U*32GR": {
@@ -1941,7 +1941,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "439/10",
+    "q": "439/9",
     "n": 439
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
@@ -1951,8 +1951,8 @@
   },
   "NESTLE SUBLIME DUO CJ 21DP30U*28GR": {
     "u": "CAJA",
-    "q": "31/20",
-    "n": 31
+    "q": "32/0",
+    "n": 32
   },
   "NESTLE SUBLIME EXTREMO CJ 24*15U*50GR": {
     "u": "CAJA",
@@ -1966,7 +1966,7 @@
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR": {
     "u": "CAJA",
-    "q": "25/11",
+    "q": "25/10",
     "n": 25
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*46GR": {
@@ -2006,7 +2006,7 @@
   },
   "NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR": {
     "u": "CAJA",
-    "q": "28/11",
+    "q": "28/7",
     "n": 28
   },
   "NESTLE TRIANGULO BOLA NAVIDEÑA CJ 24X72G PE": {
@@ -2026,7 +2026,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "194/4",
+    "q": "194/5",
     "n": 194
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
@@ -2051,7 +2051,7 @@
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR": {
     "u": "CAJA",
-    "q": "17/17",
+    "q": "17/18",
     "n": 17
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*22U*30GR": {
