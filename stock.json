@@ -1201,8 +1201,8 @@
   },
   "MAGGI SOPA POLLO/FIDEOS DP*12*57GR": {
     "u": "UN",
-    "q": "216/0",
-    "n": 216
+    "q": "210/0",
+    "n": 210
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
@@ -1421,7 +1421,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "309/5",
+    "q": "309/6",
     "n": 309
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1941,7 +1941,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "441/4",
+    "q": "441/5",
     "n": 441
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
