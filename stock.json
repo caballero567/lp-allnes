@@ -741,7 +741,7 @@
   },
   "CORN FLAKES CJ 14*405GR": {
     "u": "CAJA",
-    "q": "4/1",
+    "q": "4/0",
     "n": 4
   },
   "CORN FLAKES CJ 20*180 GR N2": {
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "526/4",
+    "q": "526/3",
     "n": 526
   },
   "ECCO CEBADA 15X175G PE": {
@@ -971,7 +971,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "3709/18",
+    "q": "3709/12",
     "n": 3709
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1206,8 +1206,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "504/0",
-    "n": 504
+    "q": "503/0",
+    "n": 503
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1261,7 +1261,7 @@
   },
   "MILO CHOC ACTI-GO LATA CJ 12U*380GR": {
     "u": "CAJA",
-    "q": "88/2",
+    "q": "88/1",
     "n": 88
   },
   "MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR": {
@@ -1416,8 +1416,8 @@
   },
   "NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR": {
     "u": "CAJA",
-    "q": "157/0",
-    "n": 157
+    "q": "156/5",
+    "n": 156
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
@@ -1661,7 +1661,7 @@
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
     "u": "CAJA",
-    "q": "104/28",
+    "q": "104/25",
     "n": 104
   },
   "NESTLE CONDENSADA A/F CJ 96U*100GR": {
@@ -1701,8 +1701,8 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "113/1",
-    "n": 113
+    "q": "112/23",
+    "n": 112
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
     "u": "BOLSA",
@@ -1741,7 +1741,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "45/19",
+    "q": "45/18",
     "n": 45
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
