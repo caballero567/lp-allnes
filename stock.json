@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "2512/0",
-    "n": 2512
+    "q": "2510/0",
+    "n": 2510
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "4002/0",
-    "n": 4002
+    "q": "4001/0",
+    "n": 4001
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -551,8 +551,8 @@
   },
   "BUON NATALE PANETON CAJA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "23/0",
-    "n": 23
+    "q": "18/0",
+    "n": 18
   },
   "CAJAS DISPLAY SUBLIME/TRIANGULO": {
     "u": "UN",
@@ -966,13 +966,13 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2192/11",
+    "q": "2192/5",
     "n": 2192
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "3002/2",
-    "n": 3002
+    "q": "3001/14",
+    "n": 3001
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1266,7 +1266,7 @@
   },
   "MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR": {
     "u": "CAJA",
-    "q": "32/38",
+    "q": "32/36",
     "n": 32
   },
   "MILO DOYPACK 10X350G VASO PE": {
@@ -1606,12 +1606,12 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "84/4",
+    "q": "84/3",
     "n": 84
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
     "u": "CAJA",
-    "q": "31/17",
+    "q": "31/11",
     "n": 31
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
@@ -1736,12 +1736,12 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "143/5",
+    "q": "143/2",
     "n": 143
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "43/20",
+    "q": "43/19",
     "n": 43
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -1786,7 +1786,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "146/13",
+    "q": "146/12",
     "n": 146
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
@@ -1806,7 +1806,7 @@
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "195/8",
+    "q": "195/7",
     "n": 195
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
@@ -1931,7 +1931,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "104/18",
+    "q": "104/17",
     "n": 104
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
@@ -2026,7 +2026,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "186/2",
+    "q": "186/1",
     "n": 186
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
