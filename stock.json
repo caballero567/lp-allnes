@@ -91,8 +91,8 @@
   },
   "BONIF ECCO*12GR X ECCO|ECCO": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "13/0",
+    "n": 13
   },
   "BONIF ECCO*170GR X ECCO": {
     "u": "UN",
@@ -720,9 +720,9 @@
     "n": 1
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
-    "u": "CBO",
-    "q": "0/0",
-    "n": 0
+    "u": "TIRA",
+    "q": "213/0",
+    "n": 213
   },
   "COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)": {
     "u": "CBO",
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "501/4",
+    "q": "501/3",
     "n": 501
   },
   "ECCO CEBADA 15X175G PE": {
@@ -971,8 +971,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "3121/3",
-    "n": 3121
+    "q": "3120/21",
+    "n": 3120
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1091,8 +1091,8 @@
   },
   "MAGCALGLLNPLV12(488.8+490)GPRGALLNPLASP": {
     "u": "CAJA",
-    "q": "0/0",
-    "n": 0
+    "q": "43/5",
+    "n": 43
   },
   "MAGGI CALDO CUBO GALLINA 20(12X28.2G) PE": {
     "u": "CAJA",
@@ -1421,7 +1421,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "296/9",
+    "q": "296/8",
     "n": 296
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1466,7 +1466,7 @@
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
     "u": "CAJA",
-    "q": "80/8",
+    "q": "80/7",
     "n": 80
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE": {
@@ -1786,8 +1786,8 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "0/0",
-    "n": 0
+    "q": "149/16",
+    "n": 149
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
     "u": "CAJA",
@@ -1866,8 +1866,8 @@
   },
   "NESTLE PRINCESA CHOCOLATE CJ 24*16U*8GR": {
     "u": "CAJA",
-    "q": "0/0",
-    "n": 0
+    "q": "1/9",
+    "n": 1
   },
   "NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR": {
     "u": "CAJA",
@@ -2621,8 +2621,8 @@
   },
   "TRASL.GRAT LONCHERA MANO MILO": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "602/0",
+    "n": 602
   },
   "TRASL.GRAT MAGGI POLVO CARNE 7GR PE": {
     "u": "UN",
