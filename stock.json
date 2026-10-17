@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "55/0",
-    "n": 55
+    "q": "68/0",
+    "n": 68
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "1672/0",
-    "n": 1672
+    "q": "2568/0",
+    "n": 2568
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -1081,8 +1081,8 @@
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
-    "q": "484/0",
-    "n": 484
+    "q": "485/0",
+    "n": 485
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1431,7 +1431,7 @@
   },
   "NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR": {
     "u": "CAJA",
-    "q": "134/0",
+    "q": "134/1",
     "n": 134
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
@@ -1771,7 +1771,7 @@
   },
   "NESTLE LENTEJAS FIESTA CJ 15*30U*240GR": {
     "u": "CAJA",
-    "q": "21/3",
+    "q": "21/4",
     "n": 21
   },
   "NESTLE MOROCHA FIESTA CJ 15 UN * 20U*11.2GR": {
