@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
-    "q": "21/0",
-    "n": 21
+    "q": "20/0",
+    "n": 20
   },
   "CBO:EXHIBIDOR-SUB(SON/CLA)-PRI-KIT-TRGL CLA-MRHS CLA -AGO": {
     "u": "UN",
@@ -666,8 +666,8 @@
   },
   "CBO:EXHIBIDOR-SUB(SON/CLA)-PRI-KIT-TRGL CLA-MRHS CLA -AGOSTO": {
     "u": "UN",
-    "q": "24/0",
-    "n": 24
+    "q": "25/0",
+    "n": 25
   },
   "CBO:KIRMA 9TR*10 U*15GR+IDEAL CREMOSITA CJ 24U*390GR": {
     "u": "CBO",
