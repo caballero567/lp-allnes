@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "2439/0",
-    "n": 2439
+    "q": "2440/0",
+    "n": 2440
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -806,7 +806,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "6757/0",
+    "q": "6757/1",
     "n": 6757
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -1301,7 +1301,7 @@
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "253/7",
+    "q": "253/6",
     "n": 253
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR": {
