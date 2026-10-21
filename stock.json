@@ -231,8 +231,8 @@
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X CULINARIOS|CULINARIOS": {
     "u": "UN",
-    "q": "7029/0",
-    "n": 7029
+    "q": "7028/0",
+    "n": 7028
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X MAGGI CALDO|CULINARIOS": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "2071/0",
-    "n": 2071
+    "q": "2070/0",
+    "n": 2070
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2262/3",
+    "q": "2262/2",
     "n": 2262
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -806,7 +806,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "6544/1",
+    "q": "6544/0",
     "n": 6544
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "374/8",
+    "q": "374/7",
     "n": 374
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -976,8 +976,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "7943/12",
-    "n": 7943
+    "q": "7942/12",
+    "n": 7942
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1116,8 +1116,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "3982/0",
-    "n": 3982
+    "q": "3979/0",
+    "n": 3979
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "UN",
@@ -1251,7 +1251,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "344/3",
+    "q": "344/2",
     "n": 344
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -1626,7 +1626,7 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "65/5",
+    "q": "65/4",
     "n": 65
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
@@ -1806,8 +1806,8 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "83/0",
-    "n": 83
+    "q": "82/21",
+    "n": 82
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
     "u": "CAJA",
@@ -1891,7 +1891,7 @@
   },
   "NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR": {
     "u": "CAJA",
-    "q": "87/11",
+    "q": "87/10",
     "n": 87
   },
   "NESTLE SORRENTO CJ 30*20U*32GR": {
@@ -1971,7 +1971,7 @@
   },
   "NESTLE SUBLIME DUO CJ 21DP30U*28GR": {
     "u": "CAJA",
-    "q": "23/3",
+    "q": "23/2",
     "n": 23
   },
   "NESTLE SUBLIME EXTREMO CJ 24*15U*50GR": {
@@ -2046,7 +2046,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "121/9",
+    "q": "121/8",
     "n": 121
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
