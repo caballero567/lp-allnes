@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "6014/0",
-    "n": 6014
+    "q": "6015/0",
+    "n": 6015
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "1239/0",
-    "n": 1239
+    "q": "1240/0",
+    "n": 1240
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -891,7 +891,7 @@
   },
   "ECCO CEBADA INSTANT CJ 24U*80GR": {
     "u": "CAJA",
-    "q": "42/5",
+    "q": "42/8",
     "n": 42
   },
   "ECCO CEBADA LATA CJ 24U* 50GR": {
@@ -901,7 +901,7 @@
   },
   "ECCO DOYPACK 16X170G PE": {
     "u": "CAJA",
-    "q": "98/2",
+    "q": "98/5",
     "n": 98
   },
   "ECCO DOYPACK 6X170G + JARRA": {
@@ -971,8 +971,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "1866/5",
-    "n": 1866
+    "q": "1867/5",
+    "n": 1867
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
@@ -1046,8 +1046,8 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "312/7",
-    "n": 312
+    "q": "313/1",
+    "n": 313
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1431,12 +1431,12 @@
   },
   "NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR": {
     "u": "CAJA",
-    "q": "116/1",
+    "q": "116/2",
     "n": 116
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "221/8",
+    "q": "221/9",
     "n": 221
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1951,7 +1951,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "79/4",
+    "q": "79/5",
     "n": 79
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
