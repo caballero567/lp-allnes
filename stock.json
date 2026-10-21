@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "2081/0",
-    "n": 2081
+    "q": "2080/0",
+    "n": 2080
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "1167/0",
-    "n": 1167
+    "q": "1166/0",
+    "n": 1166
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2263/1",
+    "q": "2263/0",
     "n": 2263
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -971,8 +971,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "1843/21",
-    "n": 1843
+    "q": "1842/9",
+    "n": 1842
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
@@ -1031,7 +1031,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1861/11",
+    "q": "1861/10",
     "n": 1861
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1046,7 +1046,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "309/1",
+    "q": "309/0",
     "n": 309
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1486,7 +1486,7 @@
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
     "u": "CAJA",
-    "q": "61/1",
+    "q": "61/0",
     "n": 61
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE": {
@@ -1556,7 +1556,7 @@
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "86/6",
+    "q": "86/4",
     "n": 86
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*50GR": {
@@ -1806,7 +1806,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "83/4",
+    "q": "83/3",
     "n": 83
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
@@ -1821,12 +1821,12 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "162/6",
+    "q": "162/5",
     "n": 162
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "142/12",
+    "q": "142/10",
     "n": 142
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
@@ -2011,7 +2011,7 @@
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*37GR": {
     "u": "CAJA",
-    "q": "30/16",
+    "q": "30/15",
     "n": 30
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*38GR": {
