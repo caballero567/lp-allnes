@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "5701/0",
-    "n": 5701
+    "q": "5704/0",
+    "n": 5704
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "1363/0",
-    "n": 1363
+    "q": "1362/0",
+    "n": 1362
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "92/0",
-    "n": 92
+    "q": "89/0",
+    "n": 89
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,8 +541,8 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "1938/0",
-    "n": 1938
+    "q": "1937/4",
+    "n": 1937
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
     "u": "CAJA",
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "459/3",
+    "q": "459/8",
     "n": 459
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -1191,7 +1191,7 @@
   },
   "MAGGI POLVO GUSTO GALLINA CJ 80TR*10U*7GR": {
     "u": "CAJA",
-    "q": "40/40",
+    "q": "40/39",
     "n": 40
   },
   "MAGGI SOPA CRIOLLA GLIN FD 12*12*60GR": {
@@ -1656,8 +1656,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "610/0",
-    "n": 610
+    "q": "609/0",
+    "n": 609
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1826,7 +1826,7 @@
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "123/15",
+    "q": "123/13",
     "n": 123
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
@@ -1951,7 +1951,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "70/4",
+    "q": "70/3",
     "n": 70
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
@@ -2071,7 +2071,7 @@
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR": {
     "u": "CAJA",
-    "q": "14/3",
+    "q": "14/2",
     "n": 14
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*22U*30GR": {
