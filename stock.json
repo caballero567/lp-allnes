@@ -601,8 +601,8 @@
   },
   "CBO: KIRMA TIRA 16* 7GR + 8 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "1/0",
+    "n": 1
   },
   "CBO: NESCAFE 5 UN* 15GR + CANISTER NSCF": {
     "u": "CBO",
@@ -971,8 +971,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "1579/8",
-    "n": 1579
+    "q": "1580/8",
+    "n": 1580
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
@@ -1311,7 +1311,7 @@
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "197/6",
+    "q": "197/5",
     "n": 197
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
