@@ -231,8 +231,8 @@
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X CULINARIOS|CULINARIOS": {
     "u": "UN",
-    "q": "6866/0",
-    "n": 6866
+    "q": "6864/0",
+    "n": 6864
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X MAGGI CALDO|CULINARIOS": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "1553/0",
-    "n": 1553
+    "q": "1548/0",
+    "n": 1548
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "360/0",
-    "n": 360
+    "q": "357/0",
+    "n": 357
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,8 +541,8 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2135/0",
-    "n": 2135
+    "q": "2134/3",
+    "n": 2134
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
     "u": "CAJA",
@@ -806,7 +806,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "6447/5",
+    "q": "6447/1",
     "n": 6447
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -886,7 +886,7 @@
   },
   "ECCO CEBADA DOYPACK CJ 15U*250GR": {
     "u": "CAJA",
-    "q": "45/12",
+    "q": "45/11",
     "n": 45
   },
   "ECCO CEBADA INSTANT CJ 24U*80GR": {
@@ -976,7 +976,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "6969/4",
+    "q": "6969/0",
     "n": 6969
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1031,7 +1031,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1821/7",
+    "q": "1821/5",
     "n": 1821
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1046,7 +1046,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "284/5",
+    "q": "284/4",
     "n": 284
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1116,8 +1116,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "3812/0",
-    "n": 3812
+    "q": "3810/0",
+    "n": 3810
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "UN",
@@ -1216,8 +1216,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "360/0",
-    "n": 360
+    "q": "359/0",
+    "n": 359
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1236,7 +1236,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR": {
     "u": "CAJA",
-    "q": "356/4",
+    "q": "356/0",
     "n": 356
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR PRYAPE": {
@@ -1691,7 +1691,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1076/21",
+    "q": "1076/17",
     "n": 1076
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
@@ -1746,8 +1746,8 @@
   },
   "NESTLE KIT KAT 4 FINGER CHOC CJA 8*12*41.5GR": {
     "u": "CAJA",
-    "q": "29/0",
-    "n": 29
+    "q": "28/7",
+    "n": 28
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
@@ -1821,12 +1821,12 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "146/5",
+    "q": "146/2",
     "n": 146
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "127/8",
+    "q": "127/7",
     "n": 127
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
@@ -2011,7 +2011,7 @@
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*37GR": {
     "u": "CAJA",
-    "q": "40/20",
+    "q": "40/19",
     "n": 40
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*38GR": {
@@ -2046,7 +2046,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "110/3",
+    "q": "110/0",
     "n": 110
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
@@ -2316,8 +2316,8 @@
   },
   "TRASL. TAPER GALLINA C/TAPA ROJA": {
     "u": "UN",
-    "q": "1932/0",
-    "n": 1932
+    "q": "1931/0",
+    "n": 1931
   },
   "TRASL. TAPER IDEAL CREMOSITA 1L": {
     "u": "UN",
@@ -2606,8 +2606,8 @@
   },
   "TRASL.GRAT JARRA CHICA CONDENSADA CON TAPA": {
     "u": "UN",
-    "q": "938/0",
-    "n": 938
+    "q": "937/0",
+    "n": 937
   },
   "TRASL.GRAT JARRA ECCO + TAPA PE": {
     "u": "UN",
@@ -2906,8 +2906,8 @@
   },
   "TRASL.SHAKER MILO": {
     "u": "UN",
-    "q": "1820/0",
-    "n": 1820
+    "q": "1818/0",
+    "n": 1818
   },
   "TRASL.SHAKER MILO 2026": {
     "u": "UN",
