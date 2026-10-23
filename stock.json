@@ -1031,8 +1031,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "3240/10",
-    "n": 3240
+    "q": "3241/1",
+    "n": 3241
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1046,8 +1046,8 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "274/7",
-    "n": 274
+    "q": "275/0",
+    "n": 275
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1186,12 +1186,12 @@
   },
   "MAGGI POLVO GUSTO CARNE CJ 80TR*10U*7GR": {
     "u": "CAJA",
-    "q": "1/44",
+    "q": "1/47",
     "n": 1
   },
   "MAGGI POLVO GUSTO GALLINA CJ 80TR*10U*7GR": {
     "u": "CAJA",
-    "q": "39/73",
+    "q": "39/76",
     "n": 39
   },
   "MAGGI SOPA CRIOLLA GLIN FD 12*12*60GR": {
@@ -1406,8 +1406,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "672/0",
-    "n": 672
+    "q": "673/0",
+    "n": 673
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1516,7 +1516,7 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "165/1",
+    "q": "165/2",
     "n": 165
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
@@ -1661,7 +1661,7 @@
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
-    "q": "17/11",
+    "q": "17/13",
     "n": 17
   },
   "NESTLE BOMBON MULTIPACK CJ 15*360GR": {
@@ -1736,8 +1736,8 @@
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
     "u": "CAJA",
-    "q": "90/44",
-    "n": 90
+    "q": "91/2",
+    "n": 91
   },
   "NESTLE ESTRELLA NAVIDEÑA CJ 24*6*8GR PE": {
     "u": "CAJA",
@@ -1756,7 +1756,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "71/12",
+    "q": "71/18",
     "n": 71
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
@@ -1961,7 +1961,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "377/9",
+    "q": "377/10",
     "n": 377
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
