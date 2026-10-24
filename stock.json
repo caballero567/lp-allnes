@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "840/4",
+    "q": "840/3",
     "n": 840
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -1076,7 +1076,7 @@
   },
   "KIRMA LATA CJ 12U*180GR": {
     "u": "CAJA",
-    "q": "83/4",
+    "q": "83/2",
     "n": 83
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
@@ -1691,8 +1691,8 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1023/2",
-    "n": 1023
+    "q": "1022/20",
+    "n": 1022
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
     "u": "CAJA",
@@ -1961,7 +1961,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "371/1",
+    "q": "371/0",
     "n": 371
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
@@ -2046,7 +2046,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "160/14",
+    "q": "160/13",
     "n": 160
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
