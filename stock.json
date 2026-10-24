@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "1842/1",
+    "q": "1842/0",
     "n": 1842
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -806,12 +806,12 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "7882/2",
-    "n": 7882
+    "q": "7883/3",
+    "n": 7883
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "3746/3",
+    "q": "3746/2",
     "n": 3746
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
@@ -876,7 +876,7 @@
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
     "u": "CAJA",
-    "q": "178/8",
+    "q": "178/4",
     "n": 178
   },
   "ECCO CEBADA DOYPACK 12U*170GR + VASO PAVONADO": {
@@ -1231,7 +1231,7 @@
   },
   "MILO ACTI-GO DOYPACK CJ 12U*350GR+POTE": {
     "u": "CAJA",
-    "q": "75/1",
+    "q": "75/2",
     "n": 75
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR": {
@@ -2046,7 +2046,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "159/21",
+    "q": "159/22",
     "n": 159
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
@@ -2926,8 +2926,8 @@
   },
   "TRASL.TAPER RECTAGULAR ECCO CHICO": {
     "u": "UN",
-    "q": "1121/0",
-    "n": 1121
+    "q": "1120/0",
+    "n": 1120
   },
   "TRASL.TAPERS CALDO EN POLVO MAGGI": {
     "u": "UN",
