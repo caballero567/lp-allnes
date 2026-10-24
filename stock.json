@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "5272/0",
-    "n": 5272
+    "q": "5271/0",
+    "n": 5271
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -876,7 +876,7 @@
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
     "u": "CAJA",
-    "q": "168/7",
+    "q": "168/4",
     "n": 168
   },
   "ECCO CEBADA DOYPACK 12U*170GR + VASO PAVONADO": {
@@ -901,8 +901,8 @@
   },
   "ECCO DOYPACK 16X170G PE": {
     "u": "CAJA",
-    "q": "96/3",
-    "n": 96
+    "q": "95/13",
+    "n": 95
   },
   "ECCO DOYPACK 6X170G + JARRA": {
     "u": "CAJA",
@@ -1751,7 +1751,7 @@
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
-    "q": "270/35",
+    "q": "270/29",
     "n": 270
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
