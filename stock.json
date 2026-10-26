@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "5223/0",
-    "n": 5223
+    "q": "5222/0",
+    "n": 5222
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -791,7 +791,7 @@
   },
   "DONOFRIO COCOA CAJA 7TR*24U*10GR": {
     "u": "CAJA",
-    "q": "114/3",
+    "q": "114/4",
     "n": 114
   },
   "DONOFRIO COCOA DOYPACK CAJA 12*150GR": {
@@ -956,7 +956,7 @@
   },
   "IDEAL COMPLEJO-B MZC LAC CJ 8PACK*6U*390G": {
     "u": "CAJA",
-    "q": "19/2",
+    "q": "19/1",
     "n": 19
   },
   "IDEAL OMEGA MZC LAC * 1 UNID* 390G -": {
@@ -1936,7 +1936,7 @@
   },
   "NESTLE SUBLIME CAPUCCINO CJ 18(12X37G) PE": {
     "u": "CAJA",
-    "q": "258/1",
+    "q": "258/0",
     "n": 258
   },
   "NESTLE SUBLIME CARNAVAL CJ24 DP*20U*38GR": {
