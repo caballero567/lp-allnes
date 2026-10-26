@@ -131,8 +131,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
-    "q": "8881/0",
-    "n": 8881
+    "q": "8880/0",
+    "n": 8880
   },
   "BONIF IDEAL CREMOSITA*390GR X REBATE 0.03CAFÉS": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "110/0",
-    "n": 110
+    "q": "108/0",
+    "n": 108
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -306,8 +306,8 @@
   },
   "BONIF NATURES HEART ALMENDRA S/AZU 946ML X NATURES HEART": {
     "u": "UN",
-    "q": "33/0",
-    "n": 33
+    "q": "27/0",
+    "n": 27
   },
   "BONIF NATURES HEAT COCO 946ML X NATURES HEAT 946 ML": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "7952/0",
-    "n": 7952
+    "q": "7950/0",
+    "n": 7950
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2845/1",
+    "q": "2845/0",
     "n": 2845
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -806,12 +806,12 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "7091/0",
-    "n": 7091
+    "q": "7090/5",
+    "n": 7090
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "2114/4",
+    "q": "2114/3",
     "n": 2114
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "784/7",
+    "q": "784/6",
     "n": 784
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -976,7 +976,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "8522/22",
+    "q": "8522/10",
     "n": 8522
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1176,7 +1176,7 @@
   },
   "MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR": {
     "u": "DISP",
-    "q": "224/11",
+    "q": "224/3",
     "n": 224
   },
   "MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR": {
@@ -1326,8 +1326,8 @@
   },
   "NATURES HEART BEB ALMENDRA SIN AZUCAR CJ 12U*946ML": {
     "u": "CAJA",
-    "q": "113/11",
-    "n": 113
+    "q": "110/5",
+    "n": 110
   },
   "NATURES HEART BEBIDA DE AVENA S/AZUCAR CJ 12U*946ML": {
     "u": "CAJA",
@@ -1336,8 +1336,8 @@
   },
   "NATURES HEART BEBIDA DE COCO SIN/ AZUCAR CJ 12U*946ML": {
     "u": "CAJA",
-    "q": "100/0",
-    "n": 100
+    "q": "99/0",
+    "n": 99
   },
   "NESCAFE (MEDIA TIRA) TR* 9U*7GR": {
     "u": "TIRA",
@@ -1656,8 +1656,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "889/0",
-    "n": 889
+    "q": "886/0",
+    "n": 886
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1761,7 +1761,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "31/16",
+    "q": "31/15",
     "n": 31
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -1806,7 +1806,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "129/21",
+    "q": "129/19",
     "n": 129
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
@@ -1951,7 +1951,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "99/10",
+    "q": "99/9",
     "n": 99
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
@@ -1961,8 +1961,8 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "356/0",
-    "n": 356
+    "q": "355/11",
+    "n": 355
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
     "u": "CAJA",
@@ -1971,7 +1971,7 @@
   },
   "NESTLE SUBLIME DUO CJ 21DP30U*28GR": {
     "u": "CAJA",
-    "q": "39/18",
+    "q": "39/17",
     "n": 39
   },
   "NESTLE SUBLIME EXTREMO CJ 24*15U*50GR": {
@@ -2926,8 +2926,8 @@
   },
   "TRASL.TAPER RECTAGULAR ECCO CHICO": {
     "u": "UN",
-    "q": "813/0",
-    "n": 813
+    "q": "812/0",
+    "n": 812
   },
   "TRASL.TAPERS CALDO EN POLVO MAGGI": {
     "u": "UN",
