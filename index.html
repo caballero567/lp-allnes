@@ -160,6 +160,13 @@
         .sb-im{color:#fbbf24;font-size:.58rem;margin-top:3px;display:inline-block}
         .sb-sn{color:#f87171;font-weight:800}
         .sb-su{color:#9ca3af;font-size:.6rem;margin-left:4px}
+        .sb-ps{color:#9ca3af;font-size:.66rem;margin-top:2px}
+        .sb-x{cursor:pointer;font-size:1rem;line-height:1;padding:4px 8px;border-radius:8px}
+        .sb-x:hover{background:rgba(255,255,255,.06)}
+        .sb-it .sb-iv{color:#fbbf24;font-weight:800;font-size:.9rem}
+        .sb-it .sb-iu{color:#9ca3af;font-size:.6rem;margin-left:3px}
+        .sb-e{color:#9ca3af;text-align:center;padding:26px 12px;font-size:.78rem}
+
 
     </style>
 
@@ -84347,12 +84354,174 @@ document.getElementById('devVehiculo').addEventListener('change', devAplicar);
 document.getElementById('devCliente').addEventListener('keydown', function (e) { if (e.key === 'Enter') devAplicar(); });
 </script>
 
-    <button id="sbf" class="sb-fab"><span class="sb-fab-dot"></span><span>Stock bajo</span><span id="sbfc" class="sb-fab-c">0</span></button>
+    <button id="sbf" class="sb-fab" type="button" aria-label="Ver productos con stock bajo">
+        <span class="sb-fab-dot"></span>
+        <span>Stock bajo</span>
+        <span id="sbfc" class="sb-fab-c">0</span>
+    </button>
     <div id="sbb" class="sb-b"></div>
-    <div id="sbp" class="sb-p">
-        <div class="sb-ph"><div class="sb-pt">Productos con poco stock</div><button id="sbx" class="sb-x">✕</button></div>
+    <div id="sbp" class="sb-p" role="dialog" aria-modal="true" aria-label="Productos con stock bajo">
+        <div class="sb-ph">
+            <div>
+                <div class="sb-pt">Productos con poco stock</div>
+                <div class="sb-ps" id="sbps"></div>
+            </div>
+            <button id="sbx" class="sb-x" type="button" aria-label="Cerrar">✕</button>
+        </div>
         <div id="sbpl" class="sb-pl"></div>
     </div>
+
+
+<!-- SB-LOW-STOCK-V1 -->
+<script>
+(function () {
+    'use strict';
+    var UMBRAL = 10;          // cajas: hasta 10 se considera stock bajo
+    var datos = null;         // stock.json
+    var cargado = false;
+
+    function norm(v) {
+        return String(v == null ? '' : v).trim().toUpperCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStock(sc) {
+        if (sc == null) return null;
+        var q = sc, u = '';
+        if (typeof sc === 'object') { q = sc.q; u = sc.u || ''; }
+        if (q == null) return null;
+        var txt = String(q).trim();
+        if (!txt) return null;
+        var cajas = null, unidades = 0;
+        if (txt.indexOf('/') > -1) {
+            var p = txt.split('/');
+            cajas = parseInt(p[0], 10);
+            unidades = parseInt(p[1], 10);
+            if (isNaN(cajas)) return null;
+            if (isNaN(unidades)) unidades = 0;
+        } else {
+            var n = parseInt(txt, 10);
+            if (isNaN(n)) return null;
+            cajas = n;
+        }
+        if (cajas < 0) return null;
+        return { cajas: cajas, unidades: unidades, q: txt, u: u };
+    }
+
+    function calcular() {
+        var out = [];
+        if (!datos) return out;
+        var lista = null;
+        try { lista = productos; } catch (e) { lista = null; }
+        if (!lista || !lista.length) return out;
+        var i, p, k, st, bajo;
+        for (i = 0; i < lista.length; i++) {
+            p = lista[i];
+            k = norm(p.Producto);
+            if (!k || !Object.prototype.hasOwnProperty.call(datos, k)) continue;
+            st = parseStock(datos[k]);
+            if (!st) continue;
+            bajo = (st.cajas <= UMBRAL) && (st.cajas > 0 || st.unidades > 0);
+            if (!bajo) continue;
+            out.push({ nombre: p.Producto, marca: p.Marca || '', st: st });
+        }
+        out.sort(function (a, b) {
+            if (a.st.cajas !== b.st.cajas) return a.st.cajas - b.st.cajas;
+            if (a.st.unidades !== b.st.unidades) return a.st.unidades - b.st.unidades;
+            return String(a.nombre).localeCompare(String(b.nombre));
+        });
+        return out;
+    }
+
+    function esc(v) {
+        return String(v == null ? '' : v)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function render() {
+        var fab = document.getElementById('sbf');
+        var cnt = document.getElementById('sbfc');
+        var sub = document.getElementById('sbps');
+        var lst = document.getElementById('sbpl');
+        if (!fab || !cnt || !lst) return;
+        var items = calcular();
+        if (!cargado || !items.length) {
+            fab.classList.remove('show');
+            return;
+        }
+        cnt.textContent = items.length;
+        fab.classList.add('show');
+        if (sub) sub.textContent = items.length + (items.length === 1 ? ' producto' : ' productos') + ' con stock bajo (hasta 10 cajas)';
+        lst.innerHTML = items.map(function (it) {
+            var etiqueta = it.st.cajas === 0 ? 'SOLO UNID.' : '';
+            var valor = (it.st.u ? it.st.u + ' ' : '') + it.st.q;
+            return '<div class="sb-it">' +
+                   '<div><div class="sb-in">' + esc(it.nombre) + '</div>' +
+                   (it.marca ? '<span class="sb-im">' + esc(it.marca) + '</span>' : '') +
+                   '</div>' +
+                   '<div style="text-align:right;white-space:nowrap">' +
+                   '<span class="sb-iv">' + esc(valor) + '</span>' +
+                   (etiqueta ? '<span class="sb-iu">' + esc(etiqueta) + '</span>' : '') +
+                   '</div></div>';
+        }).join('');
+    }
+
+    function abrir() {
+        var bd = document.getElementById('sbb');
+        var pn = document.getElementById('sbp');
+        if (!bd || !pn) return;
+        bd.classList.add('show');
+        pn.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function cerrar() {
+        var bd = document.getElementById('sbb');
+        var pn = document.getElementById('sbp');
+        if (!bd || !pn) return;
+        bd.classList.remove('show');
+        pn.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function cargarStock() {
+        return fetch('stock.json', { cache: 'no-store' })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) {
+                if (d && typeof d === 'object') {
+                    datos = d;
+                    cargado = true;
+                    render();
+                }
+                return d;
+            })
+            .catch(function () { return null; });
+    }
+
+    function init() {
+        var fab = document.getElementById('sbf');
+        var bd = document.getElementById('sbb');
+        var x = document.getElementById('sbx');
+        if (!fab) return;
+        fab.addEventListener('click', abrir);
+        if (bd) bd.addEventListener('click', cerrar);
+        if (x) x.addEventListener('click', cerrar);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') cerrar();
+        });
+        cargarStock().then(function (d) {
+            if (!d) setTimeout(function () { cargarStock(); }, 4000);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+<!-- /SB-LOW-STOCK-V1 -->
 
 </body>
 </html>
