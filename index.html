@@ -142,6 +142,25 @@
         @keyframes spin { to { transform: rotate(360deg); } }
         .fv-loading p { color: #6b7280; font-size: 0.75rem; }
         @media (max-width: 640px) { .fv-input-row { flex-direction: column; gap: 12px; } .fv-flex-buttons { flex-direction: column; } .fv-resultado-card .fv-info-grid { grid-template-columns: 1fr; } }
+    
+        .sb-fab{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0));display:none;align-items:center;gap:8px;padding:10px 16px 10px 12px;border-radius:999px;border:1px solid rgba(251,191,36,.6);background:linear-gradient(145deg,#fbbf24,#f59e0b);color:#1a1200;font-weight:800;font-size:.86rem;box-shadow:0 20px 40px rgba(251,191,36,.25);z-index:9999;cursor:pointer}
+        .sb-fab.show{display:flex}
+        .sb-fab-dot{width:8px;height:8px;border-radius:50%;background:#dc2626;box-shadow:0 0 0 5px rgba(220,38,38,.16)}
+        .sb-fab-c{min-width:24px;height:24px;border-radius:999px;background:rgba(26,18,0,.9);color:#fbbf24;display:flex;align-items:center;justify-content:center;font-size:.76rem}
+        .sb-b{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;z-index:10000}
+        .sb-b.show{display:block}
+        .sb-p{position:fixed;left:50%;bottom:0;transform:translate(-50%,100%);width:min(420px,calc(100vw - 8px));max-height:72dvh;background:#0b0b0b;border:1px solid rgba(251,191,36,.5);border-bottom:none;border-radius:16px 16px 10px 10px;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s ease;z-index:10001}
+        .sb-p.show{transform:translate(-50%,0)}
+        .sb-ph{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+        .sb-pt{color:#fff;font-weight:800;font-size:.88rem}
+        .sb-x{background:transparent;border:none;color:#aaa}
+        .sb-pl{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:6px}
+        .sb-it{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;background:rgba(255,255,255,.01);border:1px solid rgba(255,255,255,.06)}
+        .sb-in{color:#e5e5e5;font-size:.82rem;line-height:1.3}
+        .sb-im{color:#fbbf24;font-size:.58rem;margin-top:3px;display:inline-block}
+        .sb-sn{color:#f87171;font-weight:800}
+        .sb-su{color:#9ca3af;font-size:.6rem;margin-left:4px}
+
     </style>
 
 <style>
@@ -862,7 +881,7 @@ const productos = [
 {Marca:"DONOFRIO",Producto:"DONOFRIO COCOA CAJA 7TR*24U*10GR",Abrev:"CAJA",Factor:"7",P1CJ:"140.01",P1UN:"20.00",FechaVencimiento:"30/09/2027"},
 {Marca:"DONOFRIO",Producto:"DONOFRIO COCOA DOYPACK CAJA 12*150GR",Abrev:"CAJA",Factor:"12",P1CJ:"185.86",P1UN:"15.49",FechaVencimiento:"15/11/2027"},
 {Marca:"DONOFRIO",Producto:"DONOFRIO PANETON BOLSA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"140.81",P1UN:"23.48",FechaVencimiento:"30/03/2027"},
-{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CAJA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"155.91",P1UN:"25.98",FechaVencimiento:"23/04/2027"},
+{Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CAJA CJ 6*880GR",Abrev:"CAJA",Factor:"6",P1CJ:"155.91",P1UN:"25.98",FechaVencimiento:"09/04/2027"},
 {Marca:"DONOFRIO",Producto:"DONOFRIO PANETON CHOCOTON CJ 6*450GR",Abrev:"CAJA",Factor:"6",P1CJ:"118.71",P1UN:"19.80",FechaVencimiento:"06/03/2027"},
 {Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*10GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.30",FechaVencimiento:"10/03/2028"},
 {Marca:"ECCO",Producto:"ECCO CAFE CJ 10R*14U*12GR",Abrev:"CAJA",Factor:"10",P1CJ:"112.93",P1UN:"11.29",FechaVencimiento:"13/12/2026"},
@@ -898,13 +917,13 @@ const productos = [
 {Marca:"MAGGI CALDOS TABLETA",Producto:"MAGCalGllnPlv12(488.8+490)gPRGallnPlasP",Abrev:"CAJA",Factor:"12",P1CJ:"373.97",P1UN:"31.16",FechaVencimiento:"28/03/2027"},
 {Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI Caldo Cubo Gallina 20(12x28.2g) PE",Abrev:"CAJA",Factor:"20",P1CJ:"195.80",P1UN:"9.80",FechaVencimiento:"10/07/2027"},
 {Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/CARNE DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"24/08/2027"},
-{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"24/07/2027"},
+{Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CALDO/GALLINA DP 26U*18.8GR",Abrev:"DISP",Factor:"1",P1CJ:"16.96",P1UN:"0.00",FechaVencimiento:"22/07/2027"},
 {Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA ESPARRAGOS DP*12*66GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"31/01/2027"},
 {Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI CREMA HONGOS DP 12U*65GR",Abrev:"DISP",Factor:"12",P1CJ:"36.11",P1UN:"3.01",FechaVencimiento:"31/03/2027"},
 {Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"07/02/2027"},
 {Marca:"MAGGI CALDOS TABLETA",Producto:"MAGGI CUBITO GALLINA CJ 32 U *75CUBOS X4 GR",Abrev:"CAJA",Factor:"32",P1CJ:"324.76",P1UN:"10.13",FechaVencimiento:"24/06/2027"},
 {Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR",Abrev:"DISP",Factor:"15",P1CJ:"35.93",P1UN:"2.45",FechaVencimiento:"02/07/2027"},
-{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR",Abrev:"CAJA",Factor:"15",P1CJ:"41.95",P1UN:"2.80",FechaVencimiento:"26/05/2027"},
+{Marca:"MAGGI MEZCLAS APANAR",Producto:"MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR",Abrev:"CAJA",Factor:"15",P1CJ:"41.95",P1UN:"2.80",FechaVencimiento:"18/02/2027"},
 {Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO CARNE CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"02/03/2027"},
 {Marca:"MAGGI",Producto:"MAGGI POLVO  GUSTO GALLINA CJ 80TR*10U*7GR",Abrev:"CAJA",Factor:"80",P1CJ:"162.24",P1UN:"2.03",FechaVencimiento:"18/06/2027"},
 {Marca:"MAGGI SOPAS & CREMAS",Producto:"MAGGI SOPA POLLO/FIDEOS CJ 12*12*57GR",Abrev:"CAJA",Factor:"12",P1CJ:"431.60",P1UN:"35.97",FechaVencimiento:"30/06/2027"},
@@ -952,7 +971,7 @@ const productos = [
 {Marca:"NESQUIK",Producto:"NESQUIK OPTISTART CHOCOLATE CJ 48*190GR",Abrev:"CAJA",Factor:"48",P1CJ:"420.96",P1UN:"8.77",FechaVencimiento:"01/12/2027"},
 {Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA A/S CJ 24DP*9U*24GR",Abrev:"CAJA",Factor:"24",P1CJ:"221.18",P1UN:"9.22",FechaVencimiento:"19/11/2026"},
 {Marca:"NESTLE",Producto:"NESTLE BESO DE MOZA DP*20U*24GR",Abrev:"DISP",Factor:"1",P1CJ:"19.25",P1UN:"0.00",FechaVencimiento:"16/12/2026"},
-{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*320GR",Abrev:"CAJA",Factor:"15",P1CJ:"293.29",P1UN:"19.55",FechaVencimiento:"13/04/2027"},
+{Marca:"NESTLE",Producto:"NESTLE BOMBON MULTIPACK CJ 15*320GR",Abrev:"CAJA",Factor:"15",P1CJ:"293.29",P1UN:"19.55",FechaVencimiento:"11/03/2027"},
 {Marca:"NESTLE",Producto:"NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR",Abrev:"CAJA",Factor:"6",P1CJ:"180.12",P1UN:"30.02",FechaVencimiento:"15/03/2027"},
 {Marca:"NESTLE CONDENSADA",Producto:"NESTLE COND TOPPING TARRO CJ 96U*100GR",Abrev:"CAJA",Factor:"96",P1CJ:"237.82",P1UN:"2.48",FechaVencimiento:"03/09/2027"},
 {Marca:"NESTLE CONDENSADA",Producto:"NESTLE CONDENSADA CJ 24U*393GR",Abrev:"CAJA",Factor:"24",P1CJ:"142.05",P1UN:"5.92",FechaVencimiento:"08/10/2027"},
@@ -968,13 +987,13 @@ const productos = [
 {Marca:"NESTLE CONDENSADA",Producto:"NESTLE LCA TOPPING TARRO 48U*397GR",Abrev:"CAJA",Factor:"48",P1CJ:"223.61",P1UN:"4.66",FechaVencimiento:"04/06/2027"},
 {Marca:"NESTLE CONDENSADA",Producto:"NESTLE LECHE COND DOYPACK 36x180G PE",Abrev:"CAJA",Factor:"36",P1CJ:"131.10",P1UN:"3.65",FechaVencimiento:"12/01/2027"},
 {Marca:"NESTLE",Producto:"NESTLE LENTEJAS BOLSA CJ 24*24U*16GR",Abrev:"CAJA",Factor:"24",P1CJ:"462.19",P1UN:"19.26",FechaVencimiento:"07/07/2027"},
-{Marca:"NESTLE",Producto:"NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"792.96",P1UN:"33.04",FechaVencimiento:"14/07/2027"},
+{Marca:"NESTLE",Producto:"NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR",Abrev:"CAJA",Factor:"24",P1CJ:"792.96",P1UN:"33.04",FechaVencimiento:"09/07/2027"},
 {Marca:"NESTLE",Producto:"NESTLE LENTEJAS FIESTA CJ 15*30U*240GR",Abrev:"CAJA",Factor:"15",P1CJ:"187.80",P1UN:"12.52",FechaVencimiento:"21/05/2027"},
 {Marca:"NESTLE",Producto:"NESTLE MOROCHAS DOBLE PLACER CJ 30*6U*34.4GR",Abrev:"CAJA",Factor:"30",P1CJ:"225.14",P1UN:"7.51",FechaVencimiento:"21/04/2027"},
 {Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR",Abrev:"CAJA",Factor:"22",P1CJ:"221.76",P1UN:"10.08",FechaVencimiento:"02/04/2027"},
 {Marca:"NESTLE",Producto:"NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR",Abrev:"CAJA",Factor:"22",P1CJ:"221.76",P1UN:"10.08",FechaVencimiento:"09/04/2027"},
 {Marca:"NESTLE",Producto:"NESTLE MOROCHAS SNACK CJ 8*8U*42GR",Abrev:"CAJA",Factor:"8",P1CJ:"80.05",P1UN:"10.01",FechaVencimiento:"29/04/2027"},
-{Marca:"NESTLE",Producto:"NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR",Abrev:"CAJA",Factor:"18",P1CJ:"226.84",P1UN:"12.61",FechaVencimiento:"06/04/2027"},
+{Marca:"NESTLE",Producto:"NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR",Abrev:"CAJA",Factor:"18",P1CJ:"226.84",P1UN:"12.61",FechaVencimiento:"05/04/2027"},
 {Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*16U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.29",P1UN:"12.72",FechaVencimiento:"18/12/2026"},
 {Marca:"NESTLE",Producto:"NESTLE PRINCESA CHOCOLATE CJ 24*18U*28GR",Abrev:"CAJA",Factor:"24",P1CJ:"917.57",P1UN:"38.24",FechaVencimiento:"21/05/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SORRENTO CJ 30*20U*32GR",Abrev:"CAJA",Factor:"30",P1CJ:"842.52",P1UN:"28.08",FechaVencimiento:"03/04/2027"},
@@ -984,7 +1003,7 @@ const productos = [
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME BOMBONES CJ 24 DP *16 U*8GR",Abrev:"CAJA",Factor:"24",P1CJ:"305.86",P1UN:"12.74",FechaVencimiento:"10/03/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME CAPUCCINO CJ 18(12x37g) PE",Abrev:"CAJA",Factor:"18",P1CJ:"532.70",P1UN:"29.59",FechaVencimiento:"03/03/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME CHOCOLATE CJ 28*30U*14GR",Abrev:"CAJA",Factor:"28",P1CJ:"840.16",P1UN:"30.01",FechaVencimiento:"31/03/2027"},
-{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 24*24U*26GR.",Abrev:"CAJA",Factor:"24",P1CJ:"951.55",P1UN:"39.65",FechaVencimiento:"26/05/2027"},
+{Marca:"NESTLE",Producto:"NESTLE SUBLIME CLASICO CJ 24*24U*26GR.",Abrev:"CAJA",Factor:"24",P1CJ:"951.55",P1UN:"39.65",FechaVencimiento:"15/05/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME CRISPY CJ 12(20x20g) PE",Abrev:"CAJA",Factor:"12",P1CJ:"192.58",P1UN:"16.05",FechaVencimiento:"30/01/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME DUO CJ 21DP30U*28GR",Abrev:"CAJA",Factor:"21",P1CJ:"758.27",P1UN:"36.11",FechaVencimiento:"29/03/2027"},
 {Marca:"NESTLE",Producto:"NESTLE SUBLIME EXTREMO CJ 24*15U*50GR",Abrev:"CAJA",Factor:"24",P1CJ:"1142.71",P1UN:"47.61",FechaVencimiento:"09/04/2027"},
@@ -84327,5 +84346,13 @@ document.getElementById('devDia').addEventListener('change', devAplicar);
 document.getElementById('devVehiculo').addEventListener('change', devAplicar);
 document.getElementById('devCliente').addEventListener('keydown', function (e) { if (e.key === 'Enter') devAplicar(); });
 </script>
+
+    <button id="sbf" class="sb-fab"><span class="sb-fab-dot"></span><span>Stock bajo</span><span id="sbfc" class="sb-fab-c">0</span></button>
+    <div id="sbb" class="sb-b"></div>
+    <div id="sbp" class="sb-p">
+        <div class="sb-ph"><div class="sb-pt">Productos con poco stock</div><button id="sbx" class="sb-x">✕</button></div>
+        <div id="sbpl" class="sb-pl"></div>
+    </div>
+
 </body>
 </html>
