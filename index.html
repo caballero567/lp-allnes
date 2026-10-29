@@ -84377,11 +84377,26 @@ document.getElementById('devCliente').addEventListener('keydown', function (e) {
 (function () {
     'use strict';
     var UMBRAL = 10;          // cajas: hasta 10 se considera stock bajo
+    var MIN_UNIDADES = 8;     // menos de 8 unidades ya se considera agotado: no se muestra
     var datos = null;         // stock.json
     var cargado = false;
 
     function norm(v) {
         return String(v == null ? '' : v).trim().toUpperCase().replace(/\s+/g, ' ');
+    }
+
+    // factor de unidades por caja segun el catalogo (12, 24, etc.)
+    function factorDe(p) {
+        var f = parseFloat(String(p && p.Factor != null ? p.Factor : '').replace(',', '.'));
+        if (!isFinite(f) || f <= 0) f = 1;
+        return f;
+    }
+
+    // productos que no deben aparecer en la notificacion
+    function excluir(nombre) {
+        var n = norm(nombre);
+        if (n.indexOf('KIRMA') === -1) return false;
+        return /8\s*GR/.test(n);   // KIRMA ... 8GR / 8 GR
     }
 
     function parseStock(sc) {
@@ -84413,15 +84428,19 @@ document.getElementById('devCliente').addEventListener('keydown', function (e) {
         var lista = null;
         try { lista = productos; } catch (e) { lista = null; }
         if (!lista || !lista.length) return out;
-        var i, p, k, st, bajo;
+        var i, p, k, st, total;
         for (i = 0; i < lista.length; i++) {
             p = lista[i];
             k = norm(p.Producto);
             if (!k || !Object.prototype.hasOwnProperty.call(datos, k)) continue;
+            if (excluir(p.Producto)) continue;
             st = parseStock(datos[k]);
             if (!st) continue;
-            bajo = (st.cajas <= UMBRAL) && (st.cajas > 0 || st.unidades > 0);
-            if (!bajo) continue;
+            if (st.cajas === 0 && st.unidades === 0) continue;   // 0/0 = agotado, no se lista
+            if (st.cajas > UMBRAL) continue;
+            total = st.cajas * factorDe(p) + st.unidades;
+            if (total < MIN_UNIDADES) continue;                  // menos de 8 unidades = agotado
+            st.total = total;
             out.push({ nombre: p.Producto, marca: p.Marca || '', st: st });
         }
         out.sort(function (a, b) {
