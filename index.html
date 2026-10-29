@@ -163,8 +163,8 @@
         .sb-ps{color:#9ca3af;font-size:.66rem;margin-top:2px}
         .sb-x{cursor:pointer;font-size:1rem;line-height:1;padding:4px 8px;border-radius:8px}
         .sb-x:hover{background:rgba(255,255,255,.06)}
-        .sb-it .sb-iv{color:#fbbf24;font-weight:800;font-size:.9rem}
-        .sb-it .sb-iu{color:#9ca3af;font-size:.6rem;margin-left:3px}
+        .sb-it .sb-iv{display:inline-block;background:rgba(52,211,153,0.13);color:#6ee7b7;border:1px solid rgba(52,211,153,0.32);padding:4px 10px;border-radius:30px;font-size:0.7rem;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+        .sb-it .sb-iu{display:block;text-align:right;color:#9ca3af;font-size:0.58rem;margin-top:4px}
         .sb-e{color:#9ca3af;text-align:center;padding:26px 12px;font-size:.78rem}
 
 
@@ -84376,7 +84376,7 @@ document.getElementById('devCliente').addEventListener('keydown', function (e) {
 <script>
 (function () {
     'use strict';
-    var UMBRAL = 10;          // cajas: hasta 10 se considera stock bajo
+    var UMBRAL = 7;           // mostrar solo productos con menos de 7 cajas
     var MIN_UNIDADES = 8;     // menos de 8 unidades ya se considera agotado: no se muestra
     var datos = null;         // stock.json
     var cargado = false;
@@ -84437,7 +84437,7 @@ document.getElementById('devCliente').addEventListener('keydown', function (e) {
             st = parseStock(datos[k]);
             if (!st) continue;
             if (st.cajas === 0 && st.unidades === 0) continue;   // 0/0 = agotado, no se lista
-            if (st.cajas > UMBRAL) continue;
+            if (st.cajas >= UMBRAL) continue;                    // 7 cajas o mas ya no es stock bajo
             total = st.cajas * factorDe(p) + st.unidades;
             if (total < MIN_UNIDADES) continue;                  // menos de 8 unidades = agotado
             st.total = total;
@@ -84470,7 +84470,7 @@ document.getElementById('devCliente').addEventListener('keydown', function (e) {
         }
         cnt.textContent = items.length;
         fab.classList.add('show');
-        if (sub) sub.textContent = items.length + (items.length === 1 ? ' producto' : ' productos') + ' con stock bajo (hasta 10 cajas)';
+        if (sub) sub.textContent = items.length + (items.length === 1 ? ' producto' : ' productos') + ' con stock bajo (menos de 7 cajas)';
         lst.innerHTML = items.map(function (it) {
             var etiqueta = it.st.cajas === 0 ? 'SOLO UNID.' : '';
             var valor = (it.st.u ? it.st.u + ' ' : '') + it.st.q;
