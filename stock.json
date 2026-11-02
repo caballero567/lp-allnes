@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "698/0",
-    "n": 698
+    "q": "699/0",
+    "n": 699
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -811,7 +811,7 @@
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "3192/0",
+    "q": "3192/2",
     "n": 3192
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
@@ -956,13 +956,13 @@
   },
   "IDEAL COMPLEJO-B MZC LAC * 1 UNID* 390G - C": {
     "u": "UN",
-    "q": "458/0",
-    "n": 458
+    "q": "746/0",
+    "n": 746
   },
   "IDEAL COMPLEJO-B MZC LAC CJ 8PACK*6U*390G": {
     "u": "CAJA",
-    "q": "11/1",
-    "n": 11
+    "q": "5/1",
+    "n": 5
   },
   "IDEAL OMEGA MZC LAC * 1 UNID* 390G -": {
     "u": "UN",
@@ -1741,8 +1741,8 @@
   },
   "NESTLE EL MANJAR BOL 24U*500GR": {
     "u": "BOLSA",
-    "q": "54/22",
-    "n": 54
+    "q": "55/3",
+    "n": 55
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
     "u": "CAJA",
