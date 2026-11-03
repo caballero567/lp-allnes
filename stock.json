@@ -721,8 +721,8 @@
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
     "u": "TIRA",
-    "q": "128/0",
-    "n": 128
+    "q": "129/0",
+    "n": 129
   },
   "COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)": {
     "u": "CBO",
@@ -1036,8 +1036,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "3022/11",
-    "n": 3022
+    "q": "3023/0",
+    "n": 3023
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1701,7 +1701,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1970/10",
+    "q": "1970/11",
     "n": 1970
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
