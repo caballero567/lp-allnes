@@ -701,7 +701,7 @@
   },
   "CHOCAPIC CEREAL CJ 18*350GR": {
     "u": "CAJA",
-    "q": "1/5",
+    "q": "1/4",
     "n": 1
   },
   "CHOCAPIC CEREAL CJ 26*90GR": {
@@ -871,7 +871,7 @@
   },
   "ECCO CEBADA 15X175G PE": {
     "u": "CAJA",
-    "q": "1/9",
+    "q": "1/7",
     "n": 1
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
@@ -1036,8 +1036,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "3024/10",
-    "n": 3024
+    "q": "3022/11",
+    "n": 3022
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1051,7 +1051,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "670/1",
+    "q": "670/0",
     "n": 670
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1121,8 +1121,8 @@
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "2309/0",
-    "n": 2309
+    "q": "2306/0",
+    "n": 2306
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
@@ -1136,13 +1136,13 @@
   },
   "MAGGI CREMA ESPARRAGOS DP*12*66GR": {
     "u": "DISP",
-    "q": "38/7",
+    "q": "38/2",
     "n": 38
   },
   "MAGGI CREMA HONGOS DP 12U*65GR": {
     "u": "DISP",
-    "q": "69/11",
-    "n": 69
+    "q": "67/11",
+    "n": 67
   },
   "MAGGI CUBITO CARNE CJ 32 U *75CUBOS X4 GR": {
     "u": "CAJA",
@@ -1526,8 +1526,8 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "386/2",
-    "n": 386
+    "q": "385/7",
+    "n": 385
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1556,7 +1556,7 @@
   },
   "NESCAFE TRADICION DP ZIPPER 16*140GR": {
     "u": "CAJA",
-    "q": "0/10",
+    "q": "0/9",
     "n": 0
   },
   "NESCAFE TRADICION DP ZIPPER 24X100GR": {
@@ -1636,12 +1636,12 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "92/2",
+    "q": "92/1",
     "n": 92
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
     "u": "CAJA",
-    "q": "8/47",
+    "q": "8/46",
     "n": 8
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
@@ -1666,8 +1666,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "45/0",
-    "n": 45
+    "q": "43/0",
+    "n": 43
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1756,8 +1756,8 @@
   },
   "NESTLE KIT KAT 4 FINGER CHOC CJA 8*12*41.5GR": {
     "u": "CAJA",
-    "q": "65/0",
-    "n": 65
+    "q": "64/6",
+    "n": 64
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
@@ -1961,7 +1961,7 @@
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
     "u": "CAJA",
-    "q": "156/8",
+    "q": "156/0",
     "n": 156
   },
   "NESTLE SUBLIME CLASICO CJ 27*24U*28GR": {
@@ -1971,7 +1971,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "304/6",
+    "q": "304/5",
     "n": 304
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
@@ -1981,7 +1981,7 @@
   },
   "NESTLE SUBLIME DUO CJ 21DP30U*28GR": {
     "u": "CAJA",
-    "q": "46/4",
+    "q": "46/3",
     "n": 46
   },
   "NESTLE SUBLIME EXTREMO CJ 24*15U*50GR": {
@@ -2051,7 +2051,7 @@
   },
   "NESTLE TRIANGULO CLASICO 64(10X29G) PE": {
     "u": "CAJA",
-    "q": "0/1",
+    "q": "0/0",
     "n": 0
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
@@ -3001,7 +3001,7 @@
   },
   "TRIX CEREAL CJ 18*330 GR": {
     "u": "CAJA",
-    "q": "1/12",
+    "q": "1/7",
     "n": 1
   },
   "TRIX MARSHMALLOW CER CJ 18*300 GR": {
