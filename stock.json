@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "4247/0",
-    "n": 4247
+    "q": "4231/0",
+    "n": 4231
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "3376/0",
-    "n": 3376
+    "q": "3373/0",
+    "n": 3373
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "8186/0",
-    "n": 8186
+    "q": "8185/0",
+    "n": 8185
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,8 +541,8 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2715/4",
-    "n": 2715
+    "q": "2714/1",
+    "n": 2714
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
     "u": "CAJA",
@@ -596,8 +596,8 @@
   },
   "CBO: KIRMA TIRA 10* 14GR + 5 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
-    "q": "44/0",
-    "n": 44
+    "q": "43/0",
+    "n": 43
   },
   "CBO: KIRMA TIRA 16* 7GR + 8 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
@@ -806,13 +806,13 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "8352/5",
-    "n": 8352
+    "q": "8349/2",
+    "n": 8349
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "3065/1",
-    "n": 3065
+    "q": "3062/1",
+    "n": 3062
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
     "u": "CAJA",
@@ -861,7 +861,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "579/9",
+    "q": "579/8",
     "n": 579
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -876,8 +876,8 @@
   },
   "ECCO CEBADA 10X175G + EXPRIMIDOR PE": {
     "u": "CAJA",
-    "q": "75/3",
-    "n": 75
+    "q": "70/3",
+    "n": 70
   },
   "ECCO CEBADA DOYPACK 12U*170GR + VASO PAVONADO": {
     "u": "CAJA",
@@ -886,13 +886,13 @@
   },
   "ECCO CEBADA DOYPACK CJ 15U*250GR": {
     "u": "CAJA",
-    "q": "49/11",
-    "n": 49
+    "q": "48/11",
+    "n": 48
   },
   "ECCO CEBADA INSTANT CJ 24U*80GR": {
     "u": "CAJA",
-    "q": "78/4",
-    "n": 78
+    "q": "77/4",
+    "n": 77
   },
   "ECCO CEBADA LATA CJ 24U* 50GR": {
     "u": "CAJA",
@@ -981,8 +981,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2306/21",
-    "n": 2306
+    "q": "2305/0",
+    "n": 2305
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1036,8 +1036,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "3029/7",
-    "n": 3029
+    "q": "3028/1",
+    "n": 3028
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1081,8 +1081,8 @@
   },
   "KIRMA LATA CJ 12U*180GR": {
     "u": "CAJA",
-    "q": "89/0",
-    "n": 89
+    "q": "88/11",
+    "n": 88
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
@@ -1116,7 +1116,7 @@
   },
   "MAGGI CALDO CUBO GALLINA 20(12X28.2G) PE": {
     "u": "CAJA",
-    "q": "7/10",
+    "q": "7/9",
     "n": 7
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
@@ -1126,8 +1126,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "4442/0",
-    "n": 4442
+    "q": "4441/0",
+    "n": 4441
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "UN",
@@ -1186,7 +1186,7 @@
   },
   "MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR": {
     "u": "DISP",
-    "q": "233/9",
+    "q": "233/6",
     "n": 233
   },
   "MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR": {
@@ -1201,7 +1201,7 @@
   },
   "MAGGI POLVO GUSTO GALLINA CJ 80TR*10U*7GR": {
     "u": "CAJA",
-    "q": "41/43",
+    "q": "41/42",
     "n": 41
   },
   "MAGGI SOPA CRIOLLA GLIN FD 12*12*60GR": {
@@ -1226,8 +1226,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "129/0",
-    "n": 129
+    "q": "128/0",
+    "n": 128
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1261,8 +1261,8 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "616/0",
-    "n": 616
+    "q": "615/4",
+    "n": 615
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
     "u": "CAJA",
@@ -1446,7 +1446,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "248/9",
+    "q": "248/7",
     "n": 248
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1526,7 +1526,7 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "387/5",
+    "q": "387/4",
     "n": 387
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
@@ -1621,7 +1621,7 @@
   },
   "NESQUIK OPTISTART CHOC CJ 24U*380GR": {
     "u": "CAJA",
-    "q": "73/18",
+    "q": "73/16",
     "n": 73
   },
   "NESQUIK OPTISTART CHOC CJ 24U*400GR": {
@@ -1641,8 +1641,8 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
     "u": "CAJA",
-    "q": "9/1",
-    "n": 9
+    "q": "8/46",
+    "n": 8
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
     "u": "CAJA",
@@ -1671,7 +1671,7 @@
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
-    "q": "78/4",
+    "q": "78/3",
     "n": 78
   },
   "NESTLE BOMBON MULTIPACK CJ 15*360GR": {
@@ -1686,7 +1686,7 @@
   },
   "NESTLE COCOSETTE MAXI WAFER CJ 6DP*24UN*50GR": {
     "u": "CAJA",
-    "q": "96/2",
+    "q": "96/1",
     "n": 96
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
@@ -1731,7 +1731,7 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "122/26",
+    "q": "122/20",
     "n": 122
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
@@ -1771,7 +1771,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "29/9",
+    "q": "29/8",
     "n": 29
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -1816,7 +1816,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "277/17",
+    "q": "277/16",
     "n": 277
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
@@ -1831,12 +1831,12 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "337/6",
+    "q": "337/5",
     "n": 337
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "306/12",
+    "q": "306/9",
     "n": 306
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
@@ -1906,7 +1906,7 @@
   },
   "NESTLE SORRENTO CJ 30*20U*32GR": {
     "u": "CAJA",
-    "q": "12/13",
+    "q": "12/12",
     "n": 12
   },
   "NESTLE SUBLIME ALMENDRA CJ 24*15U*50GR": {
@@ -1956,7 +1956,7 @@
   },
   "NESTLE SUBLIME CHOCOLATE CJ 28*30U*14GR": {
     "u": "CAJA",
-    "q": "24/2",
+    "q": "24/1",
     "n": 24
   },
   "NESTLE SUBLIME CLASICO CJ 24*24U*26GR.": {
@@ -2021,7 +2021,7 @@
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*37GR": {
     "u": "CAJA",
-    "q": "113/11",
+    "q": "113/10",
     "n": 113
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*38GR": {
@@ -2056,7 +2056,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "111/17",
+    "q": "111/16",
     "n": 111
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
