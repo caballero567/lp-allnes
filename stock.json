@@ -101,8 +101,8 @@
   },
   "BONIF ESTRELLA NAVIDEÑA 48G": {
     "u": "UN",
-    "q": "42/0",
-    "n": 42
+    "q": "39/0",
+    "n": 39
   },
   "BONIF IDEAL AMANECER*390GR X ADICIONAL CREMO|AB": {
     "u": "UN",
@@ -351,8 +351,8 @@
   },
   "BONIF NESCAFE*7GR X CAFE": {
     "u": "UN",
-    "q": "574/0",
-    "n": 574
+    "q": "575/0",
+    "n": 575
   },
   "BONIF NESCAFE*7GR X CAFE YAPE L NE": {
     "u": "UN",
@@ -386,13 +386,13 @@
   },
   "BONIF PRINCESA BARRA*30GR X S/. NESTLE CONFITERIA": {
     "u": "UN",
-    "q": "27/0",
-    "n": 27
+    "q": "19/0",
+    "n": 19
   },
   "BONIF RESRVA*15GRXRESERVA": {
     "u": "UN",
-    "q": "1207/0",
-    "n": 1207
+    "q": "1201/0",
+    "n": 1201
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
@@ -596,8 +596,8 @@
   },
   "CBO: KIRMA TIRA 10* 14GR + 5 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
-    "q": "41/0",
-    "n": 41
+    "q": "42/0",
+    "n": 42
   },
   "CBO: KIRMA TIRA 16* 7GR + 8 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
@@ -716,7 +716,7 @@
   },
   "CHOCAPIC CJ 14*540GR": {
     "u": "CAJA",
-    "q": "2/1",
+    "q": "2/2",
     "n": 2
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
@@ -861,8 +861,8 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "577/8",
-    "n": 577
+    "q": "578/2",
+    "n": 578
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
     "u": "CAJA",
@@ -956,8 +956,8 @@
   },
   "IDEAL COMPLEJO-B MZC LAC * 1 UNID* 390G - C": {
     "u": "UN",
-    "q": "974/0",
-    "n": 974
+    "q": "976/0",
+    "n": 976
   },
   "IDEAL COMPLEJO-B MZC LAC CJ 8PACK*6U*390G": {
     "u": "CAJA",
@@ -976,22 +976,22 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2026/10",
-    "n": 2026
+    "q": "2027/21",
+    "n": 2027
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2284/5",
+    "q": "2284/22",
     "n": 2284
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
-    "q": "0/3",
-    "n": 0
+    "q": "1/15",
+    "n": 1
   },
   "IDEAL TABLETA LIGHT MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "5/17",
+    "q": "5/20",
     "n": 5
   },
   "INFUSIÓN N.H FLOR DE JAMAICA CJ 12 * 20 UND 13GR": {
@@ -1046,7 +1046,7 @@
   },
   "KIRMA CJ 12TR*16U*8GR": {
     "u": "CAJA",
-    "q": "0/5",
+    "q": "0/6",
     "n": 0
   },
   "KIRMA CJ 8TR*10U*14GR": {
@@ -1081,7 +1081,7 @@
   },
   "KIRMA LATA CJ 12U*180GR": {
     "u": "CAJA",
-    "q": "88/7",
+    "q": "88/8",
     "n": 88
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
@@ -1221,8 +1221,8 @@
   },
   "MAGGI SOPA POLLO/FIDEOS DP*12*57GR": {
     "u": "UN",
-    "q": "533/0",
-    "n": 533
+    "q": "542/0",
+    "n": 542
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
@@ -1256,12 +1256,12 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*51GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/2",
     "n": 0
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "614/1",
+    "q": "614/3",
     "n": 614
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -1286,7 +1286,7 @@
   },
   "MILO CHOC ACTI-GO LATA CJ 12U*380GR": {
     "u": "CAJA",
-    "q": "19/2",
+    "q": "19/3",
     "n": 19
   },
   "MILO CHOC ACTIV-GO DOY PACK CJ 48U* 190GR": {
@@ -1306,7 +1306,7 @@
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "44/15",
+    "q": "44/17",
     "n": 44
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
@@ -1316,12 +1316,12 @@
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "34/2",
+    "q": "34/3",
     "n": 34
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "321/0",
+    "q": "321/1",
     "n": 321
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
@@ -1396,8 +1396,8 @@
   },
   "NESCAFE DESCAF ORIGINAL CJ 12U*40GR": {
     "u": "CAJA",
-    "q": "19/11",
-    "n": 19
+    "q": "20/0",
+    "n": 20
   },
   "NESCAFE FINA SELECCION CJ 12U*170GR": {
     "u": "CAJA",
@@ -1446,8 +1446,8 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "247/9",
-    "n": 247
+    "q": "248/0",
+    "n": 248
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
     "u": "CAJA",
@@ -1481,7 +1481,7 @@
   },
   "NESCAFE RESERVA CJ 12TR*10*15GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/1",
     "n": 0
   },
   "NESCAFE RESERVA CJ 18TR *10*7GR": {
@@ -1491,7 +1491,7 @@
   },
   "NESCAFE TRADICION 3(18X7G) PE": {
     "u": "CAJA",
-    "q": "198/2",
+    "q": "198/3",
     "n": 198
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
@@ -1556,7 +1556,7 @@
   },
   "NESCAFE TRADICION DP ZIPPER 16*140GR": {
     "u": "CAJA",
-    "q": "0/9",
+    "q": "0/10",
     "n": 0
   },
   "NESCAFE TRADICION DP ZIPPER 24X100GR": {
@@ -1566,12 +1566,12 @@
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "102/3",
+    "q": "102/7",
     "n": 102
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*50GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/1",
     "n": 0
   },
   "NESCAFE TRADICION DPL 50U*7GR": {
@@ -1656,7 +1656,7 @@
   },
   "NESTLE BESO DE MOZA A/S CJ 24DP*9U*24GR": {
     "u": "CAJA",
-    "q": "0/20",
+    "q": "0/22",
     "n": 0
   },
   "NESTLE BESO DE MOZA CJ8*DP*20UN*24G": {
@@ -1666,8 +1666,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "43/0",
-    "n": 43
+    "q": "44/0",
+    "n": 44
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1701,7 +1701,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1970/11",
+    "q": "1970/13",
     "n": 1970
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
@@ -1726,8 +1726,8 @@
   },
   "NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR": {
     "u": "CAJA",
-    "q": "26/23",
-    "n": 26
+    "q": "27/4",
+    "n": 27
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
@@ -1771,7 +1771,7 @@
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
     "u": "CAJA",
-    "q": "29/3",
+    "q": "29/4",
     "n": 29
   },
   "NESTLE LENTEJAS CONFIT CHOC CJ 24*20U*30GR": {
@@ -2161,8 +2161,8 @@
   },
   "TRAS.NESTLE DISPENSA MAGGI 2L - OCT": {
     "u": "UN",
-    "q": "246/0",
-    "n": 246
+    "q": "160/0",
+    "n": 160
   },
   "TRAS.NESTLE PANERA ECCO LOGO": {
     "u": "UN",
@@ -2176,8 +2176,8 @@
   },
   "TRAS.POLO SUBLIME AZUL LOGO": {
     "u": "UN",
-    "q": "158/0",
-    "n": 158
+    "q": "148/0",
+    "n": 148
   },
   "TRAS.REFRIGERADORA INDURAMA": {
     "u": "UN",
@@ -2191,8 +2191,8 @@
   },
   "TRAS.TACHO MILO 35 LT VERDE": {
     "u": "UN",
-    "q": "281/0",
-    "n": 281
+    "q": "271/0",
+    "n": 271
   },
   "TRAS.TAPER ENVASE NESTLE CON TAPA": {
     "u": "UN",
@@ -2211,8 +2211,8 @@
   },
   "TRAS.VASO + CUCHARITA NESTLE 450ML": {
     "u": "UN",
-    "q": "182/0",
-    "n": 182
+    "q": "170/0",
+    "n": 170
   },
   "TRASL. BOLSITAS KITS KITKAT": {
     "u": "UN",
@@ -2251,8 +2251,8 @@
   },
   "TRASL. CUPON VEGA EVENTO 2025": {
     "u": "UN",
-    "q": "55/0",
-    "n": 55
+    "q": "0/0",
+    "n": 0
   },
   "TRASL. GRAT NESCAFE TRADICION*50GR": {
     "u": "UN",
@@ -2261,8 +2261,8 @@
   },
   "TRASL. KIRMA X 8 GR": {
     "u": "UN",
-    "q": "2/0",
-    "n": 2
+    "q": "0/0",
+    "n": 0
   },
   "TRASL. MANDIL KIRMA LOGO": {
     "u": "UN",
@@ -2281,8 +2281,8 @@
   },
   "TRASL. MANDIL IDEAL CREMOSITA": {
     "u": "UN",
-    "q": "13/0",
-    "n": 13
+    "q": "0/0",
+    "n": 0
   },
   "TRASL. MANTA NEGRA NESCAFE LOGO": {
     "u": "UN",
@@ -2291,8 +2291,8 @@
   },
   "TRASL. MANTA ROJA KIRMA LOGO": {
     "u": "UN",
-    "q": "4/0",
-    "n": 4
+    "q": "0/0",
+    "n": 0
   },
   "TRASL. NESCAFE GOLD SIGNATURE 95G": {
     "u": "UN",
@@ -2316,8 +2316,8 @@
   },
   "TRASL. TAPER CUADRADO ANCHOR 1LT.": {
     "u": "UN",
-    "q": "118/0",
-    "n": 118
+    "q": "100/0",
+    "n": 100
   },
   "TRASL. TAPER CUADRADO NESTLE CHOCOLATE": {
     "u": "UN",
@@ -2331,8 +2331,8 @@
   },
   "TRASL. TAPER IDEAL CREMOSITA 1L": {
     "u": "UN",
-    "q": "160/0",
-    "n": 160
+    "q": "150/0",
+    "n": 150
   },
   "TRASL.BALANZA DIGITAL VENTUS X 40 KG": {
     "u": "UN",
@@ -2346,8 +2346,8 @@
   },
   "TRASL.BANDEJA MOROCHA AMARRILLO": {
     "u": "UN",
-    "q": "116/0",
-    "n": 116
+    "q": "108/0",
+    "n": 108
   },
   "TRASL.BATEA DONOFRIO CIRCULAR": {
     "u": "UN",
@@ -2361,13 +2361,13 @@
   },
   "TRASL.BOWLS MAGGI CHICO": {
     "u": "UN",
-    "q": "5/0",
-    "n": 5
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.CAJA DISCPLEY SUBLIME + INTERIORES": {
     "u": "UN",
-    "q": "10/0",
-    "n": 10
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.CANISTER CAFES TRNASPARENTE": {
     "u": "UN",
@@ -2386,13 +2386,13 @@
   },
   "TRASL.CASACA TALLA S / NESCAFE": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.COOLER 8LT": {
     "u": "UN",
-    "q": "29/0",
-    "n": 29
+    "q": "25/0",
+    "n": 25
   },
   "TRASL.COOLER TELA 2LT NESCAFE": {
     "u": "UN",
@@ -2401,8 +2401,8 @@
   },
   "TRASL.ESCALERA 2 PASOS MILO": {
     "u": "UN",
-    "q": "306/0",
-    "n": 306
+    "q": "296/0",
+    "n": 296
   },
   "TRASL.EXHIBIDOR METALICO - NESACFE/KIRMA": {
     "u": "UN",
@@ -2416,8 +2416,8 @@
   },
   "TRASL.EXHIBIDOR MULTIMARCA NESTLE CONF": {
     "u": "UN",
-    "q": "479/0",
-    "n": 479
+    "q": "444/0",
+    "n": 444
   },
   "TRASL.GALLINITA CUBO MAGGI": {
     "u": "UN",
@@ -2476,8 +2476,8 @@
   },
   "TRASL.GRAT BATEA MILO VERDE": {
     "u": "UN",
-    "q": "120/0",
-    "n": 120
+    "q": "100/0",
+    "n": 100
   },
   "TRASL.GRAT BOLSA NOTEX ROJA LOGO N.H": {
     "u": "UN",
@@ -2501,8 +2501,8 @@
   },
   "TRASL.GRAT COOLER DE TELA 2 LT NESCAFE": {
     "u": "UN",
-    "q": "68/0",
-    "n": 68
+    "q": "60/0",
+    "n": 60
   },
   "TRASL.GRAT COOLERS 30 LITROS LOGO MILO": {
     "u": "UN",
@@ -2511,8 +2511,8 @@
   },
   "TRASL.GRAT CUCHILLO PANETONES": {
     "u": "UN",
-    "q": "13/0",
-    "n": 13
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT DISPLAY MANJAR": {
     "u": "UN",
@@ -2536,8 +2536,8 @@
   },
   "TRASL.GRAT EXHIBIDOR CHOCOLATES (SUBLIME Y TRIANGULO)": {
     "u": "UN",
-    "q": "17/0",
-    "n": 17
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT EXHIBIDOR MODELO TAZA NESCAFE": {
     "u": "UN",
@@ -2621,13 +2621,13 @@
   },
   "TRASL.GRAT JARRA ECCO + TAPA PE": {
     "u": "UN",
-    "q": "199/0",
-    "n": 199
+    "q": "180/0",
+    "n": 180
   },
   "TRASL.GRAT JARRA MILO CON TAPA": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT JARRITAS NESTLE LCN": {
     "u": "UN",
@@ -2651,8 +2651,8 @@
   },
   "TRASL.GRAT LONCHERA MANO MILO": {
     "u": "UN",
-    "q": "602/0",
-    "n": 602
+    "q": "580/0",
+    "n": 580
   },
   "TRASL.GRAT MAGGI POLVO CARNE 7GR PE": {
     "u": "UN",
@@ -2676,8 +2676,8 @@
   },
   "TRASL.GRAT MOCHILA MILO VERDE": {
     "u": "UN",
-    "q": "134/0",
-    "n": 134
+    "q": "104/0",
+    "n": 104
   },
   "TRASL.GRAT NATURE HEART.EXHIBIDOR 2 CARGAS N.H": {
     "u": "UN",
@@ -2711,8 +2711,8 @@
   },
   "TRASL.GRAT NESTLE MOROCHAS GALLETA SNACK 42GR": {
     "u": "UN",
-    "q": "3/0",
-    "n": 3
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT PAÑO DE LIMPIEZA IDEAL": {
     "u": "UN",
@@ -2721,13 +2721,13 @@
   },
   "TRASL.GRAT RASPA Y GANA CINEPLANET": {
     "u": "UN",
-    "q": "25/0",
-    "n": 25
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT RASPA Y SIGUE INTENTANDO": {
     "u": "UN",
-    "q": "3589/0",
-    "n": 3589
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT RECIPIENTE CON TAPA BOMBONERA": {
     "u": "UN",
@@ -2736,8 +2736,8 @@
   },
   "TRASL.GRAT SUBLIMECOOKIES&CREAM24(12*38GR) PE": {
     "u": "UN",
-    "q": "4/0",
-    "n": 4
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT TACHO 50 LITROS LOGO MILO": {
     "u": "UN",
@@ -2746,8 +2746,8 @@
   },
   "TRASL.GRAT TAPER C/TAPA MAGGI": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT TAPER CIRCULAR MILO": {
     "u": "UN",
@@ -2776,8 +2776,8 @@
   },
   "TRASL.GRAT TAPER TRANSPARENTE TAPA VERDE LOGO MILO": {
     "u": "UN",
-    "q": "13/0",
-    "n": 13
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT TAPERS 5T CAFES KIMR": {
     "u": "UN",
@@ -2796,8 +2796,8 @@
   },
   "TRASL.GRAT TAPPER ECCO CHICO+ TAPA PE": {
     "u": "UN",
-    "q": "13/0",
-    "n": 13
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT TAPPER MAGGI C/TAPA AMARRILLA": {
     "u": "UN",
@@ -2806,8 +2806,8 @@
   },
   "TRASL.GRAT TAPPER NESCAFE + TAPA PE": {
     "u": "UN",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.GRAT TAPPER NESCAFE C/TAPA": {
     "u": "UN",
@@ -2826,8 +2826,8 @@
   },
   "TRASL.GRAT VASO MILO VERDE": {
     "u": "UN",
-    "q": "59/0",
-    "n": 59
+    "q": "52/0",
+    "n": 52
   },
   "TRASL.GRAT VASO PAVONADO ECCO": {
     "u": "UN",
@@ -2846,8 +2846,8 @@
   },
   "TRASL.MAGGI SOPA POLLO C/FIDEO 57GR": {
     "u": "UN",
-    "q": "15/0",
-    "n": 15
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.MANDIL EN DRILL KIRMA": {
     "u": "UN",
@@ -2866,8 +2866,8 @@
   },
   "TRASL.MANTA ECCO POLAR": {
     "u": "UN",
-    "q": "23/0",
-    "n": 23
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.MANTEQUILLERA DONOFRIO CIRCULAR": {
     "u": "UN",
@@ -2876,8 +2876,8 @@
   },
   "TRASL.MANTEQUILLERO ECCO": {
     "u": "UN",
-    "q": "33/0",
-    "n": 33
+    "q": "24/0",
+    "n": 24
   },
   "TRASL.NATURES HEART BEB ALM SABOR VAIN S/AZU *946ML": {
     "u": "UN",
@@ -2886,8 +2886,8 @@
   },
   "TRASL.NESCAFE KIRMA SACHET 2G": {
     "u": "UN",
-    "q": "915/0",
-    "n": 915
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.NESCAFE RESERVA SACHET 360X2GR": {
     "u": "UN",
@@ -2896,8 +2896,8 @@
   },
   "TRASL.NESCAFERESERVA STRIP *7GR": {
     "u": "UN",
-    "q": "26/0",
-    "n": 26
+    "q": "13/0",
+    "n": 13
   },
   "TRASL.NESCAFERESERVA STRIP 18*10*7GR": {
     "u": "UN",
@@ -2916,8 +2916,8 @@
   },
   "TRASL.SHAKER MILO": {
     "u": "UN",
-    "q": "927/0",
-    "n": 927
+    "q": "921/0",
+    "n": 921
   },
   "TRASL.SHAKER MILO 2026": {
     "u": "UN",
@@ -2951,13 +2951,13 @@
   },
   "TRASL.TAZA AZUCARERA KIRMA": {
     "u": "UN",
-    "q": "2/0",
-    "n": 2
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.TAZA AZUCARERA NESCAFE": {
     "u": "UN",
-    "q": "2/0",
-    "n": 2
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.TAZAS MEDIDORAS LCN": {
     "u": "UN",
@@ -2966,13 +2966,13 @@
   },
   "TRASL.TINA MILO 2026": {
     "u": "UN",
-    "q": "4/0",
-    "n": 4
+    "q": "0/0",
+    "n": 0
   },
   "TRASL.VASOS KIRMA": {
     "u": "UN",
-    "q": "5/0",
-    "n": 5
+    "q": "4/0",
+    "n": 4
   },
   "TRASL.VASOS NESCAFE": {
     "u": "UN",
@@ -2996,7 +2996,7 @@
   },
   "TRIX CEREAL 36X90G PE": {
     "u": "CAJA",
-    "q": "0/26",
+    "q": "0/31",
     "n": 0
   },
   "TRIX CEREAL CJ 18*330 GR": {
