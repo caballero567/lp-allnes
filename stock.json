@@ -1186,7 +1186,7 @@
   },
   "MAGGI MEZCLA LISTA PARA APANAR DP 15U*80GR": {
     "u": "DISP",
-    "q": "233/0",
+    "q": "233/2",
     "n": 233
   },
   "MAGGI MEZCLA LISTA POLLO BRASA CJ 15U*45GR": {
@@ -1691,7 +1691,7 @@
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
     "u": "CAJA",
-    "q": "151/27",
+    "q": "151/40",
     "n": 151
   },
   "NESTLE CONDENSADA A/F CJ 96U*100GR": {
@@ -1746,7 +1746,7 @@
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
     "u": "CAJA",
-    "q": "63/34",
+    "q": "63/37",
     "n": 63
   },
   "NESTLE ESTRELLA NAVIDEÑA CJ 24*6*8GR PE": {
@@ -1831,7 +1831,7 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "336/4",
+    "q": "336/5",
     "n": 336
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
@@ -1996,7 +1996,7 @@
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR": {
     "u": "CAJA",
-    "q": "29/20",
+    "q": "29/21",
     "n": 29
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*46GR": {
@@ -2166,8 +2166,8 @@
   },
   "TRAS.NESTLE PANERA ECCO LOGO": {
     "u": "UN",
-    "q": "13/0",
-    "n": 13
+    "q": "20/0",
+    "n": 20
   },
   "TRAS.NESTLE TRIANGULO CLASICO*29GR": {
     "u": "UN",
@@ -2406,8 +2406,8 @@
   },
   "TRASL.EXHIBIDOR METALICO - NESACFE/KIRMA": {
     "u": "UN",
-    "q": "50/0",
-    "n": 50
+    "q": "60/0",
+    "n": 60
   },
   "TRASL.EXHIBIDOR MIXTO MOROCHA": {
     "u": "UN",
@@ -2911,8 +2911,8 @@
   },
   "TRASL.SECADOR MAGGI": {
     "u": "UN",
-    "q": "319/0",
-    "n": 319
+    "q": "322/0",
+    "n": 322
   },
   "TRASL.SHAKER MILO": {
     "u": "UN",
@@ -2961,8 +2961,8 @@
   },
   "TRASL.TAZAS MEDIDORAS LCN": {
     "u": "UN",
-    "q": "84/0",
-    "n": 84
+    "q": "110/0",
+    "n": 110
   },
   "TRASL.TINA MILO 2026": {
     "u": "UN",
