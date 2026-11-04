@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "2319/0",
-    "n": 2319
+    "q": "2187/0",
+    "n": 2187
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -596,8 +596,8 @@
   },
   "CBO: KIRMA TIRA 10* 14GR + 5 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "1/0",
+    "n": 1
   },
   "CBO: KIRMA TIRA 16* 7GR + 8 UND KIRMA*2GR AGOSTO": {
     "u": "UN",
@@ -836,7 +836,7 @@
   },
   "DONOFRIO PANETON LATA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/1",
     "n": 0
   },
   "DONOFRIO PANETONCITO 12X80GR PE": {
@@ -1036,7 +1036,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "2967/3",
+    "q": "2967/9",
     "n": 2967
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1121,8 +1121,8 @@
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "2288/0",
-    "n": 2288
+    "q": "2289/0",
+    "n": 2289
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
@@ -1261,8 +1261,8 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "587/4",
-    "n": 587
+    "q": "588/0",
+    "n": 588
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
     "u": "CAJA",
@@ -1311,8 +1311,8 @@
   },
   "NAN 2 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "528/0",
-    "n": 528
+    "q": "527/7",
+    "n": 527
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 24U*390GR": {
     "u": "CAJA",
@@ -1446,7 +1446,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "226/11",
+    "q": "226/10",
     "n": 226
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1526,7 +1526,7 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "360/0",
+    "q": "360/1",
     "n": 360
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
@@ -1691,7 +1691,7 @@
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
     "u": "CAJA",
-    "q": "137/85",
+    "q": "137/83",
     "n": 137
   },
   "NESTLE CONDENSADA A/F CJ 96U*100GR": {
@@ -1761,8 +1761,8 @@
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
-    "q": "217/43",
-    "n": 217
+    "q": "218/1",
+    "n": 218
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
