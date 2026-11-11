@@ -1,0 +1,128 @@
+/* ============================================================
+   TEMA NAVIDAD — capa 100% decorativa
+   Activar/desactivar: clase .xmas en <html>
+   No cambia layout, formularios, tabs ni lógica existente.
+   ============================================================ */
+
+/* ---------- Header: acentos rojo/verde sobre la base dorada ---------- */
+html.xmas .header {
+    border-left-color: #ef4444;
+    background: linear-gradient(155deg, rgba(38, 30, 34, 0.96), rgba(17, 20, 26, 0.98));
+}
+html.xmas .header::before {
+    background:
+        radial-gradient(480px 240px at 94% 0%, rgba(239, 68, 68, 0.16), transparent 70%),
+        radial-gradient(420px 220px at 6% 100%, rgba(34, 197, 94, 0.10), transparent 70%),
+        linear-gradient(115deg, rgba(255, 255, 255, 0.03) 0%, transparent 30%),
+        repeating-linear-gradient(115deg, transparent 0 44px, rgba(255, 255, 255, 0.018) 44px 45px);
+}
+html.xmas .header::after {
+    background: linear-gradient(90deg, transparent 2%, #ef4444 26%, #fbbf24 50%, #22c55e 74%, transparent 98%);
+    opacity: 0.95;
+}
+
+/* ---------- Copo junto al título ---------- */
+html.xmas .title-section h1::after {
+    content: ' \2744';
+    font-size: 0.72em;
+    vertical-align: 0.12em;
+    color: #bfdbfe;
+    text-shadow: 0 0 10px rgba(191, 219, 254, 0.75);
+}
+
+/* ---------- Elementos decorativos: ocultos si no hay .xmas ---------- */
+.xmas-hat,
+.xmas-lights,
+.xmas-snow { display: none; }
+
+/* ---------- 1) Gorro de Papá Noel sobre el logo NE ---------- */
+html.xmas .logo-badge { overflow: visible; }
+html.xmas .xmas-hat {
+    display: block;
+    position: absolute;
+    z-index: 4;
+    top: -19px;
+    right: -24px;
+    width: 50px;
+    height: 43px;
+    pointer-events: none;
+    animation: xmasHatPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+html.xmas .xmas-hat svg { display: block; width: 100%; height: 100%; }
+@keyframes xmasHatPop {
+    from { opacity: 0; transform: translateY(-10px) scale(0.72); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- 2) Guirnalda de luces en el borde superior ---------- */
+html.xmas .xmas-lights {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 12px;
+    right: 12px;
+    height: 18px;
+    align-items: flex-start;
+    justify-content: space-between;
+    z-index: 2;
+    pointer-events: none;
+}
+html.xmas .xmas-lights::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22) 8%, rgba(255, 255, 255, 0.22) 92%, transparent);
+}
+html.xmas .xmas-bulb {
+    position: relative;
+    top: 1px;
+    width: 6px;
+    height: 9px;
+    border-radius: 50% 50% 46% 46%;
+    background: var(--bulb, #ef4444);
+    box-shadow: 0 0 6px 1px var(--bulb, #ef4444), 0 0 12px 2px rgba(255, 255, 255, 0.10);
+    animation: xmasTwinkle 2.8s ease-in-out infinite;
+}
+@keyframes xmasTwinkle {
+    0%, 100% { opacity: 0.55; filter: brightness(0.9); }
+    50%      { opacity: 1;    filter: brightness(1.35); }
+}
+
+/* ---------- 3) Nieve sutil (no intercepta clics) ---------- */
+html.xmas .xmas-snow {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    overflow: hidden;
+    pointer-events: none;
+}
+html.xmas .xmas-flake {
+    position: absolute;
+    top: -8vh;
+    color: #dbeafe;
+    line-height: 1;
+    will-change: transform;
+    animation-name: xmasFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes xmasFall {
+    0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+    100% { transform: translate3d(var(--drift, 20px), 112vh, 0) rotate(320deg); }
+}
+
+/* ---------- Móvil: no saturar ---------- */
+@media (max-width: 420px) {
+    html.xmas .xmas-hat { width: 44px; height: 38px; top: -15px; right: -23px; }
+}
+
+/* ---------- Accesibilidad: sin animaciones si el usuario lo pide ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html.xmas .xmas-hat,
+    html.xmas .xmas-bulb,
+    html.xmas .xmas-flake { animation: none !important; }
+}
