@@ -541,8 +541,8 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2371/4",
-    "n": 2371
+    "q": "2401/4",
+    "n": 2401
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
     "u": "CAJA",
@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB CLA-SUB SON-PRIN-SUB CAP-TRI CLA-(MOR*12)": {
     "u": "UN",
-    "q": "269/0",
-    "n": 269
+    "q": "267/0",
+    "n": 267
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
@@ -781,8 +781,8 @@
   },
   "DONOFRIO CHOCOTONCITO 12X80GR PE": {
     "u": "CJA",
-    "q": "1/0",
-    "n": 1
+    "q": "0/0",
+    "n": 0
   },
   "DONOFRIO CHOCOTONCITO BOLSA CJ 36*80GR": {
     "u": "CAJA",
@@ -811,13 +811,13 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "7805/5",
-    "n": 7805
+    "q": "7845/5",
+    "n": 7845
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "30/1",
-    "n": 30
+    "q": "60/1",
+    "n": 60
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
     "u": "CAJA",
@@ -826,8 +826,8 @@
   },
   "DONOFRIO PANETON CHOCOTON CJ 6*450GR": {
     "u": "CAJA",
-    "q": "289/4",
-    "n": 289
+    "q": "297/4",
+    "n": 297
   },
   "DONOFRIO PANETON INTEGRAL BSA 6U*500GR": {
     "u": "CAJA",
@@ -866,7 +866,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "552/9",
+    "q": "552/8",
     "n": 552
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -1671,8 +1671,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "117/0",
-    "n": 117
+    "q": "118/0",
+    "n": 118
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
