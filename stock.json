@@ -1421,8 +1421,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "123/0",
-    "n": 123
+    "q": "124/0",
+    "n": 124
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1751,7 +1751,7 @@
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
     "u": "CAJA",
-    "q": "103/10",
+    "q": "103/12",
     "n": 103
   },
   "NESTLE ESTRELLA NAVIDEÑA CJ 24*6*8GR PE": {
