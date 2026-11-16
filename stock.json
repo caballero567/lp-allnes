@@ -501,8 +501,8 @@
   },
   "BONIFICACION GERBER MANZANA *113 GR": {
     "u": "UN",
-    "q": "0/0",
-    "n": 0
+    "q": "24/0",
+    "n": 24
   },
   "BONIFICACION KIRMA*8GR X OPN CAFÉS": {
     "u": "UN",
@@ -941,8 +941,8 @@
   },
   "GERBER PURE MANZANA CJ 12*113GR": {
     "u": "CAJA",
-    "q": "2/11",
-    "n": 2
+    "q": "0/11",
+    "n": 0
   },
   "GERBER PURE PERA CJ 12*113GR": {
     "u": "CAJA",
@@ -986,7 +986,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "3180/1",
+    "q": "3180/13",
     "n": 3180
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1111,7 +1111,7 @@
   },
   "MAGCALGLLNPLV12(488.8+490)GPRGALLNPLASP": {
     "u": "CAJA",
-    "q": "37/9",
+    "q": "37/10",
     "n": 37
   },
   "MAGGGI CUBO GALLN+CALPLV CP 24(488.8+35)GPE": {
@@ -2071,7 +2071,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "329/15",
+    "q": "329/16",
     "n": 329
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
