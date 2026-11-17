@@ -866,7 +866,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "747/4",
+    "q": "747/5",
     "n": 747
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -1016,8 +1016,8 @@
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR": {
     "u": "TIRA",
-    "q": "287/0",
-    "n": 287
+    "q": "286/0",
+    "n": 286
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR PRYAPE": {
     "u": "TIRA",
