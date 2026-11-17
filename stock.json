@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "1748/0",
-    "n": 1748
+    "q": "2820/0",
+    "n": 2820
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -1231,8 +1231,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "118/0",
-    "n": 118
+    "q": "117/0",
+    "n": 117
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1706,7 +1706,7 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1525/16",
+    "q": "1525/17",
     "n": 1525
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
@@ -1766,7 +1766,7 @@
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
-    "q": "234/22",
+    "q": "234/23",
     "n": 234
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
