@@ -816,13 +816,13 @@
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "487/4",
-    "n": 487
+    "q": "488/4",
+    "n": 488
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
     "u": "CAJA",
-    "q": "45/1",
-    "n": 45
+    "q": "48/1",
+    "n": 48
   },
   "DONOFRIO PANETON CHOCOTON CJ 6*450GR": {
     "u": "CAJA",
@@ -841,7 +841,7 @@
   },
   "DONOFRIO PANETON LATA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/4",
     "n": 0
   },
   "DONOFRIO PANETONCITO 12X80GR PE": {
@@ -1041,7 +1041,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "2561/1",
+    "q": "2561/2",
     "n": 2561
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1131,8 +1131,8 @@
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "5364/0",
-    "n": 5364
+    "q": "5365/0",
+    "n": 5365
   },
   "MAGGI CALDO/GALLISOL PACK DP 26U*28.2GR": {
     "u": "UN",
