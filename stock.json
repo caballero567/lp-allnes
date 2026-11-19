@@ -86,8 +86,8 @@
   },
   "BONIF ECCO*10GR X ECCO|ECCO NE": {
     "u": "UN",
-    "q": "864/0",
-    "n": 864
+    "q": "539/0",
+    "n": 539
   },
   "BONIF ECCO*12GR X ECCO|ECCO": {
     "u": "UN",
@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "1873/0",
-    "n": 1873
+    "q": "1445/0",
+    "n": 1445
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -896,8 +896,8 @@
   },
   "ECCO CEBADA INSTANT CJ 24U*80GR": {
     "u": "CAJA",
-    "q": "76/0",
-    "n": 76
+    "q": "75/11",
+    "n": 75
   },
   "ECCO CEBADA LATA CJ 24U* 50GR": {
     "u": "CAJA",
@@ -911,7 +911,7 @@
   },
   "ECCO DOYPACK 16X170G PE": {
     "u": "CAJA",
-    "q": "75/10",
+    "q": "75/8",
     "n": 75
   },
   "ECCO DOYPACK 6X170G + JARRA": {
@@ -1056,8 +1056,8 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "413/6",
-    "n": 413
+    "q": "402/2",
+    "n": 402
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1081,13 +1081,13 @@
   },
   "KIRMA DOY PACK ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "140/23",
-    "n": 140
+    "q": "138/6",
+    "n": 138
   },
   "KIRMA LATA CJ 12U*180GR": {
     "u": "CAJA",
-    "q": "58/10",
-    "n": 58
+    "q": "55/11",
+    "n": 55
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
@@ -1246,7 +1246,7 @@
   },
   "MILO ACTI-GO DOYPACK CJ 12U*350GR+POTE": {
     "u": "CAJA",
-    "q": "0/7",
+    "q": "0/3",
     "n": 0
   },
   "MILO CHOC ACTI-E GRANUL CJ 5TR*8U*48GR": {
@@ -1401,8 +1401,8 @@
   },
   "NESCAFE DESCAF ORIGINAL CJ 12U*40GR": {
     "u": "CAJA",
-    "q": "26/8",
-    "n": 26
+    "q": "25/11",
+    "n": 25
   },
   "NESCAFE FINA SELECCION CJ 12U*170GR": {
     "u": "CAJA",
@@ -1436,8 +1436,8 @@
   },
   "NESCAFE GOLD CAPPUCCINO MOCHA CJ 6DP*8S*18GR": {
     "u": "CAJA",
-    "q": "50/1",
-    "n": 50
+    "q": "49/3",
+    "n": 49
   },
   "NESCAFE GOLD CAPPUCCINO CJ 6DP*10S*14GR": {
     "u": "CAJA",
@@ -1461,13 +1461,13 @@
   },
   "NESCAFE GOLD SIGNATURE JAR 12X95G PE": {
     "u": "CAJA",
-    "q": "17/5",
-    "n": 17
+    "q": "16/10",
+    "n": 16
   },
   "NESCAFE GOLD SIGNATURE JAR 6X190G PE": {
     "u": "CAJA",
-    "q": "48/0",
-    "n": 48
+    "q": "47/1",
+    "n": 47
   },
   "NESCAFE KIRMA DOYPACK 24X80GR": {
     "u": "CAJA",
@@ -1526,13 +1526,13 @@
   },
   "NESCAFE TRADICION CJ 24*100GR": {
     "u": "CAJA",
-    "q": "16/19",
+    "q": "16/16",
     "n": 16
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "491/0",
-    "n": 491
+    "q": "486/1",
+    "n": 486
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1561,7 +1561,7 @@
   },
   "NESCAFE TRADICION DP ZIPPER 16*140GR": {
     "u": "CAJA",
-    "q": "1/6",
+    "q": "1/4",
     "n": 1
   },
   "NESCAFE TRADICION DP ZIPPER 24X100GR": {
@@ -1571,8 +1571,8 @@
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "74/11",
-    "n": 74
+    "q": "72/8",
+    "n": 72
   },
   "NESCAFE TRADICION DP ZIPPER CJ 24U*50GR": {
     "u": "CAJA",
@@ -1586,8 +1586,8 @@
   },
   "NESCAFE TRADICION FCO CJ 24U*50GR": {
     "u": "CAJA",
-    "q": "15/7",
-    "n": 15
+    "q": "14/9",
+    "n": 14
   },
   "NESCAFE TRADICION LATA CJ 16U*190+TAZA": {
     "u": "CAJA",
@@ -1601,8 +1601,8 @@
   },
   "NESCAFE TRADICION TRADICION CJ 12U*170GR": {
     "u": "CAJA",
-    "q": "63/2",
-    "n": 63
+    "q": "62/10",
+    "n": 62
   },
   "NESCFE CAJA 8*(*10*15GR+KIRMAK*5UN*7GR)": {
     "u": "CAJA",
@@ -1636,13 +1636,13 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 12*470GR": {
     "u": "CAJA",
-    "q": "16/2",
+    "q": "16/1",
     "n": 16
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "102/1",
-    "n": 102
+    "q": "101/12",
+    "n": 101
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
     "u": "CAJA",
