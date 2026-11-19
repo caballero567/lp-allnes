@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "3016/0",
-    "n": 3016
+    "q": "3017/0",
+    "n": 3017
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "2280/1",
+    "q": "2280/3",
     "n": 2280
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -906,7 +906,7 @@
   },
   "ECCO CEBADA LATA CJ 24U*170GR": {
     "u": "CAJA",
-    "q": "0/0",
+    "q": "0/3",
     "n": 0
   },
   "ECCO DOYPACK 16X170G PE": {
@@ -981,8 +981,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "1077/23",
-    "n": 1077
+    "q": "1078/5",
+    "n": 1078
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
