@@ -1056,7 +1056,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "421/0",
+    "q": "421/1",
     "n": 421
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1091,8 +1091,8 @@
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
-    "q": "384/0",
-    "n": 384
+    "q": "383/0",
+    "n": 383
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1651,7 +1651,7 @@
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
     "u": "CAJA",
-    "q": "42/13",
+    "q": "42/12",
     "n": 42
   },
   "NESTLE AFHS PANETON BOLSA 6X750G PE": {
@@ -1736,7 +1736,7 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "229/22",
+    "q": "229/21",
     "n": 229
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
@@ -2011,7 +2011,7 @@
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*36GR": {
     "u": "CAJA",
-    "q": "61/4",
+    "q": "61/3",
     "n": 61
   },
   "NESTLE SUBLIME GALLETA RELLENA CJ 24DP*6U*46GR": {
