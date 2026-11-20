@@ -866,8 +866,8 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "607/9",
-    "n": 607
+    "q": "608/0",
+    "n": 608
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
     "u": "CAJA",
@@ -1041,7 +1041,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1922/9",
+    "q": "1922/10",
     "n": 1922
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1056,7 +1056,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "736/6",
+    "q": "736/7",
     "n": 736
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1451,7 +1451,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "519/7",
+    "q": "519/8",
     "n": 519
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1696,7 +1696,7 @@
   },
   "NESTLE COND TOPPING TARRO CJ 96U*100GR": {
     "u": "CAJA",
-    "q": "126/0",
+    "q": "126/6",
     "n": 126
   },
   "NESTLE CONDENSADA A/F CJ 96U*100GR": {
@@ -1766,7 +1766,7 @@
   },
   "NESTLE LCA TOPPING TARRO 48U*397GR": {
     "u": "CAJA",
-    "q": "217/13",
+    "q": "217/19",
     "n": 217
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
@@ -2051,7 +2051,7 @@
   },
   "NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR": {
     "u": "CAJA",
-    "q": "35/16",
+    "q": "35/17",
     "n": 35
   },
   "NESTLE TRIANGULO BOLA NAVIDEÑA CJ 24X72G PE": {
