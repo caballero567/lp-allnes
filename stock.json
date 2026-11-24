@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "204/0",
-    "n": 204
+    "q": "175/0",
+    "n": 175
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "2464/0",
-    "n": 2464
+    "q": "2559/0",
+    "n": 2559
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "3031/0",
-    "n": 3031
+    "q": "3075/0",
+    "n": 3075
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -1421,8 +1421,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "232/0",
-    "n": 232
+    "q": "231/0",
+    "n": 231
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1451,7 +1451,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "460/8",
+    "q": "460/7",
     "n": 460
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1731,7 +1731,7 @@
   },
   "NESTLE DORE GALLETA INDIVIDUAL CJ 24*6U*24GR": {
     "u": "CAJA",
-    "q": "47/5",
+    "q": "47/4",
     "n": 47
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
