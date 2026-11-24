@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "1157/0",
-    "n": 1157
+    "q": "1156/0",
+    "n": 1156
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -725,9 +725,9 @@
     "n": 2
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
-    "u": "TIRA",
-    "q": "1/0",
-    "n": 1
+    "u": "CBO",
+    "q": "0/0",
+    "n": 0
   },
   "COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)": {
     "u": "CBO",
@@ -811,13 +811,13 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "2647/0",
-    "n": 2647
+    "q": "2643/0",
+    "n": 2643
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "43/5",
-    "n": 43
+    "q": "40/5",
+    "n": 40
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
     "u": "CAJA",
@@ -866,7 +866,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "737/2",
+    "q": "737/1",
     "n": 737
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -986,7 +986,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "16799/7",
+    "q": "16799/8",
     "n": 16799
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1421,8 +1421,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "234/0",
-    "n": 234
+    "q": "233/0",
+    "n": 233
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1851,7 +1851,7 @@
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "194/11",
+    "q": "194/9",
     "n": 194
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
