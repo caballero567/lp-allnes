@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "436/0",
-    "n": 436
+    "q": "204/0",
+    "n": 204
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -766,7 +766,7 @@
   },
   "DONOFRIO CHOCOTON BOLSA CJ 6*450GR": {
     "u": "CAJA",
-    "q": "10/3",
+    "q": "10/1",
     "n": 10
   },
   "DONOFRIO CHOCOTON DOBLE CHOC CJ 6*450GR": {
@@ -811,13 +811,13 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "2648/2",
-    "n": 2648
+    "q": "2647/0",
+    "n": 2647
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "48/5",
-    "n": 48
+    "q": "43/5",
+    "n": 43
   },
   "DONOFRIO PANETON CAJA CJ*3X1.3KG": {
     "u": "CAJA",
@@ -866,7 +866,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "737/3",
+    "q": "737/2",
     "n": 737
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -936,7 +936,7 @@
   },
   "GERBER PURE MANGO CJ 12*113GR": {
     "u": "CAJA",
-    "q": "13/11",
+    "q": "13/9",
     "n": 13
   },
   "GERBER PURE MANZANA CJ 12*113GR": {
@@ -946,8 +946,8 @@
   },
   "GERBER PURE PERA CJ 12*113GR": {
     "u": "CAJA",
-    "q": "17/1",
-    "n": 17
+    "q": "16/11",
+    "n": 16
   },
   "IDEAL CREMOSITACJ 24U*390GR GRATIS NSCF RSV*2GR": {
     "u": "CAJA",
@@ -981,12 +981,12 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2184/23",
-    "n": 2184
+    "q": "2183/11",
+    "n": 2183
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "16799/6",
+    "q": "16799/7",
     "n": 16799
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1016,8 +1016,8 @@
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR": {
     "u": "TIRA",
-    "q": "238/0",
-    "n": 238
+    "q": "239/0",
+    "n": 239
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR PRYAPE": {
     "u": "TIRA",
@@ -1041,7 +1041,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1801/9",
+    "q": "1801/8",
     "n": 1801
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1056,7 +1056,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "665/4",
+    "q": "665/3",
     "n": 665
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1081,7 +1081,7 @@
   },
   "KIRMA DOY PACK ZIPPER CJ 24U*45GR": {
     "u": "CAJA",
-    "q": "169/18",
+    "q": "169/17",
     "n": 169
   },
   "KIRMA LATA CJ 12U*180GR": {
@@ -1226,13 +1226,13 @@
   },
   "MAGGI SOPA POLLO/FIDEOS DP*12*57GR": {
     "u": "UN",
-    "q": "356/0",
-    "n": 356
+    "q": "355/0",
+    "n": 355
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "282/0",
-    "n": 282
+    "q": "283/0",
+    "n": 283
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1286,8 +1286,8 @@
   },
   "MILO CHOC ACTI-GO DOY PACK CJ 12U*350GR": {
     "u": "CAJA",
-    "q": "56/0",
-    "n": 56
+    "q": "55/10",
+    "n": 55
   },
   "MILO CHOC ACTI-GO LATA CJ 12U*380GR": {
     "u": "CAJA",
@@ -1501,7 +1501,7 @@
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
     "u": "CAJA",
-    "q": "124/2",
+    "q": "124/1",
     "n": 124
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE": {
@@ -1626,7 +1626,7 @@
   },
   "NESQUIK OPTISTART CHOC CJ 24U*380GR": {
     "u": "CAJA",
-    "q": "56/8",
+    "q": "56/7",
     "n": 56
   },
   "NESQUIK OPTISTART CHOC CJ 24U*400GR": {
@@ -1706,8 +1706,8 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR": {
     "u": "CAJA",
-    "q": "1644/5",
-    "n": 1644
+    "q": "1643/23",
+    "n": 1643
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
     "u": "CAJA",
@@ -1771,7 +1771,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "188/12",
+    "q": "188/6",
     "n": 188
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
@@ -1821,7 +1821,7 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "496/19",
+    "q": "496/20",
     "n": 496
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
