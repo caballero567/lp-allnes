@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "1156/0",
-    "n": 1156
+    "q": "1158/0",
+    "n": 1158
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "2958/0",
-    "n": 2958
+    "q": "3031/0",
+    "n": 3031
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -811,8 +811,8 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "2643/1",
-    "n": 2643
+    "q": "2644/0",
+    "n": 2644
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
@@ -986,8 +986,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "16797/1",
-    "n": 16797
+    "q": "16796/19",
+    "n": 16796
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1041,7 +1041,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1801/4",
+    "q": "1801/5",
     "n": 1801
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1056,8 +1056,8 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "665/0",
-    "n": 665
+    "q": "664/6",
+    "n": 664
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
     "u": "CAJA",
@@ -1421,8 +1421,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "233/0",
-    "n": 233
+    "q": "232/0",
+    "n": 232
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1641,7 +1641,7 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "162/12",
+    "q": "162/13",
     "n": 162
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
@@ -1651,7 +1651,7 @@
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
     "u": "CAJA",
-    "q": "40/6",
+    "q": "40/5",
     "n": 40
   },
   "NESTLE AFHS PANETON BOLSA 6X750G PE": {
@@ -1671,8 +1671,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "1535/0",
-    "n": 1535
+    "q": "1534/0",
+    "n": 1534
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1771,7 +1771,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "188/6",
+    "q": "188/5",
     "n": 188
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
@@ -1821,8 +1821,8 @@
   },
   "NESTLE MOROCHAS GALLETA CLASICA CJ 22*12U*30GR": {
     "u": "CAJA",
-    "q": "496/20",
-    "n": 496
+    "q": "497/3",
+    "n": 497
   },
   "NESTLE MOROCHAS GALLETA DISPLAY CJ 30*6*30GR": {
     "u": "CAJA",
