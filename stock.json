@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB CLA-SUB SON-PRIN-SUB CAP-TRI CLA-(MOR*12)": {
     "u": "UN",
-    "q": "228/0",
-    "n": 228
+    "q": "229/0",
+    "n": 229
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
@@ -725,9 +725,9 @@
     "n": 2
   },
   "COCOA (MEDIA TIRA) TR*12U*10GR": {
-    "u": "CBO",
-    "q": "0/0",
-    "n": 0
+    "u": "TIRA",
+    "q": "301/0",
+    "n": 301
   },
   "COMBO EXHIBIDOR NESTLE (SUB CLA-SUB SON-KIT-PRIN-TRIANGULO)": {
     "u": "CBO",
@@ -796,8 +796,8 @@
   },
   "DONOFRIO COCOA CAJA 7TR*24U*10GR": {
     "u": "CAJA",
-    "q": "137/6",
-    "n": 137
+    "q": "116/3",
+    "n": 116
   },
   "DONOFRIO COCOA DOYPACK CAJA 12*150GR": {
     "u": "CAJA",
@@ -1501,7 +1501,7 @@
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR": {
     "u": "CAJA",
-    "q": "124/1",
+    "q": "124/2",
     "n": 124
   },
   "NESCAFE TRADICION CJ 12TR*18U*7GR PRYAPE": {
@@ -1531,7 +1531,7 @@
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "517/3",
+    "q": "517/4",
     "n": 517
   },
   "NESCAFE TRADICION CJ 8TR*10U*14GR PRYAPE": {
