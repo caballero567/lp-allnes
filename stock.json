@@ -36,8 +36,8 @@
   },
   "BONIF ANCHOR*96GR X NESTLE LCCB": {
     "u": "UN",
-    "q": "94/0",
-    "n": 94
+    "q": "105/0",
+    "n": 105
   },
   "BONIF BUON NATALE BOLSA 750GR": {
     "u": "UN",
@@ -126,8 +126,8 @@
   },
   "BONIF IDEAL CREMOSITA*390GR X IT": {
     "u": "UN",
-    "q": "5092/0",
-    "n": 5092
+    "q": "5082/0",
+    "n": 5082
   },
   "BONIF IDEAL CREMOSITA*390GR X NE": {
     "u": "UN",
@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "2306/0",
-    "n": 2306
+    "q": "2478/0",
+    "n": 2478
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -231,8 +231,8 @@
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X CULINARIOS|CULINARIOS": {
     "u": "UN",
-    "q": "3669/0",
-    "n": 3669
+    "q": "3989/0",
+    "n": 3989
   },
   "BONIF MAGGI CUBITO GALLINA*18.8GR X MAGGI CALDO|CULINARIOS": {
     "u": "UN",
@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "1005/0",
-    "n": 1005
+    "q": "1053/0",
+    "n": 1053
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -286,8 +286,8 @@
   },
   "BONIF MOROCHAS GALLETA*30GR X GALLETA": {
     "u": "UN",
-    "q": "1050/0",
-    "n": 1050
+    "q": "1053/0",
+    "n": 1053
   },
   "BONIF MOROCHAS GALLETA*30GR X S/. CONFITERIA OP": {
     "u": "UN",
@@ -351,8 +351,8 @@
   },
   "BONIF NESCAFE*7GR X CAFE": {
     "u": "UN",
-    "q": "320/0",
-    "n": 320
+    "q": "319/0",
+    "n": 319
   },
   "BONIF NESCAFE*7GR X CAFE YAPE L NE": {
     "u": "UN",
@@ -391,13 +391,13 @@
   },
   "BONIF RESRVA*15GRXRESERVA": {
     "u": "UN",
-    "q": "1136/0",
-    "n": 1136
+    "q": "1137/0",
+    "n": 1137
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "2286/0",
-    "n": 2286
+    "q": "2357/0",
+    "n": 2357
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -541,8 +541,8 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "1614/4",
-    "n": 1614
+    "q": "1613/4",
+    "n": 1613
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
     "u": "CAJA",
@@ -645,7 +645,7 @@
     "n": 0
   },
   "CBO:12 UN SUBLIME CLASICO + 10 UN SUBLIME SONRISA": {
-    "u": "UN",
+    "u": "CBO",
     "q": "0/0",
     "n": 0
   },
@@ -991,13 +991,13 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2045/20",
+    "q": "2045/8",
     "n": 2045
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "15725/1",
-    "n": 15725
+    "q": "15724/1",
+    "n": 15724
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1051,7 +1051,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1761/10",
+    "q": "1761/9",
     "n": 1761
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1066,7 +1066,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "638/3",
+    "q": "638/2",
     "n": 638
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1216,7 +1216,7 @@
   },
   "MAGGI POLVO GUSTO GALLINA CJ 80TR*10U*7GR": {
     "u": "CAJA",
-    "q": "44/15",
+    "q": "44/17",
     "n": 44
   },
   "MAGGI SOPA CRIOLLA GLIN FD 12*12*60GR": {
@@ -1276,7 +1276,7 @@
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR": {
     "u": "CAJA",
-    "q": "660/1",
+    "q": "660/0",
     "n": 660
   },
   "MILO CHOC ACTI-E GRANUL CJ 6TR*24U*16GR PRYAPE": {
@@ -1336,7 +1336,7 @@
   },
   "NAN 3 BB FÓRMULA LIQ CONC CJ 8PACK*6U*390GR": {
     "u": "CAJA",
-    "q": "307/3",
+    "q": "307/2",
     "n": 307
   },
   "NATURES HEART BEB ALM SABOR VAIN S/AZU CJ 12*946ML": {
@@ -1461,7 +1461,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "443/3",
+    "q": "443/2",
     "n": 443
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1651,7 +1651,7 @@
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 15TR*12U*13GR": {
     "u": "CAJA",
-    "q": "155/11",
+    "q": "155/10",
     "n": 155
   },
   "NESQUIK OPTISTART CHOCOLATE CJ 48*190GR": {
@@ -2106,7 +2106,7 @@
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*20U*30GR": {
     "u": "CAJA",
-    "q": "20/7",
+    "q": "20/6",
     "n": 20
   },
   "NESTLE TRIANGULO MARMOLEADO CJ 24DP*22U*30GR": {
@@ -3013,6 +3013,16 @@
     "u": "UN",
     "q": "697/0",
     "n": 697
+  },
+  "TRASL:TAZA KIRMA NAVIDEÑA DISEÑO ARBOL NAVIDAD NOV 26": {
+    "u": "UN",
+    "q": "0/0",
+    "n": 0
+  },
+  "TRASL:TAZA KIRMA NAVIDEÑA DISEÑO NIEVE NOV 26": {
+    "u": "UN",
+    "q": "0/0",
+    "n": 0
   },
   "TRIANGULO CLASICO DPL 20 (PAC*2)*58GR + DPL 20U*29GR": {
     "u": "UN",
