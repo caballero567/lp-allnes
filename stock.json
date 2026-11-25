@@ -251,8 +251,8 @@
   },
   "BONIF MILO*16GR X MILO|BEBIDAS NE": {
     "u": "UN",
-    "q": "1053/0",
-    "n": 1053
+    "q": "1050/0",
+    "n": 1050
   },
   "BONIF MILO*16GR X MILO|BEBIDAS|IT": {
     "u": "UN",
@@ -541,7 +541,7 @@
   },
   "BUON NATALE PANETON BOLSA CJA 6*800GR": {
     "u": "CAJA",
-    "q": "1612/4",
+    "q": "1612/2",
     "n": 1612
   },
   "BUON NATALE PANETON CAJA CJA 6*750GR": {
@@ -821,7 +821,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "2219/3",
+    "q": "2219/2",
     "n": 2219
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -991,8 +991,8 @@
   },
   "IDEAL TABLETA AMANECER MZC LAC CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "2045/2",
-    "n": 2045
+    "q": "2044/20",
+    "n": 2044
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
@@ -1051,8 +1051,8 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1761/0",
-    "n": 1761
+    "q": "1760/11",
+    "n": 1760
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
     "u": "CAJA",
@@ -1136,8 +1136,8 @@
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "1372/0",
-    "n": 1372
+    "q": "1371/0",
+    "n": 1371
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
@@ -1751,12 +1751,12 @@
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
     "u": "BOLSA",
-    "q": "97/5",
+    "q": "97/3",
     "n": 97
   },
   "NESTLE EL MANJAR BOL 24U*500GR": {
     "u": "BOLSA",
-    "q": "34/23",
+    "q": "34/20",
     "n": 34
   },
   "NESTLE EL MANJAR CJ 48U*200GR": {
