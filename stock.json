@@ -1136,8 +1136,8 @@
   },
   "MAGGI CALDO/CARNE DP 26U*18.8GR": {
     "u": "DISP",
-    "q": "1371/0",
-    "n": 1371
+    "q": "1370/0",
+    "n": 1370
   },
   "MAGGI CALDO/GALLINA DP 26U*18.8GR": {
     "u": "DISP",
@@ -1241,8 +1241,8 @@
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
-    "q": "221/0",
-    "n": 221
+    "q": "220/0",
+    "n": 220
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR YAPE": {
     "u": "TIRA",
@@ -1456,7 +1456,7 @@
   },
   "NESCAFE GOLD CAPPUCCINO CJ 6DP*8S*14GR": {
     "u": "CAJA",
-    "q": "206/3",
+    "q": "206/2",
     "n": 206
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
