@@ -656,8 +656,8 @@
   },
   "CBO:EXHIBIDOR-SUB CLA-SUB SON-PRIN-SUB CAP-TRI CLA-(MOR*12)": {
     "u": "UN",
-    "q": "224/0",
-    "n": 224
+    "q": "223/0",
+    "n": 223
   },
   "CBO:EXHIBIDOR-SUB SON-PRI-KIT-TRGL CLA-MRHS CLA -CAPU- SET": {
     "u": "UN",
@@ -996,7 +996,7 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "15722/19",
+    "q": "15722/6",
     "n": 15722
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
@@ -1351,7 +1351,7 @@
   },
   "NATURES HEART BEB ALMENDRA SIN AZUCAR CJ 12U*946ML": {
     "u": "CAJA",
-    "q": "15/10",
+    "q": "15/7",
     "n": 15
   },
   "NATURES HEART BEBIDA DE AVENA S/AZUCAR CJ 12U*946ML": {
@@ -1431,8 +1431,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "195/0",
-    "n": 195
+    "q": "194/0",
+    "n": 194
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1721,8 +1721,8 @@
   },
   "NESTLE CONDENSADA CJ 24U*393GR + DULCERA": {
     "u": "CAJA",
-    "q": "18/7",
-    "n": 18
+    "q": "17/9",
+    "n": 17
   },
   "NESTLE CONDENSADA DOY PACK CJ 24U*90GR": {
     "u": "CAJA",
@@ -1746,7 +1746,7 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "215/6",
+    "q": "215/4",
     "n": 215
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
@@ -1781,7 +1781,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "169/20",
+    "q": "169/11",
     "n": 169
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
@@ -1861,7 +1861,7 @@
   },
   "NESTLE MOROCHAS TACO EXHIBIDOR CJ 18*6U*75GR": {
     "u": "CAJA",
-    "q": "184/6",
+    "q": "184/3",
     "n": 184
   },
   "NESTLE MOROCHAS WAFER BARRA VAINILLA CJ 8*12U*37GR": {
