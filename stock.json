@@ -1041,7 +1041,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "1775/10",
+    "q": "1775/11",
     "n": 1775
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1091,8 +1091,8 @@
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
-    "q": "348/0",
-    "n": 348
+    "q": "347/0",
+    "n": 347
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1421,8 +1421,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "219/0",
-    "n": 219
+    "q": "218/0",
+    "n": 218
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
