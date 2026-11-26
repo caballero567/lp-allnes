@@ -1101,8 +1101,8 @@
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR": {
     "u": "TIRA",
-    "q": "346/0",
-    "n": 346
+    "q": "345/0",
+    "n": 345
   },
   "KIRMA(MEDIA TIRA)TIRA*5U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1376,8 +1376,8 @@
   },
   "NESCAFE (MEDIA TIRA) *5 U*14GR": {
     "u": "TIRA",
-    "q": "96/0",
-    "n": 96
+    "q": "95/0",
+    "n": 95
   },
   "NESCAFE (MEDIA TIRA) *5 U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1661,7 +1661,7 @@
   },
   "NEST LCA TOPPING40X200GPR2CUCHARASGRTSPE": {
     "u": "CAJA",
-    "q": "39/29",
+    "q": "39/27",
     "n": 39
   },
   "NESTLE AFHS PANETON BOLSA 6X750G PE": {
