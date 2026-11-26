@@ -876,7 +876,7 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "697/1",
+    "q": "697/0",
     "n": 697
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
@@ -1236,8 +1236,8 @@
   },
   "MAGGI SOPA POLLO/FIDEOS DP*12*57GR": {
     "u": "UN",
-    "q": "355/0",
-    "n": 355
+    "q": "352/0",
+    "n": 352
   },
   "MILO (MEDIA TIRA) CHOC ACTI-E GRANUL TR*12U*16GR": {
     "u": "TIRA",
