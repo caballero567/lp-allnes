@@ -391,8 +391,8 @@
   },
   "BONIF RESRVA*15GRXRESERVA": {
     "u": "UN",
-    "q": "1011/0",
-    "n": 1011
+    "q": "1012/0",
+    "n": 1012
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
@@ -1746,8 +1746,8 @@
   },
   "NESTLE DORE GALLETA TACO CJ 27U*230GR": {
     "u": "CAJA",
-    "q": "215/17",
-    "n": 215
+    "q": "255/17",
+    "n": 255
   },
   "NESTLE EL MANJAR BOL 12U*1KG": {
     "u": "BOLSA",
@@ -2061,8 +2061,8 @@
   },
   "NESTLE SUBLIME WAFER POWER CJ 33*6U*25GR": {
     "u": "CAJA",
-    "q": "26/29",
-    "n": 26
+    "q": "35/29",
+    "n": 35
   },
   "NESTLE TRIANGULO BOLA NAVIDEÑA CJ 24X72G PE": {
     "u": "CAJA",
