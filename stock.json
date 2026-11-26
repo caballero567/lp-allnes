@@ -396,8 +396,8 @@
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
-    "q": "1901/0",
-    "n": 1901
+    "q": "1900/0",
+    "n": 1900
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES|IT": {
     "u": "UN",
@@ -1026,8 +1026,8 @@
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR": {
     "u": "TIRA",
-    "q": "158/0",
-    "n": 158
+    "q": "155/0",
+    "n": 155
   },
   "KIRMA (MEDIA TIRA) TR*8U*7GR PRYAPE": {
     "u": "TIRA",
@@ -1366,8 +1366,8 @@
   },
   "NESCAFE (MEDIA TIRA) TR* 9U*7GR": {
     "u": "TIRA",
-    "q": "391/0",
-    "n": 391
+    "q": "390/0",
+    "n": 390
   },
   "NESCAFE (MEDIA TIRA) TR* 9U*7GR PRYAPE": {
     "u": "TIRA",
@@ -1376,8 +1376,8 @@
   },
   "NESCAFE (MEDIA TIRA) *5 U*14GR": {
     "u": "TIRA",
-    "q": "89/0",
-    "n": 89
+    "q": "88/0",
+    "n": 88
   },
   "NESCAFE (MEDIA TIRA) *5 U*14GR PRYAPE": {
     "u": "TIRA",
@@ -1681,8 +1681,8 @@
   },
   "NESTLE BESO DE MOZA DP*20U*24GR": {
     "u": "DISP",
-    "q": "1937/0",
-    "n": 1937
+    "q": "1938/0",
+    "n": 1938
   },
   "NESTLE BOMBON MULTIPACK CJ 15*320GR": {
     "u": "CAJA",
@@ -1846,8 +1846,8 @@
   },
   "NESTLE MOROCHAS SNACK CJ 8*8U*42GR": {
     "u": "CAJA",
-    "q": "432/0",
-    "n": 432
+    "q": "431/7",
+    "n": 431
   },
   "NESTLE MOROCHAS TACO BOLSA CJ 16*6U*75GR": {
     "u": "CAJA",
@@ -2046,7 +2046,7 @@
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*37GR": {
     "u": "CAJA",
-    "q": "316/23",
+    "q": "316/22",
     "n": 316
   },
   "NESTLE SUBLIME SONRISA CJ 24*20U*38GR": {
@@ -2081,7 +2081,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "408/1",
+    "q": "408/0",
     "n": 408
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
