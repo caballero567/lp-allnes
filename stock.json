@@ -166,8 +166,8 @@
   },
   "BONIF KIRMA*7GR X CAFE|CAFÉS": {
     "u": "UN",
-    "q": "2258/0",
-    "n": 2258
+    "q": "2257/0",
+    "n": 2257
   },
   "BONIF KIRMA*8GR X BEBIDAS|BEBIDAS": {
     "u": "UN",
@@ -501,8 +501,8 @@
   },
   "BONIFICACION GERBER MANZANA *113 GR": {
     "u": "UN",
-    "q": "2/0",
-    "n": 2
+    "q": "1/0",
+    "n": 1
   },
   "BONIFICACION KIRMA*8GR X OPN CAFÉS": {
     "u": "UN",
@@ -821,7 +821,7 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "466/2",
+    "q": "466/1",
     "n": 466
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
@@ -876,8 +876,8 @@
   },
   "ECCO CAFE CJ 10R*14U*10GR": {
     "u": "CAJA",
-    "q": "931/1",
-    "n": 931
+    "q": "930/8",
+    "n": 930
   },
   "ECCO CAFE CJ 10R*14U*12GR": {
     "u": "CAJA",
@@ -946,8 +946,8 @@
   },
   "GERBER PURE MANGO CJ 12*113GR": {
     "u": "CAJA",
-    "q": "11/1",
-    "n": 11
+    "q": "10/10",
+    "n": 10
   },
   "GERBER PURE MANZANA CJ 12*113GR": {
     "u": "CAJA",
@@ -956,7 +956,7 @@
   },
   "GERBER PURE PERA CJ 12*113GR": {
     "u": "CAJA",
-    "q": "13/8",
+    "q": "13/5",
     "n": 13
   },
   "IDEAL CREMOSITACJ 24U*390GR GRATIS NSCF RSV*2GR": {
@@ -996,8 +996,8 @@
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR": {
     "u": "CAJA",
-    "q": "14054/17",
-    "n": 14054
+    "q": "14053/16",
+    "n": 14053
   },
   "IDEAL TABLETA CREMOSITA MZC LACT CJ 24U*390GR+1UND MAGGI 7GR": {
     "u": "CAJA",
@@ -1051,7 +1051,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "2360/11",
+    "q": "2360/10",
     "n": 2360
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1066,7 +1066,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "691/2",
+    "q": "691/1",
     "n": 691
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1431,8 +1431,8 @@
   },
   "NESCAFE GOLD (MEDIA TIRA) TR*5 UN*11GR": {
     "u": "TIRA",
-    "q": "155/0",
-    "n": 155
+    "q": "154/0",
+    "n": 154
   },
   "NESCAFE GOLD BLEND CJ12*50GR": {
     "u": "CAJA",
@@ -1996,7 +1996,7 @@
   },
   "NESTLE SUBLIME CRISPY CJ 12(20X20G) PE": {
     "u": "CAJA",
-    "q": "232/4",
+    "q": "232/3",
     "n": 232
   },
   "NESTLE SUBLIME DUO CJ 21DP12U*28GR": {
@@ -2081,7 +2081,7 @@
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*29GR": {
     "u": "CAJA",
-    "q": "401/22",
+    "q": "401/20",
     "n": 401
   },
   "NESTLE TRIANGULO CLASICO CJ 24*20U*30GR": {
