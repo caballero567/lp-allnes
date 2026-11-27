@@ -391,8 +391,8 @@
   },
   "BONIF RESRVA*15GRXRESERVA": {
     "u": "UN",
-    "q": "653/0",
-    "n": 653
+    "q": "652/0",
+    "n": 652
   },
   "BONIF SUBLIME CLASICO* 26GR X CHOCOLATES|CHOCOLATES": {
     "u": "UN",
@@ -821,8 +821,8 @@
   },
   "DONOFRIO PANETON BOLSA CJ 6*880GR": {
     "u": "CAJA",
-    "q": "464/5",
-    "n": 464
+    "q": "465/0",
+    "n": 465
   },
   "DONOFRIO PANETON CAJA CJ 6*880GR": {
     "u": "CAJA",
@@ -1051,7 +1051,7 @@
   },
   "KIRMA CJ 12TR*16U*7GR": {
     "u": "CAJA",
-    "q": "2360/9",
+    "q": "2360/8",
     "n": 2360
   },
   "KIRMA CJ 12TR*16U*7GR PRYAPE": {
@@ -1066,7 +1066,7 @@
   },
   "KIRMA CJ 8TR*10U*14GR": {
     "u": "CAJA",
-    "q": "690/6",
+    "q": "690/5",
     "n": 690
   },
   "KIRMA CJ 8TR*10U*14GR PRYAPE": {
@@ -1461,7 +1461,7 @@
   },
   "NESCAFE GOLD CJ 12TR*10*11G": {
     "u": "CAJA",
-    "q": "560/9",
+    "q": "560/7",
     "n": 560
   },
   "NESCAFE GOLD FCO VIDRIO CJ 12U*100GR": {
@@ -1781,7 +1781,7 @@
   },
   "NESTLE LECHE COND DOYPACK 36X180G PE": {
     "u": "CAJA",
-    "q": "136/29",
+    "q": "136/26",
     "n": 136
   },
   "NESTLE LENTEJAS BOLSA CJ 24*24U*16GR": {
